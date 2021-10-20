@@ -1,0 +1,24 @@
+name: better_test_reporter
+description: A CLI for generating a junit xml report from dart test json output and libraries for parsing test json into dev-friendly models
+version: 1.0.0
+publish_to: none
+homepage: https://github.com/Betterment/better_test_reporter
+
+environment:
+  sdk: '>=2.12.0 <3.0.0'
+
+dev_dependencies:
+  build_runner: ^2.1.2
+  freezed: ^0.14.5
+  json_serializable: ^5.0.2
+  lints: ^1.0.1
+  test: ^1.16.0
+dependencies: 
+  args: ^2.3.0
+  freezed_annotation: ^0.14.3
+  intl: ^0.17.0
+  pub_semver: ^2.1.0
+  xml: ^5.2.0
+
+executables:
+  report_to_junit:
