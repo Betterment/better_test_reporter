@@ -22,7 +22,9 @@ class TestJsonProcessor {
     if (events.first['type'] != 'start') {
       throw UnsupportedError("First event was not a 'start' event");
     }
-    final processorDelegate = _createProcessorDelegate(protocolVersion: events.first['protocolVersion'] as String);
+    final processorDelegate = _createProcessorDelegate(
+      protocolVersion: events.first['protocolVersion'] as String,
+    );
     return processorDelegate.process(events);
   }
 
@@ -31,7 +33,9 @@ class TestJsonProcessor {
     if (protocol0Range.allows(Version.parse(protocolVersion))) {
       return Processor0_1(timestamp: timestamp);
     }
-    throw UnsupportedError("No suitable processor found for version '$protocolVersion'. "
-        "Supported versions:\n'^0.1.0'");
+    throw UnsupportedError(
+      "No suitable processor found for version '$protocolVersion'. "
+      "Supported versions:\n'^0.1.0'",
+    );
   }
 }

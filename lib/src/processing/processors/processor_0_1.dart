@@ -1,4 +1,5 @@
-import 'package:better_test_reporter/json_reporter_protocol_0_1.dart' as json_reporter_protocol_0_1;
+import 'package:better_test_reporter/json_reporter_protocol_0_1.dart'
+    as json_reporter_protocol_0_1;
 import 'package:better_test_reporter/src/processing/models/models.dart';
 import 'package:better_test_reporter/src/processing/processors/processor.dart';
 
@@ -77,13 +78,15 @@ class Processor0_1 implements Processor {
           messageType,
           message,
         ) {
-          tests[testId] = tests[testId]!.copyWith(prints: tests[testId]!.prints..add(message));
+          tests[testId] = tests[testId]!
+              .copyWith(prints: tests[testId]!.prints..add(message));
         },
         orElse: () {},
       );
     }
     for (final test in tests.values) {
-      suites[test.suiteId] = suites[test.suiteId]!.copyWith(allTests: suites[test.suiteId]!.allTests..add(test));
+      suites[test.suiteId] = suites[test.suiteId]!
+          .copyWith(allTests: suites[test.suiteId]!.allTests..add(test));
     }
     return Report(suites: suites.values, timestamp: timestamp);
   }
