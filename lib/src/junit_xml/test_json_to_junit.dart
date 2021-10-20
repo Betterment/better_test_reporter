@@ -59,8 +59,10 @@ class TestJsonToJunit {
   }) {
     final className = _pathToClassName(suite.path);
     final attributes = <String, String>{
-      'errors': '${suite.problems.where((t) => !t.problems.every((p) => p.isFailure)).length}',
-      'failures': '${suite.problems.where((t) => t.problems.every((p) => p.isFailure)).length}',
+      'errors':
+          '${suite.problems.where((t) => !t.problems.every((p) => p.isFailure)).length}',
+      'failures':
+          '${suite.problems.where((t) => t.problems.every((p) => p.isFailure)).length}',
       'tests': '${suite.tests.length}',
       'skipped': '${suite.skipped.length}',
       'name': className,
@@ -210,7 +212,8 @@ class TestJsonToJunit {
         main = main.substring(1);
       }
     }
-    return package + main.replaceAll(_pathSeparator, '.').replaceAll(_dash, '_');
+    return package +
+        main.replaceAll(_pathSeparator, '.').replaceAll(_dash, '_');
   }
 
   Iterable<String> _details(Iterable<Problem> problems) {

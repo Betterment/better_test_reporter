@@ -140,7 +140,9 @@ DateTime? _processTimestamp({
   try {
     return format.parseUtc(timestamp);
   } on FormatException {
-    throw FormatException("'timestamp' should be in the form 'yyyy-MM-ddTHH:mm:ss' UTC");
+    throw FormatException(
+      "'timestamp' should be in the form 'yyyy-MM-ddTHH:mm:ss' UTC",
+    );
   }
 }
 
