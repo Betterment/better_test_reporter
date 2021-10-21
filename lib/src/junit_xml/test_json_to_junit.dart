@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:better_test_reporter/src/processing/models/models.dart';
 import 'package:intl/intl.dart';
 import 'package:xml/xml.dart';
@@ -6,8 +8,6 @@ import 'package:xml/xml.dart';
 class TestJsonToJunit {
   static final _milliseconds = NumberFormat('#####0.00#', 'en_US');
   static final _dateFormat = DateFormat('yyyy-MM-ddTHH:mm:ss', 'en_US');
-  static final _pathSeparator = RegExp(r'[\\/]');
-  static final _dash = RegExp(r'-');
 
   /// The part to strip from the 'path' elements in the source
   final String base;
@@ -208,12 +208,12 @@ class TestJsonToJunit {
 
     if (base.isNotEmpty && main.startsWith(base)) {
       main = main.substring(base.length);
-      while (main.startsWith(_pathSeparator)) {
+      while (main.startsWith(Platform.pathSeparator)) {
         main = main.substring(1);
       }
     }
     return package +
-        main.replaceAll(_pathSeparator, '.').replaceAll(_dash, '_');
+        main.replaceAll(Platform.pathSeparator, '.').replaceAll('-', '_');
   }
 
   Iterable<String> _details(Iterable<Problem> problems) {
