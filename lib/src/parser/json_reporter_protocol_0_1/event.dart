@@ -45,7 +45,7 @@ class Event with _$Event {
     /// The time (in milliseconds) that has elapsed since the test runner started.
     required int time,
 
-    /// Metadata about the [Suite].
+    /// Metadata about the Suite.
     required Suite suite,
   }) = _Suite;
 
@@ -69,7 +69,7 @@ class Event with _$Event {
     /// The time (in milliseconds) that has elapsed since the test runner started.
     required int time,
 
-    /// Metadata about the [Group].
+    /// Metadata about the Group.
     required Group group,
   }) = _Group;
 
@@ -78,7 +78,7 @@ class Event with _$Event {
     /// The time (in milliseconds) that has elapsed since the test runner started.
     required int time,
 
-    /// Metadata about the [Test] that started.
+    /// Metadata about the Test that started.
     required Test test,
   }) = _TestStart;
 

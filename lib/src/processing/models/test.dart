@@ -6,7 +6,7 @@ part 'test.freezed.dart';
 /// Describes a test
 @freezed
 class Test with _$Test {
-  /// Factory constructor to create a [Test]
+  /// Factory constructor to create a Test
   factory Test({
     /// The id of the suite to which this test belongs.
     required int suiteId,
@@ -22,7 +22,7 @@ class Test with _$Test {
 
     /// Optional URL for the original test suite in which the test was defined
     ///
-    /// Will only be present if different from [url]
+    /// Will only be present if different from `url`
     String? rootUrl,
 
     /// The time (in milliseconds) that has elapsed between the test runner starting and this test completing.

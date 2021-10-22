@@ -7,7 +7,7 @@ part 'group.g.dart';
 /// Group model as defined by https://github.com/dart-lang/test/blob/master/pkgs/test/doc/json_reporter.md#group
 @freezed
 class Group with _$Group {
-  /// Factory constructor to create a [Group]
+  /// Factory constructor to create a Group
   factory Group({
     /// An opaque ID for the group.
     required int id,
@@ -34,6 +34,6 @@ class Group with _$Group {
     String? url,
   }) = _Group;
 
-  /// Factory constructor to convert json into a [Group] model
+  /// Factory constructor to convert json into a Group model
   factory Group.fromJson(Map<String, dynamic> json) => _$GroupFromJson(json);
 }
