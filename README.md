@@ -1,6 +1,6 @@
 # better_test_reporter
 
-[![Build status](https://github.com/Betterment/better_test_reporter/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/Betterment/better_test_reporter/actions/workflows/ci.yml)
+[![Build status](https://github.com/Betterment/better_test_reporter/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/Betterment/better_test_reporter/actions/workflows/ci.yml?query=branch%3Amain)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://GitHub.com/Betterment/better_test_reporter/pulse)
 
