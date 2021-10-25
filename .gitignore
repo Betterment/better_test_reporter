@@ -8,3 +8,6 @@ build/
 # Directories used for IDE setup
 .idea/
 *.iml
+
+# Conventional directory for doc generation
+doc/

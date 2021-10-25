@@ -11,7 +11,7 @@ part 'event.g.dart';
   fallbackUnion: 'unknown',
 )
 class Event with _$Event {
-  /// [start event](https://github.com/dart-lang/test/blob/master/pkgs/test/doc/json_reporter.md#startevent)
+  /// Factory constructor for [start event](https://github.com/dart-lang/test/blob/master/pkgs/test/doc/json_reporter.md#startevent)
   const factory Event.start({
     /// The time (in milliseconds) that has elapsed since the test runner started.
     required int time,
@@ -31,7 +31,7 @@ class Event with _$Event {
     required int pid,
   }) = _Start;
 
-  /// [allSuites event](https://github.com/dart-lang/test/blob/master/pkgs/test/doc/json_reporter.md#allsuitesevent)
+  /// Factory constructor for [allSuites event](https://github.com/dart-lang/test/blob/master/pkgs/test/doc/json_reporter.md#allsuitesevent)
   const factory Event.allSuites({
     /// The time (in milliseconds) that has elapsed since the test runner started.
     required int time,
@@ -40,7 +40,7 @@ class Event with _$Event {
     required int count,
   }) = _AllSuites;
 
-  /// [suite event](https://github.com/dart-lang/test/blob/master/pkgs/test/doc/json_reporter.md#suiteevent)
+  /// Factory constructor for [suite event](https://github.com/dart-lang/test/blob/master/pkgs/test/doc/json_reporter.md#suiteevent)
   const factory Event.suite({
     /// The time (in milliseconds) that has elapsed since the test runner started.
     required int time,
@@ -49,7 +49,7 @@ class Event with _$Event {
     required Suite suite,
   }) = _Suite;
 
-  /// [debug event](https://github.com/dart-lang/test/blob/master/pkgs/test/doc/json_reporter.md#debugevent)
+  /// Factory constructor for [debug event](https://github.com/dart-lang/test/blob/master/pkgs/test/doc/json_reporter.md#debugevent)
   const factory Event.debug({
     /// The time (in milliseconds) that has elapsed since the test runner started.
     required int time,
@@ -64,7 +64,7 @@ class Event with _$Event {
     String? remoteDebugger,
   }) = _Debug;
 
-  /// [group event](https://github.com/dart-lang/test/blob/master/pkgs/test/doc/json_reporter.md#groupevent)
+  /// Factory constructor for [group event](https://github.com/dart-lang/test/blob/master/pkgs/test/doc/json_reporter.md#groupevent)
   const factory Event.group({
     /// The time (in milliseconds) that has elapsed since the test runner started.
     required int time,
@@ -73,7 +73,7 @@ class Event with _$Event {
     required Group group,
   }) = _Group;
 
-  /// [testStart event](https://github.com/dart-lang/test/blob/master/pkgs/test/doc/json_reporter.md#teststartevent)
+  /// Factory constructor for [testStart event](https://github.com/dart-lang/test/blob/master/pkgs/test/doc/json_reporter.md#teststartevent)
   const factory Event.testStart({
     /// The time (in milliseconds) that has elapsed since the test runner started.
     required int time,
@@ -82,7 +82,7 @@ class Event with _$Event {
     required Test test,
   }) = _TestStart;
 
-  /// [print event](https://github.com/dart-lang/test/blob/master/pkgs/test/doc/json_reporter.md#messageevent)
+  /// Factory constructor for [print event](https://github.com/dart-lang/test/blob/master/pkgs/test/doc/json_reporter.md#messageevent)
   const factory Event.print({
     /// The time (in milliseconds) that has elapsed since the test runner started.
     required int time,
@@ -97,7 +97,7 @@ class Event with _$Event {
     required String message,
   }) = _Print;
 
-  /// [error event](https://github.com/dart-lang/test/blob/master/pkgs/test/doc/json_reporter.md#errorevent)
+  /// Factory constructor for [error event](https://github.com/dart-lang/test/blob/master/pkgs/test/doc/json_reporter.md#errorevent)
   const factory Event.error({
     /// The time (in milliseconds) that has elapsed since the test runner started.
     required int time,
@@ -115,7 +115,7 @@ class Event with _$Event {
     required bool isFailure,
   }) = _Error;
 
-  /// [testDone event](https://github.com/dart-lang/test/blob/master/pkgs/test/doc/json_reporter.md#testdoneevent)
+  /// Factory constructor for [testDone event](https://github.com/dart-lang/test/blob/master/pkgs/test/doc/json_reporter.md#testdoneevent)
   const factory Event.testDone({
     /// The time (in milliseconds) that has elapsed since the test runner started.
     required int time,
@@ -133,7 +133,7 @@ class Event with _$Event {
     required bool skipped,
   }) = _TestDone;
 
-  /// [done event](https://github.com/dart-lang/test/blob/master/pkgs/test/doc/json_reporter.md#doneevent)
+  /// Factory constructor for [done event](https://github.com/dart-lang/test/blob/master/pkgs/test/doc/json_reporter.md#doneevent)
   const factory Event.done({
     /// The time (in milliseconds) that has elapsed since the test runner started.
     required int time,

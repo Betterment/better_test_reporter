@@ -8,13 +8,13 @@ part 'suite.g.dart';
 class Suite with _$Suite {
   /// Factory constructor to create a Suite
   factory Suite({
-    /// An opaque ID for the suite.
+    /// An opaque ID for this suite.
     required int id,
 
-    /// The platform on which the suite is running.
+    /// The platform on which this suite is running.
     required String platform,
 
-    /// The path to the suite's file, or `null` if that path is unknown.
+    /// The path to this suite's file, or `null` if that path is unknown.
     String? path,
   }) = _Suite;
 

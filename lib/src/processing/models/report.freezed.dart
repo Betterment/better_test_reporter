@@ -30,7 +30,7 @@ const $Report = _$ReportTearOff();
 
 /// @nodoc
 mixin _$Report {
-  /// The [Suite]s in the report
+  /// The Suites in this report
   Iterable<Suite> get suites => throw _privateConstructorUsedError;
 
   /// The optional timestamp of the tests
@@ -115,7 +115,7 @@ class _$_Report implements _Report {
 
   @override
 
-  /// The [Suite]s in the report
+  /// The Suites in this report
   final Iterable<Suite> suites;
   @override
 
@@ -130,19 +130,16 @@ class _$_Report implements _Report {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _Report &&
-            (identical(other.suites, suites) ||
-                const DeepCollectionEquality().equals(other.suites, suites)) &&
+        (other.runtimeType == runtimeType &&
+            other is _Report &&
+            const DeepCollectionEquality().equals(other.suites, suites) &&
             (identical(other.timestamp, timestamp) ||
-                const DeepCollectionEquality()
-                    .equals(other.timestamp, timestamp)));
+                other.timestamp == timestamp));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(suites) ^
-      const DeepCollectionEquality().hash(timestamp);
+  int get hashCode => Object.hash(
+      runtimeType, const DeepCollectionEquality().hash(suites), timestamp);
 
   @JsonKey(ignore: true)
   @override
@@ -156,12 +153,12 @@ abstract class _Report implements Report {
 
   @override
 
-  /// The [Suite]s in the report
-  Iterable<Suite> get suites => throw _privateConstructorUsedError;
+  /// The Suites in this report
+  Iterable<Suite> get suites;
   @override
 
   /// The optional timestamp of the tests
-  DateTime? get timestamp => throw _privateConstructorUsedError;
+  DateTime? get timestamp;
   @override
   @JsonKey(ignore: true)
   _$ReportCopyWith<_Report> get copyWith => throw _privateConstructorUsedError;

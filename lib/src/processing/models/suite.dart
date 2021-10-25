@@ -8,10 +8,10 @@ part 'suite.freezed.dart';
 class Suite with _$Suite {
   /// Factory constructor to create a Suite
   factory Suite({
-    /// Optional path to the suite's file
+    /// Optional path to this suite's file
     String? path,
 
-    /// Platform on which the suite is running
+    /// Platform on which this suite is running
     required String platform,
 
     /// All Tests contained within this suite

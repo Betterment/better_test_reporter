@@ -32,13 +32,13 @@ const $Suite = _$SuiteTearOff();
 
 /// @nodoc
 mixin _$Suite {
-  /// Optional path to the suite's file
+  /// Optional path to this suite's file
   String? get path => throw _privateConstructorUsedError;
 
-  /// Platform on which the suite is running
+  /// Platform on which this suite is running
   String get platform => throw _privateConstructorUsedError;
 
-  /// All [Test]s contained within this suite
+  /// All Tests contained within this suite
   List<Test> get allTests => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
@@ -131,15 +131,15 @@ class _$_Suite extends _Suite {
 
   @override
 
-  /// Optional path to the suite's file
+  /// Optional path to this suite's file
   final String? path;
   @override
 
-  /// Platform on which the suite is running
+  /// Platform on which this suite is running
   final String platform;
   @override
 
-  /// All [Test]s contained within this suite
+  /// All Tests contained within this suite
   final List<Test> allTests;
 
   @override
@@ -150,23 +150,17 @@ class _$_Suite extends _Suite {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _Suite &&
-            (identical(other.path, path) ||
-                const DeepCollectionEquality().equals(other.path, path)) &&
+        (other.runtimeType == runtimeType &&
+            other is _Suite &&
+            (identical(other.path, path) || other.path == path) &&
             (identical(other.platform, platform) ||
-                const DeepCollectionEquality()
-                    .equals(other.platform, platform)) &&
-            (identical(other.allTests, allTests) ||
-                const DeepCollectionEquality()
-                    .equals(other.allTests, allTests)));
+                other.platform == platform) &&
+            const DeepCollectionEquality().equals(other.allTests, allTests));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(path) ^
-      const DeepCollectionEquality().hash(platform) ^
-      const DeepCollectionEquality().hash(allTests);
+  int get hashCode => Object.hash(runtimeType, path, platform,
+      const DeepCollectionEquality().hash(allTests));
 
   @JsonKey(ignore: true)
   @override
@@ -183,16 +177,16 @@ abstract class _Suite extends Suite {
 
   @override
 
-  /// Optional path to the suite's file
-  String? get path => throw _privateConstructorUsedError;
+  /// Optional path to this suite's file
+  String? get path;
   @override
 
-  /// Platform on which the suite is running
-  String get platform => throw _privateConstructorUsedError;
+  /// Platform on which this suite is running
+  String get platform;
   @override
 
-  /// All [Test]s contained within this suite
-  List<Test> get allTests => throw _privateConstructorUsedError;
+  /// All Tests contained within this suite
+  List<Test> get allTests;
   @override
   @JsonKey(ignore: true)
   _$SuiteCopyWith<_Suite> get copyWith => throw _privateConstructorUsedError;

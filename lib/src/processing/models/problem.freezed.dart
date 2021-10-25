@@ -40,7 +40,7 @@ mixin _$Problem {
   /// The error's stack trace, in the [stack_trace](https://pub.dev/packages/stack_trace) package format
   String get stacktrace => throw _privateConstructorUsedError;
 
-  /// Whether the error was a [TestFailure]
+  /// Whether the error was a `TestFailure`
   bool get isFailure => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
@@ -143,7 +143,7 @@ class _$_Problem implements _Problem {
   final String stacktrace;
   @override
 
-  /// Whether the error was a [TestFailure]
+  /// Whether the error was a `TestFailure`
   final bool isFailure;
 
   @override
@@ -154,24 +154,17 @@ class _$_Problem implements _Problem {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _Problem &&
-            (identical(other.message, message) ||
-                const DeepCollectionEquality()
-                    .equals(other.message, message)) &&
+        (other.runtimeType == runtimeType &&
+            other is _Problem &&
+            (identical(other.message, message) || other.message == message) &&
             (identical(other.stacktrace, stacktrace) ||
-                const DeepCollectionEquality()
-                    .equals(other.stacktrace, stacktrace)) &&
+                other.stacktrace == stacktrace) &&
             (identical(other.isFailure, isFailure) ||
-                const DeepCollectionEquality()
-                    .equals(other.isFailure, isFailure)));
+                other.isFailure == isFailure));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(message) ^
-      const DeepCollectionEquality().hash(stacktrace) ^
-      const DeepCollectionEquality().hash(isFailure);
+  int get hashCode => Object.hash(runtimeType, message, stacktrace, isFailure);
 
   @JsonKey(ignore: true)
   @override
@@ -188,15 +181,15 @@ abstract class _Problem implements Problem {
   @override
 
   /// The error's message.
-  String get message => throw _privateConstructorUsedError;
+  String get message;
   @override
 
   /// The error's stack trace, in the [stack_trace](https://pub.dev/packages/stack_trace) package format
-  String get stacktrace => throw _privateConstructorUsedError;
+  String get stacktrace;
   @override
 
-  /// Whether the error was a [TestFailure]
-  bool get isFailure => throw _privateConstructorUsedError;
+  /// Whether the error was a `TestFailure`
+  bool get isFailure;
   @override
   @JsonKey(ignore: true)
   _$ProblemCopyWith<_Problem> get copyWith =>

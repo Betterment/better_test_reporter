@@ -42,7 +42,7 @@ class _$GroupTearOff {
     );
   }
 
-  Group fromJson(Map<String, Object> json) {
+  Group fromJson(Map<String, Object?> json) {
     return Group.fromJson(json);
   }
 }
@@ -52,30 +52,30 @@ const $Group = _$GroupTearOff();
 
 /// @nodoc
 mixin _$Group {
-  /// An opaque ID for the group.
+  /// An opaque ID for this group.
   int get id => throw _privateConstructorUsedError;
 
-  /// The name of the group, including prefixes from any containing groups.
+  /// The name of this group, including prefixes from any containing groups.
   String get name => throw _privateConstructorUsedError;
 
   /// The ID of the suite containing this group.
   @JsonKey(name: 'suiteID')
   int get suiteId => throw _privateConstructorUsedError;
 
-  /// The ID of the group's parent group, unless it's the root group.
+  /// The ID of this group's parent group, unless it's this root group.
   @JsonKey(name: 'parentID')
   int? get parentId => throw _privateConstructorUsedError;
 
   /// The number of tests (recursively) within this group.
   int get testCount => throw _privateConstructorUsedError;
 
-  /// The (1-based) line on which the group was defined, or `null`.
+  /// The (1-based) line on which this group was defined, or `null`.
   int? get line => throw _privateConstructorUsedError;
 
-  /// The (1-based) column on which the group was defined, or `null`.
+  /// The (1-based) column on which this group was defined, or `null`.
   int? get column => throw _privateConstructorUsedError;
 
-  /// The URL for the file in which the group was defined, or `null`.
+  /// The URL for the file in which this group was defined, or `null`.
   String? get url => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -245,11 +245,11 @@ class _$_Group implements _Group {
 
   @override
 
-  /// An opaque ID for the group.
+  /// An opaque ID for this group.
   final int id;
   @override
 
-  /// The name of the group, including prefixes from any containing groups.
+  /// The name of this group, including prefixes from any containing groups.
   final String name;
   @override
 
@@ -258,7 +258,7 @@ class _$_Group implements _Group {
   final int suiteId;
   @override
 
-  /// The ID of the group's parent group, unless it's the root group.
+  /// The ID of this group's parent group, unless it's this root group.
   @JsonKey(name: 'parentID')
   final int? parentId;
   @override
@@ -267,15 +267,15 @@ class _$_Group implements _Group {
   final int testCount;
   @override
 
-  /// The (1-based) line on which the group was defined, or `null`.
+  /// The (1-based) line on which this group was defined, or `null`.
   final int? line;
   @override
 
-  /// The (1-based) column on which the group was defined, or `null`.
+  /// The (1-based) column on which this group was defined, or `null`.
   final int? column;
   @override
 
-  /// The URL for the file in which the group was defined, or `null`.
+  /// The URL for the file in which this group was defined, or `null`.
   final String? url;
 
   @override
@@ -286,39 +286,23 @@ class _$_Group implements _Group {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _Group &&
-            (identical(other.id, id) ||
-                const DeepCollectionEquality().equals(other.id, id)) &&
-            (identical(other.name, name) ||
-                const DeepCollectionEquality().equals(other.name, name)) &&
-            (identical(other.suiteId, suiteId) ||
-                const DeepCollectionEquality()
-                    .equals(other.suiteId, suiteId)) &&
+        (other.runtimeType == runtimeType &&
+            other is _Group &&
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.name, name) || other.name == name) &&
+            (identical(other.suiteId, suiteId) || other.suiteId == suiteId) &&
             (identical(other.parentId, parentId) ||
-                const DeepCollectionEquality()
-                    .equals(other.parentId, parentId)) &&
+                other.parentId == parentId) &&
             (identical(other.testCount, testCount) ||
-                const DeepCollectionEquality()
-                    .equals(other.testCount, testCount)) &&
-            (identical(other.line, line) ||
-                const DeepCollectionEquality().equals(other.line, line)) &&
-            (identical(other.column, column) ||
-                const DeepCollectionEquality().equals(other.column, column)) &&
-            (identical(other.url, url) ||
-                const DeepCollectionEquality().equals(other.url, url)));
+                other.testCount == testCount) &&
+            (identical(other.line, line) || other.line == line) &&
+            (identical(other.column, column) || other.column == column) &&
+            (identical(other.url, url) || other.url == url));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(id) ^
-      const DeepCollectionEquality().hash(name) ^
-      const DeepCollectionEquality().hash(suiteId) ^
-      const DeepCollectionEquality().hash(parentId) ^
-      const DeepCollectionEquality().hash(testCount) ^
-      const DeepCollectionEquality().hash(line) ^
-      const DeepCollectionEquality().hash(column) ^
-      const DeepCollectionEquality().hash(url);
+  int get hashCode => Object.hash(
+      runtimeType, id, name, suiteId, parentId, testCount, line, column, url);
 
   @JsonKey(ignore: true)
   @override
@@ -346,38 +330,38 @@ abstract class _Group implements Group {
 
   @override
 
-  /// An opaque ID for the group.
-  int get id => throw _privateConstructorUsedError;
+  /// An opaque ID for this group.
+  int get id;
   @override
 
-  /// The name of the group, including prefixes from any containing groups.
-  String get name => throw _privateConstructorUsedError;
+  /// The name of this group, including prefixes from any containing groups.
+  String get name;
   @override
 
   /// The ID of the suite containing this group.
   @JsonKey(name: 'suiteID')
-  int get suiteId => throw _privateConstructorUsedError;
+  int get suiteId;
   @override
 
-  /// The ID of the group's parent group, unless it's the root group.
+  /// The ID of this group's parent group, unless it's this root group.
   @JsonKey(name: 'parentID')
-  int? get parentId => throw _privateConstructorUsedError;
+  int? get parentId;
   @override
 
   /// The number of tests (recursively) within this group.
-  int get testCount => throw _privateConstructorUsedError;
+  int get testCount;
   @override
 
-  /// The (1-based) line on which the group was defined, or `null`.
-  int? get line => throw _privateConstructorUsedError;
+  /// The (1-based) line on which this group was defined, or `null`.
+  int? get line;
   @override
 
-  /// The (1-based) column on which the group was defined, or `null`.
-  int? get column => throw _privateConstructorUsedError;
+  /// The (1-based) column on which this group was defined, or `null`.
+  int? get column;
   @override
 
-  /// The URL for the file in which the group was defined, or `null`.
-  String? get url => throw _privateConstructorUsedError;
+  /// The URL for the file in which this group was defined, or `null`.
+  String? get url;
   @override
   @JsonKey(ignore: true)
   _$GroupCopyWith<_Group> get copyWith => throw _privateConstructorUsedError;
