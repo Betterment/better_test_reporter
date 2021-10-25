@@ -62,7 +62,7 @@ mixin _$Group {
   @JsonKey(name: 'suiteID')
   int get suiteId => throw _privateConstructorUsedError;
 
-  /// The ID of this group's parent group, unless it's this root group.
+  /// The ID of this group's parent group, unless it's the root group.
   @JsonKey(name: 'parentID')
   int? get parentId => throw _privateConstructorUsedError;
 
@@ -258,7 +258,7 @@ class _$_Group implements _Group {
   final int suiteId;
   @override
 
-  /// The ID of this group's parent group, unless it's this root group.
+  /// The ID of this group's parent group, unless it's the root group.
   @JsonKey(name: 'parentID')
   final int? parentId;
   @override
@@ -343,7 +343,7 @@ abstract class _Group implements Group {
   int get suiteId;
   @override
 
-  /// The ID of this group's parent group, unless it's this root group.
+  /// The ID of this group's parent group, unless it's the root group.
   @JsonKey(name: 'parentID')
   int? get parentId;
   @override

@@ -18,7 +18,7 @@ class Group with _$Group {
     /// The ID of the suite containing this group.
     @JsonKey(name: 'suiteID') required int suiteId,
 
-    /// The ID of this group's parent group, unless it's this root group.
+    /// The ID of this group's parent group, unless it's the root group.
     @JsonKey(name: 'parentID') int? parentId,
 
     /// The number of tests (recursively) within this group.
