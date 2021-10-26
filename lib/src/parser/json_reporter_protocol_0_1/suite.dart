@@ -6,18 +6,18 @@ part 'suite.g.dart';
 /// Suite model as defined by https://github.com/dart-lang/test/blob/master/pkgs/test/doc/json_reporter.md#suite
 @freezed
 class Suite with _$Suite {
-  /// Factory constructor to create a [Suite]
+  /// Factory constructor to create a Suite
   factory Suite({
-    /// An opaque ID for the suite.
+    /// An opaque ID for this suite.
     required int id,
 
-    /// The platform on which the suite is running.
+    /// The platform on which this suite is running.
     required String platform,
 
-    /// The path to the suite's file, or `null` if that path is unknown.
+    /// The path to this suite's file, or `null` if that path is unknown.
     String? path,
   }) = _Suite;
 
-  /// Factory constructor to convert json into a [Suite] model
+  /// Factory constructor to convert json into a Suite model
   factory Suite.fromJson(Map<String, dynamic> json) => _$SuiteFromJson(json);
 }

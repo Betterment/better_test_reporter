@@ -3,19 +3,19 @@ import 'package:better_test_reporter/json_reporter_protocol_0_1.dart'
 import 'package:better_test_reporter/src/processing/models/models.dart';
 import 'package:better_test_reporter/src/processing/processors/processor.dart';
 
-/// [Processor] for the ^0.1.0 test json reporter protocol version
+/// Processor for the ^0.1.0 test json reporter protocol version
 // ignore: camel_case_types
 class Processor0_1 implements Processor {
   /// Timestamp of the start process time
   final DateTime? timestamp;
 
-  /// Mapping from `int suiteId` to [Suite]
+  /// Mapping from `int suiteId` to Suite
   final Map<int, Suite> suites = {};
 
-  /// Mapping from `int testId` to [Test]
+  /// Mapping from `int testId` to Test
   final Map<int, Test> tests = {};
 
-  /// Constructs a [Processor0_1] from the timestamp of the start process time
+  /// Constructs a Processor0_1 from the timestamp of the start process time
   Processor0_1({this.timestamp});
 
   @override

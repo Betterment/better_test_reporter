@@ -6,32 +6,32 @@ part 'suite.freezed.dart';
 /// Describes a suite of tests
 @freezed
 class Suite with _$Suite {
-  /// Factory constructor to create a [Suite]
+  /// Factory constructor to create a Suite
   factory Suite({
-    /// Optional path to the suite's file
+    /// Optional path to this suite's file
     String? path,
 
-    /// Platform on which the suite is running
+    /// Platform on which this suite is running
     required String platform,
 
-    /// All [Test]s contained within this suite
+    /// All Tests contained within this suite
     required List<Test> allTests,
   }) = _Suite;
 
   const Suite._();
 
-  /// All non-hidden [Test]s
+  /// All non-hidden Tests
   List<Test> get tests => allTests.whereNot((test) => test.hidden).toList();
 
-  /// All non-hidden skipped [Test]s
+  /// All non-hidden skipped Tests
   List<Test> get skipped =>
       allTests.where((test) => test.skipped && !test.hidden).toList();
 
-  /// All non-hidden tests with problems
+  /// All non-hidden Tests with problems
   List<Test> get problems => allTests
       .where((test) => !test.hidden && test.problems.isNotEmpty)
       .toList();
 
-  /// All hidden tests
+  /// All hidden Tests
   List<Test> get hidden => allTests.where((test) => test.hidden).toList();
 }

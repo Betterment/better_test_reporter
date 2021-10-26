@@ -20,7 +20,7 @@ Before creating a pull request please:
 3. Make your changes.
 4. Add tests!
 5. Ensure the existing test suite passes locally.
-6. Ensure the generated files are up to date(`dart pub run build_runner build --delete-conflicting-outputs`)
+6. Ensure the generated files are up to date(`dart run build_runner build --delete-conflicting-outputs`)
 7. Format your code (`dart format .`).
 8. Analyze your code (`dart analyze --fatal-infos --fatal-warnings .`).
 9. Create the Pull Request with [semantic title](https://github.com/zeke/semantic-pull-requests).

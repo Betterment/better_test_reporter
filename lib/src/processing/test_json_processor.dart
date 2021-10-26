@@ -2,19 +2,19 @@ import 'package:better_test_reporter/src/processing/models/models.dart';
 import 'package:better_test_reporter/src/processing/processors/processors.dart';
 import 'package:pub_semver/pub_semver.dart';
 
-/// The TestJsonProcessor consumes a list of events emitted by the [json reporter](https://github.com/dart-lang/test/blob/master/pkgs/test/doc/json_reporter.md) to produce a test [Report].
+/// The TestJsonProcessor consumes a list of events emitted by the [json reporter](https://github.com/dart-lang/test/blob/master/pkgs/test/doc/json_reporter.md) to produce a test report.
 ///
 /// It will determine the appropriate processor to use automatically by parsing the `start` event's `protocolVersion`.
 class TestJsonProcessor {
   /// Timestamp of the start process time
   final DateTime? timestamp;
 
-  /// Constructs a [TestJsonProcessor] from the timestamp of the start process time
+  /// Constructs a TestJsonProcessor from the timestamp of the start process time
   const TestJsonProcessor({this.timestamp});
 
-  /// Generates a [Report] from a list of json events from the [json reporter](https://github.com/dart-lang/test/blob/master/pkgs/test/doc/json_reporter.md).
+  /// Generates a Report from a list of json events from the [json reporter](https://github.com/dart-lang/test/blob/master/pkgs/test/doc/json_reporter.md).
   ///
-  /// [events] cannot be empty and the first event must have `type == start` and a present `protocolVersion`.
+  /// `events` cannot be empty and the first event must have `type == start` and a present `protocolVersion`.
   /// The appropriate processor will be used based on `protocolVersion`
   /// Currently supported `protocolVersion`s: `^0.1.0`
   Report process(List<Map<String, dynamic>> events) {

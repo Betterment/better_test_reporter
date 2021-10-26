@@ -108,7 +108,7 @@ Map<String, dynamic> _$$_ErrorToJson(_$_Error instance) => <String, dynamic>{
 
 _$_TestDone _$$_TestDoneFromJson(Map<String, dynamic> json) => _$_TestDone(
       time: json['time'] as int,
-      result: _$enumDecode(_$TestResultEnumMap, json['result'],
+      result: $enumDecode(_$TestResultEnumMap, json['result'],
           unknownValue: TestResult.unknown),
       testId: json['testID'] as int,
       hidden: json['hidden'] as bool,
@@ -123,32 +123,6 @@ Map<String, dynamic> _$$_TestDoneToJson(_$_TestDone instance) =>
       'hidden': instance.hidden,
       'skipped': instance.skipped,
     };
-
-K _$enumDecode<K, V>(
-  Map<K, V> enumValues,
-  Object? source, {
-  K? unknownValue,
-}) {
-  if (source == null) {
-    throw ArgumentError(
-      'A value must be provided. Supported values: '
-      '${enumValues.values.join(', ')}',
-    );
-  }
-
-  return enumValues.entries.singleWhere(
-    (e) => e.value == source,
-    orElse: () {
-      if (unknownValue == null) {
-        throw ArgumentError(
-          '`$source` is not one of the supported values: '
-          '${enumValues.values.join(', ')}',
-        );
-      }
-      return MapEntry(unknownValue, enumValues.values.first);
-    },
-  ).key;
-}
 
 const _$TestResultEnumMap = {
   TestResult.success: 'success',

@@ -5,7 +5,7 @@ part 'problem.freezed.dart';
 /// Describes an error when running a test
 @freezed
 class Problem with _$Problem {
-  /// Factory constructor to create a [Problem]
+  /// Factory constructor to create a Problem
   factory Problem({
     /// The error's message.
     required String message,
@@ -13,7 +13,7 @@ class Problem with _$Problem {
     /// The error's stack trace, in the [stack_trace](https://pub.dev/packages/stack_trace) package format
     required String stacktrace,
 
-    /// Whether the error was a [TestFailure]
+    /// Whether the error was a `TestFailure`
     required bool isFailure,
   }) = _Problem;
 }

@@ -51,35 +51,35 @@ mixin _$Test {
   /// The id of the suite to which this test belongs.
   int get suiteId => throw _privateConstructorUsedError;
 
-  /// The name of the test, including prefixes from any containing groups.
+  /// The name of this test, including prefixes from any containing groups.
   String get name => throw _privateConstructorUsedError;
 
   /// The time (in milliseconds) that has elapsed between the test runner starting and this test starting.
   int get startTime => throw _privateConstructorUsedError;
 
-  /// Optional URL for the file in which the test was defined
+  /// Optional URL for the file in which this test was defined
   String? get url => throw _privateConstructorUsedError;
 
-  /// Optional URL for the original test suite in which the test was defined
+  /// Optional URL for the original test suite in which this test was defined
   ///
-  /// Will only be present if different from [url]
+  /// Will only be present if different from `url`
   String? get rootUrl => throw _privateConstructorUsedError;
 
   /// The time (in milliseconds) that has elapsed between the test runner starting and this test completing.
   ///
-  /// This will be -1 if the test was not completed.
+  /// This will be -1 if this test was not completed.
   int get endTime => throw _privateConstructorUsedError;
 
-  /// Whether the test's result should be hidden.
+  /// Whether this test's result should be hidden.
   bool get hidden => throw _privateConstructorUsedError;
 
-  /// Whether the test (or some part of it) was skipped.
+  /// Whether this test (or some part of it) was skipped.
   bool get skipped => throw _privateConstructorUsedError;
 
-  /// A list of any problems that occured during the test.
+  /// A list of any problems that occured during this test.
   List<Problem> get problems => throw _privateConstructorUsedError;
 
-  /// A list of any messages emitted during the test.
+  /// A list of any messages emitted during this test.
   List<String> get prints => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
@@ -276,7 +276,7 @@ class _$_Test extends _Test {
   final int suiteId;
   @override
 
-  /// The name of the test, including prefixes from any containing groups.
+  /// The name of this test, including prefixes from any containing groups.
   final String name;
   @override
 
@@ -284,38 +284,38 @@ class _$_Test extends _Test {
   final int startTime;
   @override
 
-  /// Optional URL for the file in which the test was defined
+  /// Optional URL for the file in which this test was defined
   final String? url;
   @override
 
-  /// Optional URL for the original test suite in which the test was defined
+  /// Optional URL for the original test suite in which this test was defined
   ///
-  /// Will only be present if different from [url]
+  /// Will only be present if different from `url`
   final String? rootUrl;
   @JsonKey(defaultValue: -1)
   @override
 
   /// The time (in milliseconds) that has elapsed between the test runner starting and this test completing.
   ///
-  /// This will be -1 if the test was not completed.
+  /// This will be -1 if this test was not completed.
   final int endTime;
   @JsonKey(defaultValue: false)
   @override
 
-  /// Whether the test's result should be hidden.
+  /// Whether this test's result should be hidden.
   final bool hidden;
   @JsonKey(defaultValue: false)
   @override
 
-  /// Whether the test (or some part of it) was skipped.
+  /// Whether this test (or some part of it) was skipped.
   final bool skipped;
   @override
 
-  /// A list of any problems that occured during the test.
+  /// A list of any problems that occured during this test.
   final List<Problem> problems;
   @override
 
-  /// A list of any messages emitted during the test.
+  /// A list of any messages emitted during this test.
   final List<String> prints;
 
   @override
@@ -326,48 +326,34 @@ class _$_Test extends _Test {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _Test &&
-            (identical(other.suiteId, suiteId) ||
-                const DeepCollectionEquality()
-                    .equals(other.suiteId, suiteId)) &&
-            (identical(other.name, name) ||
-                const DeepCollectionEquality().equals(other.name, name)) &&
+        (other.runtimeType == runtimeType &&
+            other is _Test &&
+            (identical(other.suiteId, suiteId) || other.suiteId == suiteId) &&
+            (identical(other.name, name) || other.name == name) &&
             (identical(other.startTime, startTime) ||
-                const DeepCollectionEquality()
-                    .equals(other.startTime, startTime)) &&
-            (identical(other.url, url) ||
-                const DeepCollectionEquality().equals(other.url, url)) &&
-            (identical(other.rootUrl, rootUrl) ||
-                const DeepCollectionEquality()
-                    .equals(other.rootUrl, rootUrl)) &&
-            (identical(other.endTime, endTime) ||
-                const DeepCollectionEquality()
-                    .equals(other.endTime, endTime)) &&
-            (identical(other.hidden, hidden) ||
-                const DeepCollectionEquality().equals(other.hidden, hidden)) &&
-            (identical(other.skipped, skipped) ||
-                const DeepCollectionEquality()
-                    .equals(other.skipped, skipped)) &&
-            (identical(other.problems, problems) ||
-                const DeepCollectionEquality()
-                    .equals(other.problems, problems)) &&
-            (identical(other.prints, prints) ||
-                const DeepCollectionEquality().equals(other.prints, prints)));
+                other.startTime == startTime) &&
+            (identical(other.url, url) || other.url == url) &&
+            (identical(other.rootUrl, rootUrl) || other.rootUrl == rootUrl) &&
+            (identical(other.endTime, endTime) || other.endTime == endTime) &&
+            (identical(other.hidden, hidden) || other.hidden == hidden) &&
+            (identical(other.skipped, skipped) || other.skipped == skipped) &&
+            const DeepCollectionEquality().equals(other.problems, problems) &&
+            const DeepCollectionEquality().equals(other.prints, prints));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(suiteId) ^
-      const DeepCollectionEquality().hash(name) ^
-      const DeepCollectionEquality().hash(startTime) ^
-      const DeepCollectionEquality().hash(url) ^
-      const DeepCollectionEquality().hash(rootUrl) ^
-      const DeepCollectionEquality().hash(endTime) ^
-      const DeepCollectionEquality().hash(hidden) ^
-      const DeepCollectionEquality().hash(skipped) ^
-      const DeepCollectionEquality().hash(problems) ^
-      const DeepCollectionEquality().hash(prints);
+  int get hashCode => Object.hash(
+      runtimeType,
+      suiteId,
+      name,
+      startTime,
+      url,
+      rootUrl,
+      endTime,
+      hidden,
+      skipped,
+      const DeepCollectionEquality().hash(problems),
+      const DeepCollectionEquality().hash(prints));
 
   @JsonKey(ignore: true)
   @override
@@ -392,47 +378,47 @@ abstract class _Test extends Test {
   @override
 
   /// The id of the suite to which this test belongs.
-  int get suiteId => throw _privateConstructorUsedError;
+  int get suiteId;
   @override
 
-  /// The name of the test, including prefixes from any containing groups.
-  String get name => throw _privateConstructorUsedError;
+  /// The name of this test, including prefixes from any containing groups.
+  String get name;
   @override
 
   /// The time (in milliseconds) that has elapsed between the test runner starting and this test starting.
-  int get startTime => throw _privateConstructorUsedError;
+  int get startTime;
   @override
 
-  /// Optional URL for the file in which the test was defined
-  String? get url => throw _privateConstructorUsedError;
+  /// Optional URL for the file in which this test was defined
+  String? get url;
   @override
 
-  /// Optional URL for the original test suite in which the test was defined
+  /// Optional URL for the original test suite in which this test was defined
   ///
-  /// Will only be present if different from [url]
-  String? get rootUrl => throw _privateConstructorUsedError;
+  /// Will only be present if different from `url`
+  String? get rootUrl;
   @override
 
   /// The time (in milliseconds) that has elapsed between the test runner starting and this test completing.
   ///
-  /// This will be -1 if the test was not completed.
-  int get endTime => throw _privateConstructorUsedError;
+  /// This will be -1 if this test was not completed.
+  int get endTime;
   @override
 
-  /// Whether the test's result should be hidden.
-  bool get hidden => throw _privateConstructorUsedError;
+  /// Whether this test's result should be hidden.
+  bool get hidden;
   @override
 
-  /// Whether the test (or some part of it) was skipped.
-  bool get skipped => throw _privateConstructorUsedError;
+  /// Whether this test (or some part of it) was skipped.
+  bool get skipped;
   @override
 
-  /// A list of any problems that occured during the test.
-  List<Problem> get problems => throw _privateConstructorUsedError;
+  /// A list of any problems that occured during this test.
+  List<Problem> get problems;
   @override
 
-  /// A list of any messages emitted during the test.
-  List<String> get prints => throw _privateConstructorUsedError;
+  /// A list of any messages emitted during this test.
+  List<String> get prints;
   @override
   @JsonKey(ignore: true)
   _$TestCopyWith<_Test> get copyWith => throw _privateConstructorUsedError;

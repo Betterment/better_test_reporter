@@ -155,7 +155,7 @@ class _$EventTearOff {
     );
   }
 
-  Event fromJson(Map<String, Object> json) {
+  Event fromJson(Map<String, Object?> json) {
     return Event.fromJson(json);
   }
 }
@@ -434,26 +434,19 @@ class _$_Start implements _Start {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _Start &&
-            (identical(other.time, time) ||
-                const DeepCollectionEquality().equals(other.time, time)) &&
+        (other.runtimeType == runtimeType &&
+            other is _Start &&
+            (identical(other.time, time) || other.time == time) &&
             (identical(other.protocolVersion, protocolVersion) ||
-                const DeepCollectionEquality()
-                    .equals(other.protocolVersion, protocolVersion)) &&
+                other.protocolVersion == protocolVersion) &&
             (identical(other.runnerVersion, runnerVersion) ||
-                const DeepCollectionEquality()
-                    .equals(other.runnerVersion, runnerVersion)) &&
-            (identical(other.pid, pid) ||
-                const DeepCollectionEquality().equals(other.pid, pid)));
+                other.runnerVersion == runnerVersion) &&
+            (identical(other.pid, pid) || other.pid == pid));
   }
 
   @override
   int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(time) ^
-      const DeepCollectionEquality().hash(protocolVersion) ^
-      const DeepCollectionEquality().hash(runnerVersion) ^
-      const DeepCollectionEquality().hash(pid);
+      Object.hash(runtimeType, time, protocolVersion, runnerVersion, pid);
 
   @JsonKey(ignore: true)
   @override
@@ -648,21 +641,21 @@ abstract class _Start implements Event {
   @override
 
   /// The time (in milliseconds) that has elapsed since the test runner started.
-  int get time => throw _privateConstructorUsedError;
+  int get time;
 
   /// The version of the JSON reporter protocol being used.
   ///
   /// This is a semantic version, but it reflects only the version of the
   /// protocol—it's not identical to the version of the test runner itself.
-  String get protocolVersion => throw _privateConstructorUsedError;
+  String get protocolVersion;
 
   /// The version of the test runner being used.
   ///
   /// This is null if for some reason the version couldn't be loaded.
-  String? get runnerVersion => throw _privateConstructorUsedError;
+  String? get runnerVersion;
 
   /// The pid of the VM process running the tests.
-  int get pid => throw _privateConstructorUsedError;
+  int get pid;
   @override
   @JsonKey(ignore: true)
   _$StartCopyWith<_Start> get copyWith => throw _privateConstructorUsedError;
@@ -729,18 +722,14 @@ class _$_AllSuites implements _AllSuites {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _AllSuites &&
-            (identical(other.time, time) ||
-                const DeepCollectionEquality().equals(other.time, time)) &&
-            (identical(other.count, count) ||
-                const DeepCollectionEquality().equals(other.count, count)));
+        (other.runtimeType == runtimeType &&
+            other is _AllSuites &&
+            (identical(other.time, time) || other.time == time) &&
+            (identical(other.count, count) || other.count == count));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(time) ^
-      const DeepCollectionEquality().hash(count);
+  int get hashCode => Object.hash(runtimeType, time, count);
 
   @JsonKey(ignore: true)
   @override
@@ -933,10 +922,10 @@ abstract class _AllSuites implements Event {
   @override
 
   /// The time (in milliseconds) that has elapsed since the test runner started.
-  int get time => throw _privateConstructorUsedError;
+  int get time;
 
   /// The total number of suites that will be loaded.
-  int get count => throw _privateConstructorUsedError;
+  int get count;
   @override
   @JsonKey(ignore: true)
   _$AllSuitesCopyWith<_AllSuites> get copyWith =>
@@ -1001,7 +990,7 @@ class _$_Suite implements _Suite {
   final int time;
   @override
 
-  /// Metadata about the [Suite].
+  /// Metadata about the Suite.
   final Suite suite;
 
   @override
@@ -1012,18 +1001,14 @@ class _$_Suite implements _Suite {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _Suite &&
-            (identical(other.time, time) ||
-                const DeepCollectionEquality().equals(other.time, time)) &&
-            (identical(other.suite, suite) ||
-                const DeepCollectionEquality().equals(other.suite, suite)));
+        (other.runtimeType == runtimeType &&
+            other is _Suite &&
+            (identical(other.time, time) || other.time == time) &&
+            (identical(other.suite, suite) || other.suite == suite));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(time) ^
-      const DeepCollectionEquality().hash(suite);
+  int get hashCode => Object.hash(runtimeType, time, suite);
 
   @JsonKey(ignore: true)
   @override
@@ -1214,10 +1199,10 @@ abstract class _Suite implements Event {
   @override
 
   /// The time (in milliseconds) that has elapsed since the test runner started.
-  int get time => throw _privateConstructorUsedError;
+  int get time;
 
-  /// Metadata about the [Suite].
-  Suite get suite => throw _privateConstructorUsedError;
+  /// Metadata about the Suite.
+  Suite get suite;
   @override
   @JsonKey(ignore: true)
   _$SuiteCopyWith<_Suite> get copyWith => throw _privateConstructorUsedError;
@@ -1310,27 +1295,19 @@ class _$_Debug implements _Debug {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _Debug &&
-            (identical(other.time, time) ||
-                const DeepCollectionEquality().equals(other.time, time)) &&
-            (identical(other.suiteId, suiteId) ||
-                const DeepCollectionEquality()
-                    .equals(other.suiteId, suiteId)) &&
+        (other.runtimeType == runtimeType &&
+            other is _Debug &&
+            (identical(other.time, time) || other.time == time) &&
+            (identical(other.suiteId, suiteId) || other.suiteId == suiteId) &&
             (identical(other.observatory, observatory) ||
-                const DeepCollectionEquality()
-                    .equals(other.observatory, observatory)) &&
+                other.observatory == observatory) &&
             (identical(other.remoteDebugger, remoteDebugger) ||
-                const DeepCollectionEquality()
-                    .equals(other.remoteDebugger, remoteDebugger)));
+                other.remoteDebugger == remoteDebugger));
   }
 
   @override
   int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(time) ^
-      const DeepCollectionEquality().hash(suiteId) ^
-      const DeepCollectionEquality().hash(observatory) ^
-      const DeepCollectionEquality().hash(remoteDebugger);
+      Object.hash(runtimeType, time, suiteId, observatory, remoteDebugger);
 
   @JsonKey(ignore: true)
   @override
@@ -1525,17 +1502,17 @@ abstract class _Debug implements Event {
   @override
 
   /// The time (in milliseconds) that has elapsed since the test runner started.
-  int get time => throw _privateConstructorUsedError;
+  int get time;
 
   /// The suite for which debug information is reported.
   @JsonKey(name: 'suiteID')
-  int get suiteId => throw _privateConstructorUsedError;
+  int get suiteId;
 
   /// The HTTP URL for the Dart Observatory, or `null` if the Observatory isn't available for this suite.
-  String? get observatory => throw _privateConstructorUsedError;
+  String? get observatory;
 
   /// The HTTP URL for the remote debugger for this suite's host page, or `null` if no remote debugger is available for this suite.
-  String? get remoteDebugger => throw _privateConstructorUsedError;
+  String? get remoteDebugger;
   @override
   @JsonKey(ignore: true)
   _$DebugCopyWith<_Debug> get copyWith => throw _privateConstructorUsedError;
@@ -1599,7 +1576,7 @@ class _$_Group implements _Group {
   final int time;
   @override
 
-  /// Metadata about the [Group].
+  /// Metadata about the Group.
   final Group group;
 
   @override
@@ -1610,18 +1587,14 @@ class _$_Group implements _Group {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _Group &&
-            (identical(other.time, time) ||
-                const DeepCollectionEquality().equals(other.time, time)) &&
-            (identical(other.group, group) ||
-                const DeepCollectionEquality().equals(other.group, group)));
+        (other.runtimeType == runtimeType &&
+            other is _Group &&
+            (identical(other.time, time) || other.time == time) &&
+            (identical(other.group, group) || other.group == group));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(time) ^
-      const DeepCollectionEquality().hash(group);
+  int get hashCode => Object.hash(runtimeType, time, group);
 
   @JsonKey(ignore: true)
   @override
@@ -1812,10 +1785,10 @@ abstract class _Group implements Event {
   @override
 
   /// The time (in milliseconds) that has elapsed since the test runner started.
-  int get time => throw _privateConstructorUsedError;
+  int get time;
 
-  /// Metadata about the [Group].
-  Group get group => throw _privateConstructorUsedError;
+  /// Metadata about the Group.
+  Group get group;
   @override
   @JsonKey(ignore: true)
   _$GroupCopyWith<_Group> get copyWith => throw _privateConstructorUsedError;
@@ -1880,7 +1853,7 @@ class _$_TestStart implements _TestStart {
   final int time;
   @override
 
-  /// Metadata about the [Test] that started.
+  /// Metadata about the Test that started.
   final Test test;
 
   @override
@@ -1891,18 +1864,14 @@ class _$_TestStart implements _TestStart {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _TestStart &&
-            (identical(other.time, time) ||
-                const DeepCollectionEquality().equals(other.time, time)) &&
-            (identical(other.test, test) ||
-                const DeepCollectionEquality().equals(other.test, test)));
+        (other.runtimeType == runtimeType &&
+            other is _TestStart &&
+            (identical(other.time, time) || other.time == time) &&
+            (identical(other.test, test) || other.test == test));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(time) ^
-      const DeepCollectionEquality().hash(test);
+  int get hashCode => Object.hash(runtimeType, time, test);
 
   @JsonKey(ignore: true)
   @override
@@ -2095,10 +2064,10 @@ abstract class _TestStart implements Event {
   @override
 
   /// The time (in milliseconds) that has elapsed since the test runner started.
-  int get time => throw _privateConstructorUsedError;
+  int get time;
 
-  /// Metadata about the [Test] that started.
-  Test get test => throw _privateConstructorUsedError;
+  /// Metadata about the Test that started.
+  Test get test;
   @override
   @JsonKey(ignore: true)
   _$TestStartCopyWith<_TestStart> get copyWith =>
@@ -2192,25 +2161,18 @@ class _$_Print implements _Print {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _Print &&
-            (identical(other.time, time) ||
-                const DeepCollectionEquality().equals(other.time, time)) &&
-            (identical(other.testId, testId) ||
-                const DeepCollectionEquality().equals(other.testId, testId)) &&
+        (other.runtimeType == runtimeType &&
+            other is _Print &&
+            (identical(other.time, time) || other.time == time) &&
+            (identical(other.testId, testId) || other.testId == testId) &&
             (identical(other.messageType, messageType) ||
-                const DeepCollectionEquality()
-                    .equals(other.messageType, messageType)) &&
-            (identical(other.message, message) ||
-                const DeepCollectionEquality().equals(other.message, message)));
+                other.messageType == messageType) &&
+            (identical(other.message, message) || other.message == message));
   }
 
   @override
   int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(time) ^
-      const DeepCollectionEquality().hash(testId) ^
-      const DeepCollectionEquality().hash(messageType) ^
-      const DeepCollectionEquality().hash(message);
+      Object.hash(runtimeType, time, testId, messageType, message);
 
   @JsonKey(ignore: true)
   @override
@@ -2405,17 +2367,17 @@ abstract class _Print implements Event {
   @override
 
   /// The time (in milliseconds) that has elapsed since the test runner started.
-  int get time => throw _privateConstructorUsedError;
+  int get time;
 
   /// The ID of the test that printed a message.
   @JsonKey(name: 'testID')
-  int get testId => throw _privateConstructorUsedError;
+  int get testId;
 
   /// The type of message being printed.
-  String get messageType => throw _privateConstructorUsedError;
+  String get messageType;
 
   /// The message that was printed.
-  String get message => throw _privateConstructorUsedError;
+  String get message;
   @override
   @JsonKey(ignore: true)
   _$PrintCopyWith<_Print> get copyWith => throw _privateConstructorUsedError;
@@ -2520,29 +2482,20 @@ class _$_Error implements _Error {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _Error &&
-            (identical(other.time, time) ||
-                const DeepCollectionEquality().equals(other.time, time)) &&
-            (identical(other.testId, testId) ||
-                const DeepCollectionEquality().equals(other.testId, testId)) &&
-            (identical(other.error, error) ||
-                const DeepCollectionEquality().equals(other.error, error)) &&
+        (other.runtimeType == runtimeType &&
+            other is _Error &&
+            (identical(other.time, time) || other.time == time) &&
+            (identical(other.testId, testId) || other.testId == testId) &&
+            (identical(other.error, error) || other.error == error) &&
             (identical(other.stacktrace, stacktrace) ||
-                const DeepCollectionEquality()
-                    .equals(other.stacktrace, stacktrace)) &&
+                other.stacktrace == stacktrace) &&
             (identical(other.isFailure, isFailure) ||
-                const DeepCollectionEquality()
-                    .equals(other.isFailure, isFailure)));
+                other.isFailure == isFailure));
   }
 
   @override
   int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(time) ^
-      const DeepCollectionEquality().hash(testId) ^
-      const DeepCollectionEquality().hash(error) ^
-      const DeepCollectionEquality().hash(stacktrace) ^
-      const DeepCollectionEquality().hash(isFailure);
+      Object.hash(runtimeType, time, testId, error, stacktrace, isFailure);
 
   @JsonKey(ignore: true)
   @override
@@ -2738,21 +2691,21 @@ abstract class _Error implements Event {
   @override
 
   /// The time (in milliseconds) that has elapsed since the test runner started.
-  int get time => throw _privateConstructorUsedError;
+  int get time;
 
   /// The ID of the test that experienced the error.
   @JsonKey(name: 'testID')
-  int get testId => throw _privateConstructorUsedError;
+  int get testId;
 
   /// The result of calling toString() on the error object.
-  String get error => throw _privateConstructorUsedError;
+  String get error;
 
   /// The error's stack trace, in the [stack_trace package](https://pub.dev/packages/stack_trace) format.
   @JsonKey(name: 'stackTrace')
-  String get stacktrace => throw _privateConstructorUsedError;
+  String get stacktrace;
 
   /// Whether the error was a `TestFailure`.
-  bool get isFailure => throw _privateConstructorUsedError;
+  bool get isFailure;
   @override
   @JsonKey(ignore: true)
   _$ErrorCopyWith<_Error> get copyWith => throw _privateConstructorUsedError;
@@ -2857,27 +2810,18 @@ class _$_TestDone implements _TestDone {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _TestDone &&
-            (identical(other.time, time) ||
-                const DeepCollectionEquality().equals(other.time, time)) &&
-            (identical(other.result, result) ||
-                const DeepCollectionEquality().equals(other.result, result)) &&
-            (identical(other.testId, testId) ||
-                const DeepCollectionEquality().equals(other.testId, testId)) &&
-            (identical(other.hidden, hidden) ||
-                const DeepCollectionEquality().equals(other.hidden, hidden)) &&
-            (identical(other.skipped, skipped) ||
-                const DeepCollectionEquality().equals(other.skipped, skipped)));
+        (other.runtimeType == runtimeType &&
+            other is _TestDone &&
+            (identical(other.time, time) || other.time == time) &&
+            (identical(other.result, result) || other.result == result) &&
+            (identical(other.testId, testId) || other.testId == testId) &&
+            (identical(other.hidden, hidden) || other.hidden == hidden) &&
+            (identical(other.skipped, skipped) || other.skipped == skipped));
   }
 
   @override
   int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(time) ^
-      const DeepCollectionEquality().hash(result) ^
-      const DeepCollectionEquality().hash(testId) ^
-      const DeepCollectionEquality().hash(hidden) ^
-      const DeepCollectionEquality().hash(skipped);
+      Object.hash(runtimeType, time, result, testId, hidden, skipped);
 
   @JsonKey(ignore: true)
   @override
@@ -3073,21 +3017,21 @@ abstract class _TestDone implements Event {
   @override
 
   /// The time (in milliseconds) that has elapsed since the test runner started.
-  int get time => throw _privateConstructorUsedError;
+  int get time;
 
   /// The result of the test.
   @JsonKey(unknownEnumValue: TestResult.unknown)
-  TestResult get result => throw _privateConstructorUsedError;
+  TestResult get result;
 
   /// The ID of the test that completed.
   @JsonKey(name: 'testID')
-  int get testId => throw _privateConstructorUsedError;
+  int get testId;
 
   /// Whether the test's result should be hidden.
-  bool get hidden => throw _privateConstructorUsedError;
+  bool get hidden;
 
   /// Whether the test (or some part of it) was skipped.
-  bool get skipped => throw _privateConstructorUsedError;
+  bool get skipped;
   @override
   @JsonKey(ignore: true)
   _$TestDoneCopyWith<_TestDone> get copyWith =>
@@ -3156,18 +3100,14 @@ class _$_Done implements _Done {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _Done &&
-            (identical(other.time, time) ||
-                const DeepCollectionEquality().equals(other.time, time)) &&
-            (identical(other.success, success) ||
-                const DeepCollectionEquality().equals(other.success, success)));
+        (other.runtimeType == runtimeType &&
+            other is _Done &&
+            (identical(other.time, time) || other.time == time) &&
+            (identical(other.success, success) || other.success == success));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(time) ^
-      const DeepCollectionEquality().hash(success);
+  int get hashCode => Object.hash(runtimeType, time, success);
 
   @JsonKey(ignore: true)
   @override
@@ -3358,13 +3298,13 @@ abstract class _Done implements Event {
   @override
 
   /// The time (in milliseconds) that has elapsed since the test runner started.
-  int get time => throw _privateConstructorUsedError;
+  int get time;
 
   /// Whether all tests succeeded (or were skipped).
   ///
   /// Will be `null` if the test runner was close before all tests completed
   /// running.
-  bool? get success => throw _privateConstructorUsedError;
+  bool? get success;
   @override
   @JsonKey(ignore: true)
   _$DoneCopyWith<_Done> get copyWith => throw _privateConstructorUsedError;
@@ -3421,14 +3361,13 @@ class _$_Unknown implements _Unknown {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _Unknown &&
-            (identical(other.time, time) ||
-                const DeepCollectionEquality().equals(other.time, time)));
+        (other.runtimeType == runtimeType &&
+            other is _Unknown &&
+            (identical(other.time, time) || other.time == time));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(time);
+  int get hashCode => Object.hash(runtimeType, time);
 
   @JsonKey(ignore: true)
   @override
@@ -3619,7 +3558,7 @@ abstract class _Unknown implements Event {
   @override
 
   /// The time (in milliseconds) that has elapsed since the test runner started.
-  int get time => throw _privateConstructorUsedError;
+  int get time;
   @override
   @JsonKey(ignore: true)
   _$UnknownCopyWith<_Unknown> get copyWith =>

@@ -29,7 +29,7 @@ class _$SuiteTearOff {
     );
   }
 
-  Suite fromJson(Map<String, Object> json) {
+  Suite fromJson(Map<String, Object?> json) {
     return Suite.fromJson(json);
   }
 }
@@ -39,13 +39,13 @@ const $Suite = _$SuiteTearOff();
 
 /// @nodoc
 mixin _$Suite {
-  /// An opaque ID for the suite.
+  /// An opaque ID for this suite.
   int get id => throw _privateConstructorUsedError;
 
-  /// The platform on which the suite is running.
+  /// The platform on which this suite is running.
   String get platform => throw _privateConstructorUsedError;
 
-  /// The path to the suite's file, or `null` if that path is unknown.
+  /// The path to this suite's file, or `null` if that path is unknown.
   String? get path => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -141,15 +141,15 @@ class _$_Suite implements _Suite {
 
   @override
 
-  /// An opaque ID for the suite.
+  /// An opaque ID for this suite.
   final int id;
   @override
 
-  /// The platform on which the suite is running.
+  /// The platform on which this suite is running.
   final String platform;
   @override
 
-  /// The path to the suite's file, or `null` if that path is unknown.
+  /// The path to this suite's file, or `null` if that path is unknown.
   final String? path;
 
   @override
@@ -160,22 +160,16 @@ class _$_Suite implements _Suite {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _Suite &&
-            (identical(other.id, id) ||
-                const DeepCollectionEquality().equals(other.id, id)) &&
+        (other.runtimeType == runtimeType &&
+            other is _Suite &&
+            (identical(other.id, id) || other.id == id) &&
             (identical(other.platform, platform) ||
-                const DeepCollectionEquality()
-                    .equals(other.platform, platform)) &&
-            (identical(other.path, path) ||
-                const DeepCollectionEquality().equals(other.path, path)));
+                other.platform == platform) &&
+            (identical(other.path, path) || other.path == path));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(id) ^
-      const DeepCollectionEquality().hash(platform) ^
-      const DeepCollectionEquality().hash(path);
+  int get hashCode => Object.hash(runtimeType, id, platform, path);
 
   @JsonKey(ignore: true)
   @override
@@ -196,16 +190,16 @@ abstract class _Suite implements Suite {
 
   @override
 
-  /// An opaque ID for the suite.
-  int get id => throw _privateConstructorUsedError;
+  /// An opaque ID for this suite.
+  int get id;
   @override
 
-  /// The platform on which the suite is running.
-  String get platform => throw _privateConstructorUsedError;
+  /// The platform on which this suite is running.
+  String get platform;
   @override
 
-  /// The path to the suite's file, or `null` if that path is unknown.
-  String? get path => throw _privateConstructorUsedError;
+  /// The path to this suite's file, or `null` if that path is unknown.
+  String? get path;
   @override
   @JsonKey(ignore: true)
   _$SuiteCopyWith<_Suite> get copyWith => throw _privateConstructorUsedError;

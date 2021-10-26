@@ -4,7 +4,7 @@ import 'package:better_test_reporter/src/processing/models/models.dart';
 import 'package:intl/intl.dart';
 import 'package:xml/xml.dart';
 
-/// A tool for converting a [Report] into junit xml
+/// A tool for converting a Report into junit xml
 class TestJsonToJunit {
   static final _milliseconds = NumberFormat('#####0.00#', 'en_US');
   static final _dateFormat = DateFormat('yyyy-MM-ddTHH:mm:ss', 'en_US');

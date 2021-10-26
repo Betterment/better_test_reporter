@@ -46,7 +46,7 @@ class _$TestTearOff {
     );
   }
 
-  Test fromJson(Map<String, Object> json) {
+  Test fromJson(Map<String, Object?> json) {
     return Test.fromJson(json);
   }
 }
@@ -56,10 +56,10 @@ const $Test = _$TestTearOff();
 
 /// @nodoc
 mixin _$Test {
-  /// An opaque ID for the test.
+  /// An opaque ID for this test.
   int get id => throw _privateConstructorUsedError;
 
-  /// The name of the test, including prefixes from any containing groups.
+  /// The name of this test, including prefixes from any containing groups.
   String get name => throw _privateConstructorUsedError;
 
   /// The ID of the suite containing this test.
@@ -70,28 +70,28 @@ mixin _$Test {
   @JsonKey(name: 'groupIDs')
   List<int> get groupIds => throw _privateConstructorUsedError;
 
-  /// The (1-based) line on which the test was defined, or `null`.
+  /// The (1-based) line on which this test was defined, or `null`.
   int? get line => throw _privateConstructorUsedError;
 
-  /// The (1-based) column on which the test was defined, or `null`.
+  /// The (1-based) column on which this test was defined, or `null`.
   int? get column => throw _privateConstructorUsedError;
 
-  /// The URL for the file in which the test was defined, or `null`.
+  /// The URL for the file in which this test was defined, or `null`.
   String? get url => throw _privateConstructorUsedError;
 
-  /// The (1-based) line in the original test suite from which the test originated.
+  /// The (1-based) line in the original test suite from which this test originated.
   ///
   /// Will only be present if `rootUrl` is different from `url`.
   @JsonKey(name: 'root_line')
   int? get rootLine => throw _privateConstructorUsedError;
 
-  /// The (1-based) line on in the original test suite from which the test originated.
+  /// The (1-based) line on in the original test suite from which this test originated.
   ///
   /// Will only be present if `rootUrl` is different from `url`.
   @JsonKey(name: 'root_column')
   int? get rootColumn => throw _privateConstructorUsedError;
 
-  /// The URL for the original test suite in which the test was defined.
+  /// The URL for the original test suite in which this test was defined.
   ///
   /// Will only be present if different from `url`.
   @JsonKey(name: 'root_url')
@@ -289,11 +289,11 @@ class _$_Test implements _Test {
 
   @override
 
-  /// An opaque ID for the test.
+  /// An opaque ID for this test.
   final int id;
   @override
 
-  /// The name of the test, including prefixes from any containing groups.
+  /// The name of this test, including prefixes from any containing groups.
   final String name;
   @override
 
@@ -307,33 +307,33 @@ class _$_Test implements _Test {
   final List<int> groupIds;
   @override
 
-  /// The (1-based) line on which the test was defined, or `null`.
+  /// The (1-based) line on which this test was defined, or `null`.
   final int? line;
   @override
 
-  /// The (1-based) column on which the test was defined, or `null`.
+  /// The (1-based) column on which this test was defined, or `null`.
   final int? column;
   @override
 
-  /// The URL for the file in which the test was defined, or `null`.
+  /// The URL for the file in which this test was defined, or `null`.
   final String? url;
   @override
 
-  /// The (1-based) line in the original test suite from which the test originated.
+  /// The (1-based) line in the original test suite from which this test originated.
   ///
   /// Will only be present if `rootUrl` is different from `url`.
   @JsonKey(name: 'root_line')
   final int? rootLine;
   @override
 
-  /// The (1-based) line on in the original test suite from which the test originated.
+  /// The (1-based) line on in the original test suite from which this test originated.
   ///
   /// Will only be present if `rootUrl` is different from `url`.
   @JsonKey(name: 'root_column')
   final int? rootColumn;
   @override
 
-  /// The URL for the original test suite in which the test was defined.
+  /// The URL for the original test suite in which this test was defined.
   ///
   /// Will only be present if different from `url`.
   @JsonKey(name: 'root_url')
@@ -347,46 +347,35 @@ class _$_Test implements _Test {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _Test &&
-            (identical(other.id, id) ||
-                const DeepCollectionEquality().equals(other.id, id)) &&
-            (identical(other.name, name) ||
-                const DeepCollectionEquality().equals(other.name, name)) &&
-            (identical(other.suiteId, suiteId) ||
-                const DeepCollectionEquality()
-                    .equals(other.suiteId, suiteId)) &&
-            (identical(other.groupIds, groupIds) ||
-                const DeepCollectionEquality()
-                    .equals(other.groupIds, groupIds)) &&
-            (identical(other.line, line) ||
-                const DeepCollectionEquality().equals(other.line, line)) &&
-            (identical(other.column, column) ||
-                const DeepCollectionEquality().equals(other.column, column)) &&
-            (identical(other.url, url) ||
-                const DeepCollectionEquality().equals(other.url, url)) &&
+        (other.runtimeType == runtimeType &&
+            other is _Test &&
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.name, name) || other.name == name) &&
+            (identical(other.suiteId, suiteId) || other.suiteId == suiteId) &&
+            const DeepCollectionEquality().equals(other.groupIds, groupIds) &&
+            (identical(other.line, line) || other.line == line) &&
+            (identical(other.column, column) || other.column == column) &&
+            (identical(other.url, url) || other.url == url) &&
             (identical(other.rootLine, rootLine) ||
-                const DeepCollectionEquality()
-                    .equals(other.rootLine, rootLine)) &&
+                other.rootLine == rootLine) &&
             (identical(other.rootColumn, rootColumn) ||
-                const DeepCollectionEquality()
-                    .equals(other.rootColumn, rootColumn)) &&
-            (identical(other.rootUrl, rootUrl) ||
-                const DeepCollectionEquality().equals(other.rootUrl, rootUrl)));
+                other.rootColumn == rootColumn) &&
+            (identical(other.rootUrl, rootUrl) || other.rootUrl == rootUrl));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(id) ^
-      const DeepCollectionEquality().hash(name) ^
-      const DeepCollectionEquality().hash(suiteId) ^
-      const DeepCollectionEquality().hash(groupIds) ^
-      const DeepCollectionEquality().hash(line) ^
-      const DeepCollectionEquality().hash(column) ^
-      const DeepCollectionEquality().hash(url) ^
-      const DeepCollectionEquality().hash(rootLine) ^
-      const DeepCollectionEquality().hash(rootColumn) ^
-      const DeepCollectionEquality().hash(rootUrl);
+  int get hashCode => Object.hash(
+      runtimeType,
+      id,
+      name,
+      suiteId,
+      const DeepCollectionEquality().hash(groupIds),
+      line,
+      column,
+      url,
+      rootLine,
+      rootColumn,
+      rootUrl);
 
   @JsonKey(ignore: true)
   @override
@@ -416,55 +405,55 @@ abstract class _Test implements Test {
 
   @override
 
-  /// An opaque ID for the test.
-  int get id => throw _privateConstructorUsedError;
+  /// An opaque ID for this test.
+  int get id;
   @override
 
-  /// The name of the test, including prefixes from any containing groups.
-  String get name => throw _privateConstructorUsedError;
+  /// The name of this test, including prefixes from any containing groups.
+  String get name;
   @override
 
   /// The ID of the suite containing this test.
   @JsonKey(name: 'suiteID')
-  int get suiteId => throw _privateConstructorUsedError;
+  int get suiteId;
   @override
 
   /// The IDs of groups containing this test, in order from outermost to innermost.
   @JsonKey(name: 'groupIDs')
-  List<int> get groupIds => throw _privateConstructorUsedError;
+  List<int> get groupIds;
   @override
 
-  /// The (1-based) line on which the test was defined, or `null`.
-  int? get line => throw _privateConstructorUsedError;
+  /// The (1-based) line on which this test was defined, or `null`.
+  int? get line;
   @override
 
-  /// The (1-based) column on which the test was defined, or `null`.
-  int? get column => throw _privateConstructorUsedError;
+  /// The (1-based) column on which this test was defined, or `null`.
+  int? get column;
   @override
 
-  /// The URL for the file in which the test was defined, or `null`.
-  String? get url => throw _privateConstructorUsedError;
+  /// The URL for the file in which this test was defined, or `null`.
+  String? get url;
   @override
 
-  /// The (1-based) line in the original test suite from which the test originated.
+  /// The (1-based) line in the original test suite from which this test originated.
   ///
   /// Will only be present if `rootUrl` is different from `url`.
   @JsonKey(name: 'root_line')
-  int? get rootLine => throw _privateConstructorUsedError;
+  int? get rootLine;
   @override
 
-  /// The (1-based) line on in the original test suite from which the test originated.
+  /// The (1-based) line on in the original test suite from which this test originated.
   ///
   /// Will only be present if `rootUrl` is different from `url`.
   @JsonKey(name: 'root_column')
-  int? get rootColumn => throw _privateConstructorUsedError;
+  int? get rootColumn;
   @override
 
-  /// The URL for the original test suite in which the test was defined.
+  /// The URL for the original test suite in which this test was defined.
   ///
   /// Will only be present if different from `url`.
   @JsonKey(name: 'root_url')
-  String? get rootUrl => throw _privateConstructorUsedError;
+  String? get rootUrl;
   @override
   @JsonKey(ignore: true)
   _$TestCopyWith<_Test> get copyWith => throw _privateConstructorUsedError;
