@@ -16,14 +16,14 @@ The purpose of this package is three-fold:
 
 ## Getting Started
 
-In order to start using the `report_to_junit`, install the latest `better_test_reporter` as a global packages via [pub.dev](https://pub.dev).
+In order to start using the `report_to_junit` command, install the latest `better_test_reporter` as a global packages via [pub.dev](https://pub.dev).
 
 ```bash
 pub global activate better_test_reporter
 ```
 
 ### Options
-Details on all options for `report_to_junit` cna be found by running `report_to_junit --help`
+Details on all options for `report_to_junit` can be found by running `report_to_junit --help`
 ```
 > report_to_junit --help
 -i, --input        the path to the 'json' file containing the output of 'pub run test'.
