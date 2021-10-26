@@ -16,13 +16,8 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v2
-
-      # Note: This workflow uses the latest stable version of the Dart SDK.
-      # You can specify other versions if desired, see documentation here:
-      # https://github.com/dart-lang/setup-dart/blob/main/README.md
-      # - uses: dart-lang/setup-dart@v1
-      - uses: dart-lang/setup-dart@9a04e6d73cca37bd455e0608d7e5092f881fd603
+      - uses: actions/checkout@v2.3.5
+      - uses: dart-lang/setup-dart@v1.3
 
       - name: Install dependencies
         run: dart pub get
@@ -43,7 +38,7 @@ jobs:
         run: ./scripts/generate_code_coverage.sh
 
       - name: Report code coverage
-        uses: zgosalvez/github-actions-report-lcov@v1
+        uses: zgosalvez/github-actions-report-lcov@v1.4.0
         with:
           coverage-files: coverage/lcov.info
           minimum-coverage: 90
