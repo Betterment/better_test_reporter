@@ -4,59 +4,60 @@ import 'package:intl/intl.dart';
 import 'package:test/test.dart';
 
 void main() {
-  test('it generates a basic report xml for dart test output', () {
-    final timestamp = DateTime(2020);
-    final dateFormat = DateFormat('yyyy-MM-ddTHH:mm:ss', 'en_US');
-    final formattedTimestamp = dateFormat.format(timestamp.toUtc());
-    final report = Report(
-      suites: [
-        Suite(
-          // dart test doesn't include the project (package) name
-          path: 'test/some_file_test.dart',
-          platform: 'vm',
-          allTests: [
-            Test(
-              suiteId: 1,
-              name: 'some file test',
-              startTime: 30,
-              url:
-                  'file:///Users/bilbo/src/repo/package/test/some_file_test.dart',
-              endTime: 50,
-              problems: [],
-              prints: ['This is the test that passes'],
-            ),
-            Test(
-              suiteId: 1,
-              name: 'failing some file test',
-              startTime: 58,
-              url:
-                  'file:///Users/bilbo/src/repo/package/test/some_file_test.dart',
-              endTime: 75,
-              problems: [
-                Problem(
-                  message: 'Expected false but was true',
-                  stacktrace: 'stack_trace',
-                  isFailure: true,
-                ),
-              ],
-              prints: [],
-            ),
-          ],
-        ),
-      ],
-      timestamp: timestamp,
-    );
+  group('when output comes from dart test -r json', () {
+    test('it generates a basic report xml', () {
+      final timestamp = DateTime(2020);
+      final dateFormat = DateFormat('yyyy-MM-ddTHH:mm:ss', 'en_US');
+      final formattedTimestamp = dateFormat.format(timestamp.toUtc());
+      final report = Report(
+        suites: [
+          Suite(
+            // dart test doesn't include the project (package) name
+            path: 'test/some_file_test.dart',
+            platform: 'vm',
+            allTests: [
+              Test(
+                suiteId: 1,
+                name: 'some file test',
+                startTime: 30,
+                url:
+                    'file:///Users/bilbo/src/repo/package/test/some_file_test.dart',
+                endTime: 50,
+                problems: [],
+                prints: ['This is the test that passes'],
+              ),
+              Test(
+                suiteId: 1,
+                name: 'failing some file test',
+                startTime: 58,
+                url:
+                    'file:///Users/bilbo/src/repo/package/test/some_file_test.dart',
+                endTime: 75,
+                problems: [
+                  Problem(
+                    message: 'Expected false but was true',
+                    stacktrace: 'stack_trace',
+                    isFailure: true,
+                  ),
+                ],
+                prints: [],
+              ),
+            ],
+          ),
+        ],
+        timestamp: timestamp,
+      );
 
-    final subject = TestJsonToJunit(
-      base: '',
-      package: '',
-    );
+      final subject = TestJsonToJunit(
+        base: '',
+        package: '',
+      );
 
-    final xmlReport = subject.toXml(report);
+      final xmlReport = subject.toXml(report);
 
-    expect(
-      xmlReport,
-      '''<?xml version="1.0" encoding="UTF-8"?>
+      expect(
+        xmlReport,
+        '''<?xml version="1.0" encoding="UTF-8"?>
 <testsuites>
   <testsuite errors="0" failures="1" tests="2" skipped="0" name="test.some_file" timestamp="$formattedTimestamp">
     <properties>
@@ -70,61 +71,63 @@ void main() {
     </testcase>
   </testsuite>
 </testsuites>''',
-    );
+      );
+    });
   });
 
-  test('it generates a basic report xml for flutter test output', () {
-    final timestamp = DateTime(2020);
-    final dateFormat = DateFormat('yyyy-MM-ddTHH:mm:ss', 'en_US');
-    final formattedTimestamp = dateFormat.format(timestamp.toUtc());
-    final report = Report(
-      suites: [
-        Suite(
-          path: '/Users/bilbo/src/repo/package/test/some_file_test.dart',
-          platform: 'vm',
-          allTests: [
-            Test(
-              suiteId: 1,
-              name: 'some file test',
-              startTime: 30,
-              url:
-                  'file:///Users/bilbo/src/repo/package/test/some_file_test.dart',
-              endTime: 50,
-              problems: [],
-              prints: ['This is the test that passes'],
-            ),
-            Test(
-              suiteId: 1,
-              name: 'failing some file test',
-              startTime: 58,
-              url:
-                  'file:///Users/bilbo/src/repo/package/test/some_file_test.dart',
-              endTime: 75,
-              problems: [
-                Problem(
-                  message: 'Expected false but was true',
-                  stacktrace: 'stack_trace',
-                  isFailure: true,
-                ),
-              ],
-              prints: [],
-            ),
-          ],
-        ),
-      ],
-      timestamp: timestamp,
-    );
+  group('when output comes from flutter test --machine', () {
+    test('it generates a basic report xml', () {
+      final timestamp = DateTime(2020);
+      final dateFormat = DateFormat('yyyy-MM-ddTHH:mm:ss', 'en_US');
+      final formattedTimestamp = dateFormat.format(timestamp.toUtc());
+      final report = Report(
+        suites: [
+          Suite(
+            path: '/Users/bilbo/src/repo/package/test/some_file_test.dart',
+            platform: 'vm',
+            allTests: [
+              Test(
+                suiteId: 1,
+                name: 'some file test',
+                startTime: 30,
+                url:
+                    'file:///Users/bilbo/src/repo/package/test/some_file_test.dart',
+                endTime: 50,
+                problems: [],
+                prints: ['This is the test that passes'],
+              ),
+              Test(
+                suiteId: 1,
+                name: 'failing some file test',
+                startTime: 58,
+                url:
+                    'file:///Users/bilbo/src/repo/package/test/some_file_test.dart',
+                endTime: 75,
+                problems: [
+                  Problem(
+                    message: 'Expected false but was true',
+                    stacktrace: 'stack_trace',
+                    isFailure: true,
+                  ),
+                ],
+                prints: [],
+              ),
+            ],
+          ),
+        ],
+        timestamp: timestamp,
+      );
 
-    final subject = TestJsonToJunit(
-      base: '',
-      package: '',
-    );
+      final subject = TestJsonToJunit(
+        base: '',
+        package: '',
+      );
 
-    final xmlReport = subject.toXml(report);
+      final xmlReport = subject.toXml(report);
 
-    expect(
-      xmlReport,
-      '''<?xml version="1.0" encoding="UTF-8"?>
+      expect(
+        xmlReport,
+        '''<?xml version="1.0" encoding="UTF-8"?>
 <testsuites>
   <testsuite errors="0" failures="1" tests="2" skipped="0" name="test.some_file" timestamp="$formattedTimestamp">
     <properties>
@@ -138,6 +141,7 @@ void main() {
     </testcase>
   </testsuite>
 </testsuites>''',
-    );
+      );
+    });
   });
 }

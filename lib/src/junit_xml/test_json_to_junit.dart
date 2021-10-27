@@ -57,7 +57,7 @@ class TestJsonToJunit {
     required Suite suite,
     DateTime? timestamp,
   }) {
-    final className = _pathToClassName(suite.path);
+    final className = _convertPathToClassName(suite.path);
     final attributes = <String, String>{
       'errors':
           '${suite.problems.where((t) => !t.problems.every((p) => p.isFailure)).length}',
@@ -153,11 +153,7 @@ class TestJsonToJunit {
     String? suitePath,
   }) {
     var path = test.rootUrl ?? suitePath ?? test.url ?? 'unknown_file';
-    // in some cases, e.g. when using test.url the path will include the file://
-    // protocol as a prefix which is nasty and not helpful, so we trim that out.
-    path = _convertSuitePathToRelativePath(path);
-    path = path.replaceFirst('file://', '');
-    return path;
+    return _convertPathToRelativePath(path);
   }
 
   void _buildPrints({
@@ -198,12 +194,16 @@ class TestJsonToJunit {
     }
   }
 
-  static String _convertSuitePathToRelativePath(String? path) {
+  String _convertPathToRelativePath(String? path) {
     if (path == null) {
       return 'unknown_path';
     }
 
     String result = path;
+
+    // in some cases, e.g. when using test.url the path will include the file://
+    // protocol as a prefix which is nasty and not helpful, so we trim that out.
+    result = result.replaceFirst('file://', '');
 
     final parts = path.split(Platform.pathSeparator);
     var indexOfTestDirectory = parts.indexOf('test');
@@ -215,27 +215,25 @@ class TestJsonToJunit {
       result = parts.skip(indexOfTestDirectory).join(Platform.pathSeparator);
     }
 
+    if (base.isNotEmpty && result.startsWith(base)) {
+      result = result.substring(base.length);
+      while (result.startsWith(Platform.pathSeparator)) {
+        result = result.substring(1);
+      }
+    }
+
     return result;
   }
 
-  String _pathToClassName(String? path) {
-    if (path == null) {
-      return 'unknown_path';
-    }
+  String _convertPathToClassName(String? path) {
+    var main = _convertPathToRelativePath(path);
 
-    String main = _convertSuitePathToRelativePath(path);
     if (main.endsWith('_test.dart')) {
       main = main.substring(0, main.length - '_test.dart'.length);
     } else if (main.endsWith('.dart')) {
       main = main.substring(0, main.length - '.dart'.length);
     }
 
-    if (base.isNotEmpty && main.startsWith(base)) {
-      main = main.substring(base.length);
-      while (main.startsWith(Platform.pathSeparator)) {
-        main = main.substring(1);
-      }
-    }
     return package +
         main.replaceAll(Platform.pathSeparator, '.').replaceAll('-', '_');
   }
