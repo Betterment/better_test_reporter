@@ -234,8 +234,14 @@ class TestJsonToJunit {
       main = main.substring(0, main.length - '.dart'.length);
     }
 
-    return package +
+    final mainResult =
         main.replaceAll(Platform.pathSeparator, '.').replaceAll('-', '_');
+
+    if (package.isNotEmpty) {
+      return '$package.$mainResult';
+    }
+
+    return mainResult;
   }
 
   Iterable<String> _details(Iterable<Problem> problems) {
