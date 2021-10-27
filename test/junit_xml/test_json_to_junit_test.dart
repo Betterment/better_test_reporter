@@ -11,14 +11,14 @@ void main() {
     final report = Report(
       suites: [
         Suite(
-          path: 'file://package/test/package_test.dart',
+          path: 'test/package_test.dart',
           platform: 'vm',
           allTests: [
             Test(
               suiteId: 1,
               name: 'package test',
               startTime: 30,
-              url: 'file://package/test/package_test.dart',
+              url: 'file:///Users/bilbo/repo/package/test/package_test.dart',
               endTime: 50,
               problems: [],
               prints: ['This is the test that passes'],
@@ -27,7 +27,7 @@ void main() {
               suiteId: 1,
               name: 'failing package test',
               startTime: 58,
-              url: 'file://package/test/package_test.dart',
+              url: 'file:///Users/bilbo/repo/package/test/package_test.dart',
               endTime: 75,
               problems: [
                 Problem(
@@ -55,14 +55,14 @@ void main() {
       xmlReport,
       '''<?xml version="1.0" encoding="UTF-8"?>
 <testsuites>
-  <testsuite errors="0" failures="1" tests="2" skipped="0" name="package.test.package" timestamp="$formattedTimestamp">
+  <testsuite errors="0" failures="1" tests="2" skipped="0" name="test.package" timestamp="$formattedTimestamp">
     <properties>
       <property name="platform" value="vm"/>
     </properties>
-    <testcase classname="package.test.package" file="package/test/package_test.dart" name="package test" time="0.02">
+    <testcase classname="test.package" file="test/package_test.dart" name="package test" time="0.02">
       <system-out>This is the test that passes</system-out>
     </testcase>
-    <testcase classname="package.test.package" file="package/test/package_test.dart" name="failing package test" time="0.017">
+    <testcase classname="test.package" file="test/package_test.dart" name="failing package test" time="0.017">
       <failure message="1 failure, see stacktrace for details">Failure: Expected false but was true</failure>
     </testcase>
   </testsuite>

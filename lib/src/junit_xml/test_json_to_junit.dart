@@ -152,7 +152,9 @@ class TestJsonToJunit {
     required Test test,
     String? suitePath,
   }) {
-    var path = test.rootUrl ?? test.url ?? suitePath ?? 'unknown_file';
+    var path = test.rootUrl ?? suitePath ?? test.url ?? 'unknown_file';
+    // in some cases, e.g. when using test.url the path will include the file://
+    // protocol as a prefix which is nasty and not helpful, so we trim that out.
     path = path.replaceFirst('file://', '');
     return path;
   }
@@ -207,10 +209,6 @@ class TestJsonToJunit {
     } else {
       main = path;
     }
-
-    // sometimes the system reports the path starting with a protocol
-    // so, we throw that out.
-    main = main.replaceFirst('file://', '');
 
     if (base.isNotEmpty && main.startsWith(base)) {
       main = main.substring(base.length);
