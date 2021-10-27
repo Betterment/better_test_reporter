@@ -155,6 +155,7 @@ class TestJsonToJunit {
     var path = test.rootUrl ?? suitePath ?? test.url ?? 'unknown_file';
     // in some cases, e.g. when using test.url the path will include the file://
     // protocol as a prefix which is nasty and not helpful, so we trim that out.
+    path = _convertSuitePathToRelativePath(path);
     path = path.replaceFirst('file://', '');
     return path;
   }
@@ -197,17 +198,36 @@ class TestJsonToJunit {
     }
   }
 
+  static String _convertSuitePathToRelativePath(String? path) {
+    if (path == null) {
+      return 'unknown_path';
+    }
+
+    String result = path;
+
+    final parts = path.split(Platform.pathSeparator);
+    var indexOfTestDirectory = parts.indexOf('test');
+    if (indexOfTestDirectory == -1) {
+      indexOfTestDirectory = parts.indexOf('integration_test');
+    }
+
+    if (indexOfTestDirectory > -1) {
+      result = parts.skip(indexOfTestDirectory).join(Platform.pathSeparator);
+    }
+
+    return result;
+  }
+
   String _pathToClassName(String? path) {
     if (path == null) {
       return 'unknown_path';
     }
-    late String main;
-    if (path.endsWith('_test.dart')) {
-      main = path.substring(0, path.length - '_test.dart'.length);
-    } else if (path.endsWith('.dart')) {
-      main = path.substring(0, path.length - '.dart'.length);
-    } else {
-      main = path;
+
+    String main = _convertSuitePathToRelativePath(path);
+    if (main.endsWith('_test.dart')) {
+      main = main.substring(0, main.length - '_test.dart'.length);
+    } else if (main.endsWith('.dart')) {
+      main = main.substring(0, main.length - '.dart'.length);
     }
 
     if (base.isNotEmpty && main.startsWith(base)) {
