@@ -59,10 +59,8 @@ class TestJsonToJunit {
   }) {
     final className = _pathToClassName(suite.path);
     final attributes = <String, String>{
-      'errors':
-          '${suite.problems.where((t) => !t.problems.every((p) => p.isFailure)).length}',
-      'failures':
-          '${suite.problems.where((t) => t.problems.every((p) => p.isFailure)).length}',
+      'errors': '${suite.problems.where((t) => !t.problems.every((p) => p.isFailure)).length}',
+      'failures': '${suite.problems.where((t) => t.problems.every((p) => p.isFailure)).length}',
       'tests': '${suite.tests.length}',
       'skipped': '${suite.skipped.length}',
       'name': className,
@@ -152,7 +150,9 @@ class TestJsonToJunit {
     required Test test,
     String? suitePath,
   }) {
-    return test.rootUrl ?? test.url ?? suitePath ?? 'unknown_file';
+    var path = test.rootUrl ?? test.url ?? suitePath ?? 'unknown_file';
+    path = path.replaceFirst('file://', '');
+    return path;
   }
 
   void _buildPrints({
@@ -206,14 +206,17 @@ class TestJsonToJunit {
       main = path;
     }
 
+    // sometimes the system reports the path starting with a protocol
+    // so, we throw that out.
+    main = main.replaceFirst('file://', '');
+
     if (base.isNotEmpty && main.startsWith(base)) {
       main = main.substring(base.length);
       while (main.startsWith(Platform.pathSeparator)) {
         main = main.substring(1);
       }
     }
-    return package +
-        main.replaceAll(Platform.pathSeparator, '.').replaceAll('-', '_');
+    return package + main.replaceAll(Platform.pathSeparator, '.').replaceAll('-', '_');
   }
 
   Iterable<String> _details(Iterable<Problem> problems) {

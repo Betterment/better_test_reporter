@@ -55,14 +55,14 @@ void main() {
       xmlReport,
       '''<?xml version="1.0" encoding="UTF-8"?>
 <testsuites>
-  <testsuite errors="0" failures="1" tests="2" skipped="0" name="file:..package.test.package" timestamp="$formattedTimestamp">
+  <testsuite errors="0" failures="1" tests="2" skipped="0" name="package.test.package" timestamp="$formattedTimestamp">
     <properties>
       <property name="platform" value="vm"/>
     </properties>
-    <testcase classname="file:..package.test.package" file="file://package/test/package_test.dart" name="package test" time="0.02">
+    <testcase classname="package.test.package" file="package/test/package_test.dart" name="package test" time="0.02">
       <system-out>This is the test that passes</system-out>
     </testcase>
-    <testcase classname="file:..package.test.package" file="file://package/test/package_test.dart" name="failing package test" time="0.017">
+    <testcase classname="package.test.package" file="package/test/package_test.dart" name="failing package test" time="0.017">
       <failure message="1 failure, see stacktrace for details">Failure: Expected false but was true</failure>
     </testcase>
   </testsuite>
