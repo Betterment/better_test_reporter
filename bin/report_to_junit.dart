@@ -66,7 +66,7 @@ if missing, <stdout> will be used''',
       help: """
 the part to strip from the 'path' elements in the source.
 defaults to current working directory""",
-      defaultsTo: '',
+      defaultsTo: Directory.current.path,
     )
     ..addOption(
       'package',
@@ -109,7 +109,7 @@ the timestamp to be used in the report
       source: source,
     );
     final package = _processPackage(result['package'] as String);
-    final base = _processBase(result['base'] as String);
+    final base = result['base'] as String;
 
     return _Arguments(
       base: base,
@@ -124,14 +124,6 @@ the timestamp to be used in the report
     print(parser.usage);
     exit(1);
   }
-}
-
-String _processBase(String base) {
-  if (base.isNotEmpty) {
-    return base;
-  }
-
-  return Directory.current.path;
 }
 
 String _processPackage(String package) {
