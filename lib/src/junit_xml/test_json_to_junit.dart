@@ -152,7 +152,7 @@ class TestJsonToJunit {
     required Test test,
     String? suitePath,
   }) {
-    var path = test.rootUrl ?? suitePath ?? test.url ?? 'unknown_file';
+    final path = test.rootUrl ?? suitePath ?? test.url ?? 'unknown_file';
     return _convertPathToRelativePath(path);
   }
 
@@ -201,19 +201,10 @@ class TestJsonToJunit {
 
     String result = path;
 
-    // in some cases, e.g. when using test.url the path will include the file://
-    // protocol as a prefix which is nasty and not helpful, so we trim that out.
+    // in some cases, e.g. when using test.url or test.rootUrl the path will
+    // include the file:// protocol as a prefix which is nasty and not helpful,
+    // so we trim that out.
     result = result.replaceFirst('file://', '');
-
-    final parts = path.split(Platform.pathSeparator);
-    var indexOfTestDirectory = parts.indexOf('test');
-    if (indexOfTestDirectory == -1) {
-      indexOfTestDirectory = parts.indexOf('integration_test');
-    }
-
-    if (indexOfTestDirectory > -1) {
-      result = parts.skip(indexOfTestDirectory).join(Platform.pathSeparator);
-    }
 
     if (base.isNotEmpty && result.startsWith(base)) {
       result = result.substring(base.length);

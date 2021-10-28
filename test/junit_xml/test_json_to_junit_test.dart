@@ -146,6 +146,7 @@ void main() {
       formattedTimestamp = dateFormat.format(timestamp.toUtc());
       report = Report(
         suites: [
+          // flutter test gives an absolute path to the file
           Suite(
             path: '/Users/bilbo/src/repo/package/test/some_file_test.dart',
             platform: 'vm',
@@ -195,14 +196,14 @@ void main() {
         xmlReport,
         '''<?xml version="1.0" encoding="UTF-8"?>
 <testsuites>
-  <testsuite errors="0" failures="1" tests="2" skipped="0" name="test.some_file" timestamp="$formattedTimestamp">
+  <testsuite errors="0" failures="1" tests="2" skipped="0" name=".Users.bilbo.src.repo.package.test.some_file" timestamp="$formattedTimestamp">
     <properties>
       <property name="platform" value="vm"/>
     </properties>
-    <testcase classname="test.some_file" file="test/some_file_test.dart" name="some file test" time="0.02">
+    <testcase classname=".Users.bilbo.src.repo.package.test.some_file" file="/Users/bilbo/src/repo/package/test/some_file_test.dart" name="some file test" time="0.02">
       <system-out>This is the test that passes</system-out>
     </testcase>
-    <testcase classname="test.some_file" file="test/some_file_test.dart" name="failing some file test" time="0.017">
+    <testcase classname=".Users.bilbo.src.repo.package.test.some_file" file="/Users/bilbo/src/repo/package/test/some_file_test.dart" name="failing some file test" time="0.017">
       <failure message="1 failure, see stacktrace for details">Failure: Expected false but was true</failure>
     </testcase>
   </testsuite>
@@ -212,7 +213,7 @@ void main() {
 
     test('it generates a report xml with proper package prefixes', () {
       final subject = TestJsonToJunit(
-        base: '',
+        base: '/Users/bilbo/src/repo/package',
         package: 'package',
       );
 
@@ -239,7 +240,7 @@ void main() {
 
     test('it generates a report xml with base prefix removed', () {
       final subject = TestJsonToJunit(
-        base: 'test',
+        base: '/Users/bilbo/src/repo/package',
         package: '',
       );
 
@@ -249,14 +250,14 @@ void main() {
         xmlReport,
         '''<?xml version="1.0" encoding="UTF-8"?>
 <testsuites>
-  <testsuite errors="0" failures="1" tests="2" skipped="0" name="some_file" timestamp="$formattedTimestamp">
+  <testsuite errors="0" failures="1" tests="2" skipped="0" name="test.some_file" timestamp="$formattedTimestamp">
     <properties>
       <property name="platform" value="vm"/>
     </properties>
-    <testcase classname="some_file" file="some_file_test.dart" name="some file test" time="0.02">
+    <testcase classname="test.some_file" file="test/some_file_test.dart" name="some file test" time="0.02">
       <system-out>This is the test that passes</system-out>
     </testcase>
-    <testcase classname="some_file" file="some_file_test.dart" name="failing some file test" time="0.017">
+    <testcase classname="test.some_file" file="test/some_file_test.dart" name="failing some file test" time="0.017">
       <failure message="1 failure, see stacktrace for details">Failure: Expected false but was true</failure>
     </testcase>
   </testsuite>
