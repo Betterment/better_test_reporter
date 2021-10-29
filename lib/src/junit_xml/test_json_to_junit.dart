@@ -57,7 +57,7 @@ class TestJsonToJunit {
     required Suite suite,
     DateTime? timestamp,
   }) {
-    final className = _pathToClassName(suite.path);
+    final className = _convertPathToClassName(suite.path);
     final attributes = <String, String>{
       'errors':
           '${suite.problems.where((t) => !t.problems.every((p) => p.isFailure)).length}',
@@ -152,7 +152,8 @@ class TestJsonToJunit {
     required Test test,
     String? suitePath,
   }) {
-    return test.rootUrl ?? test.url ?? suitePath ?? 'unknown_file';
+    final path = test.rootUrl ?? suitePath ?? test.url ?? 'unknown_file';
+    return _convertPathToRelativePath(path);
   }
 
   void _buildPrints({
@@ -193,27 +194,45 @@ class TestJsonToJunit {
     }
   }
 
-  String _pathToClassName(String? path) {
+  String _convertPathToRelativePath(String? path) {
     if (path == null) {
       return 'unknown_path';
     }
-    late String main;
-    if (path.endsWith('_test.dart')) {
-      main = path.substring(0, path.length - '_test.dart'.length);
-    } else if (path.endsWith('.dart')) {
-      main = path.substring(0, path.length - '.dart'.length);
-    } else {
-      main = path;
-    }
 
-    if (base.isNotEmpty && main.startsWith(base)) {
-      main = main.substring(base.length);
-      while (main.startsWith(Platform.pathSeparator)) {
-        main = main.substring(1);
+    String result = path;
+
+    // in some cases, e.g. when using test.url or test.rootUrl the path will
+    // include the file:// protocol as a prefix which is nasty and not helpful,
+    // so we trim that out.
+    result = result.replaceFirst('file://', '');
+
+    if (base.isNotEmpty && result.startsWith(base)) {
+      result = result.substring(base.length);
+      while (result.startsWith(Platform.pathSeparator)) {
+        result = result.substring(1);
       }
     }
-    return package +
+
+    return result;
+  }
+
+  String _convertPathToClassName(String? path) {
+    var main = _convertPathToRelativePath(path);
+
+    if (main.endsWith('_test.dart')) {
+      main = main.substring(0, main.length - '_test.dart'.length);
+    } else if (main.endsWith('.dart')) {
+      main = main.substring(0, main.length - '.dart'.length);
+    }
+
+    final mainResult =
         main.replaceAll(Platform.pathSeparator, '.').replaceAll('-', '_');
+
+    if (package.isNotEmpty) {
+      return '$package.$mainResult';
+    }
+
+    return mainResult;
   }
 
   Iterable<String> _details(Iterable<Problem> problems) {
