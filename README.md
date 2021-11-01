@@ -60,6 +60,10 @@ Details on all options for `report_to_junit` can be found by running `report_to_
 
 ## Misc
 
+### Experimental nature
+
+This package is still experimental as we continue to build out more functionality. It's current state is barebones as we investigate ways to make the junit output more useful and ways to produce better testing reports for use outside of just junit.
+
 ### Differences from original implementation in `dart-junitreport` and `dart-testreport`
 
 1. When generating the XML for a problem during a test, `dart-junitreport` had a
