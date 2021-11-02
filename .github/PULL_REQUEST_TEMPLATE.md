@@ -8,5 +8,5 @@
 
 ### Reviewers
 <!-- This is used by us to signal to the correct people that your PR needs review -->
-/domain @better_test_reporter-maintainers
-/platform @better_test_reporter-maintainers
+/domain @Betterment/better_test_reporter-maintainers
+/platform @Betterment/better_test_reporter-maintainers
