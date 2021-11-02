@@ -25,6 +25,10 @@ The purpose of this package is three-fold:
   can be used to take in a full json report from the test json reporter and
   generate a junit XML report(usable by many CI tools)
 
+### Experimental nature
+
+This package is still experimental as we continue to build out more functionality. It's current state is barebones as we investigate ways to make the junit output more useful and ways to produce better testing reports for use outside of just junit.
+
 ## Getting Started
 
 In order to start using the `report_to_junit` command, install the latest
