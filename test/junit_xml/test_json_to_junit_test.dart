@@ -96,10 +96,10 @@ void main() {
     <properties>
       <property name="platform" value="vm"/>
     </properties>
-    <testcase classname="package.test.some_file" file="test/some_file_test.dart" name="some file test" time="0.02">
+    <testcase classname="package.test.some_file" file="package/test/some_file_test.dart" name="some file test" time="0.02">
       <system-out>This is the test that passes</system-out>
     </testcase>
-    <testcase classname="package.test.some_file" file="test/some_file_test.dart" name="failing some file test" time="0.017">
+    <testcase classname="package.test.some_file" file="package/test/some_file_test.dart" name="failing some file test" time="0.017">
       <failure message="1 failure, see stacktrace for details">Failure: Expected false but was true</failure>
     </testcase>
   </testsuite>
@@ -227,10 +227,10 @@ void main() {
     <properties>
       <property name="platform" value="vm"/>
     </properties>
-    <testcase classname="package.test.some_file" file="test/some_file_test.dart" name="some file test" time="0.02">
+    <testcase classname="package.test.some_file" file="package/test/some_file_test.dart" name="some file test" time="0.02">
       <system-out>This is the test that passes</system-out>
     </testcase>
-    <testcase classname="package.test.some_file" file="test/some_file_test.dart" name="failing some file test" time="0.017">
+    <testcase classname="package.test.some_file" file="package/test/some_file_test.dart" name="failing some file test" time="0.017">
       <failure message="1 failure, see stacktrace for details">Failure: Expected false but was true</failure>
     </testcase>
   </testsuite>

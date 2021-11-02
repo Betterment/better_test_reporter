@@ -108,7 +108,7 @@ the timestamp to be used in the report
       timestamp: result['timestamp'] as String?,
       source: source,
     );
-    final package = _processPackage(result['package'] as String);
+    final package = result['package'] as String;
     final base = result['base'] as String;
 
     return _Arguments(
@@ -124,11 +124,6 @@ the timestamp to be used in the report
     print(parser.usage);
     exit(1);
   }
-}
-
-String _processPackage(String package) {
-  if (package.isNotEmpty && !package.endsWith('.')) package += '.';
-  return package;
 }
 
 DateTime? _processTimestamp({
