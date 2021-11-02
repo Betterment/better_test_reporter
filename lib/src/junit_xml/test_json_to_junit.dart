@@ -213,6 +213,8 @@ class TestJsonToJunit {
       }
     }
 
+    if (package.isNotEmpty) return '$package${Platform.pathSeparator}$result';
+
     return result;
   }
 
@@ -227,10 +229,6 @@ class TestJsonToJunit {
 
     final mainResult =
         main.replaceAll(Platform.pathSeparator, '.').replaceAll('-', '_');
-
-    if (package.isNotEmpty) {
-      return '$package.$mainResult';
-    }
 
     return mainResult;
   }
