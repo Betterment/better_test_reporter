@@ -162,14 +162,17 @@ class _$_Suite implements _Suite {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _Suite &&
-            (identical(other.id, id) || other.id == id) &&
-            (identical(other.platform, platform) ||
-                other.platform == platform) &&
-            (identical(other.path, path) || other.path == path));
+            const DeepCollectionEquality().equals(other.id, id) &&
+            const DeepCollectionEquality().equals(other.platform, platform) &&
+            const DeepCollectionEquality().equals(other.path, path));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, id, platform, path);
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(id),
+      const DeepCollectionEquality().hash(platform),
+      const DeepCollectionEquality().hash(path));
 
   @JsonKey(ignore: true)
   @override

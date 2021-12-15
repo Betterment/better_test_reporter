@@ -156,15 +156,18 @@ class _$_Problem implements _Problem {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _Problem &&
-            (identical(other.message, message) || other.message == message) &&
-            (identical(other.stacktrace, stacktrace) ||
-                other.stacktrace == stacktrace) &&
-            (identical(other.isFailure, isFailure) ||
-                other.isFailure == isFailure));
+            const DeepCollectionEquality().equals(other.message, message) &&
+            const DeepCollectionEquality()
+                .equals(other.stacktrace, stacktrace) &&
+            const DeepCollectionEquality().equals(other.isFailure, isFailure));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, message, stacktrace, isFailure);
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(message),
+      const DeepCollectionEquality().hash(stacktrace),
+      const DeepCollectionEquality().hash(isFailure));
 
   @JsonKey(ignore: true)
   @override

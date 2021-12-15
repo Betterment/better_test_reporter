@@ -14,7 +14,7 @@ final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 Event _$EventFromJson(Map<String, dynamic> json) {
-  switch (json['type'] as String?) {
+  switch (json['type']) {
     case 'start':
       return _Start.fromJson(json);
     case 'allSuites':
@@ -399,7 +399,9 @@ class _$_Start implements _Start {
       {required this.time,
       required this.protocolVersion,
       this.runnerVersion,
-      required this.pid});
+      required this.pid,
+      String? $type})
+      : $type = $type ?? 'start';
 
   factory _$_Start.fromJson(Map<String, dynamic> json) =>
       _$$_StartFromJson(json);
@@ -426,6 +428,9 @@ class _$_Start implements _Start {
   /// The pid of the VM process running the tests.
   final int pid;
 
+  @JsonKey(name: 'type')
+  final String $type;
+
   @override
   String toString() {
     return 'Event.start(time: $time, protocolVersion: $protocolVersion, runnerVersion: $runnerVersion, pid: $pid)';
@@ -436,17 +441,21 @@ class _$_Start implements _Start {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _Start &&
-            (identical(other.time, time) || other.time == time) &&
-            (identical(other.protocolVersion, protocolVersion) ||
-                other.protocolVersion == protocolVersion) &&
-            (identical(other.runnerVersion, runnerVersion) ||
-                other.runnerVersion == runnerVersion) &&
-            (identical(other.pid, pid) || other.pid == pid));
+            const DeepCollectionEquality().equals(other.time, time) &&
+            const DeepCollectionEquality()
+                .equals(other.protocolVersion, protocolVersion) &&
+            const DeepCollectionEquality()
+                .equals(other.runnerVersion, runnerVersion) &&
+            const DeepCollectionEquality().equals(other.pid, pid));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, time, protocolVersion, runnerVersion, pid);
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(time),
+      const DeepCollectionEquality().hash(protocolVersion),
+      const DeepCollectionEquality().hash(runnerVersion),
+      const DeepCollectionEquality().hash(pid));
 
   @JsonKey(ignore: true)
   @override
@@ -625,7 +634,7 @@ class _$_Start implements _Start {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_StartToJson(this)..['type'] = 'start';
+    return _$$_StartToJson(this);
   }
 }
 
@@ -700,7 +709,8 @@ class __$AllSuitesCopyWithImpl<$Res> extends _$EventCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$_AllSuites implements _AllSuites {
-  const _$_AllSuites({required this.time, required this.count});
+  const _$_AllSuites({required this.time, required this.count, String? $type})
+      : $type = $type ?? 'allSuites';
 
   factory _$_AllSuites.fromJson(Map<String, dynamic> json) =>
       _$$_AllSuitesFromJson(json);
@@ -714,6 +724,9 @@ class _$_AllSuites implements _AllSuites {
   /// The total number of suites that will be loaded.
   final int count;
 
+  @JsonKey(name: 'type')
+  final String $type;
+
   @override
   String toString() {
     return 'Event.allSuites(time: $time, count: $count)';
@@ -724,12 +737,15 @@ class _$_AllSuites implements _AllSuites {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _AllSuites &&
-            (identical(other.time, time) || other.time == time) &&
-            (identical(other.count, count) || other.count == count));
+            const DeepCollectionEquality().equals(other.time, time) &&
+            const DeepCollectionEquality().equals(other.count, count));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, time, count);
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(time),
+      const DeepCollectionEquality().hash(count));
 
   @JsonKey(ignore: true)
   @override
@@ -908,7 +924,7 @@ class _$_AllSuites implements _AllSuites {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_AllSuitesToJson(this)..['type'] = 'allSuites';
+    return _$$_AllSuitesToJson(this);
   }
 }
 
@@ -979,7 +995,8 @@ class __$SuiteCopyWithImpl<$Res> extends _$EventCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$_Suite implements _Suite {
-  const _$_Suite({required this.time, required this.suite});
+  const _$_Suite({required this.time, required this.suite, String? $type})
+      : $type = $type ?? 'suite';
 
   factory _$_Suite.fromJson(Map<String, dynamic> json) =>
       _$$_SuiteFromJson(json);
@@ -993,6 +1010,9 @@ class _$_Suite implements _Suite {
   /// Metadata about the Suite.
   final Suite suite;
 
+  @JsonKey(name: 'type')
+  final String $type;
+
   @override
   String toString() {
     return 'Event.suite(time: $time, suite: $suite)';
@@ -1003,12 +1023,15 @@ class _$_Suite implements _Suite {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _Suite &&
-            (identical(other.time, time) || other.time == time) &&
-            (identical(other.suite, suite) || other.suite == suite));
+            const DeepCollectionEquality().equals(other.time, time) &&
+            const DeepCollectionEquality().equals(other.suite, suite));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, time, suite);
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(time),
+      const DeepCollectionEquality().hash(suite));
 
   @JsonKey(ignore: true)
   @override
@@ -1187,7 +1210,7 @@ class _$_Suite implements _Suite {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_SuiteToJson(this)..['type'] = 'suite';
+    return _$$_SuiteToJson(this);
   }
 }
 
@@ -1264,7 +1287,9 @@ class _$_Debug implements _Debug {
       {required this.time,
       @JsonKey(name: 'suiteID') required this.suiteId,
       this.observatory,
-      this.remoteDebugger});
+      this.remoteDebugger,
+      String? $type})
+      : $type = $type ?? 'debug';
 
   factory _$_Debug.fromJson(Map<String, dynamic> json) =>
       _$$_DebugFromJson(json);
@@ -1287,6 +1312,9 @@ class _$_Debug implements _Debug {
   /// The HTTP URL for the remote debugger for this suite's host page, or `null` if no remote debugger is available for this suite.
   final String? remoteDebugger;
 
+  @JsonKey(name: 'type')
+  final String $type;
+
   @override
   String toString() {
     return 'Event.debug(time: $time, suiteId: $suiteId, observatory: $observatory, remoteDebugger: $remoteDebugger)';
@@ -1297,17 +1325,21 @@ class _$_Debug implements _Debug {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _Debug &&
-            (identical(other.time, time) || other.time == time) &&
-            (identical(other.suiteId, suiteId) || other.suiteId == suiteId) &&
-            (identical(other.observatory, observatory) ||
-                other.observatory == observatory) &&
-            (identical(other.remoteDebugger, remoteDebugger) ||
-                other.remoteDebugger == remoteDebugger));
+            const DeepCollectionEquality().equals(other.time, time) &&
+            const DeepCollectionEquality().equals(other.suiteId, suiteId) &&
+            const DeepCollectionEquality()
+                .equals(other.observatory, observatory) &&
+            const DeepCollectionEquality()
+                .equals(other.remoteDebugger, remoteDebugger));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, time, suiteId, observatory, remoteDebugger);
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(time),
+      const DeepCollectionEquality().hash(suiteId),
+      const DeepCollectionEquality().hash(observatory),
+      const DeepCollectionEquality().hash(remoteDebugger));
 
   @JsonKey(ignore: true)
   @override
@@ -1486,7 +1518,7 @@ class _$_Debug implements _Debug {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_DebugToJson(this)..['type'] = 'debug';
+    return _$$_DebugToJson(this);
   }
 }
 
@@ -1565,7 +1597,8 @@ class __$GroupCopyWithImpl<$Res> extends _$EventCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$_Group implements _Group {
-  const _$_Group({required this.time, required this.group});
+  const _$_Group({required this.time, required this.group, String? $type})
+      : $type = $type ?? 'group';
 
   factory _$_Group.fromJson(Map<String, dynamic> json) =>
       _$$_GroupFromJson(json);
@@ -1579,6 +1612,9 @@ class _$_Group implements _Group {
   /// Metadata about the Group.
   final Group group;
 
+  @JsonKey(name: 'type')
+  final String $type;
+
   @override
   String toString() {
     return 'Event.group(time: $time, group: $group)';
@@ -1589,12 +1625,15 @@ class _$_Group implements _Group {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _Group &&
-            (identical(other.time, time) || other.time == time) &&
-            (identical(other.group, group) || other.group == group));
+            const DeepCollectionEquality().equals(other.time, time) &&
+            const DeepCollectionEquality().equals(other.group, group));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, time, group);
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(time),
+      const DeepCollectionEquality().hash(group));
 
   @JsonKey(ignore: true)
   @override
@@ -1773,7 +1812,7 @@ class _$_Group implements _Group {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_GroupToJson(this)..['type'] = 'group';
+    return _$$_GroupToJson(this);
   }
 }
 
@@ -1842,7 +1881,8 @@ class __$TestStartCopyWithImpl<$Res> extends _$EventCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$_TestStart implements _TestStart {
-  const _$_TestStart({required this.time, required this.test});
+  const _$_TestStart({required this.time, required this.test, String? $type})
+      : $type = $type ?? 'testStart';
 
   factory _$_TestStart.fromJson(Map<String, dynamic> json) =>
       _$$_TestStartFromJson(json);
@@ -1856,6 +1896,9 @@ class _$_TestStart implements _TestStart {
   /// Metadata about the Test that started.
   final Test test;
 
+  @JsonKey(name: 'type')
+  final String $type;
+
   @override
   String toString() {
     return 'Event.testStart(time: $time, test: $test)';
@@ -1866,12 +1909,15 @@ class _$_TestStart implements _TestStart {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _TestStart &&
-            (identical(other.time, time) || other.time == time) &&
-            (identical(other.test, test) || other.test == test));
+            const DeepCollectionEquality().equals(other.time, time) &&
+            const DeepCollectionEquality().equals(other.test, test));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, time, test);
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(time),
+      const DeepCollectionEquality().hash(test));
 
   @JsonKey(ignore: true)
   @override
@@ -2050,7 +2096,7 @@ class _$_TestStart implements _TestStart {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_TestStartToJson(this)..['type'] = 'testStart';
+    return _$$_TestStartToJson(this);
   }
 }
 
@@ -2130,7 +2176,9 @@ class _$_Print implements _Print {
       {required this.time,
       @JsonKey(name: 'testID') required this.testId,
       required this.messageType,
-      required this.message});
+      required this.message,
+      String? $type})
+      : $type = $type ?? 'print';
 
   factory _$_Print.fromJson(Map<String, dynamic> json) =>
       _$$_PrintFromJson(json);
@@ -2153,6 +2201,9 @@ class _$_Print implements _Print {
   /// The message that was printed.
   final String message;
 
+  @JsonKey(name: 'type')
+  final String $type;
+
   @override
   String toString() {
     return 'Event.print(time: $time, testId: $testId, messageType: $messageType, message: $message)';
@@ -2163,16 +2214,20 @@ class _$_Print implements _Print {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _Print &&
-            (identical(other.time, time) || other.time == time) &&
-            (identical(other.testId, testId) || other.testId == testId) &&
-            (identical(other.messageType, messageType) ||
-                other.messageType == messageType) &&
-            (identical(other.message, message) || other.message == message));
+            const DeepCollectionEquality().equals(other.time, time) &&
+            const DeepCollectionEquality().equals(other.testId, testId) &&
+            const DeepCollectionEquality()
+                .equals(other.messageType, messageType) &&
+            const DeepCollectionEquality().equals(other.message, message));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, time, testId, messageType, message);
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(time),
+      const DeepCollectionEquality().hash(testId),
+      const DeepCollectionEquality().hash(messageType),
+      const DeepCollectionEquality().hash(message));
 
   @JsonKey(ignore: true)
   @override
@@ -2351,7 +2406,7 @@ class _$_Print implements _Print {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_PrintToJson(this)..['type'] = 'print';
+    return _$$_PrintToJson(this);
   }
 }
 
@@ -2446,7 +2501,9 @@ class _$_Error implements _Error {
       @JsonKey(name: 'testID') required this.testId,
       required this.error,
       @JsonKey(name: 'stackTrace') required this.stacktrace,
-      required this.isFailure});
+      required this.isFailure,
+      String? $type})
+      : $type = $type ?? 'error';
 
   factory _$_Error.fromJson(Map<String, dynamic> json) =>
       _$$_ErrorFromJson(json);
@@ -2474,6 +2531,9 @@ class _$_Error implements _Error {
   /// Whether the error was a `TestFailure`.
   final bool isFailure;
 
+  @JsonKey(name: 'type')
+  final String $type;
+
   @override
   String toString() {
     return 'Event.error(time: $time, testId: $testId, error: $error, stacktrace: $stacktrace, isFailure: $isFailure)';
@@ -2484,18 +2544,22 @@ class _$_Error implements _Error {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _Error &&
-            (identical(other.time, time) || other.time == time) &&
-            (identical(other.testId, testId) || other.testId == testId) &&
-            (identical(other.error, error) || other.error == error) &&
-            (identical(other.stacktrace, stacktrace) ||
-                other.stacktrace == stacktrace) &&
-            (identical(other.isFailure, isFailure) ||
-                other.isFailure == isFailure));
+            const DeepCollectionEquality().equals(other.time, time) &&
+            const DeepCollectionEquality().equals(other.testId, testId) &&
+            const DeepCollectionEquality().equals(other.error, error) &&
+            const DeepCollectionEquality()
+                .equals(other.stacktrace, stacktrace) &&
+            const DeepCollectionEquality().equals(other.isFailure, isFailure));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, time, testId, error, stacktrace, isFailure);
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(time),
+      const DeepCollectionEquality().hash(testId),
+      const DeepCollectionEquality().hash(error),
+      const DeepCollectionEquality().hash(stacktrace),
+      const DeepCollectionEquality().hash(isFailure));
 
   @JsonKey(ignore: true)
   @override
@@ -2674,7 +2738,7 @@ class _$_Error implements _Error {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_ErrorToJson(this)..['type'] = 'error';
+    return _$$_ErrorToJson(this);
   }
 }
 
@@ -2774,7 +2838,9 @@ class _$_TestDone implements _TestDone {
       @JsonKey(unknownEnumValue: TestResult.unknown) required this.result,
       @JsonKey(name: 'testID') required this.testId,
       required this.hidden,
-      required this.skipped});
+      required this.skipped,
+      String? $type})
+      : $type = $type ?? 'testDone';
 
   factory _$_TestDone.fromJson(Map<String, dynamic> json) =>
       _$$_TestDoneFromJson(json);
@@ -2802,6 +2868,9 @@ class _$_TestDone implements _TestDone {
   /// Whether the test (or some part of it) was skipped.
   final bool skipped;
 
+  @JsonKey(name: 'type')
+  final String $type;
+
   @override
   String toString() {
     return 'Event.testDone(time: $time, result: $result, testId: $testId, hidden: $hidden, skipped: $skipped)';
@@ -2812,16 +2881,21 @@ class _$_TestDone implements _TestDone {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _TestDone &&
-            (identical(other.time, time) || other.time == time) &&
-            (identical(other.result, result) || other.result == result) &&
-            (identical(other.testId, testId) || other.testId == testId) &&
-            (identical(other.hidden, hidden) || other.hidden == hidden) &&
-            (identical(other.skipped, skipped) || other.skipped == skipped));
+            const DeepCollectionEquality().equals(other.time, time) &&
+            const DeepCollectionEquality().equals(other.result, result) &&
+            const DeepCollectionEquality().equals(other.testId, testId) &&
+            const DeepCollectionEquality().equals(other.hidden, hidden) &&
+            const DeepCollectionEquality().equals(other.skipped, skipped));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, time, result, testId, hidden, skipped);
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(time),
+      const DeepCollectionEquality().hash(result),
+      const DeepCollectionEquality().hash(testId),
+      const DeepCollectionEquality().hash(hidden),
+      const DeepCollectionEquality().hash(skipped));
 
   @JsonKey(ignore: true)
   @override
@@ -3000,7 +3074,7 @@ class _$_TestDone implements _TestDone {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_TestDoneToJson(this)..['type'] = 'testDone';
+    return _$$_TestDoneToJson(this);
   }
 }
 
@@ -3076,7 +3150,8 @@ class __$DoneCopyWithImpl<$Res> extends _$EventCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$_Done implements _Done {
-  const _$_Done({required this.time, this.success});
+  const _$_Done({required this.time, this.success, String? $type})
+      : $type = $type ?? 'done';
 
   factory _$_Done.fromJson(Map<String, dynamic> json) => _$$_DoneFromJson(json);
 
@@ -3092,6 +3167,9 @@ class _$_Done implements _Done {
   /// running.
   final bool? success;
 
+  @JsonKey(name: 'type')
+  final String $type;
+
   @override
   String toString() {
     return 'Event.done(time: $time, success: $success)';
@@ -3102,12 +3180,15 @@ class _$_Done implements _Done {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _Done &&
-            (identical(other.time, time) || other.time == time) &&
-            (identical(other.success, success) || other.success == success));
+            const DeepCollectionEquality().equals(other.time, time) &&
+            const DeepCollectionEquality().equals(other.success, success));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, time, success);
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(time),
+      const DeepCollectionEquality().hash(success));
 
   @JsonKey(ignore: true)
   @override
@@ -3286,7 +3367,7 @@ class _$_Done implements _Done {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_DoneToJson(this)..['type'] = 'done';
+    return _$$_DoneToJson(this);
   }
 }
 
@@ -3343,7 +3424,8 @@ class __$UnknownCopyWithImpl<$Res> extends _$EventCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$_Unknown implements _Unknown {
-  const _$_Unknown({required this.time});
+  const _$_Unknown({required this.time, String? $type})
+      : $type = $type ?? 'unknown';
 
   factory _$_Unknown.fromJson(Map<String, dynamic> json) =>
       _$$_UnknownFromJson(json);
@@ -3352,6 +3434,9 @@ class _$_Unknown implements _Unknown {
 
   /// The time (in milliseconds) that has elapsed since the test runner started.
   final int time;
+
+  @JsonKey(name: 'type')
+  final String $type;
 
   @override
   String toString() {
@@ -3363,11 +3448,12 @@ class _$_Unknown implements _Unknown {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _Unknown &&
-            (identical(other.time, time) || other.time == time));
+            const DeepCollectionEquality().equals(other.time, time));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, time);
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(time));
 
   @JsonKey(ignore: true)
   @override
@@ -3546,7 +3632,7 @@ class _$_Unknown implements _Unknown {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_UnknownToJson(this)..['type'] = 'unknown';
+    return _$$_UnknownToJson(this);
   }
 }
 

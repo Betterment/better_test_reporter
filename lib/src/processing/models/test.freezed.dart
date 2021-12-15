@@ -292,19 +292,19 @@ class _$_Test extends _Test {
   ///
   /// Will only be present if different from `url`
   final String? rootUrl;
-  @JsonKey(defaultValue: -1)
+  @JsonKey()
   @override
 
   /// The time (in milliseconds) that has elapsed between the test runner starting and this test completing.
   ///
   /// This will be -1 if this test was not completed.
   final int endTime;
-  @JsonKey(defaultValue: false)
+  @JsonKey()
   @override
 
   /// Whether this test's result should be hidden.
   final bool hidden;
-  @JsonKey(defaultValue: false)
+  @JsonKey()
   @override
 
   /// Whether this test (or some part of it) was skipped.
@@ -328,15 +328,14 @@ class _$_Test extends _Test {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _Test &&
-            (identical(other.suiteId, suiteId) || other.suiteId == suiteId) &&
-            (identical(other.name, name) || other.name == name) &&
-            (identical(other.startTime, startTime) ||
-                other.startTime == startTime) &&
-            (identical(other.url, url) || other.url == url) &&
-            (identical(other.rootUrl, rootUrl) || other.rootUrl == rootUrl) &&
-            (identical(other.endTime, endTime) || other.endTime == endTime) &&
-            (identical(other.hidden, hidden) || other.hidden == hidden) &&
-            (identical(other.skipped, skipped) || other.skipped == skipped) &&
+            const DeepCollectionEquality().equals(other.suiteId, suiteId) &&
+            const DeepCollectionEquality().equals(other.name, name) &&
+            const DeepCollectionEquality().equals(other.startTime, startTime) &&
+            const DeepCollectionEquality().equals(other.url, url) &&
+            const DeepCollectionEquality().equals(other.rootUrl, rootUrl) &&
+            const DeepCollectionEquality().equals(other.endTime, endTime) &&
+            const DeepCollectionEquality().equals(other.hidden, hidden) &&
+            const DeepCollectionEquality().equals(other.skipped, skipped) &&
             const DeepCollectionEquality().equals(other.problems, problems) &&
             const DeepCollectionEquality().equals(other.prints, prints));
   }
@@ -344,14 +343,14 @@ class _$_Test extends _Test {
   @override
   int get hashCode => Object.hash(
       runtimeType,
-      suiteId,
-      name,
-      startTime,
-      url,
-      rootUrl,
-      endTime,
-      hidden,
-      skipped,
+      const DeepCollectionEquality().hash(suiteId),
+      const DeepCollectionEquality().hash(name),
+      const DeepCollectionEquality().hash(startTime),
+      const DeepCollectionEquality().hash(url),
+      const DeepCollectionEquality().hash(rootUrl),
+      const DeepCollectionEquality().hash(endTime),
+      const DeepCollectionEquality().hash(hidden),
+      const DeepCollectionEquality().hash(skipped),
       const DeepCollectionEquality().hash(problems),
       const DeepCollectionEquality().hash(prints));
 

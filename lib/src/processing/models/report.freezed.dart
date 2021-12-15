@@ -133,13 +133,14 @@ class _$_Report implements _Report {
         (other.runtimeType == runtimeType &&
             other is _Report &&
             const DeepCollectionEquality().equals(other.suites, suites) &&
-            (identical(other.timestamp, timestamp) ||
-                other.timestamp == timestamp));
+            const DeepCollectionEquality().equals(other.timestamp, timestamp));
   }
 
   @override
   int get hashCode => Object.hash(
-      runtimeType, const DeepCollectionEquality().hash(suites), timestamp);
+      runtimeType,
+      const DeepCollectionEquality().hash(suites),
+      const DeepCollectionEquality().hash(timestamp));
 
   @JsonKey(ignore: true)
   @override
