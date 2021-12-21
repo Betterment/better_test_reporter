@@ -7,6 +7,7 @@ part 'suite.freezed.dart';
 @freezed
 class Suite with _$Suite {
   /// Factory constructor to create a Suite
+  // coverage:ignore-line
   factory Suite({
     /// Optional path to this suite's file
     String? path,

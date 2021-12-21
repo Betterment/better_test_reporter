@@ -7,6 +7,7 @@ part 'test.freezed.dart';
 @freezed
 class Test with _$Test {
   /// Factory constructor to create a Test
+  // coverage:ignore-line
   factory Test({
     /// The id of the suite to which this test belongs.
     required int suiteId,

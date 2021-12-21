@@ -1,3 +1,4 @@
+// coverage:ignore-file
 import 'package:better_test_reporter/src/processing/models/models.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 

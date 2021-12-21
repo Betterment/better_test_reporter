@@ -1,4 +1,5 @@
 // ignore_for_file: invalid_annotation_target
+// coverage:ignore-file
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'group.freezed.dart';
