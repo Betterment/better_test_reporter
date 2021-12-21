@@ -6,8 +6,9 @@ part 'test.freezed.dart';
 /// Describes a test
 @freezed
 class Test with _$Test {
+  // coverage:ignore-start
+
   /// Factory constructor to create a Test
-  // coverage:ignore-line
   factory Test({
     /// The id of the suite to which this test belongs.
     required int suiteId,
@@ -43,6 +44,8 @@ class Test with _$Test {
     /// A list of any messages emitted during this test.
     required List<String> prints,
   }) = _Test;
+
+  // coverage:ignore-end
 
   const Test._();
 

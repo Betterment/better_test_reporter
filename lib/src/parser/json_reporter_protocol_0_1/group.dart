@@ -1,5 +1,4 @@
 // ignore_for_file: invalid_annotation_target
-// coverage:ignore-file
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'group.freezed.dart';
@@ -8,6 +7,8 @@ part 'group.g.dart';
 /// Group model as defined by https://github.com/dart-lang/test/blob/master/pkgs/test/doc/json_reporter.md#group
 @freezed
 class Group with _$Group {
+  // coverage:ignore-start
+
   /// Factory constructor to create a Group
   factory Group({
     /// An opaque ID for this group.
@@ -34,6 +35,8 @@ class Group with _$Group {
     /// The URL for the file in which this group was defined, or `null`.
     String? url,
   }) = _Group;
+
+  // coverage:ignore-end
 
   /// Factory constructor to convert json into a Group model
   factory Group.fromJson(Map<String, dynamic> json) => _$GroupFromJson(json);
