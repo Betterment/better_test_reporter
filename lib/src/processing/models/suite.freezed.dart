@@ -152,14 +152,16 @@ class _$_Suite extends _Suite {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _Suite &&
-            (identical(other.path, path) || other.path == path) &&
-            (identical(other.platform, platform) ||
-                other.platform == platform) &&
+            const DeepCollectionEquality().equals(other.path, path) &&
+            const DeepCollectionEquality().equals(other.platform, platform) &&
             const DeepCollectionEquality().equals(other.allTests, allTests));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, path, platform,
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(path),
+      const DeepCollectionEquality().hash(platform),
       const DeepCollectionEquality().hash(allTests));
 
   @JsonKey(ignore: true)

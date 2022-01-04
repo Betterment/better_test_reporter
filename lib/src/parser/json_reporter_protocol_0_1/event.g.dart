@@ -11,6 +11,7 @@ _$_Start _$$_StartFromJson(Map<String, dynamic> json) => _$_Start(
       protocolVersion: json['protocolVersion'] as String,
       runnerVersion: json['runnerVersion'] as String?,
       pid: json['pid'] as int,
+      $type: json['type'] as String?,
     );
 
 Map<String, dynamic> _$$_StartToJson(_$_Start instance) => <String, dynamic>{
@@ -18,27 +19,32 @@ Map<String, dynamic> _$$_StartToJson(_$_Start instance) => <String, dynamic>{
       'protocolVersion': instance.protocolVersion,
       'runnerVersion': instance.runnerVersion,
       'pid': instance.pid,
+      'type': instance.$type,
     };
 
 _$_AllSuites _$$_AllSuitesFromJson(Map<String, dynamic> json) => _$_AllSuites(
       time: json['time'] as int,
       count: json['count'] as int,
+      $type: json['type'] as String?,
     );
 
 Map<String, dynamic> _$$_AllSuitesToJson(_$_AllSuites instance) =>
     <String, dynamic>{
       'time': instance.time,
       'count': instance.count,
+      'type': instance.$type,
     };
 
 _$_Suite _$$_SuiteFromJson(Map<String, dynamic> json) => _$_Suite(
       time: json['time'] as int,
       suite: Suite.fromJson(json['suite'] as Map<String, dynamic>),
+      $type: json['type'] as String?,
     );
 
 Map<String, dynamic> _$$_SuiteToJson(_$_Suite instance) => <String, dynamic>{
       'time': instance.time,
       'suite': instance.suite,
+      'type': instance.$type,
     };
 
 _$_Debug _$$_DebugFromJson(Map<String, dynamic> json) => _$_Debug(
@@ -46,6 +52,7 @@ _$_Debug _$$_DebugFromJson(Map<String, dynamic> json) => _$_Debug(
       suiteId: json['suiteID'] as int,
       observatory: json['observatory'] as String?,
       remoteDebugger: json['remoteDebugger'] as String?,
+      $type: json['type'] as String?,
     );
 
 Map<String, dynamic> _$$_DebugToJson(_$_Debug instance) => <String, dynamic>{
@@ -53,27 +60,32 @@ Map<String, dynamic> _$$_DebugToJson(_$_Debug instance) => <String, dynamic>{
       'suiteID': instance.suiteId,
       'observatory': instance.observatory,
       'remoteDebugger': instance.remoteDebugger,
+      'type': instance.$type,
     };
 
 _$_Group _$$_GroupFromJson(Map<String, dynamic> json) => _$_Group(
       time: json['time'] as int,
       group: Group.fromJson(json['group'] as Map<String, dynamic>),
+      $type: json['type'] as String?,
     );
 
 Map<String, dynamic> _$$_GroupToJson(_$_Group instance) => <String, dynamic>{
       'time': instance.time,
       'group': instance.group,
+      'type': instance.$type,
     };
 
 _$_TestStart _$$_TestStartFromJson(Map<String, dynamic> json) => _$_TestStart(
       time: json['time'] as int,
       test: Test.fromJson(json['test'] as Map<String, dynamic>),
+      $type: json['type'] as String?,
     );
 
 Map<String, dynamic> _$$_TestStartToJson(_$_TestStart instance) =>
     <String, dynamic>{
       'time': instance.time,
       'test': instance.test,
+      'type': instance.$type,
     };
 
 _$_Print _$$_PrintFromJson(Map<String, dynamic> json) => _$_Print(
@@ -81,6 +93,7 @@ _$_Print _$$_PrintFromJson(Map<String, dynamic> json) => _$_Print(
       testId: json['testID'] as int,
       messageType: json['messageType'] as String,
       message: json['message'] as String,
+      $type: json['type'] as String?,
     );
 
 Map<String, dynamic> _$$_PrintToJson(_$_Print instance) => <String, dynamic>{
@@ -88,6 +101,7 @@ Map<String, dynamic> _$$_PrintToJson(_$_Print instance) => <String, dynamic>{
       'testID': instance.testId,
       'messageType': instance.messageType,
       'message': instance.message,
+      'type': instance.$type,
     };
 
 _$_Error _$$_ErrorFromJson(Map<String, dynamic> json) => _$_Error(
@@ -96,6 +110,7 @@ _$_Error _$$_ErrorFromJson(Map<String, dynamic> json) => _$_Error(
       error: json['error'] as String,
       stacktrace: json['stackTrace'] as String,
       isFailure: json['isFailure'] as bool,
+      $type: json['type'] as String?,
     );
 
 Map<String, dynamic> _$$_ErrorToJson(_$_Error instance) => <String, dynamic>{
@@ -104,6 +119,7 @@ Map<String, dynamic> _$$_ErrorToJson(_$_Error instance) => <String, dynamic>{
       'error': instance.error,
       'stackTrace': instance.stacktrace,
       'isFailure': instance.isFailure,
+      'type': instance.$type,
     };
 
 _$_TestDone _$$_TestDoneFromJson(Map<String, dynamic> json) => _$_TestDone(
@@ -113,6 +129,7 @@ _$_TestDone _$$_TestDoneFromJson(Map<String, dynamic> json) => _$_TestDone(
       testId: json['testID'] as int,
       hidden: json['hidden'] as bool,
       skipped: json['skipped'] as bool,
+      $type: json['type'] as String?,
     );
 
 Map<String, dynamic> _$$_TestDoneToJson(_$_TestDone instance) =>
@@ -122,6 +139,7 @@ Map<String, dynamic> _$$_TestDoneToJson(_$_TestDone instance) =>
       'testID': instance.testId,
       'hidden': instance.hidden,
       'skipped': instance.skipped,
+      'type': instance.$type,
     };
 
 const _$TestResultEnumMap = {
@@ -134,18 +152,22 @@ const _$TestResultEnumMap = {
 _$_Done _$$_DoneFromJson(Map<String, dynamic> json) => _$_Done(
       time: json['time'] as int,
       success: json['success'] as bool?,
+      $type: json['type'] as String?,
     );
 
 Map<String, dynamic> _$$_DoneToJson(_$_Done instance) => <String, dynamic>{
       'time': instance.time,
       'success': instance.success,
+      'type': instance.$type,
     };
 
 _$_Unknown _$$_UnknownFromJson(Map<String, dynamic> json) => _$_Unknown(
       time: json['time'] as int,
+      $type: json['type'] as String?,
     );
 
 Map<String, dynamic> _$$_UnknownToJson(_$_Unknown instance) =>
     <String, dynamic>{
       'time': instance.time,
+      'type': instance.$type,
     };

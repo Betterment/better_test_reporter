@@ -349,33 +349,32 @@ class _$_Test implements _Test {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _Test &&
-            (identical(other.id, id) || other.id == id) &&
-            (identical(other.name, name) || other.name == name) &&
-            (identical(other.suiteId, suiteId) || other.suiteId == suiteId) &&
+            const DeepCollectionEquality().equals(other.id, id) &&
+            const DeepCollectionEquality().equals(other.name, name) &&
+            const DeepCollectionEquality().equals(other.suiteId, suiteId) &&
             const DeepCollectionEquality().equals(other.groupIds, groupIds) &&
-            (identical(other.line, line) || other.line == line) &&
-            (identical(other.column, column) || other.column == column) &&
-            (identical(other.url, url) || other.url == url) &&
-            (identical(other.rootLine, rootLine) ||
-                other.rootLine == rootLine) &&
-            (identical(other.rootColumn, rootColumn) ||
-                other.rootColumn == rootColumn) &&
-            (identical(other.rootUrl, rootUrl) || other.rootUrl == rootUrl));
+            const DeepCollectionEquality().equals(other.line, line) &&
+            const DeepCollectionEquality().equals(other.column, column) &&
+            const DeepCollectionEquality().equals(other.url, url) &&
+            const DeepCollectionEquality().equals(other.rootLine, rootLine) &&
+            const DeepCollectionEquality()
+                .equals(other.rootColumn, rootColumn) &&
+            const DeepCollectionEquality().equals(other.rootUrl, rootUrl));
   }
 
   @override
   int get hashCode => Object.hash(
       runtimeType,
-      id,
-      name,
-      suiteId,
+      const DeepCollectionEquality().hash(id),
+      const DeepCollectionEquality().hash(name),
+      const DeepCollectionEquality().hash(suiteId),
       const DeepCollectionEquality().hash(groupIds),
-      line,
-      column,
-      url,
-      rootLine,
-      rootColumn,
-      rootUrl);
+      const DeepCollectionEquality().hash(line),
+      const DeepCollectionEquality().hash(column),
+      const DeepCollectionEquality().hash(url),
+      const DeepCollectionEquality().hash(rootLine),
+      const DeepCollectionEquality().hash(rootColumn),
+      const DeepCollectionEquality().hash(rootUrl));
 
   @JsonKey(ignore: true)
   @override

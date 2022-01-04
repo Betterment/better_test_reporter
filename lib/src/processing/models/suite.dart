@@ -6,6 +6,8 @@ part 'suite.freezed.dart';
 /// Describes a suite of tests
 @freezed
 class Suite with _$Suite {
+  // coverage:ignore-start
+
   /// Factory constructor to create a Suite
   factory Suite({
     /// Optional path to this suite's file
@@ -17,6 +19,8 @@ class Suite with _$Suite {
     /// All Tests contained within this suite
     required List<Test> allTests,
   }) = _Suite;
+
+  // coverage:ignore-end
 
   const Suite._();
 

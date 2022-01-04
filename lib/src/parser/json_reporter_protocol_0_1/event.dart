@@ -11,6 +11,8 @@ part 'event.g.dart';
   fallbackUnion: 'unknown',
 )
 class Event with _$Event {
+  // coverage:ignore-start
+
   /// Factory constructor for [start event](https://github.com/dart-lang/test/blob/master/pkgs/test/doc/json_reporter.md#startevent)
   const factory Event.start({
     /// The time (in milliseconds) that has elapsed since the test runner started.
@@ -150,6 +152,8 @@ class Event with _$Event {
     /// The time (in milliseconds) that has elapsed since the test runner started.
     required int time,
   }) = _Unknown;
+
+  // coverage:ignore-end
 
   /// Factory constructor to convert test json report into an event model
   factory Event.fromJson(Map<String, dynamic> json) => _$EventFromJson(json);

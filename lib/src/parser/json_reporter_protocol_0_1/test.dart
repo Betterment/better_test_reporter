@@ -7,6 +7,8 @@ part 'test.g.dart';
 /// Test model as defined by https://github.com/dart-lang/test/blob/master/pkgs/test/doc/json_reporter.md#test
 @freezed
 class Test with _$Test {
+  // coverage:ignore-start
+
   /// Factory constructor to create a Test
   factory Test({
     /// An opaque ID for this test.
@@ -45,6 +47,8 @@ class Test with _$Test {
     /// Will only be present if different from `url`.
     @JsonKey(name: 'root_url') String? rootUrl,
   }) = _Test;
+
+  // coverage:ignore-end
 
   /// Factory constructor to convert json into a Test model
   factory Test.fromJson(Map<String, dynamic> json) => _$TestFromJson(json);

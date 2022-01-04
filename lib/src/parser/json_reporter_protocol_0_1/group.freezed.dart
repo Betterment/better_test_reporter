@@ -288,21 +288,27 @@ class _$_Group implements _Group {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _Group &&
-            (identical(other.id, id) || other.id == id) &&
-            (identical(other.name, name) || other.name == name) &&
-            (identical(other.suiteId, suiteId) || other.suiteId == suiteId) &&
-            (identical(other.parentId, parentId) ||
-                other.parentId == parentId) &&
-            (identical(other.testCount, testCount) ||
-                other.testCount == testCount) &&
-            (identical(other.line, line) || other.line == line) &&
-            (identical(other.column, column) || other.column == column) &&
-            (identical(other.url, url) || other.url == url));
+            const DeepCollectionEquality().equals(other.id, id) &&
+            const DeepCollectionEquality().equals(other.name, name) &&
+            const DeepCollectionEquality().equals(other.suiteId, suiteId) &&
+            const DeepCollectionEquality().equals(other.parentId, parentId) &&
+            const DeepCollectionEquality().equals(other.testCount, testCount) &&
+            const DeepCollectionEquality().equals(other.line, line) &&
+            const DeepCollectionEquality().equals(other.column, column) &&
+            const DeepCollectionEquality().equals(other.url, url));
   }
 
   @override
   int get hashCode => Object.hash(
-      runtimeType, id, name, suiteId, parentId, testCount, line, column, url);
+      runtimeType,
+      const DeepCollectionEquality().hash(id),
+      const DeepCollectionEquality().hash(name),
+      const DeepCollectionEquality().hash(suiteId),
+      const DeepCollectionEquality().hash(parentId),
+      const DeepCollectionEquality().hash(testCount),
+      const DeepCollectionEquality().hash(line),
+      const DeepCollectionEquality().hash(column),
+      const DeepCollectionEquality().hash(url));
 
   @JsonKey(ignore: true)
   @override
