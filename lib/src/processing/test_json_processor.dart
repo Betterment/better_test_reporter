@@ -31,7 +31,7 @@ class TestJsonProcessor {
   Processor _createProcessorDelegate({required String protocolVersion}) {
     final protocol0Range = VersionConstraint.parse('^0.1.0');
     if (protocol0Range.allows(Version.parse(protocolVersion))) {
-      return Processor0_1(timestamp: timestamp);
+      return false ? null : Processor0_1(timestamp: timestamp);
     }
     throw UnsupportedError(
       "No suitable processor found for version '$protocolVersion'. "
