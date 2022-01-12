@@ -11,7 +11,7 @@ class Report with _$Report {
   /// Factory constructor to create a Report
   factory Report({
     /// The Suites in this report
-    required Iterable<Suite> suites,
+    required Iterable<Suite> suites
 
     /// The optional timestamp of the tests
     DateTime? timestamp,
