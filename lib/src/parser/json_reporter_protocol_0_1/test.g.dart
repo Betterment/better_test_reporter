@@ -1,23 +1,39 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
+// ignore_for_file: non_constant_identifier_names
+
 part of 'test.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_Test _$$_TestFromJson(Map<String, dynamic> json) => _$_Test(
-      id: json['id'] as int,
-      name: json['name'] as String,
-      suiteId: json['suiteID'] as int,
-      groupIds:
-          (json['groupIDs'] as List<dynamic>).map((e) => e as int).toList(),
-      line: json['line'] as int?,
-      column: json['column'] as int?,
-      url: json['url'] as String?,
-      rootLine: json['root_line'] as int?,
-      rootColumn: json['root_column'] as int?,
-      rootUrl: json['root_url'] as String?,
+_$_Test _$$_TestFromJson(Map<String, dynamic> json) => $checkedCreate(
+      r'_$_Test',
+      json,
+      ($checkedConvert) {
+        final val = _$_Test(
+          id: $checkedConvert('id', (v) => v as int),
+          name: $checkedConvert('name', (v) => v as String),
+          suiteId: $checkedConvert('suiteID', (v) => v as int),
+          groupIds: $checkedConvert('groupIDs',
+              (v) => (v as List<dynamic>).map((e) => e as int).toList()),
+          line: $checkedConvert('line', (v) => v as int?),
+          column: $checkedConvert('column', (v) => v as int?),
+          url: $checkedConvert('url', (v) => v as String?),
+          rootLine: $checkedConvert('root_line', (v) => v as int?),
+          rootColumn: $checkedConvert('root_column', (v) => v as int?),
+          rootUrl: $checkedConvert('root_url', (v) => v as String?),
+        );
+        return val;
+      },
+      fieldKeyMap: const {
+        'suiteId': 'suiteID',
+        'groupIds': 'groupIDs',
+        'rootLine': 'root_line',
+        'rootColumn': 'root_column',
+        'rootUrl': 'root_url'
+      },
     );
 
 Map<String, dynamic> _$$_TestToJson(_$_Test instance) => <String, dynamic>{

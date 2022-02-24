@@ -1,0 +1,26 @@
+targets:
+  $default:
+    sources:
+      exclude:
+        - "bin/**"
+        - "test/**"
+    builders:
+      source_gen|combining_builder:
+        options:
+          ignore_for_file:
+          - non_constant_identifier_names
+      json_serializable:
+        options:
+          any_map: false
+          checked: true
+          create_factory: true
+          create_to_json: true
+          disallow_unrecognized_keys: false
+          explicit_to_json: true
+          ignore_unannotated: false
+          include_if_null: true
+        generate_for:
+          - "**/*.dart"
+      freezed:
+        generate_for:
+          - "**/*.dart"
