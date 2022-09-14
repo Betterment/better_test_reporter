@@ -12,40 +12,7 @@ part of 'test.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
-
-/// @nodoc
-class _$TestTearOff {
-  const _$TestTearOff();
-
-  _Test call(
-      {required int suiteId,
-      required String name,
-      required int startTime,
-      String? url,
-      String? rootUrl,
-      int endTime = -1,
-      bool hidden = false,
-      bool skipped = false,
-      required List<Problem> problems,
-      required List<String> prints}) {
-    return _Test(
-      suiteId: suiteId,
-      name: name,
-      startTime: startTime,
-      url: url,
-      rootUrl: rootUrl,
-      endTime: endTime,
-      hidden: hidden,
-      skipped: skipped,
-      problems: problems,
-      prints: prints,
-    );
-  }
-}
-
-/// @nodoc
-const $Test = _$TestTearOff();
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
 mixin _$Test {
@@ -171,9 +138,9 @@ class _$TestCopyWithImpl<$Res> implements $TestCopyWith<$Res> {
 }
 
 /// @nodoc
-abstract class _$TestCopyWith<$Res> implements $TestCopyWith<$Res> {
-  factory _$TestCopyWith(_Test value, $Res Function(_Test) then) =
-      __$TestCopyWithImpl<$Res>;
+abstract class _$$_TestCopyWith<$Res> implements $TestCopyWith<$Res> {
+  factory _$$_TestCopyWith(_$_Test value, $Res Function(_$_Test) then) =
+      __$$_TestCopyWithImpl<$Res>;
   @override
   $Res call(
       {int suiteId,
@@ -189,13 +156,13 @@ abstract class _$TestCopyWith<$Res> implements $TestCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$TestCopyWithImpl<$Res> extends _$TestCopyWithImpl<$Res>
-    implements _$TestCopyWith<$Res> {
-  __$TestCopyWithImpl(_Test _value, $Res Function(_Test) _then)
-      : super(_value, (v) => _then(v as _Test));
+class __$$_TestCopyWithImpl<$Res> extends _$TestCopyWithImpl<$Res>
+    implements _$$_TestCopyWith<$Res> {
+  __$$_TestCopyWithImpl(_$_Test _value, $Res Function(_$_Test) _then)
+      : super(_value, (v) => _then(v as _$_Test));
 
   @override
-  _Test get _value => super._value as _Test;
+  _$_Test get _value => super._value as _$_Test;
 
   @override
   $Res call({
@@ -210,7 +177,7 @@ class __$TestCopyWithImpl<$Res> extends _$TestCopyWithImpl<$Res>
     Object? problems = freezed,
     Object? prints = freezed,
   }) {
-    return _then(_Test(
+    return _then(_$_Test(
       suiteId: suiteId == freezed
           ? _value.suiteId
           : suiteId // ignore: cast_nullable_to_non_nullable
@@ -244,11 +211,11 @@ class __$TestCopyWithImpl<$Res> extends _$TestCopyWithImpl<$Res>
           : skipped // ignore: cast_nullable_to_non_nullable
               as bool,
       problems: problems == freezed
-          ? _value.problems
+          ? _value._problems
           : problems // ignore: cast_nullable_to_non_nullable
               as List<Problem>,
       prints: prints == freezed
-          ? _value.prints
+          ? _value._prints
           : prints // ignore: cast_nullable_to_non_nullable
               as List<String>,
     ));
@@ -267,57 +234,70 @@ class _$_Test extends _Test {
       this.endTime = -1,
       this.hidden = false,
       this.skipped = false,
-      required this.problems,
-      required this.prints})
-      : super._();
-
-  @override
+      required final List<Problem> problems,
+      required final List<String> prints})
+      : _problems = problems,
+        _prints = prints,
+        super._();
 
   /// The id of the suite to which this test belongs.
-  final int suiteId;
   @override
+  final int suiteId;
 
   /// The name of this test, including prefixes from any containing groups.
-  final String name;
   @override
+  final String name;
 
   /// The time (in milliseconds) that has elapsed between the test runner starting and this test starting.
-  final int startTime;
   @override
+  final int startTime;
 
   /// Optional URL for the file in which this test was defined
-  final String? url;
   @override
+  final String? url;
 
   /// Optional URL for the original test suite in which this test was defined
   ///
   /// Will only be present if different from `url`
-  final String? rootUrl;
-  @JsonKey()
   @override
+  final String? rootUrl;
 
   /// The time (in milliseconds) that has elapsed between the test runner starting and this test completing.
   ///
   /// This will be -1 if this test was not completed.
-  final int endTime;
-  @JsonKey()
   @override
+  @JsonKey()
+  final int endTime;
 
   /// Whether this test's result should be hidden.
-  final bool hidden;
-  @JsonKey()
   @override
+  @JsonKey()
+  final bool hidden;
 
   /// Whether this test (or some part of it) was skipped.
-  final bool skipped;
   @override
+  @JsonKey()
+  final bool skipped;
 
   /// A list of any problems that occured during this test.
-  final List<Problem> problems;
+  final List<Problem> _problems;
+
+  /// A list of any problems that occured during this test.
   @override
+  List<Problem> get problems {
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_problems);
+  }
 
   /// A list of any messages emitted during this test.
-  final List<String> prints;
+  final List<String> _prints;
+
+  /// A list of any messages emitted during this test.
+  @override
+  List<String> get prints {
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_prints);
+  }
 
   @override
   String toString() {
@@ -328,7 +308,7 @@ class _$_Test extends _Test {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _Test &&
+            other is _$_Test &&
             const DeepCollectionEquality().equals(other.suiteId, suiteId) &&
             const DeepCollectionEquality().equals(other.name, name) &&
             const DeepCollectionEquality().equals(other.startTime, startTime) &&
@@ -337,8 +317,8 @@ class _$_Test extends _Test {
             const DeepCollectionEquality().equals(other.endTime, endTime) &&
             const DeepCollectionEquality().equals(other.hidden, hidden) &&
             const DeepCollectionEquality().equals(other.skipped, skipped) &&
-            const DeepCollectionEquality().equals(other.problems, problems) &&
-            const DeepCollectionEquality().equals(other.prints, prints));
+            const DeepCollectionEquality().equals(other._problems, _problems) &&
+            const DeepCollectionEquality().equals(other._prints, _prints));
   }
 
   @override
@@ -352,27 +332,27 @@ class _$_Test extends _Test {
       const DeepCollectionEquality().hash(endTime),
       const DeepCollectionEquality().hash(hidden),
       const DeepCollectionEquality().hash(skipped),
-      const DeepCollectionEquality().hash(problems),
-      const DeepCollectionEquality().hash(prints));
+      const DeepCollectionEquality().hash(_problems),
+      const DeepCollectionEquality().hash(_prints));
 
   @JsonKey(ignore: true)
   @override
-  _$TestCopyWith<_Test> get copyWith =>
-      __$TestCopyWithImpl<_Test>(this, _$identity);
+  _$$_TestCopyWith<_$_Test> get copyWith =>
+      __$$_TestCopyWithImpl<_$_Test>(this, _$identity);
 }
 
 abstract class _Test extends Test {
   factory _Test(
-      {required int suiteId,
-      required String name,
-      required int startTime,
-      String? url,
-      String? rootUrl,
-      int endTime,
-      bool hidden,
-      bool skipped,
-      required List<Problem> problems,
-      required List<String> prints}) = _$_Test;
+      {required final int suiteId,
+      required final String name,
+      required final int startTime,
+      final String? url,
+      final String? rootUrl,
+      final int endTime,
+      final bool hidden,
+      final bool skipped,
+      required final List<Problem> problems,
+      required final List<String> prints}) = _$_Test;
   _Test._() : super._();
 
   @override
@@ -421,5 +401,5 @@ abstract class _Test extends Test {
   List<String> get prints;
   @override
   @JsonKey(ignore: true)
-  _$TestCopyWith<_Test> get copyWith => throw _privateConstructorUsedError;
+  _$$_TestCopyWith<_$_Test> get copyWith => throw _privateConstructorUsedError;
 }

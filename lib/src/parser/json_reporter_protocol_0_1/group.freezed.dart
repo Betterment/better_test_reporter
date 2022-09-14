@@ -12,44 +12,11 @@ part of 'group.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 Group _$GroupFromJson(Map<String, dynamic> json) {
   return _Group.fromJson(json);
 }
-
-/// @nodoc
-class _$GroupTearOff {
-  const _$GroupTearOff();
-
-  _Group call(
-      {required int id,
-      required String name,
-      @JsonKey(name: 'suiteID') required int suiteId,
-      @JsonKey(name: 'parentID') int? parentId,
-      required int testCount,
-      int? line,
-      int? column,
-      String? url}) {
-    return _Group(
-      id: id,
-      name: name,
-      suiteId: suiteId,
-      parentId: parentId,
-      testCount: testCount,
-      line: line,
-      column: column,
-      url: url,
-    );
-  }
-
-  Group fromJson(Map<String, Object?> json) {
-    return Group.fromJson(json);
-  }
-}
-
-/// @nodoc
-const $Group = _$GroupTearOff();
 
 /// @nodoc
 mixin _$Group {
@@ -156,9 +123,9 @@ class _$GroupCopyWithImpl<$Res> implements $GroupCopyWith<$Res> {
 }
 
 /// @nodoc
-abstract class _$GroupCopyWith<$Res> implements $GroupCopyWith<$Res> {
-  factory _$GroupCopyWith(_Group value, $Res Function(_Group) then) =
-      __$GroupCopyWithImpl<$Res>;
+abstract class _$$_GroupCopyWith<$Res> implements $GroupCopyWith<$Res> {
+  factory _$$_GroupCopyWith(_$_Group value, $Res Function(_$_Group) then) =
+      __$$_GroupCopyWithImpl<$Res>;
   @override
   $Res call(
       {int id,
@@ -172,13 +139,13 @@ abstract class _$GroupCopyWith<$Res> implements $GroupCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$GroupCopyWithImpl<$Res> extends _$GroupCopyWithImpl<$Res>
-    implements _$GroupCopyWith<$Res> {
-  __$GroupCopyWithImpl(_Group _value, $Res Function(_Group) _then)
-      : super(_value, (v) => _then(v as _Group));
+class __$$_GroupCopyWithImpl<$Res> extends _$GroupCopyWithImpl<$Res>
+    implements _$$_GroupCopyWith<$Res> {
+  __$$_GroupCopyWithImpl(_$_Group _value, $Res Function(_$_Group) _then)
+      : super(_value, (v) => _then(v as _$_Group));
 
   @override
-  _Group get _value => super._value as _Group;
+  _$_Group get _value => super._value as _$_Group;
 
   @override
   $Res call({
@@ -191,7 +158,7 @@ class __$GroupCopyWithImpl<$Res> extends _$GroupCopyWithImpl<$Res>
     Object? column = freezed,
     Object? url = freezed,
   }) {
-    return _then(_Group(
+    return _then(_$_Group(
       id: id == freezed
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -244,39 +211,38 @@ class _$_Group implements _Group {
   factory _$_Group.fromJson(Map<String, dynamic> json) =>
       _$$_GroupFromJson(json);
 
-  @override
-
   /// An opaque ID for this group.
-  final int id;
   @override
+  final int id;
 
   /// The name of this group, including prefixes from any containing groups.
-  final String name;
   @override
+  final String name;
 
   /// The ID of the suite containing this group.
+  @override
   @JsonKey(name: 'suiteID')
   final int suiteId;
-  @override
 
   /// The ID of this group's parent group, unless it's the root group.
+  @override
   @JsonKey(name: 'parentID')
   final int? parentId;
-  @override
 
   /// The number of tests (recursively) within this group.
-  final int testCount;
   @override
+  final int testCount;
 
   /// The (1-based) line on which this group was defined, or `null`.
-  final int? line;
   @override
+  final int? line;
 
   /// The (1-based) column on which this group was defined, or `null`.
-  final int? column;
   @override
+  final int? column;
 
   /// The URL for the file in which this group was defined, or `null`.
+  @override
   final String? url;
 
   @override
@@ -288,7 +254,7 @@ class _$_Group implements _Group {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _Group &&
+            other is _$_Group &&
             const DeepCollectionEquality().equals(other.id, id) &&
             const DeepCollectionEquality().equals(other.name, name) &&
             const DeepCollectionEquality().equals(other.suiteId, suiteId) &&
@@ -299,6 +265,7 @@ class _$_Group implements _Group {
             const DeepCollectionEquality().equals(other.url, url));
   }
 
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -313,25 +280,27 @@ class _$_Group implements _Group {
 
   @JsonKey(ignore: true)
   @override
-  _$GroupCopyWith<_Group> get copyWith =>
-      __$GroupCopyWithImpl<_Group>(this, _$identity);
+  _$$_GroupCopyWith<_$_Group> get copyWith =>
+      __$$_GroupCopyWithImpl<_$_Group>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_GroupToJson(this);
+    return _$$_GroupToJson(
+      this,
+    );
   }
 }
 
 abstract class _Group implements Group {
   factory _Group(
-      {required int id,
-      required String name,
-      @JsonKey(name: 'suiteID') required int suiteId,
-      @JsonKey(name: 'parentID') int? parentId,
-      required int testCount,
-      int? line,
-      int? column,
-      String? url}) = _$_Group;
+      {required final int id,
+      required final String name,
+      @JsonKey(name: 'suiteID') required final int suiteId,
+      @JsonKey(name: 'parentID') final int? parentId,
+      required final int testCount,
+      final int? line,
+      final int? column,
+      final String? url}) = _$_Group;
 
   factory _Group.fromJson(Map<String, dynamic> json) = _$_Group.fromJson;
 
@@ -371,5 +340,6 @@ abstract class _Group implements Group {
   String? get url;
   @override
   @JsonKey(ignore: true)
-  _$GroupCopyWith<_Group> get copyWith => throw _privateConstructorUsedError;
+  _$$_GroupCopyWith<_$_Group> get copyWith =>
+      throw _privateConstructorUsedError;
 }

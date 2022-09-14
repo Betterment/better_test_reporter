@@ -12,31 +12,11 @@ part of 'suite.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 Suite _$SuiteFromJson(Map<String, dynamic> json) {
   return _Suite.fromJson(json);
 }
-
-/// @nodoc
-class _$SuiteTearOff {
-  const _$SuiteTearOff();
-
-  _Suite call({required int id, required String platform, String? path}) {
-    return _Suite(
-      id: id,
-      platform: platform,
-      path: path,
-    );
-  }
-
-  Suite fromJson(Map<String, Object?> json) {
-    return Suite.fromJson(json);
-  }
-}
-
-/// @nodoc
-const $Suite = _$SuiteTearOff();
 
 /// @nodoc
 mixin _$Suite {
@@ -93,21 +73,21 @@ class _$SuiteCopyWithImpl<$Res> implements $SuiteCopyWith<$Res> {
 }
 
 /// @nodoc
-abstract class _$SuiteCopyWith<$Res> implements $SuiteCopyWith<$Res> {
-  factory _$SuiteCopyWith(_Suite value, $Res Function(_Suite) then) =
-      __$SuiteCopyWithImpl<$Res>;
+abstract class _$$_SuiteCopyWith<$Res> implements $SuiteCopyWith<$Res> {
+  factory _$$_SuiteCopyWith(_$_Suite value, $Res Function(_$_Suite) then) =
+      __$$_SuiteCopyWithImpl<$Res>;
   @override
   $Res call({int id, String platform, String? path});
 }
 
 /// @nodoc
-class __$SuiteCopyWithImpl<$Res> extends _$SuiteCopyWithImpl<$Res>
-    implements _$SuiteCopyWith<$Res> {
-  __$SuiteCopyWithImpl(_Suite _value, $Res Function(_Suite) _then)
-      : super(_value, (v) => _then(v as _Suite));
+class __$$_SuiteCopyWithImpl<$Res> extends _$SuiteCopyWithImpl<$Res>
+    implements _$$_SuiteCopyWith<$Res> {
+  __$$_SuiteCopyWithImpl(_$_Suite _value, $Res Function(_$_Suite) _then)
+      : super(_value, (v) => _then(v as _$_Suite));
 
   @override
-  _Suite get _value => super._value as _Suite;
+  _$_Suite get _value => super._value as _$_Suite;
 
   @override
   $Res call({
@@ -115,7 +95,7 @@ class __$SuiteCopyWithImpl<$Res> extends _$SuiteCopyWithImpl<$Res>
     Object? platform = freezed,
     Object? path = freezed,
   }) {
-    return _then(_Suite(
+    return _then(_$_Suite(
       id: id == freezed
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -140,17 +120,16 @@ class _$_Suite implements _Suite {
   factory _$_Suite.fromJson(Map<String, dynamic> json) =>
       _$$_SuiteFromJson(json);
 
-  @override
-
   /// An opaque ID for this suite.
-  final int id;
   @override
+  final int id;
 
   /// The platform on which this suite is running.
-  final String platform;
   @override
+  final String platform;
 
   /// The path to this suite's file, or `null` if that path is unknown.
+  @override
   final String? path;
 
   @override
@@ -162,12 +141,13 @@ class _$_Suite implements _Suite {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _Suite &&
+            other is _$_Suite &&
             const DeepCollectionEquality().equals(other.id, id) &&
             const DeepCollectionEquality().equals(other.platform, platform) &&
             const DeepCollectionEquality().equals(other.path, path));
   }
 
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -177,18 +157,22 @@ class _$_Suite implements _Suite {
 
   @JsonKey(ignore: true)
   @override
-  _$SuiteCopyWith<_Suite> get copyWith =>
-      __$SuiteCopyWithImpl<_Suite>(this, _$identity);
+  _$$_SuiteCopyWith<_$_Suite> get copyWith =>
+      __$$_SuiteCopyWithImpl<_$_Suite>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_SuiteToJson(this);
+    return _$$_SuiteToJson(
+      this,
+    );
   }
 }
 
 abstract class _Suite implements Suite {
-  factory _Suite({required int id, required String platform, String? path}) =
-      _$_Suite;
+  factory _Suite(
+      {required final int id,
+      required final String platform,
+      final String? path}) = _$_Suite;
 
   factory _Suite.fromJson(Map<String, dynamic> json) = _$_Suite.fromJson;
 
@@ -206,5 +190,6 @@ abstract class _Suite implements Suite {
   String? get path;
   @override
   @JsonKey(ignore: true)
-  _$SuiteCopyWith<_Suite> get copyWith => throw _privateConstructorUsedError;
+  _$$_SuiteCopyWith<_$_Suite> get copyWith =>
+      throw _privateConstructorUsedError;
 }
