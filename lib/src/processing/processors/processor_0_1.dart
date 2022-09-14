@@ -61,16 +61,15 @@ class Processor0_1 implements Processor {
           stacktrace,
           isFailure,
         ) {
-          tests[testId] = tests[testId]!.copyWith(
-            problems: tests[testId]!.problems
-              ..add(
-                Problem(
-                  message: error,
-                  stacktrace: stacktrace,
-                  isFailure: isFailure,
-                ),
+          final problems = List<Problem>.from(tests[testId]!.problems)
+            ..add(
+              Problem(
+                message: error,
+                stacktrace: stacktrace,
+                isFailure: isFailure,
               ),
-          );
+            );
+          tests[testId] = tests[testId]!.copyWith(problems: problems);
         },
         print: (
           time,
@@ -78,15 +77,16 @@ class Processor0_1 implements Processor {
           messageType,
           message,
         ) {
-          tests[testId] = tests[testId]!
-              .copyWith(prints: tests[testId]!.prints..add(message));
+          final prints = List<String>.from(tests[testId]!.prints)..add(message);
+          tests[testId] = tests[testId]!.copyWith(prints: prints);
         },
         orElse: () {},
       );
     }
     for (final test in tests.values) {
-      suites[test.suiteId] = suites[test.suiteId]!
-          .copyWith(allTests: suites[test.suiteId]!.allTests..add(test));
+      final allTests = List<Test>.from(suites[test.suiteId]!.allTests)
+        ..add(test);
+      suites[test.suiteId] = suites[test.suiteId]!.copyWith(allTests: allTests);
     }
     return Report(suites: suites.values, timestamp: timestamp);
   }

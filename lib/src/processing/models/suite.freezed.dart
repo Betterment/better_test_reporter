@@ -12,24 +12,7 @@ part of 'suite.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
-
-/// @nodoc
-class _$SuiteTearOff {
-  const _$SuiteTearOff();
-
-  _Suite call(
-      {String? path, required String platform, required List<Test> allTests}) {
-    return _Suite(
-      path: path,
-      platform: platform,
-      allTests: allTests,
-    );
-  }
-}
-
-/// @nodoc
-const $Suite = _$SuiteTearOff();
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
 mixin _$Suite {
@@ -85,21 +68,21 @@ class _$SuiteCopyWithImpl<$Res> implements $SuiteCopyWith<$Res> {
 }
 
 /// @nodoc
-abstract class _$SuiteCopyWith<$Res> implements $SuiteCopyWith<$Res> {
-  factory _$SuiteCopyWith(_Suite value, $Res Function(_Suite) then) =
-      __$SuiteCopyWithImpl<$Res>;
+abstract class _$$_SuiteCopyWith<$Res> implements $SuiteCopyWith<$Res> {
+  factory _$$_SuiteCopyWith(_$_Suite value, $Res Function(_$_Suite) then) =
+      __$$_SuiteCopyWithImpl<$Res>;
   @override
   $Res call({String? path, String platform, List<Test> allTests});
 }
 
 /// @nodoc
-class __$SuiteCopyWithImpl<$Res> extends _$SuiteCopyWithImpl<$Res>
-    implements _$SuiteCopyWith<$Res> {
-  __$SuiteCopyWithImpl(_Suite _value, $Res Function(_Suite) _then)
-      : super(_value, (v) => _then(v as _Suite));
+class __$$_SuiteCopyWithImpl<$Res> extends _$SuiteCopyWithImpl<$Res>
+    implements _$$_SuiteCopyWith<$Res> {
+  __$$_SuiteCopyWithImpl(_$_Suite _value, $Res Function(_$_Suite) _then)
+      : super(_value, (v) => _then(v as _$_Suite));
 
   @override
-  _Suite get _value => super._value as _Suite;
+  _$_Suite get _value => super._value as _$_Suite;
 
   @override
   $Res call({
@@ -107,7 +90,7 @@ class __$SuiteCopyWithImpl<$Res> extends _$SuiteCopyWithImpl<$Res>
     Object? platform = freezed,
     Object? allTests = freezed,
   }) {
-    return _then(_Suite(
+    return _then(_$_Suite(
       path: path == freezed
           ? _value.path
           : path // ignore: cast_nullable_to_non_nullable
@@ -117,7 +100,7 @@ class __$SuiteCopyWithImpl<$Res> extends _$SuiteCopyWithImpl<$Res>
           : platform // ignore: cast_nullable_to_non_nullable
               as String,
       allTests: allTests == freezed
-          ? _value.allTests
+          ? _value._allTests
           : allTests // ignore: cast_nullable_to_non_nullable
               as List<Test>,
     ));
@@ -127,21 +110,28 @@ class __$SuiteCopyWithImpl<$Res> extends _$SuiteCopyWithImpl<$Res>
 /// @nodoc
 
 class _$_Suite extends _Suite {
-  _$_Suite({this.path, required this.platform, required this.allTests})
-      : super._();
-
-  @override
+  _$_Suite(
+      {this.path, required this.platform, required final List<Test> allTests})
+      : _allTests = allTests,
+        super._();
 
   /// Optional path to this suite's file
-  final String? path;
   @override
+  final String? path;
 
   /// Platform on which this suite is running
-  final String platform;
   @override
+  final String platform;
 
   /// All Tests contained within this suite
-  final List<Test> allTests;
+  final List<Test> _allTests;
+
+  /// All Tests contained within this suite
+  @override
+  List<Test> get allTests {
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_allTests);
+  }
 
   @override
   String toString() {
@@ -152,10 +142,10 @@ class _$_Suite extends _Suite {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _Suite &&
+            other is _$_Suite &&
             const DeepCollectionEquality().equals(other.path, path) &&
             const DeepCollectionEquality().equals(other.platform, platform) &&
-            const DeepCollectionEquality().equals(other.allTests, allTests));
+            const DeepCollectionEquality().equals(other._allTests, _allTests));
   }
 
   @override
@@ -163,19 +153,19 @@ class _$_Suite extends _Suite {
       runtimeType,
       const DeepCollectionEquality().hash(path),
       const DeepCollectionEquality().hash(platform),
-      const DeepCollectionEquality().hash(allTests));
+      const DeepCollectionEquality().hash(_allTests));
 
   @JsonKey(ignore: true)
   @override
-  _$SuiteCopyWith<_Suite> get copyWith =>
-      __$SuiteCopyWithImpl<_Suite>(this, _$identity);
+  _$$_SuiteCopyWith<_$_Suite> get copyWith =>
+      __$$_SuiteCopyWithImpl<_$_Suite>(this, _$identity);
 }
 
 abstract class _Suite extends Suite {
   factory _Suite(
-      {String? path,
-      required String platform,
-      required List<Test> allTests}) = _$_Suite;
+      {final String? path,
+      required final String platform,
+      required final List<Test> allTests}) = _$_Suite;
   _Suite._() : super._();
 
   @override
@@ -192,5 +182,6 @@ abstract class _Suite extends Suite {
   List<Test> get allTests;
   @override
   @JsonKey(ignore: true)
-  _$SuiteCopyWith<_Suite> get copyWith => throw _privateConstructorUsedError;
+  _$$_SuiteCopyWith<_$_Suite> get copyWith =>
+      throw _privateConstructorUsedError;
 }

@@ -12,22 +12,7 @@ part of 'report.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
-
-/// @nodoc
-class _$ReportTearOff {
-  const _$ReportTearOff();
-
-  _Report call({required Iterable<Suite> suites, DateTime? timestamp}) {
-    return _Report(
-      suites: suites,
-      timestamp: timestamp,
-    );
-  }
-}
-
-/// @nodoc
-const $Report = _$ReportTearOff();
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
 mixin _$Report {
@@ -75,28 +60,28 @@ class _$ReportCopyWithImpl<$Res> implements $ReportCopyWith<$Res> {
 }
 
 /// @nodoc
-abstract class _$ReportCopyWith<$Res> implements $ReportCopyWith<$Res> {
-  factory _$ReportCopyWith(_Report value, $Res Function(_Report) then) =
-      __$ReportCopyWithImpl<$Res>;
+abstract class _$$_ReportCopyWith<$Res> implements $ReportCopyWith<$Res> {
+  factory _$$_ReportCopyWith(_$_Report value, $Res Function(_$_Report) then) =
+      __$$_ReportCopyWithImpl<$Res>;
   @override
   $Res call({Iterable<Suite> suites, DateTime? timestamp});
 }
 
 /// @nodoc
-class __$ReportCopyWithImpl<$Res> extends _$ReportCopyWithImpl<$Res>
-    implements _$ReportCopyWith<$Res> {
-  __$ReportCopyWithImpl(_Report _value, $Res Function(_Report) _then)
-      : super(_value, (v) => _then(v as _Report));
+class __$$_ReportCopyWithImpl<$Res> extends _$ReportCopyWithImpl<$Res>
+    implements _$$_ReportCopyWith<$Res> {
+  __$$_ReportCopyWithImpl(_$_Report _value, $Res Function(_$_Report) _then)
+      : super(_value, (v) => _then(v as _$_Report));
 
   @override
-  _Report get _value => super._value as _Report;
+  _$_Report get _value => super._value as _$_Report;
 
   @override
   $Res call({
     Object? suites = freezed,
     Object? timestamp = freezed,
   }) {
-    return _then(_Report(
+    return _then(_$_Report(
       suites: suites == freezed
           ? _value.suites
           : suites // ignore: cast_nullable_to_non_nullable
@@ -114,13 +99,12 @@ class __$ReportCopyWithImpl<$Res> extends _$ReportCopyWithImpl<$Res>
 class _$_Report implements _Report {
   _$_Report({required this.suites, this.timestamp});
 
-  @override
-
   /// The Suites in this report
-  final Iterable<Suite> suites;
   @override
+  final Iterable<Suite> suites;
 
   /// The optional timestamp of the tests
+  @override
   final DateTime? timestamp;
 
   @override
@@ -132,7 +116,7 @@ class _$_Report implements _Report {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _Report &&
+            other is _$_Report &&
             const DeepCollectionEquality().equals(other.suites, suites) &&
             const DeepCollectionEquality().equals(other.timestamp, timestamp));
   }
@@ -145,13 +129,14 @@ class _$_Report implements _Report {
 
   @JsonKey(ignore: true)
   @override
-  _$ReportCopyWith<_Report> get copyWith =>
-      __$ReportCopyWithImpl<_Report>(this, _$identity);
+  _$$_ReportCopyWith<_$_Report> get copyWith =>
+      __$$_ReportCopyWithImpl<_$_Report>(this, _$identity);
 }
 
 abstract class _Report implements Report {
-  factory _Report({required Iterable<Suite> suites, DateTime? timestamp}) =
-      _$_Report;
+  factory _Report(
+      {required final Iterable<Suite> suites,
+      final DateTime? timestamp}) = _$_Report;
 
   @override
 
@@ -163,5 +148,6 @@ abstract class _Report implements Report {
   DateTime? get timestamp;
   @override
   @JsonKey(ignore: true)
-  _$ReportCopyWith<_Report> get copyWith => throw _privateConstructorUsedError;
+  _$$_ReportCopyWith<_$_Report> get copyWith =>
+      throw _privateConstructorUsedError;
 }

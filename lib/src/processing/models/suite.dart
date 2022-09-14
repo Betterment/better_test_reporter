@@ -25,7 +25,7 @@ class Suite with _$Suite {
   const Suite._();
 
   /// All non-hidden Tests
-  List<Test> get tests => allTests.whereNot((test) => test.hidden).toList();
+  List<Test> get tests => allTests.where((test) => !test.hidden).toList();
 
   /// All non-hidden skipped Tests
   List<Test> get skipped =>

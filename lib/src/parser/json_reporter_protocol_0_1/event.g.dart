@@ -220,7 +220,7 @@ _$_TestDone _$$_TestDoneFromJson(Map<String, dynamic> json) => $checkedCreate(
 Map<String, dynamic> _$$_TestDoneToJson(_$_TestDone instance) =>
     <String, dynamic>{
       'time': instance.time,
-      'result': _$TestResultEnumMap[instance.result],
+      'result': _$TestResultEnumMap[instance.result]!,
       'testID': instance.testId,
       'hidden': instance.hidden,
       'skipped': instance.skipped,

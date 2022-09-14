@@ -12,7 +12,7 @@ part of 'event.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 Event _$EventFromJson(Map<String, dynamic> json) {
   switch (json['type']) {
@@ -43,132 +43,9 @@ Event _$EventFromJson(Map<String, dynamic> json) {
 }
 
 /// @nodoc
-class _$EventTearOff {
-  const _$EventTearOff();
-
-  _Start start(
-      {required int time,
-      required String protocolVersion,
-      String? runnerVersion,
-      required int pid}) {
-    return _Start(
-      time: time,
-      protocolVersion: protocolVersion,
-      runnerVersion: runnerVersion,
-      pid: pid,
-    );
-  }
-
-  _AllSuites allSuites({required int time, required int count}) {
-    return _AllSuites(
-      time: time,
-      count: count,
-    );
-  }
-
-  _Suite suite({required int time, required Suite suite}) {
-    return _Suite(
-      time: time,
-      suite: suite,
-    );
-  }
-
-  _Debug debug(
-      {required int time,
-      @JsonKey(name: 'suiteID') required int suiteId,
-      String? observatory,
-      String? remoteDebugger}) {
-    return _Debug(
-      time: time,
-      suiteId: suiteId,
-      observatory: observatory,
-      remoteDebugger: remoteDebugger,
-    );
-  }
-
-  _Group group({required int time, required Group group}) {
-    return _Group(
-      time: time,
-      group: group,
-    );
-  }
-
-  _TestStart testStart({required int time, required Test test}) {
-    return _TestStart(
-      time: time,
-      test: test,
-    );
-  }
-
-  _Print print(
-      {required int time,
-      @JsonKey(name: 'testID') required int testId,
-      required String messageType,
-      required String message}) {
-    return _Print(
-      time: time,
-      testId: testId,
-      messageType: messageType,
-      message: message,
-    );
-  }
-
-  _Error error(
-      {required int time,
-      @JsonKey(name: 'testID') required int testId,
-      required String error,
-      @JsonKey(name: 'stackTrace') required String stacktrace,
-      required bool isFailure}) {
-    return _Error(
-      time: time,
-      testId: testId,
-      error: error,
-      stacktrace: stacktrace,
-      isFailure: isFailure,
-    );
-  }
-
-  _TestDone testDone(
-      {required int time,
-      @JsonKey(unknownEnumValue: TestResult.unknown) required TestResult result,
-      @JsonKey(name: 'testID') required int testId,
-      required bool hidden,
-      required bool skipped}) {
-    return _TestDone(
-      time: time,
-      result: result,
-      testId: testId,
-      hidden: hidden,
-      skipped: skipped,
-    );
-  }
-
-  _Done done({required int time, bool? success}) {
-    return _Done(
-      time: time,
-      success: success,
-    );
-  }
-
-  _Unknown unknown({required int time}) {
-    return _Unknown(
-      time: time,
-    );
-  }
-
-  Event fromJson(Map<String, Object?> json) {
-    return Event.fromJson(json);
-  }
-}
-
-/// @nodoc
-const $Event = _$EventTearOff();
-
-/// @nodoc
 mixin _$Event {
   /// The time (in milliseconds) that has elapsed since the test runner started.
   int get time => throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(
@@ -349,21 +226,21 @@ class _$EventCopyWithImpl<$Res> implements $EventCopyWith<$Res> {
 }
 
 /// @nodoc
-abstract class _$StartCopyWith<$Res> implements $EventCopyWith<$Res> {
-  factory _$StartCopyWith(_Start value, $Res Function(_Start) then) =
-      __$StartCopyWithImpl<$Res>;
+abstract class _$$_StartCopyWith<$Res> implements $EventCopyWith<$Res> {
+  factory _$$_StartCopyWith(_$_Start value, $Res Function(_$_Start) then) =
+      __$$_StartCopyWithImpl<$Res>;
   @override
   $Res call({int time, String protocolVersion, String? runnerVersion, int pid});
 }
 
 /// @nodoc
-class __$StartCopyWithImpl<$Res> extends _$EventCopyWithImpl<$Res>
-    implements _$StartCopyWith<$Res> {
-  __$StartCopyWithImpl(_Start _value, $Res Function(_Start) _then)
-      : super(_value, (v) => _then(v as _Start));
+class __$$_StartCopyWithImpl<$Res> extends _$EventCopyWithImpl<$Res>
+    implements _$$_StartCopyWith<$Res> {
+  __$$_StartCopyWithImpl(_$_Start _value, $Res Function(_$_Start) _then)
+      : super(_value, (v) => _then(v as _$_Start));
 
   @override
-  _Start get _value => super._value as _Start;
+  _$_Start get _value => super._value as _$_Start;
 
   @override
   $Res call({
@@ -372,7 +249,7 @@ class __$StartCopyWithImpl<$Res> extends _$EventCopyWithImpl<$Res>
     Object? runnerVersion = freezed,
     Object? pid = freezed,
   }) {
-    return _then(_Start(
+    return _then(_$_Start(
       time: time == freezed
           ? _value.time
           : time // ignore: cast_nullable_to_non_nullable
@@ -401,32 +278,31 @@ class _$_Start implements _Start {
       required this.protocolVersion,
       this.runnerVersion,
       required this.pid,
-      String? $type})
+      final String? $type})
       : $type = $type ?? 'start';
 
   factory _$_Start.fromJson(Map<String, dynamic> json) =>
       _$$_StartFromJson(json);
 
-  @override
-
   /// The time (in milliseconds) that has elapsed since the test runner started.
-  final int time;
   @override
+  final int time;
 
   /// The version of the JSON reporter protocol being used.
   ///
   /// This is a semantic version, but it reflects only the version of the
   /// protocol—it's not identical to the version of the test runner itself.
-  final String protocolVersion;
   @override
+  final String protocolVersion;
 
   /// The version of the test runner being used.
   ///
   /// This is null if for some reason the version couldn't be loaded.
-  final String? runnerVersion;
   @override
+  final String? runnerVersion;
 
   /// The pid of the VM process running the tests.
+  @override
   final int pid;
 
   @JsonKey(name: 'type')
@@ -441,7 +317,7 @@ class _$_Start implements _Start {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _Start &&
+            other is _$_Start &&
             const DeepCollectionEquality().equals(other.time, time) &&
             const DeepCollectionEquality()
                 .equals(other.protocolVersion, protocolVersion) &&
@@ -450,6 +326,7 @@ class _$_Start implements _Start {
             const DeepCollectionEquality().equals(other.pid, pid));
   }
 
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -460,8 +337,8 @@ class _$_Start implements _Start {
 
   @JsonKey(ignore: true)
   @override
-  _$StartCopyWith<_Start> get copyWith =>
-      __$StartCopyWithImpl<_Start>(this, _$identity);
+  _$$_StartCopyWith<_$_Start> get copyWith =>
+      __$$_StartCopyWithImpl<_$_Start>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -635,16 +512,18 @@ class _$_Start implements _Start {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_StartToJson(this);
+    return _$$_StartToJson(
+      this,
+    );
   }
 }
 
 abstract class _Start implements Event {
   const factory _Start(
-      {required int time,
-      required String protocolVersion,
-      String? runnerVersion,
-      required int pid}) = _$_Start;
+      {required final int time,
+      required final String protocolVersion,
+      final String? runnerVersion,
+      required final int pid}) = _$_Start;
 
   factory _Start.fromJson(Map<String, dynamic> json) = _$_Start.fromJson;
 
@@ -668,33 +547,35 @@ abstract class _Start implements Event {
   int get pid;
   @override
   @JsonKey(ignore: true)
-  _$StartCopyWith<_Start> get copyWith => throw _privateConstructorUsedError;
+  _$$_StartCopyWith<_$_Start> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$AllSuitesCopyWith<$Res> implements $EventCopyWith<$Res> {
-  factory _$AllSuitesCopyWith(
-          _AllSuites value, $Res Function(_AllSuites) then) =
-      __$AllSuitesCopyWithImpl<$Res>;
+abstract class _$$_AllSuitesCopyWith<$Res> implements $EventCopyWith<$Res> {
+  factory _$$_AllSuitesCopyWith(
+          _$_AllSuites value, $Res Function(_$_AllSuites) then) =
+      __$$_AllSuitesCopyWithImpl<$Res>;
   @override
   $Res call({int time, int count});
 }
 
 /// @nodoc
-class __$AllSuitesCopyWithImpl<$Res> extends _$EventCopyWithImpl<$Res>
-    implements _$AllSuitesCopyWith<$Res> {
-  __$AllSuitesCopyWithImpl(_AllSuites _value, $Res Function(_AllSuites) _then)
-      : super(_value, (v) => _then(v as _AllSuites));
+class __$$_AllSuitesCopyWithImpl<$Res> extends _$EventCopyWithImpl<$Res>
+    implements _$$_AllSuitesCopyWith<$Res> {
+  __$$_AllSuitesCopyWithImpl(
+      _$_AllSuites _value, $Res Function(_$_AllSuites) _then)
+      : super(_value, (v) => _then(v as _$_AllSuites));
 
   @override
-  _AllSuites get _value => super._value as _AllSuites;
+  _$_AllSuites get _value => super._value as _$_AllSuites;
 
   @override
   $Res call({
     Object? time = freezed,
     Object? count = freezed,
   }) {
-    return _then(_AllSuites(
+    return _then(_$_AllSuites(
       time: time == freezed
           ? _value.time
           : time // ignore: cast_nullable_to_non_nullable
@@ -710,19 +591,19 @@ class __$AllSuitesCopyWithImpl<$Res> extends _$EventCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$_AllSuites implements _AllSuites {
-  const _$_AllSuites({required this.time, required this.count, String? $type})
+  const _$_AllSuites(
+      {required this.time, required this.count, final String? $type})
       : $type = $type ?? 'allSuites';
 
   factory _$_AllSuites.fromJson(Map<String, dynamic> json) =>
       _$$_AllSuitesFromJson(json);
 
-  @override
-
   /// The time (in milliseconds) that has elapsed since the test runner started.
-  final int time;
   @override
+  final int time;
 
   /// The total number of suites that will be loaded.
+  @override
   final int count;
 
   @JsonKey(name: 'type')
@@ -737,11 +618,12 @@ class _$_AllSuites implements _AllSuites {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _AllSuites &&
+            other is _$_AllSuites &&
             const DeepCollectionEquality().equals(other.time, time) &&
             const DeepCollectionEquality().equals(other.count, count));
   }
 
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -750,8 +632,8 @@ class _$_AllSuites implements _AllSuites {
 
   @JsonKey(ignore: true)
   @override
-  _$AllSuitesCopyWith<_AllSuites> get copyWith =>
-      __$AllSuitesCopyWithImpl<_AllSuites>(this, _$identity);
+  _$$_AllSuitesCopyWith<_$_AllSuites> get copyWith =>
+      __$$_AllSuitesCopyWithImpl<_$_AllSuites>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -925,13 +807,15 @@ class _$_AllSuites implements _AllSuites {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_AllSuitesToJson(this);
+    return _$$_AllSuitesToJson(
+      this,
+    );
   }
 }
 
 abstract class _AllSuites implements Event {
-  const factory _AllSuites({required int time, required int count}) =
-      _$_AllSuites;
+  const factory _AllSuites(
+      {required final int time, required final int count}) = _$_AllSuites;
 
   factory _AllSuites.fromJson(Map<String, dynamic> json) =
       _$_AllSuites.fromJson;
@@ -945,14 +829,14 @@ abstract class _AllSuites implements Event {
   int get count;
   @override
   @JsonKey(ignore: true)
-  _$AllSuitesCopyWith<_AllSuites> get copyWith =>
+  _$$_AllSuitesCopyWith<_$_AllSuites> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$SuiteCopyWith<$Res> implements $EventCopyWith<$Res> {
-  factory _$SuiteCopyWith(_Suite value, $Res Function(_Suite) then) =
-      __$SuiteCopyWithImpl<$Res>;
+abstract class _$$_SuiteCopyWith<$Res> implements $EventCopyWith<$Res> {
+  factory _$$_SuiteCopyWith(_$_Suite value, $Res Function(_$_Suite) then) =
+      __$$_SuiteCopyWithImpl<$Res>;
   @override
   $Res call({int time, Suite suite});
 
@@ -960,20 +844,20 @@ abstract class _$SuiteCopyWith<$Res> implements $EventCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$SuiteCopyWithImpl<$Res> extends _$EventCopyWithImpl<$Res>
-    implements _$SuiteCopyWith<$Res> {
-  __$SuiteCopyWithImpl(_Suite _value, $Res Function(_Suite) _then)
-      : super(_value, (v) => _then(v as _Suite));
+class __$$_SuiteCopyWithImpl<$Res> extends _$EventCopyWithImpl<$Res>
+    implements _$$_SuiteCopyWith<$Res> {
+  __$$_SuiteCopyWithImpl(_$_Suite _value, $Res Function(_$_Suite) _then)
+      : super(_value, (v) => _then(v as _$_Suite));
 
   @override
-  _Suite get _value => super._value as _Suite;
+  _$_Suite get _value => super._value as _$_Suite;
 
   @override
   $Res call({
     Object? time = freezed,
     Object? suite = freezed,
   }) {
-    return _then(_Suite(
+    return _then(_$_Suite(
       time: time == freezed
           ? _value.time
           : time // ignore: cast_nullable_to_non_nullable
@@ -996,19 +880,18 @@ class __$SuiteCopyWithImpl<$Res> extends _$EventCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$_Suite implements _Suite {
-  const _$_Suite({required this.time, required this.suite, String? $type})
+  const _$_Suite({required this.time, required this.suite, final String? $type})
       : $type = $type ?? 'suite';
 
   factory _$_Suite.fromJson(Map<String, dynamic> json) =>
       _$$_SuiteFromJson(json);
 
-  @override
-
   /// The time (in milliseconds) that has elapsed since the test runner started.
-  final int time;
   @override
+  final int time;
 
   /// Metadata about the Suite.
+  @override
   final Suite suite;
 
   @JsonKey(name: 'type')
@@ -1023,11 +906,12 @@ class _$_Suite implements _Suite {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _Suite &&
+            other is _$_Suite &&
             const DeepCollectionEquality().equals(other.time, time) &&
             const DeepCollectionEquality().equals(other.suite, suite));
   }
 
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -1036,8 +920,8 @@ class _$_Suite implements _Suite {
 
   @JsonKey(ignore: true)
   @override
-  _$SuiteCopyWith<_Suite> get copyWith =>
-      __$SuiteCopyWithImpl<_Suite>(this, _$identity);
+  _$$_SuiteCopyWith<_$_Suite> get copyWith =>
+      __$$_SuiteCopyWithImpl<_$_Suite>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -1211,12 +1095,15 @@ class _$_Suite implements _Suite {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_SuiteToJson(this);
+    return _$$_SuiteToJson(
+      this,
+    );
   }
 }
 
 abstract class _Suite implements Event {
-  const factory _Suite({required int time, required Suite suite}) = _$_Suite;
+  const factory _Suite({required final int time, required final Suite suite}) =
+      _$_Suite;
 
   factory _Suite.fromJson(Map<String, dynamic> json) = _$_Suite.fromJson;
 
@@ -1229,13 +1116,14 @@ abstract class _Suite implements Event {
   Suite get suite;
   @override
   @JsonKey(ignore: true)
-  _$SuiteCopyWith<_Suite> get copyWith => throw _privateConstructorUsedError;
+  _$$_SuiteCopyWith<_$_Suite> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$DebugCopyWith<$Res> implements $EventCopyWith<$Res> {
-  factory _$DebugCopyWith(_Debug value, $Res Function(_Debug) then) =
-      __$DebugCopyWithImpl<$Res>;
+abstract class _$$_DebugCopyWith<$Res> implements $EventCopyWith<$Res> {
+  factory _$$_DebugCopyWith(_$_Debug value, $Res Function(_$_Debug) then) =
+      __$$_DebugCopyWithImpl<$Res>;
   @override
   $Res call(
       {int time,
@@ -1245,13 +1133,13 @@ abstract class _$DebugCopyWith<$Res> implements $EventCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$DebugCopyWithImpl<$Res> extends _$EventCopyWithImpl<$Res>
-    implements _$DebugCopyWith<$Res> {
-  __$DebugCopyWithImpl(_Debug _value, $Res Function(_Debug) _then)
-      : super(_value, (v) => _then(v as _Debug));
+class __$$_DebugCopyWithImpl<$Res> extends _$EventCopyWithImpl<$Res>
+    implements _$$_DebugCopyWith<$Res> {
+  __$$_DebugCopyWithImpl(_$_Debug _value, $Res Function(_$_Debug) _then)
+      : super(_value, (v) => _then(v as _$_Debug));
 
   @override
-  _Debug get _value => super._value as _Debug;
+  _$_Debug get _value => super._value as _$_Debug;
 
   @override
   $Res call({
@@ -1260,7 +1148,7 @@ class __$DebugCopyWithImpl<$Res> extends _$EventCopyWithImpl<$Res>
     Object? observatory = freezed,
     Object? remoteDebugger = freezed,
   }) {
-    return _then(_Debug(
+    return _then(_$_Debug(
       time: time == freezed
           ? _value.time
           : time // ignore: cast_nullable_to_non_nullable
@@ -1289,28 +1177,27 @@ class _$_Debug implements _Debug {
       @JsonKey(name: 'suiteID') required this.suiteId,
       this.observatory,
       this.remoteDebugger,
-      String? $type})
+      final String? $type})
       : $type = $type ?? 'debug';
 
   factory _$_Debug.fromJson(Map<String, dynamic> json) =>
       _$$_DebugFromJson(json);
 
-  @override
-
   /// The time (in milliseconds) that has elapsed since the test runner started.
-  final int time;
   @override
+  final int time;
 
   /// The suite for which debug information is reported.
+  @override
   @JsonKey(name: 'suiteID')
   final int suiteId;
-  @override
 
   /// The HTTP URL for the Dart Observatory, or `null` if the Observatory isn't available for this suite.
-  final String? observatory;
   @override
+  final String? observatory;
 
   /// The HTTP URL for the remote debugger for this suite's host page, or `null` if no remote debugger is available for this suite.
+  @override
   final String? remoteDebugger;
 
   @JsonKey(name: 'type')
@@ -1325,7 +1212,7 @@ class _$_Debug implements _Debug {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _Debug &&
+            other is _$_Debug &&
             const DeepCollectionEquality().equals(other.time, time) &&
             const DeepCollectionEquality().equals(other.suiteId, suiteId) &&
             const DeepCollectionEquality()
@@ -1334,6 +1221,7 @@ class _$_Debug implements _Debug {
                 .equals(other.remoteDebugger, remoteDebugger));
   }
 
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -1344,8 +1232,8 @@ class _$_Debug implements _Debug {
 
   @JsonKey(ignore: true)
   @override
-  _$DebugCopyWith<_Debug> get copyWith =>
-      __$DebugCopyWithImpl<_Debug>(this, _$identity);
+  _$$_DebugCopyWith<_$_Debug> get copyWith =>
+      __$$_DebugCopyWithImpl<_$_Debug>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -1519,16 +1407,18 @@ class _$_Debug implements _Debug {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_DebugToJson(this);
+    return _$$_DebugToJson(
+      this,
+    );
   }
 }
 
 abstract class _Debug implements Event {
   const factory _Debug(
-      {required int time,
-      @JsonKey(name: 'suiteID') required int suiteId,
-      String? observatory,
-      String? remoteDebugger}) = _$_Debug;
+      {required final int time,
+      @JsonKey(name: 'suiteID') required final int suiteId,
+      final String? observatory,
+      final String? remoteDebugger}) = _$_Debug;
 
   factory _Debug.fromJson(Map<String, dynamic> json) = _$_Debug.fromJson;
 
@@ -1548,13 +1438,14 @@ abstract class _Debug implements Event {
   String? get remoteDebugger;
   @override
   @JsonKey(ignore: true)
-  _$DebugCopyWith<_Debug> get copyWith => throw _privateConstructorUsedError;
+  _$$_DebugCopyWith<_$_Debug> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$GroupCopyWith<$Res> implements $EventCopyWith<$Res> {
-  factory _$GroupCopyWith(_Group value, $Res Function(_Group) then) =
-      __$GroupCopyWithImpl<$Res>;
+abstract class _$$_GroupCopyWith<$Res> implements $EventCopyWith<$Res> {
+  factory _$$_GroupCopyWith(_$_Group value, $Res Function(_$_Group) then) =
+      __$$_GroupCopyWithImpl<$Res>;
   @override
   $Res call({int time, Group group});
 
@@ -1562,20 +1453,20 @@ abstract class _$GroupCopyWith<$Res> implements $EventCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$GroupCopyWithImpl<$Res> extends _$EventCopyWithImpl<$Res>
-    implements _$GroupCopyWith<$Res> {
-  __$GroupCopyWithImpl(_Group _value, $Res Function(_Group) _then)
-      : super(_value, (v) => _then(v as _Group));
+class __$$_GroupCopyWithImpl<$Res> extends _$EventCopyWithImpl<$Res>
+    implements _$$_GroupCopyWith<$Res> {
+  __$$_GroupCopyWithImpl(_$_Group _value, $Res Function(_$_Group) _then)
+      : super(_value, (v) => _then(v as _$_Group));
 
   @override
-  _Group get _value => super._value as _Group;
+  _$_Group get _value => super._value as _$_Group;
 
   @override
   $Res call({
     Object? time = freezed,
     Object? group = freezed,
   }) {
-    return _then(_Group(
+    return _then(_$_Group(
       time: time == freezed
           ? _value.time
           : time // ignore: cast_nullable_to_non_nullable
@@ -1598,19 +1489,18 @@ class __$GroupCopyWithImpl<$Res> extends _$EventCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$_Group implements _Group {
-  const _$_Group({required this.time, required this.group, String? $type})
+  const _$_Group({required this.time, required this.group, final String? $type})
       : $type = $type ?? 'group';
 
   factory _$_Group.fromJson(Map<String, dynamic> json) =>
       _$$_GroupFromJson(json);
 
-  @override
-
   /// The time (in milliseconds) that has elapsed since the test runner started.
-  final int time;
   @override
+  final int time;
 
   /// Metadata about the Group.
+  @override
   final Group group;
 
   @JsonKey(name: 'type')
@@ -1625,11 +1515,12 @@ class _$_Group implements _Group {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _Group &&
+            other is _$_Group &&
             const DeepCollectionEquality().equals(other.time, time) &&
             const DeepCollectionEquality().equals(other.group, group));
   }
 
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -1638,8 +1529,8 @@ class _$_Group implements _Group {
 
   @JsonKey(ignore: true)
   @override
-  _$GroupCopyWith<_Group> get copyWith =>
-      __$GroupCopyWithImpl<_Group>(this, _$identity);
+  _$$_GroupCopyWith<_$_Group> get copyWith =>
+      __$$_GroupCopyWithImpl<_$_Group>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -1813,12 +1704,15 @@ class _$_Group implements _Group {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_GroupToJson(this);
+    return _$$_GroupToJson(
+      this,
+    );
   }
 }
 
 abstract class _Group implements Event {
-  const factory _Group({required int time, required Group group}) = _$_Group;
+  const factory _Group({required final int time, required final Group group}) =
+      _$_Group;
 
   factory _Group.fromJson(Map<String, dynamic> json) = _$_Group.fromJson;
 
@@ -1831,14 +1725,15 @@ abstract class _Group implements Event {
   Group get group;
   @override
   @JsonKey(ignore: true)
-  _$GroupCopyWith<_Group> get copyWith => throw _privateConstructorUsedError;
+  _$$_GroupCopyWith<_$_Group> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$TestStartCopyWith<$Res> implements $EventCopyWith<$Res> {
-  factory _$TestStartCopyWith(
-          _TestStart value, $Res Function(_TestStart) then) =
-      __$TestStartCopyWithImpl<$Res>;
+abstract class _$$_TestStartCopyWith<$Res> implements $EventCopyWith<$Res> {
+  factory _$$_TestStartCopyWith(
+          _$_TestStart value, $Res Function(_$_TestStart) then) =
+      __$$_TestStartCopyWithImpl<$Res>;
   @override
   $Res call({int time, Test test});
 
@@ -1846,20 +1741,21 @@ abstract class _$TestStartCopyWith<$Res> implements $EventCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$TestStartCopyWithImpl<$Res> extends _$EventCopyWithImpl<$Res>
-    implements _$TestStartCopyWith<$Res> {
-  __$TestStartCopyWithImpl(_TestStart _value, $Res Function(_TestStart) _then)
-      : super(_value, (v) => _then(v as _TestStart));
+class __$$_TestStartCopyWithImpl<$Res> extends _$EventCopyWithImpl<$Res>
+    implements _$$_TestStartCopyWith<$Res> {
+  __$$_TestStartCopyWithImpl(
+      _$_TestStart _value, $Res Function(_$_TestStart) _then)
+      : super(_value, (v) => _then(v as _$_TestStart));
 
   @override
-  _TestStart get _value => super._value as _TestStart;
+  _$_TestStart get _value => super._value as _$_TestStart;
 
   @override
   $Res call({
     Object? time = freezed,
     Object? test = freezed,
   }) {
-    return _then(_TestStart(
+    return _then(_$_TestStart(
       time: time == freezed
           ? _value.time
           : time // ignore: cast_nullable_to_non_nullable
@@ -1882,19 +1778,19 @@ class __$TestStartCopyWithImpl<$Res> extends _$EventCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$_TestStart implements _TestStart {
-  const _$_TestStart({required this.time, required this.test, String? $type})
+  const _$_TestStart(
+      {required this.time, required this.test, final String? $type})
       : $type = $type ?? 'testStart';
 
   factory _$_TestStart.fromJson(Map<String, dynamic> json) =>
       _$$_TestStartFromJson(json);
 
-  @override
-
   /// The time (in milliseconds) that has elapsed since the test runner started.
-  final int time;
   @override
+  final int time;
 
   /// Metadata about the Test that started.
+  @override
   final Test test;
 
   @JsonKey(name: 'type')
@@ -1909,11 +1805,12 @@ class _$_TestStart implements _TestStart {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _TestStart &&
+            other is _$_TestStart &&
             const DeepCollectionEquality().equals(other.time, time) &&
             const DeepCollectionEquality().equals(other.test, test));
   }
 
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -1922,8 +1819,8 @@ class _$_TestStart implements _TestStart {
 
   @JsonKey(ignore: true)
   @override
-  _$TestStartCopyWith<_TestStart> get copyWith =>
-      __$TestStartCopyWithImpl<_TestStart>(this, _$identity);
+  _$$_TestStartCopyWith<_$_TestStart> get copyWith =>
+      __$$_TestStartCopyWithImpl<_$_TestStart>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -2097,13 +1994,15 @@ class _$_TestStart implements _TestStart {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_TestStartToJson(this);
+    return _$$_TestStartToJson(
+      this,
+    );
   }
 }
 
 abstract class _TestStart implements Event {
-  const factory _TestStart({required int time, required Test test}) =
-      _$_TestStart;
+  const factory _TestStart(
+      {required final int time, required final Test test}) = _$_TestStart;
 
   factory _TestStart.fromJson(Map<String, dynamic> json) =
       _$_TestStart.fromJson;
@@ -2117,14 +2016,14 @@ abstract class _TestStart implements Event {
   Test get test;
   @override
   @JsonKey(ignore: true)
-  _$TestStartCopyWith<_TestStart> get copyWith =>
+  _$$_TestStartCopyWith<_$_TestStart> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$PrintCopyWith<$Res> implements $EventCopyWith<$Res> {
-  factory _$PrintCopyWith(_Print value, $Res Function(_Print) then) =
-      __$PrintCopyWithImpl<$Res>;
+abstract class _$$_PrintCopyWith<$Res> implements $EventCopyWith<$Res> {
+  factory _$$_PrintCopyWith(_$_Print value, $Res Function(_$_Print) then) =
+      __$$_PrintCopyWithImpl<$Res>;
   @override
   $Res call(
       {int time,
@@ -2134,13 +2033,13 @@ abstract class _$PrintCopyWith<$Res> implements $EventCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$PrintCopyWithImpl<$Res> extends _$EventCopyWithImpl<$Res>
-    implements _$PrintCopyWith<$Res> {
-  __$PrintCopyWithImpl(_Print _value, $Res Function(_Print) _then)
-      : super(_value, (v) => _then(v as _Print));
+class __$$_PrintCopyWithImpl<$Res> extends _$EventCopyWithImpl<$Res>
+    implements _$$_PrintCopyWith<$Res> {
+  __$$_PrintCopyWithImpl(_$_Print _value, $Res Function(_$_Print) _then)
+      : super(_value, (v) => _then(v as _$_Print));
 
   @override
-  _Print get _value => super._value as _Print;
+  _$_Print get _value => super._value as _$_Print;
 
   @override
   $Res call({
@@ -2149,7 +2048,7 @@ class __$PrintCopyWithImpl<$Res> extends _$EventCopyWithImpl<$Res>
     Object? messageType = freezed,
     Object? message = freezed,
   }) {
-    return _then(_Print(
+    return _then(_$_Print(
       time: time == freezed
           ? _value.time
           : time // ignore: cast_nullable_to_non_nullable
@@ -2178,28 +2077,27 @@ class _$_Print implements _Print {
       @JsonKey(name: 'testID') required this.testId,
       required this.messageType,
       required this.message,
-      String? $type})
+      final String? $type})
       : $type = $type ?? 'print';
 
   factory _$_Print.fromJson(Map<String, dynamic> json) =>
       _$$_PrintFromJson(json);
 
-  @override
-
   /// The time (in milliseconds) that has elapsed since the test runner started.
-  final int time;
   @override
+  final int time;
 
   /// The ID of the test that printed a message.
+  @override
   @JsonKey(name: 'testID')
   final int testId;
-  @override
 
   /// The type of message being printed.
-  final String messageType;
   @override
+  final String messageType;
 
   /// The message that was printed.
+  @override
   final String message;
 
   @JsonKey(name: 'type')
@@ -2214,7 +2112,7 @@ class _$_Print implements _Print {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _Print &&
+            other is _$_Print &&
             const DeepCollectionEquality().equals(other.time, time) &&
             const DeepCollectionEquality().equals(other.testId, testId) &&
             const DeepCollectionEquality()
@@ -2222,6 +2120,7 @@ class _$_Print implements _Print {
             const DeepCollectionEquality().equals(other.message, message));
   }
 
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -2232,8 +2131,8 @@ class _$_Print implements _Print {
 
   @JsonKey(ignore: true)
   @override
-  _$PrintCopyWith<_Print> get copyWith =>
-      __$PrintCopyWithImpl<_Print>(this, _$identity);
+  _$$_PrintCopyWith<_$_Print> get copyWith =>
+      __$$_PrintCopyWithImpl<_$_Print>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -2407,16 +2306,18 @@ class _$_Print implements _Print {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_PrintToJson(this);
+    return _$$_PrintToJson(
+      this,
+    );
   }
 }
 
 abstract class _Print implements Event {
   const factory _Print(
-      {required int time,
-      @JsonKey(name: 'testID') required int testId,
-      required String messageType,
-      required String message}) = _$_Print;
+      {required final int time,
+      @JsonKey(name: 'testID') required final int testId,
+      required final String messageType,
+      required final String message}) = _$_Print;
 
   factory _Print.fromJson(Map<String, dynamic> json) = _$_Print.fromJson;
 
@@ -2436,13 +2337,14 @@ abstract class _Print implements Event {
   String get message;
   @override
   @JsonKey(ignore: true)
-  _$PrintCopyWith<_Print> get copyWith => throw _privateConstructorUsedError;
+  _$$_PrintCopyWith<_$_Print> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$ErrorCopyWith<$Res> implements $EventCopyWith<$Res> {
-  factory _$ErrorCopyWith(_Error value, $Res Function(_Error) then) =
-      __$ErrorCopyWithImpl<$Res>;
+abstract class _$$_ErrorCopyWith<$Res> implements $EventCopyWith<$Res> {
+  factory _$$_ErrorCopyWith(_$_Error value, $Res Function(_$_Error) then) =
+      __$$_ErrorCopyWithImpl<$Res>;
   @override
   $Res call(
       {int time,
@@ -2453,13 +2355,13 @@ abstract class _$ErrorCopyWith<$Res> implements $EventCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$ErrorCopyWithImpl<$Res> extends _$EventCopyWithImpl<$Res>
-    implements _$ErrorCopyWith<$Res> {
-  __$ErrorCopyWithImpl(_Error _value, $Res Function(_Error) _then)
-      : super(_value, (v) => _then(v as _Error));
+class __$$_ErrorCopyWithImpl<$Res> extends _$EventCopyWithImpl<$Res>
+    implements _$$_ErrorCopyWith<$Res> {
+  __$$_ErrorCopyWithImpl(_$_Error _value, $Res Function(_$_Error) _then)
+      : super(_value, (v) => _then(v as _$_Error));
 
   @override
-  _Error get _value => super._value as _Error;
+  _$_Error get _value => super._value as _$_Error;
 
   @override
   $Res call({
@@ -2469,7 +2371,7 @@ class __$ErrorCopyWithImpl<$Res> extends _$EventCopyWithImpl<$Res>
     Object? stacktrace = freezed,
     Object? isFailure = freezed,
   }) {
-    return _then(_Error(
+    return _then(_$_Error(
       time: time == freezed
           ? _value.time
           : time // ignore: cast_nullable_to_non_nullable
@@ -2503,33 +2405,32 @@ class _$_Error implements _Error {
       required this.error,
       @JsonKey(name: 'stackTrace') required this.stacktrace,
       required this.isFailure,
-      String? $type})
+      final String? $type})
       : $type = $type ?? 'error';
 
   factory _$_Error.fromJson(Map<String, dynamic> json) =>
       _$$_ErrorFromJson(json);
 
-  @override
-
   /// The time (in milliseconds) that has elapsed since the test runner started.
-  final int time;
   @override
+  final int time;
 
   /// The ID of the test that experienced the error.
+  @override
   @JsonKey(name: 'testID')
   final int testId;
-  @override
 
   /// The result of calling toString() on the error object.
-  final String error;
   @override
+  final String error;
 
   /// The error's stack trace, in the [stack_trace package](https://pub.dev/packages/stack_trace) format.
+  @override
   @JsonKey(name: 'stackTrace')
   final String stacktrace;
-  @override
 
   /// Whether the error was a `TestFailure`.
+  @override
   final bool isFailure;
 
   @JsonKey(name: 'type')
@@ -2544,7 +2445,7 @@ class _$_Error implements _Error {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _Error &&
+            other is _$_Error &&
             const DeepCollectionEquality().equals(other.time, time) &&
             const DeepCollectionEquality().equals(other.testId, testId) &&
             const DeepCollectionEquality().equals(other.error, error) &&
@@ -2553,6 +2454,7 @@ class _$_Error implements _Error {
             const DeepCollectionEquality().equals(other.isFailure, isFailure));
   }
 
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -2564,8 +2466,8 @@ class _$_Error implements _Error {
 
   @JsonKey(ignore: true)
   @override
-  _$ErrorCopyWith<_Error> get copyWith =>
-      __$ErrorCopyWithImpl<_Error>(this, _$identity);
+  _$$_ErrorCopyWith<_$_Error> get copyWith =>
+      __$$_ErrorCopyWithImpl<_$_Error>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -2739,17 +2641,19 @@ class _$_Error implements _Error {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_ErrorToJson(this);
+    return _$$_ErrorToJson(
+      this,
+    );
   }
 }
 
 abstract class _Error implements Event {
   const factory _Error(
-      {required int time,
-      @JsonKey(name: 'testID') required int testId,
-      required String error,
-      @JsonKey(name: 'stackTrace') required String stacktrace,
-      required bool isFailure}) = _$_Error;
+      {required final int time,
+      @JsonKey(name: 'testID') required final int testId,
+      required final String error,
+      @JsonKey(name: 'stackTrace') required final String stacktrace,
+      required final bool isFailure}) = _$_Error;
 
   factory _Error.fromJson(Map<String, dynamic> json) = _$_Error.fromJson;
 
@@ -2773,13 +2677,15 @@ abstract class _Error implements Event {
   bool get isFailure;
   @override
   @JsonKey(ignore: true)
-  _$ErrorCopyWith<_Error> get copyWith => throw _privateConstructorUsedError;
+  _$$_ErrorCopyWith<_$_Error> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$TestDoneCopyWith<$Res> implements $EventCopyWith<$Res> {
-  factory _$TestDoneCopyWith(_TestDone value, $Res Function(_TestDone) then) =
-      __$TestDoneCopyWithImpl<$Res>;
+abstract class _$$_TestDoneCopyWith<$Res> implements $EventCopyWith<$Res> {
+  factory _$$_TestDoneCopyWith(
+          _$_TestDone value, $Res Function(_$_TestDone) then) =
+      __$$_TestDoneCopyWithImpl<$Res>;
   @override
   $Res call(
       {int time,
@@ -2790,13 +2696,14 @@ abstract class _$TestDoneCopyWith<$Res> implements $EventCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$TestDoneCopyWithImpl<$Res> extends _$EventCopyWithImpl<$Res>
-    implements _$TestDoneCopyWith<$Res> {
-  __$TestDoneCopyWithImpl(_TestDone _value, $Res Function(_TestDone) _then)
-      : super(_value, (v) => _then(v as _TestDone));
+class __$$_TestDoneCopyWithImpl<$Res> extends _$EventCopyWithImpl<$Res>
+    implements _$$_TestDoneCopyWith<$Res> {
+  __$$_TestDoneCopyWithImpl(
+      _$_TestDone _value, $Res Function(_$_TestDone) _then)
+      : super(_value, (v) => _then(v as _$_TestDone));
 
   @override
-  _TestDone get _value => super._value as _TestDone;
+  _$_TestDone get _value => super._value as _$_TestDone;
 
   @override
   $Res call({
@@ -2806,7 +2713,7 @@ class __$TestDoneCopyWithImpl<$Res> extends _$EventCopyWithImpl<$Res>
     Object? hidden = freezed,
     Object? skipped = freezed,
   }) {
-    return _then(_TestDone(
+    return _then(_$_TestDone(
       time: time == freezed
           ? _value.time
           : time // ignore: cast_nullable_to_non_nullable
@@ -2840,33 +2747,32 @@ class _$_TestDone implements _TestDone {
       @JsonKey(name: 'testID') required this.testId,
       required this.hidden,
       required this.skipped,
-      String? $type})
+      final String? $type})
       : $type = $type ?? 'testDone';
 
   factory _$_TestDone.fromJson(Map<String, dynamic> json) =>
       _$$_TestDoneFromJson(json);
 
-  @override
-
   /// The time (in milliseconds) that has elapsed since the test runner started.
-  final int time;
   @override
+  final int time;
 
   /// The result of the test.
+  @override
   @JsonKey(unknownEnumValue: TestResult.unknown)
   final TestResult result;
-  @override
 
   /// The ID of the test that completed.
+  @override
   @JsonKey(name: 'testID')
   final int testId;
-  @override
 
   /// Whether the test's result should be hidden.
-  final bool hidden;
   @override
+  final bool hidden;
 
   /// Whether the test (or some part of it) was skipped.
+  @override
   final bool skipped;
 
   @JsonKey(name: 'type')
@@ -2881,7 +2787,7 @@ class _$_TestDone implements _TestDone {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _TestDone &&
+            other is _$_TestDone &&
             const DeepCollectionEquality().equals(other.time, time) &&
             const DeepCollectionEquality().equals(other.result, result) &&
             const DeepCollectionEquality().equals(other.testId, testId) &&
@@ -2889,6 +2795,7 @@ class _$_TestDone implements _TestDone {
             const DeepCollectionEquality().equals(other.skipped, skipped));
   }
 
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -2900,8 +2807,8 @@ class _$_TestDone implements _TestDone {
 
   @JsonKey(ignore: true)
   @override
-  _$TestDoneCopyWith<_TestDone> get copyWith =>
-      __$TestDoneCopyWithImpl<_TestDone>(this, _$identity);
+  _$$_TestDoneCopyWith<_$_TestDone> get copyWith =>
+      __$$_TestDoneCopyWithImpl<_$_TestDone>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -3075,17 +2982,21 @@ class _$_TestDone implements _TestDone {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_TestDoneToJson(this);
+    return _$$_TestDoneToJson(
+      this,
+    );
   }
 }
 
 abstract class _TestDone implements Event {
   const factory _TestDone(
-      {required int time,
-      @JsonKey(unknownEnumValue: TestResult.unknown) required TestResult result,
-      @JsonKey(name: 'testID') required int testId,
-      required bool hidden,
-      required bool skipped}) = _$_TestDone;
+      {required final int time,
+      @JsonKey(unknownEnumValue: TestResult.unknown)
+          required final TestResult result,
+      @JsonKey(name: 'testID')
+          required final int testId,
+      required final bool hidden,
+      required final bool skipped}) = _$_TestDone;
 
   factory _TestDone.fromJson(Map<String, dynamic> json) = _$_TestDone.fromJson;
 
@@ -3109,33 +3020,33 @@ abstract class _TestDone implements Event {
   bool get skipped;
   @override
   @JsonKey(ignore: true)
-  _$TestDoneCopyWith<_TestDone> get copyWith =>
+  _$$_TestDoneCopyWith<_$_TestDone> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$DoneCopyWith<$Res> implements $EventCopyWith<$Res> {
-  factory _$DoneCopyWith(_Done value, $Res Function(_Done) then) =
-      __$DoneCopyWithImpl<$Res>;
+abstract class _$$_DoneCopyWith<$Res> implements $EventCopyWith<$Res> {
+  factory _$$_DoneCopyWith(_$_Done value, $Res Function(_$_Done) then) =
+      __$$_DoneCopyWithImpl<$Res>;
   @override
   $Res call({int time, bool? success});
 }
 
 /// @nodoc
-class __$DoneCopyWithImpl<$Res> extends _$EventCopyWithImpl<$Res>
-    implements _$DoneCopyWith<$Res> {
-  __$DoneCopyWithImpl(_Done _value, $Res Function(_Done) _then)
-      : super(_value, (v) => _then(v as _Done));
+class __$$_DoneCopyWithImpl<$Res> extends _$EventCopyWithImpl<$Res>
+    implements _$$_DoneCopyWith<$Res> {
+  __$$_DoneCopyWithImpl(_$_Done _value, $Res Function(_$_Done) _then)
+      : super(_value, (v) => _then(v as _$_Done));
 
   @override
-  _Done get _value => super._value as _Done;
+  _$_Done get _value => super._value as _$_Done;
 
   @override
   $Res call({
     Object? time = freezed,
     Object? success = freezed,
   }) {
-    return _then(_Done(
+    return _then(_$_Done(
       time: time == freezed
           ? _value.time
           : time // ignore: cast_nullable_to_non_nullable
@@ -3151,21 +3062,20 @@ class __$DoneCopyWithImpl<$Res> extends _$EventCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$_Done implements _Done {
-  const _$_Done({required this.time, this.success, String? $type})
+  const _$_Done({required this.time, this.success, final String? $type})
       : $type = $type ?? 'done';
 
   factory _$_Done.fromJson(Map<String, dynamic> json) => _$$_DoneFromJson(json);
 
-  @override
-
   /// The time (in milliseconds) that has elapsed since the test runner started.
-  final int time;
   @override
+  final int time;
 
   /// Whether all tests succeeded (or were skipped).
   ///
   /// Will be `null` if the test runner was close before all tests completed
   /// running.
+  @override
   final bool? success;
 
   @JsonKey(name: 'type')
@@ -3180,11 +3090,12 @@ class _$_Done implements _Done {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _Done &&
+            other is _$_Done &&
             const DeepCollectionEquality().equals(other.time, time) &&
             const DeepCollectionEquality().equals(other.success, success));
   }
 
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -3193,8 +3104,8 @@ class _$_Done implements _Done {
 
   @JsonKey(ignore: true)
   @override
-  _$DoneCopyWith<_Done> get copyWith =>
-      __$DoneCopyWithImpl<_Done>(this, _$identity);
+  _$$_DoneCopyWith<_$_Done> get copyWith =>
+      __$$_DoneCopyWithImpl<_$_Done>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -3368,12 +3279,14 @@ class _$_Done implements _Done {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_DoneToJson(this);
+    return _$$_DoneToJson(
+      this,
+    );
   }
 }
 
 abstract class _Done implements Event {
-  const factory _Done({required int time, bool? success}) = _$_Done;
+  const factory _Done({required final int time, final bool? success}) = _$_Done;
 
   factory _Done.fromJson(Map<String, dynamic> json) = _$_Done.fromJson;
 
@@ -3389,31 +3302,32 @@ abstract class _Done implements Event {
   bool? get success;
   @override
   @JsonKey(ignore: true)
-  _$DoneCopyWith<_Done> get copyWith => throw _privateConstructorUsedError;
+  _$$_DoneCopyWith<_$_Done> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$UnknownCopyWith<$Res> implements $EventCopyWith<$Res> {
-  factory _$UnknownCopyWith(_Unknown value, $Res Function(_Unknown) then) =
-      __$UnknownCopyWithImpl<$Res>;
+abstract class _$$_UnknownCopyWith<$Res> implements $EventCopyWith<$Res> {
+  factory _$$_UnknownCopyWith(
+          _$_Unknown value, $Res Function(_$_Unknown) then) =
+      __$$_UnknownCopyWithImpl<$Res>;
   @override
   $Res call({int time});
 }
 
 /// @nodoc
-class __$UnknownCopyWithImpl<$Res> extends _$EventCopyWithImpl<$Res>
-    implements _$UnknownCopyWith<$Res> {
-  __$UnknownCopyWithImpl(_Unknown _value, $Res Function(_Unknown) _then)
-      : super(_value, (v) => _then(v as _Unknown));
+class __$$_UnknownCopyWithImpl<$Res> extends _$EventCopyWithImpl<$Res>
+    implements _$$_UnknownCopyWith<$Res> {
+  __$$_UnknownCopyWithImpl(_$_Unknown _value, $Res Function(_$_Unknown) _then)
+      : super(_value, (v) => _then(v as _$_Unknown));
 
   @override
-  _Unknown get _value => super._value as _Unknown;
+  _$_Unknown get _value => super._value as _$_Unknown;
 
   @override
   $Res call({
     Object? time = freezed,
   }) {
-    return _then(_Unknown(
+    return _then(_$_Unknown(
       time: time == freezed
           ? _value.time
           : time // ignore: cast_nullable_to_non_nullable
@@ -3425,15 +3339,14 @@ class __$UnknownCopyWithImpl<$Res> extends _$EventCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$_Unknown implements _Unknown {
-  const _$_Unknown({required this.time, String? $type})
+  const _$_Unknown({required this.time, final String? $type})
       : $type = $type ?? 'unknown';
 
   factory _$_Unknown.fromJson(Map<String, dynamic> json) =>
       _$$_UnknownFromJson(json);
 
-  @override
-
   /// The time (in milliseconds) that has elapsed since the test runner started.
+  @override
   final int time;
 
   @JsonKey(name: 'type')
@@ -3448,18 +3361,19 @@ class _$_Unknown implements _Unknown {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _Unknown &&
+            other is _$_Unknown &&
             const DeepCollectionEquality().equals(other.time, time));
   }
 
+  @JsonKey(ignore: true)
   @override
   int get hashCode =>
       Object.hash(runtimeType, const DeepCollectionEquality().hash(time));
 
   @JsonKey(ignore: true)
   @override
-  _$UnknownCopyWith<_Unknown> get copyWith =>
-      __$UnknownCopyWithImpl<_Unknown>(this, _$identity);
+  _$$_UnknownCopyWith<_$_Unknown> get copyWith =>
+      __$$_UnknownCopyWithImpl<_$_Unknown>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -3633,12 +3547,14 @@ class _$_Unknown implements _Unknown {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_UnknownToJson(this);
+    return _$$_UnknownToJson(
+      this,
+    );
   }
 }
 
 abstract class _Unknown implements Event {
-  const factory _Unknown({required int time}) = _$_Unknown;
+  const factory _Unknown({required final int time}) = _$_Unknown;
 
   factory _Unknown.fromJson(Map<String, dynamic> json) = _$_Unknown.fromJson;
 
@@ -3648,6 +3564,6 @@ abstract class _Unknown implements Event {
   int get time;
   @override
   @JsonKey(ignore: true)
-  _$UnknownCopyWith<_Unknown> get copyWith =>
+  _$$_UnknownCopyWith<_$_Unknown> get copyWith =>
       throw _privateConstructorUsedError;
 }

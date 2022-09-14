@@ -16,7 +16,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v2.3.5
+      - uses: actions/checkout@v3.0.2
       - uses: dart-lang/setup-dart@v1.3
 
       - name: Install dependencies
@@ -38,7 +38,7 @@ jobs:
         run: ./tool/generate_code_coverage.sh
 
       - name: Report code coverage
-        uses: zgosalvez/github-actions-report-lcov@v1.4.0
+        uses: zgosalvez/github-actions-report-lcov@v1.5.0
         with:
           coverage-files: coverage/lcov.info
           minimum-coverage: 90
@@ -49,7 +49,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v2.3.5
+      - uses: actions/checkout@v3.0.2
       - uses: dart-lang/setup-dart@v1.3
 
       - name: Install dependencies
