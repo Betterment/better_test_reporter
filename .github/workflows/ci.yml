@@ -16,8 +16,8 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v3.0.2
-      - uses: dart-lang/setup-dart@v1.3
+      - uses: actions/checkout@2541b1294d2704b0964813337f33b291d3f8596b # v3.0.2
+      - uses: dart-lang/setup-dart@6a218f2413a3e78e9087f638a238f6b40893203d # v1.3
 
       - name: Install dependencies
         run: dart pub get
@@ -32,13 +32,13 @@ jobs:
         run: dart format --output=none --set-exit-if-changed .
 
       - name: Analyze project source
-        uses: invertase/github-action-dart-analyzer@v1
+        uses: invertase/github-action-dart-analyzer@cdd8652b05bf7ed08ffce30f425436780f869f13 # v1
 
       - name: Run tests and generate coverage report
         run: ./tool/generate_code_coverage.sh
 
       - name: Report code coverage
-        uses: zgosalvez/github-actions-report-lcov@v1.5.0
+        uses: zgosalvez/github-actions-report-lcov@8b72ce00008730f66e6d211e54359243012b9606 # v1.5.0
         with:
           coverage-files: coverage/lcov.info
           minimum-coverage: 90
@@ -49,8 +49,8 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v3.0.2
-      - uses: dart-lang/setup-dart@v1.3
+      - uses: actions/checkout@2541b1294d2704b0964813337f33b291d3f8596b # v3.0.2
+      - uses: dart-lang/setup-dart@6a218f2413a3e78e9087f638a238f6b40893203d # v1.3
 
       - name: Install dependencies
         run: |
