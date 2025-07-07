@@ -44,6 +44,9 @@ jobs:
       - name: Run tests and generate coverage report
         run: ./tool/generate_code_coverage.sh
 
+      - name: Setup LCOV
+        uses: hrishikesh-kadam/setup-lcov@6c1aa0cc9e1c02f9f58f01ac599f1064ccc83470 # v1.1
+
       - name: Report code coverage
         uses: zgosalvez/github-actions-report-lcov@eda775f552bfb2bffbdedea26f19dfb8c24a1648 # v4.1.26
         with:
