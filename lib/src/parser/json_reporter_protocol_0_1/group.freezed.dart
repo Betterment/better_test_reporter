@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'group.dart';
 
@@ -12,7 +12,7 @@ part of 'group.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-  'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods',
+  'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models',
 );
 
 Group _$GroupFromJson(Map<String, dynamic> json) {
@@ -47,14 +47,20 @@ mixin _$Group {
   /// The URL for the file in which this group was defined, or `null`.
   String? get url => throw _privateConstructorUsedError;
 
+  /// Serializes this Group to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of Group
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $GroupCopyWith<Group> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $GroupCopyWith<$Res> {
-  factory $GroupCopyWith(Group value, $Res Function(Group) then) = _$GroupCopyWithImpl<$Res>;
+  factory $GroupCopyWith(Group value, $Res Function(Group) then) =
+      _$GroupCopyWithImpl<$Res, Group>;
+  @useResult
   $Res call({
     int id,
     String name,
@@ -68,75 +74,85 @@ abstract class $GroupCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$GroupCopyWithImpl<$Res> implements $GroupCopyWith<$Res> {
+class _$GroupCopyWithImpl<$Res, $Val extends Group>
+    implements $GroupCopyWith<$Res> {
   _$GroupCopyWithImpl(this._value, this._then);
 
-  final Group _value;
   // ignore: unused_field
-  final $Res Function(Group) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  /// Create a copy of Group
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? id = freezed,
-    Object? name = freezed,
-    Object? suiteId = freezed,
+    Object? id = null,
+    Object? name = null,
+    Object? suiteId = null,
     Object? parentId = freezed,
-    Object? testCount = freezed,
+    Object? testCount = null,
     Object? line = freezed,
     Object? column = freezed,
     Object? url = freezed,
   }) {
     return _then(
       _value.copyWith(
-        id:
-            id == freezed
-                ? _value.id
-                : id // ignore: cast_nullable_to_non_nullable
-                    as int,
-        name:
-            name == freezed
-                ? _value.name
-                : name // ignore: cast_nullable_to_non_nullable
-                    as String,
-        suiteId:
-            suiteId == freezed
-                ? _value.suiteId
-                : suiteId // ignore: cast_nullable_to_non_nullable
-                    as int,
-        parentId:
-            parentId == freezed
-                ? _value.parentId
-                : parentId // ignore: cast_nullable_to_non_nullable
-                    as int?,
-        testCount:
-            testCount == freezed
-                ? _value.testCount
-                : testCount // ignore: cast_nullable_to_non_nullable
-                    as int,
-        line:
-            line == freezed
-                ? _value.line
-                : line // ignore: cast_nullable_to_non_nullable
-                    as int?,
-        column:
-            column == freezed
-                ? _value.column
-                : column // ignore: cast_nullable_to_non_nullable
-                    as int?,
-        url:
-            url == freezed
-                ? _value.url
-                : url // ignore: cast_nullable_to_non_nullable
-                    as String?,
-      ),
+            id:
+                null == id
+                    ? _value.id
+                    : id // ignore: cast_nullable_to_non_nullable
+                        as int,
+            name:
+                null == name
+                    ? _value.name
+                    : name // ignore: cast_nullable_to_non_nullable
+                        as String,
+            suiteId:
+                null == suiteId
+                    ? _value.suiteId
+                    : suiteId // ignore: cast_nullable_to_non_nullable
+                        as int,
+            parentId:
+                freezed == parentId
+                    ? _value.parentId
+                    : parentId // ignore: cast_nullable_to_non_nullable
+                        as int?,
+            testCount:
+                null == testCount
+                    ? _value.testCount
+                    : testCount // ignore: cast_nullable_to_non_nullable
+                        as int,
+            line:
+                freezed == line
+                    ? _value.line
+                    : line // ignore: cast_nullable_to_non_nullable
+                        as int?,
+            column:
+                freezed == column
+                    ? _value.column
+                    : column // ignore: cast_nullable_to_non_nullable
+                        as int?,
+            url:
+                freezed == url
+                    ? _value.url
+                    : url // ignore: cast_nullable_to_non_nullable
+                        as String?,
+          )
+          as $Val,
     );
   }
 }
 
 /// @nodoc
-abstract class _$$_GroupCopyWith<$Res> implements $GroupCopyWith<$Res> {
-  factory _$$_GroupCopyWith(_$_Group value, $Res Function(_$_Group) then) = __$$_GroupCopyWithImpl<$Res>;
+abstract class _$$GroupImplCopyWith<$Res> implements $GroupCopyWith<$Res> {
+  factory _$$GroupImplCopyWith(
+    _$GroupImpl value,
+    $Res Function(_$GroupImpl) then,
+  ) = __$$GroupImplCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call({
     int id,
     String name,
@@ -150,62 +166,67 @@ abstract class _$$_GroupCopyWith<$Res> implements $GroupCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$_GroupCopyWithImpl<$Res> extends _$GroupCopyWithImpl<$Res> implements _$$_GroupCopyWith<$Res> {
-  __$$_GroupCopyWithImpl(_$_Group _value, $Res Function(_$_Group) _then) : super(_value, (v) => _then(v as _$_Group));
+class __$$GroupImplCopyWithImpl<$Res>
+    extends _$GroupCopyWithImpl<$Res, _$GroupImpl>
+    implements _$$GroupImplCopyWith<$Res> {
+  __$$GroupImplCopyWithImpl(
+    _$GroupImpl _value,
+    $Res Function(_$GroupImpl) _then,
+  ) : super(_value, _then);
 
-  @override
-  _$_Group get _value => super._value as _$_Group;
-
+  /// Create a copy of Group
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? id = freezed,
-    Object? name = freezed,
-    Object? suiteId = freezed,
+    Object? id = null,
+    Object? name = null,
+    Object? suiteId = null,
     Object? parentId = freezed,
-    Object? testCount = freezed,
+    Object? testCount = null,
     Object? line = freezed,
     Object? column = freezed,
     Object? url = freezed,
   }) {
     return _then(
-      _$_Group(
+      _$GroupImpl(
         id:
-            id == freezed
+            null == id
                 ? _value.id
                 : id // ignore: cast_nullable_to_non_nullable
                     as int,
         name:
-            name == freezed
+            null == name
                 ? _value.name
                 : name // ignore: cast_nullable_to_non_nullable
                     as String,
         suiteId:
-            suiteId == freezed
+            null == suiteId
                 ? _value.suiteId
                 : suiteId // ignore: cast_nullable_to_non_nullable
                     as int,
         parentId:
-            parentId == freezed
+            freezed == parentId
                 ? _value.parentId
                 : parentId // ignore: cast_nullable_to_non_nullable
                     as int?,
         testCount:
-            testCount == freezed
+            null == testCount
                 ? _value.testCount
                 : testCount // ignore: cast_nullable_to_non_nullable
                     as int,
         line:
-            line == freezed
+            freezed == line
                 ? _value.line
                 : line // ignore: cast_nullable_to_non_nullable
                     as int?,
         column:
-            column == freezed
+            freezed == column
                 ? _value.column
                 : column // ignore: cast_nullable_to_non_nullable
                     as int?,
         url:
-            url == freezed
+            freezed == url
                 ? _value.url
                 : url // ignore: cast_nullable_to_non_nullable
                     as String?,
@@ -216,8 +237,8 @@ class __$$_GroupCopyWithImpl<$Res> extends _$GroupCopyWithImpl<$Res> implements 
 
 /// @nodoc
 @JsonSerializable()
-class _$_Group implements _Group {
-  _$_Group({
+class _$GroupImpl implements _Group {
+  _$GroupImpl({
     required this.id,
     required this.name,
     @JsonKey(name: 'suiteID') required this.suiteId,
@@ -228,7 +249,8 @@ class _$_Group implements _Group {
     this.url,
   });
 
-  factory _$_Group.fromJson(Map<String, dynamic> json) => _$$_GroupFromJson(json);
+  factory _$GroupImpl.fromJson(Map<String, dynamic> json) =>
+      _$$GroupImplFromJson(json);
 
   /// An opaque ID for this group.
   @override
@@ -270,41 +292,47 @@ class _$_Group implements _Group {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_Group &&
-            const DeepCollectionEquality().equals(other.id, id) &&
-            const DeepCollectionEquality().equals(other.name, name) &&
-            const DeepCollectionEquality().equals(other.suiteId, suiteId) &&
-            const DeepCollectionEquality().equals(other.parentId, parentId) &&
-            const DeepCollectionEquality().equals(other.testCount, testCount) &&
-            const DeepCollectionEquality().equals(other.line, line) &&
-            const DeepCollectionEquality().equals(other.column, column) &&
-            const DeepCollectionEquality().equals(other.url, url));
+            other is _$GroupImpl &&
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.name, name) || other.name == name) &&
+            (identical(other.suiteId, suiteId) || other.suiteId == suiteId) &&
+            (identical(other.parentId, parentId) ||
+                other.parentId == parentId) &&
+            (identical(other.testCount, testCount) ||
+                other.testCount == testCount) &&
+            (identical(other.line, line) || other.line == line) &&
+            (identical(other.column, column) || other.column == column) &&
+            (identical(other.url, url) || other.url == url));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
     runtimeType,
-    const DeepCollectionEquality().hash(id),
-    const DeepCollectionEquality().hash(name),
-    const DeepCollectionEquality().hash(suiteId),
-    const DeepCollectionEquality().hash(parentId),
-    const DeepCollectionEquality().hash(testCount),
-    const DeepCollectionEquality().hash(line),
-    const DeepCollectionEquality().hash(column),
-    const DeepCollectionEquality().hash(url),
+    id,
+    name,
+    suiteId,
+    parentId,
+    testCount,
+    line,
+    column,
+    url,
   );
 
-  @JsonKey(ignore: true)
+  /// Create a copy of Group
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  _$$_GroupCopyWith<_$_Group> get copyWith => __$$_GroupCopyWithImpl<_$_Group>(this, _$identity);
+  @pragma('vm:prefer-inline')
+  _$$GroupImplCopyWith<_$GroupImpl> get copyWith =>
+      __$$GroupImplCopyWithImpl<_$GroupImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_GroupToJson(this);
+    return _$$GroupImplToJson(this);
   }
 }
 
@@ -318,37 +346,48 @@ abstract class _Group implements Group {
     final int? line,
     final int? column,
     final String? url,
-  }) = _$_Group;
+  }) = _$GroupImpl;
 
-  factory _Group.fromJson(Map<String, dynamic> json) = _$_Group.fromJson;
+  factory _Group.fromJson(Map<String, dynamic> json) = _$GroupImpl.fromJson;
 
-  @override
   /// An opaque ID for this group.
+  @override
   int get id;
-  @override
+
   /// The name of this group, including prefixes from any containing groups.
-  String get name;
   @override
+  String get name;
+
   /// The ID of the suite containing this group.
+  @override
   @JsonKey(name: 'suiteID')
   int get suiteId;
-  @override
+
   /// The ID of this group's parent group, unless it's the root group.
+  @override
   @JsonKey(name: 'parentID')
   int? get parentId;
-  @override
+
   /// The number of tests (recursively) within this group.
+  @override
   int get testCount;
-  @override
+
   /// The (1-based) line on which this group was defined, or `null`.
+  @override
   int? get line;
-  @override
+
   /// The (1-based) column on which this group was defined, or `null`.
+  @override
   int? get column;
-  @override
+
   /// The URL for the file in which this group was defined, or `null`.
-  String? get url;
   @override
-  @JsonKey(ignore: true)
-  _$$_GroupCopyWith<_$_Group> get copyWith => throw _privateConstructorUsedError;
+  String? get url;
+
+  /// Create a copy of Group
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$GroupImplCopyWith<_$GroupImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }

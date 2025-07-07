@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'problem.dart';
 
@@ -12,7 +12,7 @@ part of 'problem.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-  'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods',
+  'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models',
 );
 
 /// @nodoc
@@ -26,79 +26,105 @@ mixin _$Problem {
   /// Whether the error was a `TestFailure`
   bool get isFailure => throw _privateConstructorUsedError;
 
-  @JsonKey(ignore: true)
+  /// Create a copy of Problem
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $ProblemCopyWith<Problem> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $ProblemCopyWith<$Res> {
-  factory $ProblemCopyWith(Problem value, $Res Function(Problem) then) = _$ProblemCopyWithImpl<$Res>;
+  factory $ProblemCopyWith(Problem value, $Res Function(Problem) then) =
+      _$ProblemCopyWithImpl<$Res, Problem>;
+  @useResult
   $Res call({String message, String stacktrace, bool isFailure});
 }
 
 /// @nodoc
-class _$ProblemCopyWithImpl<$Res> implements $ProblemCopyWith<$Res> {
+class _$ProblemCopyWithImpl<$Res, $Val extends Problem>
+    implements $ProblemCopyWith<$Res> {
   _$ProblemCopyWithImpl(this._value, this._then);
 
-  final Problem _value;
   // ignore: unused_field
-  final $Res Function(Problem) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  /// Create a copy of Problem
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
   @override
-  $Res call({Object? message = freezed, Object? stacktrace = freezed, Object? isFailure = freezed}) {
+  $Res call({
+    Object? message = null,
+    Object? stacktrace = null,
+    Object? isFailure = null,
+  }) {
     return _then(
       _value.copyWith(
-        message:
-            message == freezed
-                ? _value.message
-                : message // ignore: cast_nullable_to_non_nullable
-                    as String,
-        stacktrace:
-            stacktrace == freezed
-                ? _value.stacktrace
-                : stacktrace // ignore: cast_nullable_to_non_nullable
-                    as String,
-        isFailure:
-            isFailure == freezed
-                ? _value.isFailure
-                : isFailure // ignore: cast_nullable_to_non_nullable
-                    as bool,
-      ),
+            message:
+                null == message
+                    ? _value.message
+                    : message // ignore: cast_nullable_to_non_nullable
+                        as String,
+            stacktrace:
+                null == stacktrace
+                    ? _value.stacktrace
+                    : stacktrace // ignore: cast_nullable_to_non_nullable
+                        as String,
+            isFailure:
+                null == isFailure
+                    ? _value.isFailure
+                    : isFailure // ignore: cast_nullable_to_non_nullable
+                        as bool,
+          )
+          as $Val,
     );
   }
 }
 
 /// @nodoc
-abstract class _$$_ProblemCopyWith<$Res> implements $ProblemCopyWith<$Res> {
-  factory _$$_ProblemCopyWith(_$_Problem value, $Res Function(_$_Problem) then) = __$$_ProblemCopyWithImpl<$Res>;
+abstract class _$$ProblemImplCopyWith<$Res> implements $ProblemCopyWith<$Res> {
+  factory _$$ProblemImplCopyWith(
+    _$ProblemImpl value,
+    $Res Function(_$ProblemImpl) then,
+  ) = __$$ProblemImplCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call({String message, String stacktrace, bool isFailure});
 }
 
 /// @nodoc
-class __$$_ProblemCopyWithImpl<$Res> extends _$ProblemCopyWithImpl<$Res> implements _$$_ProblemCopyWith<$Res> {
-  __$$_ProblemCopyWithImpl(_$_Problem _value, $Res Function(_$_Problem) _then)
-    : super(_value, (v) => _then(v as _$_Problem));
+class __$$ProblemImplCopyWithImpl<$Res>
+    extends _$ProblemCopyWithImpl<$Res, _$ProblemImpl>
+    implements _$$ProblemImplCopyWith<$Res> {
+  __$$ProblemImplCopyWithImpl(
+    _$ProblemImpl _value,
+    $Res Function(_$ProblemImpl) _then,
+  ) : super(_value, _then);
 
+  /// Create a copy of Problem
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
   @override
-  _$_Problem get _value => super._value as _$_Problem;
-
-  @override
-  $Res call({Object? message = freezed, Object? stacktrace = freezed, Object? isFailure = freezed}) {
+  $Res call({
+    Object? message = null,
+    Object? stacktrace = null,
+    Object? isFailure = null,
+  }) {
     return _then(
-      _$_Problem(
+      _$ProblemImpl(
         message:
-            message == freezed
+            null == message
                 ? _value.message
                 : message // ignore: cast_nullable_to_non_nullable
                     as String,
         stacktrace:
-            stacktrace == freezed
+            null == stacktrace
                 ? _value.stacktrace
                 : stacktrace // ignore: cast_nullable_to_non_nullable
                     as String,
         isFailure:
-            isFailure == freezed
+            null == isFailure
                 ? _value.isFailure
                 : isFailure // ignore: cast_nullable_to_non_nullable
                     as bool,
@@ -109,8 +135,12 @@ class __$$_ProblemCopyWithImpl<$Res> extends _$ProblemCopyWithImpl<$Res> impleme
 
 /// @nodoc
 
-class _$_Problem implements _Problem {
-  _$_Problem({required this.message, required this.stacktrace, required this.isFailure});
+class _$ProblemImpl implements _Problem {
+  _$ProblemImpl({
+    required this.message,
+    required this.stacktrace,
+    required this.isFailure,
+  });
 
   /// The error's message.
   @override
@@ -130,42 +160,52 @@ class _$_Problem implements _Problem {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_Problem &&
-            const DeepCollectionEquality().equals(other.message, message) &&
-            const DeepCollectionEquality().equals(other.stacktrace, stacktrace) &&
-            const DeepCollectionEquality().equals(other.isFailure, isFailure));
+            other is _$ProblemImpl &&
+            (identical(other.message, message) || other.message == message) &&
+            (identical(other.stacktrace, stacktrace) ||
+                other.stacktrace == stacktrace) &&
+            (identical(other.isFailure, isFailure) ||
+                other.isFailure == isFailure));
   }
 
   @override
-  int get hashCode => Object.hash(
-    runtimeType,
-    const DeepCollectionEquality().hash(message),
-    const DeepCollectionEquality().hash(stacktrace),
-    const DeepCollectionEquality().hash(isFailure),
-  );
+  int get hashCode => Object.hash(runtimeType, message, stacktrace, isFailure);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of Problem
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  _$$_ProblemCopyWith<_$_Problem> get copyWith => __$$_ProblemCopyWithImpl<_$_Problem>(this, _$identity);
+  @pragma('vm:prefer-inline')
+  _$$ProblemImplCopyWith<_$ProblemImpl> get copyWith =>
+      __$$ProblemImplCopyWithImpl<_$ProblemImpl>(this, _$identity);
 }
 
 abstract class _Problem implements Problem {
-  factory _Problem({required final String message, required final String stacktrace, required final bool isFailure}) =
-      _$_Problem;
+  factory _Problem({
+    required final String message,
+    required final String stacktrace,
+    required final bool isFailure,
+  }) = _$ProblemImpl;
 
-  @override
   /// The error's message.
+  @override
   String get message;
-  @override
+
   /// The error's stack trace, in the [stack_trace](https://pub.dev/packages/stack_trace) package format
+  @override
   String get stacktrace;
-  @override
+
   /// Whether the error was a `TestFailure`
-  bool get isFailure;
   @override
-  @JsonKey(ignore: true)
-  _$$_ProblemCopyWith<_$_Problem> get copyWith => throw _privateConstructorUsedError;
+  bool get isFailure;
+
+  /// Create a copy of Problem
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$ProblemImplCopyWith<_$ProblemImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }

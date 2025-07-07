@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'report.dart';
 
@@ -12,7 +12,7 @@ part of 'report.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-  'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods',
+  'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models',
 );
 
 /// @nodoc
@@ -23,69 +23,87 @@ mixin _$Report {
   /// The optional timestamp of the tests
   DateTime? get timestamp => throw _privateConstructorUsedError;
 
-  @JsonKey(ignore: true)
+  /// Create a copy of Report
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $ReportCopyWith<Report> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $ReportCopyWith<$Res> {
-  factory $ReportCopyWith(Report value, $Res Function(Report) then) = _$ReportCopyWithImpl<$Res>;
+  factory $ReportCopyWith(Report value, $Res Function(Report) then) =
+      _$ReportCopyWithImpl<$Res, Report>;
+  @useResult
   $Res call({Iterable<Suite> suites, DateTime? timestamp});
 }
 
 /// @nodoc
-class _$ReportCopyWithImpl<$Res> implements $ReportCopyWith<$Res> {
+class _$ReportCopyWithImpl<$Res, $Val extends Report>
+    implements $ReportCopyWith<$Res> {
   _$ReportCopyWithImpl(this._value, this._then);
 
-  final Report _value;
   // ignore: unused_field
-  final $Res Function(Report) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  /// Create a copy of Report
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
   @override
-  $Res call({Object? suites = freezed, Object? timestamp = freezed}) {
+  $Res call({Object? suites = null, Object? timestamp = freezed}) {
     return _then(
       _value.copyWith(
-        suites:
-            suites == freezed
-                ? _value.suites
-                : suites // ignore: cast_nullable_to_non_nullable
-                    as Iterable<Suite>,
-        timestamp:
-            timestamp == freezed
-                ? _value.timestamp
-                : timestamp // ignore: cast_nullable_to_non_nullable
-                    as DateTime?,
-      ),
+            suites:
+                null == suites
+                    ? _value.suites
+                    : suites // ignore: cast_nullable_to_non_nullable
+                        as Iterable<Suite>,
+            timestamp:
+                freezed == timestamp
+                    ? _value.timestamp
+                    : timestamp // ignore: cast_nullable_to_non_nullable
+                        as DateTime?,
+          )
+          as $Val,
     );
   }
 }
 
 /// @nodoc
-abstract class _$$_ReportCopyWith<$Res> implements $ReportCopyWith<$Res> {
-  factory _$$_ReportCopyWith(_$_Report value, $Res Function(_$_Report) then) = __$$_ReportCopyWithImpl<$Res>;
+abstract class _$$ReportImplCopyWith<$Res> implements $ReportCopyWith<$Res> {
+  factory _$$ReportImplCopyWith(
+    _$ReportImpl value,
+    $Res Function(_$ReportImpl) then,
+  ) = __$$ReportImplCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call({Iterable<Suite> suites, DateTime? timestamp});
 }
 
 /// @nodoc
-class __$$_ReportCopyWithImpl<$Res> extends _$ReportCopyWithImpl<$Res> implements _$$_ReportCopyWith<$Res> {
-  __$$_ReportCopyWithImpl(_$_Report _value, $Res Function(_$_Report) _then)
-    : super(_value, (v) => _then(v as _$_Report));
+class __$$ReportImplCopyWithImpl<$Res>
+    extends _$ReportCopyWithImpl<$Res, _$ReportImpl>
+    implements _$$ReportImplCopyWith<$Res> {
+  __$$ReportImplCopyWithImpl(
+    _$ReportImpl _value,
+    $Res Function(_$ReportImpl) _then,
+  ) : super(_value, _then);
 
+  /// Create a copy of Report
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
   @override
-  _$_Report get _value => super._value as _$_Report;
-
-  @override
-  $Res call({Object? suites = freezed, Object? timestamp = freezed}) {
+  $Res call({Object? suites = null, Object? timestamp = freezed}) {
     return _then(
-      _$_Report(
+      _$ReportImpl(
         suites:
-            suites == freezed
+            null == suites
                 ? _value.suites
                 : suites // ignore: cast_nullable_to_non_nullable
                     as Iterable<Suite>,
         timestamp:
-            timestamp == freezed
+            freezed == timestamp
                 ? _value.timestamp
                 : timestamp // ignore: cast_nullable_to_non_nullable
                     as DateTime?,
@@ -96,8 +114,8 @@ class __$$_ReportCopyWithImpl<$Res> extends _$ReportCopyWithImpl<$Res> implement
 
 /// @nodoc
 
-class _$_Report implements _Report {
-  _$_Report({required this.suites, this.timestamp});
+class _$ReportImpl implements _Report {
+  _$ReportImpl({required this.suites, this.timestamp});
 
   /// The Suites in this report
   @override
@@ -113,36 +131,49 @@ class _$_Report implements _Report {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_Report &&
+            other is _$ReportImpl &&
             const DeepCollectionEquality().equals(other.suites, suites) &&
-            const DeepCollectionEquality().equals(other.timestamp, timestamp));
+            (identical(other.timestamp, timestamp) ||
+                other.timestamp == timestamp));
   }
 
   @override
   int get hashCode => Object.hash(
     runtimeType,
     const DeepCollectionEquality().hash(suites),
-    const DeepCollectionEquality().hash(timestamp),
+    timestamp,
   );
 
-  @JsonKey(ignore: true)
+  /// Create a copy of Report
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  _$$_ReportCopyWith<_$_Report> get copyWith => __$$_ReportCopyWithImpl<_$_Report>(this, _$identity);
+  @pragma('vm:prefer-inline')
+  _$$ReportImplCopyWith<_$ReportImpl> get copyWith =>
+      __$$ReportImplCopyWithImpl<_$ReportImpl>(this, _$identity);
 }
 
 abstract class _Report implements Report {
-  factory _Report({required final Iterable<Suite> suites, final DateTime? timestamp}) = _$_Report;
+  factory _Report({
+    required final Iterable<Suite> suites,
+    final DateTime? timestamp,
+  }) = _$ReportImpl;
 
-  @override
   /// The Suites in this report
+  @override
   Iterable<Suite> get suites;
-  @override
+
   /// The optional timestamp of the tests
-  DateTime? get timestamp;
   @override
-  @JsonKey(ignore: true)
-  _$$_ReportCopyWith<_$_Report> get copyWith => throw _privateConstructorUsedError;
+  DateTime? get timestamp;
+
+  /// Create a copy of Report
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$ReportImplCopyWith<_$ReportImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }
