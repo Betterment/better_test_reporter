@@ -16,10 +16,7 @@ _$TestImpl _$$TestImplFromJson(Map<String, dynamic> json) => $checkedCreate(
       id: $checkedConvert('id', (v) => (v as num).toInt()),
       name: $checkedConvert('name', (v) => v as String),
       suiteId: $checkedConvert('suiteID', (v) => (v as num).toInt()),
-      groupIds: $checkedConvert(
-        'groupIDs',
-        (v) => (v as List<dynamic>).map((e) => (e as num).toInt()).toList(),
-      ),
+      groupIds: $checkedConvert('groupIDs', (v) => (v as List<dynamic>).map((e) => (e as num).toInt()).toList()),
       line: $checkedConvert('line', (v) => (v as num?)?.toInt()),
       column: $checkedConvert('column', (v) => (v as num?)?.toInt()),
       url: $checkedConvert('url', (v) => v as String?),
@@ -38,16 +35,15 @@ _$TestImpl _$$TestImplFromJson(Map<String, dynamic> json) => $checkedCreate(
   },
 );
 
-Map<String, dynamic> _$$TestImplToJson(_$TestImpl instance) =>
-    <String, dynamic>{
-      'id': instance.id,
-      'name': instance.name,
-      'suiteID': instance.suiteId,
-      'groupIDs': instance.groupIds,
-      'line': instance.line,
-      'column': instance.column,
-      'url': instance.url,
-      'root_line': instance.rootLine,
-      'root_column': instance.rootColumn,
-      'root_url': instance.rootUrl,
-    };
+Map<String, dynamic> _$$TestImplToJson(_$TestImpl instance) => <String, dynamic>{
+  'id': instance.id,
+  'name': instance.name,
+  'suiteID': instance.suiteId,
+  'groupIDs': instance.groupIds,
+  'line': instance.line,
+  'column': instance.column,
+  'url': instance.url,
+  'root_line': instance.rootLine,
+  'root_column': instance.rootColumn,
+  'root_url': instance.rootUrl,
+};

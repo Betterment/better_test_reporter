@@ -8,19 +8,17 @@ part of 'suite.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$SuiteImpl _$$SuiteImplFromJson(Map<String, dynamic> json) =>
-    $checkedCreate(r'_$SuiteImpl', json, ($checkedConvert) {
-      final val = _$SuiteImpl(
-        id: $checkedConvert('id', (v) => (v as num).toInt()),
-        platform: $checkedConvert('platform', (v) => v as String),
-        path: $checkedConvert('path', (v) => v as String?),
-      );
-      return val;
-    });
+_$SuiteImpl _$$SuiteImplFromJson(Map<String, dynamic> json) => $checkedCreate(r'_$SuiteImpl', json, ($checkedConvert) {
+  final val = _$SuiteImpl(
+    id: $checkedConvert('id', (v) => (v as num).toInt()),
+    platform: $checkedConvert('platform', (v) => v as String),
+    path: $checkedConvert('path', (v) => v as String?),
+  );
+  return val;
+});
 
-Map<String, dynamic> _$$SuiteImplToJson(_$SuiteImpl instance) =>
-    <String, dynamic>{
-      'id': instance.id,
-      'platform': instance.platform,
-      'path': instance.path,
-    };
+Map<String, dynamic> _$$SuiteImplToJson(_$SuiteImpl instance) => <String, dynamic>{
+  'id': instance.id,
+  'platform': instance.platform,
+  'path': instance.path,
+};

@@ -58,8 +58,7 @@ mixin _$Group {
 
 /// @nodoc
 abstract class $GroupCopyWith<$Res> {
-  factory $GroupCopyWith(Group value, $Res Function(Group) then) =
-      _$GroupCopyWithImpl<$Res, Group>;
+  factory $GroupCopyWith(Group value, $Res Function(Group) then) = _$GroupCopyWithImpl<$Res, Group>;
   @useResult
   $Res call({
     int id,
@@ -74,8 +73,7 @@ abstract class $GroupCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$GroupCopyWithImpl<$Res, $Val extends Group>
-    implements $GroupCopyWith<$Res> {
+class _$GroupCopyWithImpl<$Res, $Val extends Group> implements $GroupCopyWith<$Res> {
   _$GroupCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -147,10 +145,7 @@ class _$GroupCopyWithImpl<$Res, $Val extends Group>
 
 /// @nodoc
 abstract class _$$GroupImplCopyWith<$Res> implements $GroupCopyWith<$Res> {
-  factory _$$GroupImplCopyWith(
-    _$GroupImpl value,
-    $Res Function(_$GroupImpl) then,
-  ) = __$$GroupImplCopyWithImpl<$Res>;
+  factory _$$GroupImplCopyWith(_$GroupImpl value, $Res Function(_$GroupImpl) then) = __$$GroupImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({
@@ -166,13 +161,9 @@ abstract class _$$GroupImplCopyWith<$Res> implements $GroupCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$GroupImplCopyWithImpl<$Res>
-    extends _$GroupCopyWithImpl<$Res, _$GroupImpl>
+class __$$GroupImplCopyWithImpl<$Res> extends _$GroupCopyWithImpl<$Res, _$GroupImpl>
     implements _$$GroupImplCopyWith<$Res> {
-  __$$GroupImplCopyWithImpl(
-    _$GroupImpl _value,
-    $Res Function(_$GroupImpl) _then,
-  ) : super(_value, _then);
+  __$$GroupImplCopyWithImpl(_$GroupImpl _value, $Res Function(_$GroupImpl) _then) : super(_value, _then);
 
   /// Create a copy of Group
   /// with the given fields replaced by the non-null parameter values.
@@ -249,8 +240,7 @@ class _$GroupImpl implements _Group {
     this.url,
   });
 
-  factory _$GroupImpl.fromJson(Map<String, dynamic> json) =>
-      _$$GroupImplFromJson(json);
+  factory _$GroupImpl.fromJson(Map<String, dynamic> json) => _$$GroupImplFromJson(json);
 
   /// An opaque ID for this group.
   @override
@@ -299,10 +289,8 @@ class _$GroupImpl implements _Group {
             (identical(other.id, id) || other.id == id) &&
             (identical(other.name, name) || other.name == name) &&
             (identical(other.suiteId, suiteId) || other.suiteId == suiteId) &&
-            (identical(other.parentId, parentId) ||
-                other.parentId == parentId) &&
-            (identical(other.testCount, testCount) ||
-                other.testCount == testCount) &&
+            (identical(other.parentId, parentId) || other.parentId == parentId) &&
+            (identical(other.testCount, testCount) || other.testCount == testCount) &&
             (identical(other.line, line) || other.line == line) &&
             (identical(other.column, column) || other.column == column) &&
             (identical(other.url, url) || other.url == url));
@@ -310,25 +298,14 @@ class _$GroupImpl implements _Group {
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(
-    runtimeType,
-    id,
-    name,
-    suiteId,
-    parentId,
-    testCount,
-    line,
-    column,
-    url,
-  );
+  int get hashCode => Object.hash(runtimeType, id, name, suiteId, parentId, testCount, line, column, url);
 
   /// Create a copy of Group
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$GroupImplCopyWith<_$GroupImpl> get copyWith =>
-      __$$GroupImplCopyWithImpl<_$GroupImpl>(this, _$identity);
+  _$$GroupImplCopyWith<_$GroupImpl> get copyWith => __$$GroupImplCopyWithImpl<_$GroupImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -388,6 +365,5 @@ abstract class _Group implements Group {
   /// with the given fields replaced by the non-null parameter values.
   @override
   @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$GroupImplCopyWith<_$GroupImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$GroupImplCopyWith<_$GroupImpl> get copyWith => throw _privateConstructorUsedError;
 }

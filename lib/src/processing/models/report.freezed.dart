@@ -31,15 +31,13 @@ mixin _$Report {
 
 /// @nodoc
 abstract class $ReportCopyWith<$Res> {
-  factory $ReportCopyWith(Report value, $Res Function(Report) then) =
-      _$ReportCopyWithImpl<$Res, Report>;
+  factory $ReportCopyWith(Report value, $Res Function(Report) then) = _$ReportCopyWithImpl<$Res, Report>;
   @useResult
   $Res call({Iterable<Suite> suites, DateTime? timestamp});
 }
 
 /// @nodoc
-class _$ReportCopyWithImpl<$Res, $Val extends Report>
-    implements $ReportCopyWith<$Res> {
+class _$ReportCopyWithImpl<$Res, $Val extends Report> implements $ReportCopyWith<$Res> {
   _$ReportCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -72,23 +70,17 @@ class _$ReportCopyWithImpl<$Res, $Val extends Report>
 
 /// @nodoc
 abstract class _$$ReportImplCopyWith<$Res> implements $ReportCopyWith<$Res> {
-  factory _$$ReportImplCopyWith(
-    _$ReportImpl value,
-    $Res Function(_$ReportImpl) then,
-  ) = __$$ReportImplCopyWithImpl<$Res>;
+  factory _$$ReportImplCopyWith(_$ReportImpl value, $Res Function(_$ReportImpl) then) =
+      __$$ReportImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({Iterable<Suite> suites, DateTime? timestamp});
 }
 
 /// @nodoc
-class __$$ReportImplCopyWithImpl<$Res>
-    extends _$ReportCopyWithImpl<$Res, _$ReportImpl>
+class __$$ReportImplCopyWithImpl<$Res> extends _$ReportCopyWithImpl<$Res, _$ReportImpl>
     implements _$$ReportImplCopyWith<$Res> {
-  __$$ReportImplCopyWithImpl(
-    _$ReportImpl _value,
-    $Res Function(_$ReportImpl) _then,
-  ) : super(_value, _then);
+  __$$ReportImplCopyWithImpl(_$ReportImpl _value, $Res Function(_$ReportImpl) _then) : super(_value, _then);
 
   /// Create a copy of Report
   /// with the given fields replaced by the non-null parameter values.
@@ -136,31 +128,22 @@ class _$ReportImpl implements _Report {
         (other.runtimeType == runtimeType &&
             other is _$ReportImpl &&
             const DeepCollectionEquality().equals(other.suites, suites) &&
-            (identical(other.timestamp, timestamp) ||
-                other.timestamp == timestamp));
+            (identical(other.timestamp, timestamp) || other.timestamp == timestamp));
   }
 
   @override
-  int get hashCode => Object.hash(
-    runtimeType,
-    const DeepCollectionEquality().hash(suites),
-    timestamp,
-  );
+  int get hashCode => Object.hash(runtimeType, const DeepCollectionEquality().hash(suites), timestamp);
 
   /// Create a copy of Report
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$ReportImplCopyWith<_$ReportImpl> get copyWith =>
-      __$$ReportImplCopyWithImpl<_$ReportImpl>(this, _$identity);
+  _$$ReportImplCopyWith<_$ReportImpl> get copyWith => __$$ReportImplCopyWithImpl<_$ReportImpl>(this, _$identity);
 }
 
 abstract class _Report implements Report {
-  factory _Report({
-    required final Iterable<Suite> suites,
-    final DateTime? timestamp,
-  }) = _$ReportImpl;
+  factory _Report({required final Iterable<Suite> suites, final DateTime? timestamp}) = _$ReportImpl;
 
   /// The Suites in this report
   @override
@@ -174,6 +157,5 @@ abstract class _Report implements Report {
   /// with the given fields replaced by the non-null parameter values.
   @override
   @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$ReportImplCopyWith<_$ReportImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$ReportImplCopyWith<_$ReportImpl> get copyWith => throw _privateConstructorUsedError;
 }

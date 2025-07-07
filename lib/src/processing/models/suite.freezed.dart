@@ -34,15 +34,13 @@ mixin _$Suite {
 
 /// @nodoc
 abstract class $SuiteCopyWith<$Res> {
-  factory $SuiteCopyWith(Suite value, $Res Function(Suite) then) =
-      _$SuiteCopyWithImpl<$Res, Suite>;
+  factory $SuiteCopyWith(Suite value, $Res Function(Suite) then) = _$SuiteCopyWithImpl<$Res, Suite>;
   @useResult
   $Res call({String? path, String platform, List<Test> allTests});
 }
 
 /// @nodoc
-class _$SuiteCopyWithImpl<$Res, $Val extends Suite>
-    implements $SuiteCopyWith<$Res> {
+class _$SuiteCopyWithImpl<$Res, $Val extends Suite> implements $SuiteCopyWith<$Res> {
   _$SuiteCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -54,11 +52,7 @@ class _$SuiteCopyWithImpl<$Res, $Val extends Suite>
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
-  $Res call({
-    Object? path = freezed,
-    Object? platform = null,
-    Object? allTests = null,
-  }) {
+  $Res call({Object? path = freezed, Object? platform = null, Object? allTests = null}) {
     return _then(
       _value.copyWith(
             path:
@@ -84,33 +78,22 @@ class _$SuiteCopyWithImpl<$Res, $Val extends Suite>
 
 /// @nodoc
 abstract class _$$SuiteImplCopyWith<$Res> implements $SuiteCopyWith<$Res> {
-  factory _$$SuiteImplCopyWith(
-    _$SuiteImpl value,
-    $Res Function(_$SuiteImpl) then,
-  ) = __$$SuiteImplCopyWithImpl<$Res>;
+  factory _$$SuiteImplCopyWith(_$SuiteImpl value, $Res Function(_$SuiteImpl) then) = __$$SuiteImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({String? path, String platform, List<Test> allTests});
 }
 
 /// @nodoc
-class __$$SuiteImplCopyWithImpl<$Res>
-    extends _$SuiteCopyWithImpl<$Res, _$SuiteImpl>
+class __$$SuiteImplCopyWithImpl<$Res> extends _$SuiteCopyWithImpl<$Res, _$SuiteImpl>
     implements _$$SuiteImplCopyWith<$Res> {
-  __$$SuiteImplCopyWithImpl(
-    _$SuiteImpl _value,
-    $Res Function(_$SuiteImpl) _then,
-  ) : super(_value, _then);
+  __$$SuiteImplCopyWithImpl(_$SuiteImpl _value, $Res Function(_$SuiteImpl) _then) : super(_value, _then);
 
   /// Create a copy of Suite
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
-  $Res call({
-    Object? path = freezed,
-    Object? platform = null,
-    Object? allTests = null,
-  }) {
+  $Res call({Object? path = freezed, Object? platform = null, Object? allTests = null}) {
     return _then(
       _$SuiteImpl(
         path:
@@ -136,12 +119,9 @@ class __$$SuiteImplCopyWithImpl<$Res>
 /// @nodoc
 
 class _$SuiteImpl extends _Suite {
-  _$SuiteImpl({
-    this.path,
-    required this.platform,
-    required final List<Test> allTests,
-  }) : _allTests = allTests,
-       super._();
+  _$SuiteImpl({this.path, required this.platform, required final List<Test> allTests})
+    : _allTests = allTests,
+      super._();
 
   /// Optional path to this suite's file
   @override
@@ -173,34 +153,24 @@ class _$SuiteImpl extends _Suite {
         (other.runtimeType == runtimeType &&
             other is _$SuiteImpl &&
             (identical(other.path, path) || other.path == path) &&
-            (identical(other.platform, platform) ||
-                other.platform == platform) &&
+            (identical(other.platform, platform) || other.platform == platform) &&
             const DeepCollectionEquality().equals(other._allTests, _allTests));
   }
 
   @override
-  int get hashCode => Object.hash(
-    runtimeType,
-    path,
-    platform,
-    const DeepCollectionEquality().hash(_allTests),
-  );
+  int get hashCode => Object.hash(runtimeType, path, platform, const DeepCollectionEquality().hash(_allTests));
 
   /// Create a copy of Suite
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$SuiteImplCopyWith<_$SuiteImpl> get copyWith =>
-      __$$SuiteImplCopyWithImpl<_$SuiteImpl>(this, _$identity);
+  _$$SuiteImplCopyWith<_$SuiteImpl> get copyWith => __$$SuiteImplCopyWithImpl<_$SuiteImpl>(this, _$identity);
 }
 
 abstract class _Suite extends Suite {
-  factory _Suite({
-    final String? path,
-    required final String platform,
-    required final List<Test> allTests,
-  }) = _$SuiteImpl;
+  factory _Suite({final String? path, required final String platform, required final List<Test> allTests}) =
+      _$SuiteImpl;
   _Suite._() : super._();
 
   /// Optional path to this suite's file
@@ -219,6 +189,5 @@ abstract class _Suite extends Suite {
   /// with the given fields replaced by the non-null parameter values.
   @override
   @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$SuiteImplCopyWith<_$SuiteImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$SuiteImplCopyWith<_$SuiteImpl> get copyWith => throw _privateConstructorUsedError;
 }

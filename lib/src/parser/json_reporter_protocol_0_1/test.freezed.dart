@@ -73,8 +73,7 @@ mixin _$Test {
 
 /// @nodoc
 abstract class $TestCopyWith<$Res> {
-  factory $TestCopyWith(Test value, $Res Function(Test) then) =
-      _$TestCopyWithImpl<$Res, Test>;
+  factory $TestCopyWith(Test value, $Res Function(Test) then) = _$TestCopyWithImpl<$Res, Test>;
   @useResult
   $Res call({
     int id,
@@ -91,8 +90,7 @@ abstract class $TestCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$TestCopyWithImpl<$Res, $Val extends Test>
-    implements $TestCopyWith<$Res> {
+class _$TestCopyWithImpl<$Res, $Val extends Test> implements $TestCopyWith<$Res> {
   _$TestCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -176,10 +174,7 @@ class _$TestCopyWithImpl<$Res, $Val extends Test>
 
 /// @nodoc
 abstract class _$$TestImplCopyWith<$Res> implements $TestCopyWith<$Res> {
-  factory _$$TestImplCopyWith(
-    _$TestImpl value,
-    $Res Function(_$TestImpl) then,
-  ) = __$$TestImplCopyWithImpl<$Res>;
+  factory _$$TestImplCopyWith(_$TestImpl value, $Res Function(_$TestImpl) then) = __$$TestImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({
@@ -197,11 +192,8 @@ abstract class _$$TestImplCopyWith<$Res> implements $TestCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$TestImplCopyWithImpl<$Res>
-    extends _$TestCopyWithImpl<$Res, _$TestImpl>
-    implements _$$TestImplCopyWith<$Res> {
-  __$$TestImplCopyWithImpl(_$TestImpl _value, $Res Function(_$TestImpl) _then)
-    : super(_value, _then);
+class __$$TestImplCopyWithImpl<$Res> extends _$TestCopyWithImpl<$Res, _$TestImpl> implements _$$TestImplCopyWith<$Res> {
+  __$$TestImplCopyWithImpl(_$TestImpl _value, $Res Function(_$TestImpl) _then) : super(_value, _then);
 
   /// Create a copy of Test
   /// with the given fields replaced by the non-null parameter values.
@@ -292,8 +284,7 @@ class _$TestImpl implements _Test {
     @JsonKey(name: 'root_url') this.rootUrl,
   }) : _groupIds = groupIds;
 
-  factory _$TestImpl.fromJson(Map<String, dynamic> json) =>
-      _$$TestImplFromJson(json);
+  factory _$TestImpl.fromJson(Map<String, dynamic> json) => _$$TestImplFromJson(json);
 
   /// An opaque ID for this test.
   @override
@@ -370,10 +361,8 @@ class _$TestImpl implements _Test {
             (identical(other.line, line) || other.line == line) &&
             (identical(other.column, column) || other.column == column) &&
             (identical(other.url, url) || other.url == url) &&
-            (identical(other.rootLine, rootLine) ||
-                other.rootLine == rootLine) &&
-            (identical(other.rootColumn, rootColumn) ||
-                other.rootColumn == rootColumn) &&
+            (identical(other.rootLine, rootLine) || other.rootLine == rootLine) &&
+            (identical(other.rootColumn, rootColumn) || other.rootColumn == rootColumn) &&
             (identical(other.rootUrl, rootUrl) || other.rootUrl == rootUrl));
   }
 
@@ -398,8 +387,7 @@ class _$TestImpl implements _Test {
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$TestImplCopyWith<_$TestImpl> get copyWith =>
-      __$$TestImplCopyWithImpl<_$TestImpl>(this, _$identity);
+  _$$TestImplCopyWith<_$TestImpl> get copyWith => __$$TestImplCopyWithImpl<_$TestImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -478,6 +466,5 @@ abstract class _Test implements Test {
   /// with the given fields replaced by the non-null parameter values.
   @override
   @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$TestImplCopyWith<_$TestImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$TestImplCopyWith<_$TestImpl> get copyWith => throw _privateConstructorUsedError;
 }

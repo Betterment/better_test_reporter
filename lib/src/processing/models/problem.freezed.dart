@@ -34,15 +34,13 @@ mixin _$Problem {
 
 /// @nodoc
 abstract class $ProblemCopyWith<$Res> {
-  factory $ProblemCopyWith(Problem value, $Res Function(Problem) then) =
-      _$ProblemCopyWithImpl<$Res, Problem>;
+  factory $ProblemCopyWith(Problem value, $Res Function(Problem) then) = _$ProblemCopyWithImpl<$Res, Problem>;
   @useResult
   $Res call({String message, String stacktrace, bool isFailure});
 }
 
 /// @nodoc
-class _$ProblemCopyWithImpl<$Res, $Val extends Problem>
-    implements $ProblemCopyWith<$Res> {
+class _$ProblemCopyWithImpl<$Res, $Val extends Problem> implements $ProblemCopyWith<$Res> {
   _$ProblemCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -54,11 +52,7 @@ class _$ProblemCopyWithImpl<$Res, $Val extends Problem>
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
-  $Res call({
-    Object? message = null,
-    Object? stacktrace = null,
-    Object? isFailure = null,
-  }) {
+  $Res call({Object? message = null, Object? stacktrace = null, Object? isFailure = null}) {
     return _then(
       _value.copyWith(
             message:
@@ -84,33 +78,23 @@ class _$ProblemCopyWithImpl<$Res, $Val extends Problem>
 
 /// @nodoc
 abstract class _$$ProblemImplCopyWith<$Res> implements $ProblemCopyWith<$Res> {
-  factory _$$ProblemImplCopyWith(
-    _$ProblemImpl value,
-    $Res Function(_$ProblemImpl) then,
-  ) = __$$ProblemImplCopyWithImpl<$Res>;
+  factory _$$ProblemImplCopyWith(_$ProblemImpl value, $Res Function(_$ProblemImpl) then) =
+      __$$ProblemImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({String message, String stacktrace, bool isFailure});
 }
 
 /// @nodoc
-class __$$ProblemImplCopyWithImpl<$Res>
-    extends _$ProblemCopyWithImpl<$Res, _$ProblemImpl>
+class __$$ProblemImplCopyWithImpl<$Res> extends _$ProblemCopyWithImpl<$Res, _$ProblemImpl>
     implements _$$ProblemImplCopyWith<$Res> {
-  __$$ProblemImplCopyWithImpl(
-    _$ProblemImpl _value,
-    $Res Function(_$ProblemImpl) _then,
-  ) : super(_value, _then);
+  __$$ProblemImplCopyWithImpl(_$ProblemImpl _value, $Res Function(_$ProblemImpl) _then) : super(_value, _then);
 
   /// Create a copy of Problem
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
-  $Res call({
-    Object? message = null,
-    Object? stacktrace = null,
-    Object? isFailure = null,
-  }) {
+  $Res call({Object? message = null, Object? stacktrace = null, Object? isFailure = null}) {
     return _then(
       _$ProblemImpl(
         message:
@@ -136,11 +120,7 @@ class __$$ProblemImplCopyWithImpl<$Res>
 /// @nodoc
 
 class _$ProblemImpl implements _Problem {
-  _$ProblemImpl({
-    required this.message,
-    required this.stacktrace,
-    required this.isFailure,
-  });
+  _$ProblemImpl({required this.message, required this.stacktrace, required this.isFailure});
 
   /// The error's message.
   @override
@@ -165,10 +145,8 @@ class _$ProblemImpl implements _Problem {
         (other.runtimeType == runtimeType &&
             other is _$ProblemImpl &&
             (identical(other.message, message) || other.message == message) &&
-            (identical(other.stacktrace, stacktrace) ||
-                other.stacktrace == stacktrace) &&
-            (identical(other.isFailure, isFailure) ||
-                other.isFailure == isFailure));
+            (identical(other.stacktrace, stacktrace) || other.stacktrace == stacktrace) &&
+            (identical(other.isFailure, isFailure) || other.isFailure == isFailure));
   }
 
   @override
@@ -179,16 +157,12 @@ class _$ProblemImpl implements _Problem {
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$ProblemImplCopyWith<_$ProblemImpl> get copyWith =>
-      __$$ProblemImplCopyWithImpl<_$ProblemImpl>(this, _$identity);
+  _$$ProblemImplCopyWith<_$ProblemImpl> get copyWith => __$$ProblemImplCopyWithImpl<_$ProblemImpl>(this, _$identity);
 }
 
 abstract class _Problem implements Problem {
-  factory _Problem({
-    required final String message,
-    required final String stacktrace,
-    required final bool isFailure,
-  }) = _$ProblemImpl;
+  factory _Problem({required final String message, required final String stacktrace, required final bool isFailure}) =
+      _$ProblemImpl;
 
   /// The error's message.
   @override
@@ -206,6 +180,5 @@ abstract class _Problem implements Problem {
   /// with the given fields replaced by the non-null parameter values.
   @override
   @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$ProblemImplCopyWith<_$ProblemImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$ProblemImplCopyWith<_$ProblemImpl> get copyWith => throw _privateConstructorUsedError;
 }
