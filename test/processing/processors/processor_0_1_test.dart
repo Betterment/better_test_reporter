@@ -11,11 +11,7 @@ void main() {
         'protocolVersion': '0.1.0',
         'pid': 1234,
       },
-      <String, dynamic>{
-        'type': 'allSuites',
-        'time': 15,
-        'count': 1,
-      },
+      <String, dynamic>{'type': 'allSuites', 'time': 15, 'count': 1},
       <String, dynamic>{
         'type': 'suite',
         'time': 20,
@@ -82,11 +78,7 @@ void main() {
         'hidden': false,
         'skipped': false,
       },
-      <String, dynamic>{
-        'type': 'done',
-        'time': 90,
-        'success': false,
-      },
+      <String, dynamic>{'type': 'done', 'time': 90, 'success': false},
     ];
     final timestamp = DateTime.now();
 

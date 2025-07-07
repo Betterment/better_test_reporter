@@ -11,10 +11,7 @@ Future<void> main(List<String> args) async {
   final arguments = _parseArguments(args);
   final lines = LineSplitter().bind(utf8.decoder.bind(arguments.source));
   try {
-    final report = await _createReport(
-      arguments: arguments,
-      lines: lines,
-    );
+    final report = await _createReport(arguments: arguments, lines: lines);
     final xml = TestJsonToJunit(
       base: arguments.base,
       package: arguments.package,
@@ -45,39 +42,40 @@ Future<Report> _createReport({
 }
 
 _Arguments _parseArguments(List<String> args) {
-  final parser = ArgParser()
-    ..addOption(
-      'input',
-      abbr: 'i',
-      help: """
+  final parser =
+      ArgParser()
+        ..addOption(
+          'input',
+          abbr: 'i',
+          help: """
 the path to the 'json' file containing the output of 'pub run test'.
 if missing, <stdin> will be used""",
-    )
-    ..addOption(
-      'output',
-      abbr: 'o',
-      help: '''
+        )
+        ..addOption(
+          'output',
+          abbr: 'o',
+          help: '''
 the path of the to be generated junit xml file.
 if missing, <stdout> will be used''',
-    )
-    ..addOption(
-      'base',
-      abbr: 'b',
-      help: """
+        )
+        ..addOption(
+          'base',
+          abbr: 'b',
+          help: """
 the part to strip from the 'path' elements in the source.
 defaults to current working directory""",
-      defaultsTo: Directory.current.path,
-    )
-    ..addOption(
-      'package',
-      abbr: 'p',
-      help: "the part to prepend to the 'path' elements in the source",
-      defaultsTo: '',
-    )
-    ..addOption(
-      'timestamp',
-      abbr: 't',
-      help: """
+          defaultsTo: Directory.current.path,
+        )
+        ..addOption(
+          'package',
+          abbr: 'p',
+          help: "the part to prepend to the 'path' elements in the source",
+          defaultsTo: '',
+        )
+        ..addOption(
+          'timestamp',
+          abbr: 't',
+          help: """
 the timestamp to be used in the report
 - 'now' will use the current date/time
 - 'none' will suppress timestamps altogether
@@ -85,14 +83,14 @@ the timestamp to be used in the report
 - if no value is provided
     - if '--input' is specified the file modification date/time is used
     - otherwise the current date/time is used""",
-    )
-    ..addFlag(
-      'help',
-      abbr: 'h',
-      help: 'display this help text',
-      negatable: false,
-      defaultsTo: false,
-    );
+        )
+        ..addFlag(
+          'help',
+          abbr: 'h',
+          help: 'display this help text',
+          negatable: false,
+          defaultsTo: false,
+        );
 
   try {
     final result = parser.parse(args);
@@ -126,10 +124,7 @@ the timestamp to be used in the report
   }
 }
 
-DateTime? _processTimestamp({
-  String? timestamp,
-  required _Source source,
-}) {
+DateTime? _processTimestamp({String? timestamp, required _Source source}) {
   if (timestamp == null) {
     return source.timestamp;
   }
@@ -147,10 +142,7 @@ DateTime? _processTimestamp({
 
 _Source _processInput(String? input) {
   if (input == null) {
-    return _Source(
-      source: stdin,
-      timestamp: DateTime.now(),
-    );
+    return _Source(source: stdin, timestamp: DateTime.now());
   }
   final file = File(input);
   if (!file.existsSync()) {
@@ -158,10 +150,7 @@ _Source _processInput(String? input) {
     exit(1);
   }
   try {
-    return _Source(
-      source: file.openRead(),
-      timestamp: file.lastModifiedSync(),
-    );
+    return _Source(source: file.openRead(), timestamp: file.lastModifiedSync());
   } catch (e) {
     stderr.writeln("Cannot read file '$input' (${file.absolute.path})");
     exit(1);
@@ -199,8 +188,5 @@ class _Source {
   final Stream<List<int>> source;
   final DateTime timestamp;
 
-  _Source({
-    required this.source,
-    required this.timestamp,
-  });
+  _Source({required this.source, required this.timestamp});
 }

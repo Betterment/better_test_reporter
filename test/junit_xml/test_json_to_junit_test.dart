@@ -54,16 +54,11 @@ void main() {
     });
 
     test('it generates a basic report xml', () {
-      final subject = TestJsonToJunit(
-        base: '',
-        package: '',
-      );
+      final subject = TestJsonToJunit(base: '', package: '');
 
       final xmlReport = subject.toXml(report);
 
-      expect(
-        xmlReport,
-        '''<?xml version="1.0" encoding="UTF-8"?>
+      expect(xmlReport, '''<?xml version="1.0" encoding="UTF-8"?>
 <testsuites>
   <testsuite errors="0" failures="1" tests="2" skipped="0" name="test.some_file" timestamp="$formattedTimestamp">
     <properties>
@@ -76,21 +71,15 @@ void main() {
       <failure message="1 failure, see stacktrace for details">Failure: Expected false but was true</failure>
     </testcase>
   </testsuite>
-</testsuites>''',
-      );
+</testsuites>''');
     });
 
     test('it generates a report xml with proper package prefixes', () {
-      final subject = TestJsonToJunit(
-        base: '',
-        package: 'package',
-      );
+      final subject = TestJsonToJunit(base: '', package: 'package');
 
       final xmlReport = subject.toXml(report);
 
-      expect(
-        xmlReport,
-        '''<?xml version="1.0" encoding="UTF-8"?>
+      expect(xmlReport, '''<?xml version="1.0" encoding="UTF-8"?>
 <testsuites>
   <testsuite errors="0" failures="1" tests="2" skipped="0" name="package.test.some_file" timestamp="$formattedTimestamp">
     <properties>
@@ -103,21 +92,15 @@ void main() {
       <failure message="1 failure, see stacktrace for details">Failure: Expected false but was true</failure>
     </testcase>
   </testsuite>
-</testsuites>''',
-      );
+</testsuites>''');
     });
 
     test('it generates a report xml with base prefix removed', () {
-      final subject = TestJsonToJunit(
-        base: 'test',
-        package: '',
-      );
+      final subject = TestJsonToJunit(base: 'test', package: '');
 
       final xmlReport = subject.toXml(report);
 
-      expect(
-        xmlReport,
-        '''<?xml version="1.0" encoding="UTF-8"?>
+      expect(xmlReport, '''<?xml version="1.0" encoding="UTF-8"?>
 <testsuites>
   <testsuite errors="0" failures="1" tests="2" skipped="0" name="some_file" timestamp="$formattedTimestamp">
     <properties>
@@ -130,8 +113,7 @@ void main() {
       <failure message="1 failure, see stacktrace for details">Failure: Expected false but was true</failure>
     </testcase>
   </testsuite>
-</testsuites>''',
-      );
+</testsuites>''');
     });
   });
 
@@ -185,16 +167,11 @@ void main() {
     });
 
     test('it generates a basic report xml', () {
-      final subject = TestJsonToJunit(
-        base: '',
-        package: '',
-      );
+      final subject = TestJsonToJunit(base: '', package: '');
 
       final xmlReport = subject.toXml(report);
 
-      expect(
-        xmlReport,
-        '''<?xml version="1.0" encoding="UTF-8"?>
+      expect(xmlReport, '''<?xml version="1.0" encoding="UTF-8"?>
 <testsuites>
   <testsuite errors="0" failures="1" tests="2" skipped="0" name=".Users.bilbo.src.repo.package.test.some_file" timestamp="$formattedTimestamp">
     <properties>
@@ -207,8 +184,7 @@ void main() {
       <failure message="1 failure, see stacktrace for details">Failure: Expected false but was true</failure>
     </testcase>
   </testsuite>
-</testsuites>''',
-      );
+</testsuites>''');
     });
 
     test('it generates a report xml with proper package prefixes', () {
@@ -219,9 +195,7 @@ void main() {
 
       final xmlReport = subject.toXml(report);
 
-      expect(
-        xmlReport,
-        '''<?xml version="1.0" encoding="UTF-8"?>
+      expect(xmlReport, '''<?xml version="1.0" encoding="UTF-8"?>
 <testsuites>
   <testsuite errors="0" failures="1" tests="2" skipped="0" name="package.test.some_file" timestamp="$formattedTimestamp">
     <properties>
@@ -234,8 +208,7 @@ void main() {
       <failure message="1 failure, see stacktrace for details">Failure: Expected false but was true</failure>
     </testcase>
   </testsuite>
-</testsuites>''',
-      );
+</testsuites>''');
     });
 
     test('it generates a report xml with base prefix removed', () {
@@ -246,9 +219,7 @@ void main() {
 
       final xmlReport = subject.toXml(report);
 
-      expect(
-        xmlReport,
-        '''<?xml version="1.0" encoding="UTF-8"?>
+      expect(xmlReport, '''<?xml version="1.0" encoding="UTF-8"?>
 <testsuites>
   <testsuite errors="0" failures="1" tests="2" skipped="0" name="test.some_file" timestamp="$formattedTimestamp">
     <properties>
@@ -261,8 +232,7 @@ void main() {
       <failure message="1 failure, see stacktrace for details">Failure: Expected false but was true</failure>
     </testcase>
   </testsuite>
-</testsuites>''',
-      );
+</testsuites>''');
     });
   });
 }
