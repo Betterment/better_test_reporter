@@ -28,10 +28,14 @@ class Suite with _$Suite {
   List<Test> get tests => allTests.where((test) => !test.hidden).toList();
 
   /// All non-hidden skipped Tests
-  List<Test> get skipped => allTests.where((test) => test.skipped && !test.hidden).toList();
+  List<Test> get skipped =>
+      allTests.where((test) => test.skipped && !test.hidden).toList();
 
   /// All non-hidden Tests with problems
-  List<Test> get problems => allTests.where((test) => !test.hidden && test.problems.isNotEmpty).toList();
+  List<Test> get problems =>
+      allTests
+          .where((test) => !test.hidden && test.problems.isNotEmpty)
+          .toList();
 
   /// All hidden Tests
   List<Test> get hidden => allTests.where((test) => test.hidden).toList();

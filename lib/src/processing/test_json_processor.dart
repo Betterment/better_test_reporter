@@ -22,7 +22,9 @@ class TestJsonProcessor {
     if (events.first['type'] != 'start') {
       throw UnsupportedError("First event was not a 'start' event");
     }
-    final processorDelegate = _createProcessorDelegate(protocolVersion: events.first['protocolVersion'] as String);
+    final processorDelegate = _createProcessorDelegate(
+      protocolVersion: events.first['protocolVersion'] as String,
+    );
     return processorDelegate.process(events);
   }
 

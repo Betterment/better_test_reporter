@@ -49,7 +49,13 @@ mixin _$Event {
   int get time => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(int time, String protocolVersion, String? runnerVersion, int pid) start,
+    required TResult Function(
+      int time,
+      String protocolVersion,
+      String? runnerVersion,
+      int pid,
+    )
+    start,
     required TResult Function(int time, int count) allSuites,
     required TResult Function(int time, Suite suite) suite,
     required TResult Function(
@@ -61,7 +67,13 @@ mixin _$Event {
     debug,
     required TResult Function(int time, Group group) group,
     required TResult Function(int time, Test test) testStart,
-    required TResult Function(int time, @JsonKey(name: 'testID') int testId, String messageType, String message) print,
+    required TResult Function(
+      int time,
+      @JsonKey(name: 'testID') int testId,
+      String messageType,
+      String message,
+    )
+    print,
     required TResult Function(
       int time,
       @JsonKey(name: 'testID') int testId,
@@ -83,14 +95,31 @@ mixin _$Event {
   }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(int time, String protocolVersion, String? runnerVersion, int pid)? start,
+    TResult? Function(
+      int time,
+      String protocolVersion,
+      String? runnerVersion,
+      int pid,
+    )?
+    start,
     TResult? Function(int time, int count)? allSuites,
     TResult? Function(int time, Suite suite)? suite,
-    TResult? Function(int time, @JsonKey(name: 'suiteID') int suiteId, String? observatory, String? remoteDebugger)?
+    TResult? Function(
+      int time,
+      @JsonKey(name: 'suiteID') int suiteId,
+      String? observatory,
+      String? remoteDebugger,
+    )?
     debug,
     TResult? Function(int time, Group group)? group,
     TResult? Function(int time, Test test)? testStart,
-    TResult? Function(int time, @JsonKey(name: 'testID') int testId, String messageType, String message)? print,
+    TResult? Function(
+      int time,
+      @JsonKey(name: 'testID') int testId,
+      String messageType,
+      String message,
+    )?
+    print,
     TResult? Function(
       int time,
       @JsonKey(name: 'testID') int testId,
@@ -112,14 +141,31 @@ mixin _$Event {
   }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(int time, String protocolVersion, String? runnerVersion, int pid)? start,
+    TResult Function(
+      int time,
+      String protocolVersion,
+      String? runnerVersion,
+      int pid,
+    )?
+    start,
     TResult Function(int time, int count)? allSuites,
     TResult Function(int time, Suite suite)? suite,
-    TResult Function(int time, @JsonKey(name: 'suiteID') int suiteId, String? observatory, String? remoteDebugger)?
+    TResult Function(
+      int time,
+      @JsonKey(name: 'suiteID') int suiteId,
+      String? observatory,
+      String? remoteDebugger,
+    )?
     debug,
     TResult Function(int time, Group group)? group,
     TResult Function(int time, Test test)? testStart,
-    TResult Function(int time, @JsonKey(name: 'testID') int testId, String messageType, String message)? print,
+    TResult Function(
+      int time,
+      @JsonKey(name: 'testID') int testId,
+      String messageType,
+      String message,
+    )?
+    print,
     TResult Function(
       int time,
       @JsonKey(name: 'testID') int testId,
@@ -195,13 +241,15 @@ mixin _$Event {
 
 /// @nodoc
 abstract class $EventCopyWith<$Res> {
-  factory $EventCopyWith(Event value, $Res Function(Event) then) = _$EventCopyWithImpl<$Res, Event>;
+  factory $EventCopyWith(Event value, $Res Function(Event) then) =
+      _$EventCopyWithImpl<$Res, Event>;
   @useResult
   $Res call({int time});
 }
 
 /// @nodoc
-class _$EventCopyWithImpl<$Res, $Val extends Event> implements $EventCopyWith<$Res> {
+class _$EventCopyWithImpl<$Res, $Val extends Event>
+    implements $EventCopyWith<$Res> {
   _$EventCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -229,16 +277,23 @@ class _$EventCopyWithImpl<$Res, $Val extends Event> implements $EventCopyWith<$R
 
 /// @nodoc
 abstract class _$$StartImplCopyWith<$Res> implements $EventCopyWith<$Res> {
-  factory _$$StartImplCopyWith(_$StartImpl value, $Res Function(_$StartImpl) then) = __$$StartImplCopyWithImpl<$Res>;
+  factory _$$StartImplCopyWith(
+    _$StartImpl value,
+    $Res Function(_$StartImpl) then,
+  ) = __$$StartImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({int time, String protocolVersion, String? runnerVersion, int pid});
 }
 
 /// @nodoc
-class __$$StartImplCopyWithImpl<$Res> extends _$EventCopyWithImpl<$Res, _$StartImpl>
+class __$$StartImplCopyWithImpl<$Res>
+    extends _$EventCopyWithImpl<$Res, _$StartImpl>
     implements _$$StartImplCopyWith<$Res> {
-  __$$StartImplCopyWithImpl(_$StartImpl _value, $Res Function(_$StartImpl) _then) : super(_value, _then);
+  __$$StartImplCopyWithImpl(
+    _$StartImpl _value,
+    $Res Function(_$StartImpl) _then,
+  ) : super(_value, _then);
 
   /// Create a copy of Event
   /// with the given fields replaced by the non-null parameter values.
@@ -288,7 +343,8 @@ class _$StartImpl implements _Start {
     final String? $type,
   }) : $type = $type ?? 'start';
 
-  factory _$StartImpl.fromJson(Map<String, dynamic> json) => _$$StartImplFromJson(json);
+  factory _$StartImpl.fromJson(Map<String, dynamic> json) =>
+      _$$StartImplFromJson(json);
 
   /// The time (in milliseconds) that has elapsed since the test runner started.
   @override
@@ -325,26 +381,36 @@ class _$StartImpl implements _Start {
         (other.runtimeType == runtimeType &&
             other is _$StartImpl &&
             (identical(other.time, time) || other.time == time) &&
-            (identical(other.protocolVersion, protocolVersion) || other.protocolVersion == protocolVersion) &&
-            (identical(other.runnerVersion, runnerVersion) || other.runnerVersion == runnerVersion) &&
+            (identical(other.protocolVersion, protocolVersion) ||
+                other.protocolVersion == protocolVersion) &&
+            (identical(other.runnerVersion, runnerVersion) ||
+                other.runnerVersion == runnerVersion) &&
             (identical(other.pid, pid) || other.pid == pid));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(runtimeType, time, protocolVersion, runnerVersion, pid);
+  int get hashCode =>
+      Object.hash(runtimeType, time, protocolVersion, runnerVersion, pid);
 
   /// Create a copy of Event
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$StartImplCopyWith<_$StartImpl> get copyWith => __$$StartImplCopyWithImpl<_$StartImpl>(this, _$identity);
+  _$$StartImplCopyWith<_$StartImpl> get copyWith =>
+      __$$StartImplCopyWithImpl<_$StartImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(int time, String protocolVersion, String? runnerVersion, int pid) start,
+    required TResult Function(
+      int time,
+      String protocolVersion,
+      String? runnerVersion,
+      int pid,
+    )
+    start,
     required TResult Function(int time, int count) allSuites,
     required TResult Function(int time, Suite suite) suite,
     required TResult Function(
@@ -356,7 +422,13 @@ class _$StartImpl implements _Start {
     debug,
     required TResult Function(int time, Group group) group,
     required TResult Function(int time, Test test) testStart,
-    required TResult Function(int time, @JsonKey(name: 'testID') int testId, String messageType, String message) print,
+    required TResult Function(
+      int time,
+      @JsonKey(name: 'testID') int testId,
+      String messageType,
+      String message,
+    )
+    print,
     required TResult Function(
       int time,
       @JsonKey(name: 'testID') int testId,
@@ -382,14 +454,31 @@ class _$StartImpl implements _Start {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(int time, String protocolVersion, String? runnerVersion, int pid)? start,
+    TResult? Function(
+      int time,
+      String protocolVersion,
+      String? runnerVersion,
+      int pid,
+    )?
+    start,
     TResult? Function(int time, int count)? allSuites,
     TResult? Function(int time, Suite suite)? suite,
-    TResult? Function(int time, @JsonKey(name: 'suiteID') int suiteId, String? observatory, String? remoteDebugger)?
+    TResult? Function(
+      int time,
+      @JsonKey(name: 'suiteID') int suiteId,
+      String? observatory,
+      String? remoteDebugger,
+    )?
     debug,
     TResult? Function(int time, Group group)? group,
     TResult? Function(int time, Test test)? testStart,
-    TResult? Function(int time, @JsonKey(name: 'testID') int testId, String messageType, String message)? print,
+    TResult? Function(
+      int time,
+      @JsonKey(name: 'testID') int testId,
+      String messageType,
+      String message,
+    )?
+    print,
     TResult? Function(
       int time,
       @JsonKey(name: 'testID') int testId,
@@ -415,14 +504,31 @@ class _$StartImpl implements _Start {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(int time, String protocolVersion, String? runnerVersion, int pid)? start,
+    TResult Function(
+      int time,
+      String protocolVersion,
+      String? runnerVersion,
+      int pid,
+    )?
+    start,
     TResult Function(int time, int count)? allSuites,
     TResult Function(int time, Suite suite)? suite,
-    TResult Function(int time, @JsonKey(name: 'suiteID') int suiteId, String? observatory, String? remoteDebugger)?
+    TResult Function(
+      int time,
+      @JsonKey(name: 'suiteID') int suiteId,
+      String? observatory,
+      String? remoteDebugger,
+    )?
     debug,
     TResult Function(int time, Group group)? group,
     TResult Function(int time, Test test)? testStart,
-    TResult Function(int time, @JsonKey(name: 'testID') int testId, String messageType, String message)? print,
+    TResult Function(
+      int time,
+      @JsonKey(name: 'testID') int testId,
+      String messageType,
+      String message,
+    )?
+    print,
     TResult Function(
       int time,
       @JsonKey(name: 'testID') int testId,
@@ -545,22 +651,29 @@ abstract class _Start implements Event {
   /// with the given fields replaced by the non-null parameter values.
   @override
   @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$StartImplCopyWith<_$StartImpl> get copyWith => throw _privateConstructorUsedError;
+  _$$StartImplCopyWith<_$StartImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class _$$AllSuitesImplCopyWith<$Res> implements $EventCopyWith<$Res> {
-  factory _$$AllSuitesImplCopyWith(_$AllSuitesImpl value, $Res Function(_$AllSuitesImpl) then) =
-      __$$AllSuitesImplCopyWithImpl<$Res>;
+  factory _$$AllSuitesImplCopyWith(
+    _$AllSuitesImpl value,
+    $Res Function(_$AllSuitesImpl) then,
+  ) = __$$AllSuitesImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({int time, int count});
 }
 
 /// @nodoc
-class __$$AllSuitesImplCopyWithImpl<$Res> extends _$EventCopyWithImpl<$Res, _$AllSuitesImpl>
+class __$$AllSuitesImplCopyWithImpl<$Res>
+    extends _$EventCopyWithImpl<$Res, _$AllSuitesImpl>
     implements _$$AllSuitesImplCopyWith<$Res> {
-  __$$AllSuitesImplCopyWithImpl(_$AllSuitesImpl _value, $Res Function(_$AllSuitesImpl) _then) : super(_value, _then);
+  __$$AllSuitesImplCopyWithImpl(
+    _$AllSuitesImpl _value,
+    $Res Function(_$AllSuitesImpl) _then,
+  ) : super(_value, _then);
 
   /// Create a copy of Event
   /// with the given fields replaced by the non-null parameter values.
@@ -587,9 +700,14 @@ class __$$AllSuitesImplCopyWithImpl<$Res> extends _$EventCopyWithImpl<$Res, _$Al
 /// @nodoc
 @JsonSerializable()
 class _$AllSuitesImpl implements _AllSuites {
-  const _$AllSuitesImpl({required this.time, required this.count, final String? $type}) : $type = $type ?? 'allSuites';
+  const _$AllSuitesImpl({
+    required this.time,
+    required this.count,
+    final String? $type,
+  }) : $type = $type ?? 'allSuites';
 
-  factory _$AllSuitesImpl.fromJson(Map<String, dynamic> json) => _$$AllSuitesImplFromJson(json);
+  factory _$AllSuitesImpl.fromJson(Map<String, dynamic> json) =>
+      _$$AllSuitesImplFromJson(json);
 
   /// The time (in milliseconds) that has elapsed since the test runner started.
   @override
@@ -631,7 +749,13 @@ class _$AllSuitesImpl implements _AllSuites {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(int time, String protocolVersion, String? runnerVersion, int pid) start,
+    required TResult Function(
+      int time,
+      String protocolVersion,
+      String? runnerVersion,
+      int pid,
+    )
+    start,
     required TResult Function(int time, int count) allSuites,
     required TResult Function(int time, Suite suite) suite,
     required TResult Function(
@@ -643,7 +767,13 @@ class _$AllSuitesImpl implements _AllSuites {
     debug,
     required TResult Function(int time, Group group) group,
     required TResult Function(int time, Test test) testStart,
-    required TResult Function(int time, @JsonKey(name: 'testID') int testId, String messageType, String message) print,
+    required TResult Function(
+      int time,
+      @JsonKey(name: 'testID') int testId,
+      String messageType,
+      String message,
+    )
+    print,
     required TResult Function(
       int time,
       @JsonKey(name: 'testID') int testId,
@@ -669,14 +799,31 @@ class _$AllSuitesImpl implements _AllSuites {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(int time, String protocolVersion, String? runnerVersion, int pid)? start,
+    TResult? Function(
+      int time,
+      String protocolVersion,
+      String? runnerVersion,
+      int pid,
+    )?
+    start,
     TResult? Function(int time, int count)? allSuites,
     TResult? Function(int time, Suite suite)? suite,
-    TResult? Function(int time, @JsonKey(name: 'suiteID') int suiteId, String? observatory, String? remoteDebugger)?
+    TResult? Function(
+      int time,
+      @JsonKey(name: 'suiteID') int suiteId,
+      String? observatory,
+      String? remoteDebugger,
+    )?
     debug,
     TResult? Function(int time, Group group)? group,
     TResult? Function(int time, Test test)? testStart,
-    TResult? Function(int time, @JsonKey(name: 'testID') int testId, String messageType, String message)? print,
+    TResult? Function(
+      int time,
+      @JsonKey(name: 'testID') int testId,
+      String messageType,
+      String message,
+    )?
+    print,
     TResult? Function(
       int time,
       @JsonKey(name: 'testID') int testId,
@@ -702,14 +849,31 @@ class _$AllSuitesImpl implements _AllSuites {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(int time, String protocolVersion, String? runnerVersion, int pid)? start,
+    TResult Function(
+      int time,
+      String protocolVersion,
+      String? runnerVersion,
+      int pid,
+    )?
+    start,
     TResult Function(int time, int count)? allSuites,
     TResult Function(int time, Suite suite)? suite,
-    TResult Function(int time, @JsonKey(name: 'suiteID') int suiteId, String? observatory, String? remoteDebugger)?
+    TResult Function(
+      int time,
+      @JsonKey(name: 'suiteID') int suiteId,
+      String? observatory,
+      String? remoteDebugger,
+    )?
     debug,
     TResult Function(int time, Group group)? group,
     TResult Function(int time, Test test)? testStart,
-    TResult Function(int time, @JsonKey(name: 'testID') int testId, String messageType, String message)? print,
+    TResult Function(
+      int time,
+      @JsonKey(name: 'testID') int testId,
+      String messageType,
+      String message,
+    )?
+    print,
     TResult Function(
       int time,
       @JsonKey(name: 'testID') int testId,
@@ -801,9 +965,13 @@ class _$AllSuitesImpl implements _AllSuites {
 }
 
 abstract class _AllSuites implements Event {
-  const factory _AllSuites({required final int time, required final int count}) = _$AllSuitesImpl;
+  const factory _AllSuites({
+    required final int time,
+    required final int count,
+  }) = _$AllSuitesImpl;
 
-  factory _AllSuites.fromJson(Map<String, dynamic> json) = _$AllSuitesImpl.fromJson;
+  factory _AllSuites.fromJson(Map<String, dynamic> json) =
+      _$AllSuitesImpl.fromJson;
 
   /// The time (in milliseconds) that has elapsed since the test runner started.
   @override
@@ -816,12 +984,16 @@ abstract class _AllSuites implements Event {
   /// with the given fields replaced by the non-null parameter values.
   @override
   @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$AllSuitesImplCopyWith<_$AllSuitesImpl> get copyWith => throw _privateConstructorUsedError;
+  _$$AllSuitesImplCopyWith<_$AllSuitesImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class _$$SuiteImplCopyWith<$Res> implements $EventCopyWith<$Res> {
-  factory _$$SuiteImplCopyWith(_$SuiteImpl value, $Res Function(_$SuiteImpl) then) = __$$SuiteImplCopyWithImpl<$Res>;
+  factory _$$SuiteImplCopyWith(
+    _$SuiteImpl value,
+    $Res Function(_$SuiteImpl) then,
+  ) = __$$SuiteImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({int time, Suite suite});
@@ -830,9 +1002,13 @@ abstract class _$$SuiteImplCopyWith<$Res> implements $EventCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$SuiteImplCopyWithImpl<$Res> extends _$EventCopyWithImpl<$Res, _$SuiteImpl>
+class __$$SuiteImplCopyWithImpl<$Res>
+    extends _$EventCopyWithImpl<$Res, _$SuiteImpl>
     implements _$$SuiteImplCopyWith<$Res> {
-  __$$SuiteImplCopyWithImpl(_$SuiteImpl _value, $Res Function(_$SuiteImpl) _then) : super(_value, _then);
+  __$$SuiteImplCopyWithImpl(
+    _$SuiteImpl _value,
+    $Res Function(_$SuiteImpl) _then,
+  ) : super(_value, _then);
 
   /// Create a copy of Event
   /// with the given fields replaced by the non-null parameter values.
@@ -869,9 +1045,14 @@ class __$$SuiteImplCopyWithImpl<$Res> extends _$EventCopyWithImpl<$Res, _$SuiteI
 /// @nodoc
 @JsonSerializable()
 class _$SuiteImpl implements _Suite {
-  const _$SuiteImpl({required this.time, required this.suite, final String? $type}) : $type = $type ?? 'suite';
+  const _$SuiteImpl({
+    required this.time,
+    required this.suite,
+    final String? $type,
+  }) : $type = $type ?? 'suite';
 
-  factory _$SuiteImpl.fromJson(Map<String, dynamic> json) => _$$SuiteImplFromJson(json);
+  factory _$SuiteImpl.fromJson(Map<String, dynamic> json) =>
+      _$$SuiteImplFromJson(json);
 
   /// The time (in milliseconds) that has elapsed since the test runner started.
   @override
@@ -907,12 +1088,19 @@ class _$SuiteImpl implements _Suite {
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$SuiteImplCopyWith<_$SuiteImpl> get copyWith => __$$SuiteImplCopyWithImpl<_$SuiteImpl>(this, _$identity);
+  _$$SuiteImplCopyWith<_$SuiteImpl> get copyWith =>
+      __$$SuiteImplCopyWithImpl<_$SuiteImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(int time, String protocolVersion, String? runnerVersion, int pid) start,
+    required TResult Function(
+      int time,
+      String protocolVersion,
+      String? runnerVersion,
+      int pid,
+    )
+    start,
     required TResult Function(int time, int count) allSuites,
     required TResult Function(int time, Suite suite) suite,
     required TResult Function(
@@ -924,7 +1112,13 @@ class _$SuiteImpl implements _Suite {
     debug,
     required TResult Function(int time, Group group) group,
     required TResult Function(int time, Test test) testStart,
-    required TResult Function(int time, @JsonKey(name: 'testID') int testId, String messageType, String message) print,
+    required TResult Function(
+      int time,
+      @JsonKey(name: 'testID') int testId,
+      String messageType,
+      String message,
+    )
+    print,
     required TResult Function(
       int time,
       @JsonKey(name: 'testID') int testId,
@@ -950,14 +1144,31 @@ class _$SuiteImpl implements _Suite {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(int time, String protocolVersion, String? runnerVersion, int pid)? start,
+    TResult? Function(
+      int time,
+      String protocolVersion,
+      String? runnerVersion,
+      int pid,
+    )?
+    start,
     TResult? Function(int time, int count)? allSuites,
     TResult? Function(int time, Suite suite)? suite,
-    TResult? Function(int time, @JsonKey(name: 'suiteID') int suiteId, String? observatory, String? remoteDebugger)?
+    TResult? Function(
+      int time,
+      @JsonKey(name: 'suiteID') int suiteId,
+      String? observatory,
+      String? remoteDebugger,
+    )?
     debug,
     TResult? Function(int time, Group group)? group,
     TResult? Function(int time, Test test)? testStart,
-    TResult? Function(int time, @JsonKey(name: 'testID') int testId, String messageType, String message)? print,
+    TResult? Function(
+      int time,
+      @JsonKey(name: 'testID') int testId,
+      String messageType,
+      String message,
+    )?
+    print,
     TResult? Function(
       int time,
       @JsonKey(name: 'testID') int testId,
@@ -983,14 +1194,31 @@ class _$SuiteImpl implements _Suite {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(int time, String protocolVersion, String? runnerVersion, int pid)? start,
+    TResult Function(
+      int time,
+      String protocolVersion,
+      String? runnerVersion,
+      int pid,
+    )?
+    start,
     TResult Function(int time, int count)? allSuites,
     TResult Function(int time, Suite suite)? suite,
-    TResult Function(int time, @JsonKey(name: 'suiteID') int suiteId, String? observatory, String? remoteDebugger)?
+    TResult Function(
+      int time,
+      @JsonKey(name: 'suiteID') int suiteId,
+      String? observatory,
+      String? remoteDebugger,
+    )?
     debug,
     TResult Function(int time, Group group)? group,
     TResult Function(int time, Test test)? testStart,
-    TResult Function(int time, @JsonKey(name: 'testID') int testId, String messageType, String message)? print,
+    TResult Function(
+      int time,
+      @JsonKey(name: 'testID') int testId,
+      String messageType,
+      String message,
+    )?
+    print,
     TResult Function(
       int time,
       @JsonKey(name: 'testID') int testId,
@@ -1082,7 +1310,8 @@ class _$SuiteImpl implements _Suite {
 }
 
 abstract class _Suite implements Event {
-  const factory _Suite({required final int time, required final Suite suite}) = _$SuiteImpl;
+  const factory _Suite({required final int time, required final Suite suite}) =
+      _$SuiteImpl;
 
   factory _Suite.fromJson(Map<String, dynamic> json) = _$SuiteImpl.fromJson;
 
@@ -1097,21 +1326,34 @@ abstract class _Suite implements Event {
   /// with the given fields replaced by the non-null parameter values.
   @override
   @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$SuiteImplCopyWith<_$SuiteImpl> get copyWith => throw _privateConstructorUsedError;
+  _$$SuiteImplCopyWith<_$SuiteImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class _$$DebugImplCopyWith<$Res> implements $EventCopyWith<$Res> {
-  factory _$$DebugImplCopyWith(_$DebugImpl value, $Res Function(_$DebugImpl) then) = __$$DebugImplCopyWithImpl<$Res>;
+  factory _$$DebugImplCopyWith(
+    _$DebugImpl value,
+    $Res Function(_$DebugImpl) then,
+  ) = __$$DebugImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({int time, @JsonKey(name: 'suiteID') int suiteId, String? observatory, String? remoteDebugger});
+  $Res call({
+    int time,
+    @JsonKey(name: 'suiteID') int suiteId,
+    String? observatory,
+    String? remoteDebugger,
+  });
 }
 
 /// @nodoc
-class __$$DebugImplCopyWithImpl<$Res> extends _$EventCopyWithImpl<$Res, _$DebugImpl>
+class __$$DebugImplCopyWithImpl<$Res>
+    extends _$EventCopyWithImpl<$Res, _$DebugImpl>
     implements _$$DebugImplCopyWith<$Res> {
-  __$$DebugImplCopyWithImpl(_$DebugImpl _value, $Res Function(_$DebugImpl) _then) : super(_value, _then);
+  __$$DebugImplCopyWithImpl(
+    _$DebugImpl _value,
+    $Res Function(_$DebugImpl) _then,
+  ) : super(_value, _then);
 
   /// Create a copy of Event
   /// with the given fields replaced by the non-null parameter values.
@@ -1161,7 +1403,8 @@ class _$DebugImpl implements _Debug {
     final String? $type,
   }) : $type = $type ?? 'debug';
 
-  factory _$DebugImpl.fromJson(Map<String, dynamic> json) => _$$DebugImplFromJson(json);
+  factory _$DebugImpl.fromJson(Map<String, dynamic> json) =>
+      _$$DebugImplFromJson(json);
 
   /// The time (in milliseconds) that has elapsed since the test runner started.
   @override
@@ -1195,25 +1438,35 @@ class _$DebugImpl implements _Debug {
             other is _$DebugImpl &&
             (identical(other.time, time) || other.time == time) &&
             (identical(other.suiteId, suiteId) || other.suiteId == suiteId) &&
-            (identical(other.observatory, observatory) || other.observatory == observatory) &&
-            (identical(other.remoteDebugger, remoteDebugger) || other.remoteDebugger == remoteDebugger));
+            (identical(other.observatory, observatory) ||
+                other.observatory == observatory) &&
+            (identical(other.remoteDebugger, remoteDebugger) ||
+                other.remoteDebugger == remoteDebugger));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(runtimeType, time, suiteId, observatory, remoteDebugger);
+  int get hashCode =>
+      Object.hash(runtimeType, time, suiteId, observatory, remoteDebugger);
 
   /// Create a copy of Event
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$DebugImplCopyWith<_$DebugImpl> get copyWith => __$$DebugImplCopyWithImpl<_$DebugImpl>(this, _$identity);
+  _$$DebugImplCopyWith<_$DebugImpl> get copyWith =>
+      __$$DebugImplCopyWithImpl<_$DebugImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(int time, String protocolVersion, String? runnerVersion, int pid) start,
+    required TResult Function(
+      int time,
+      String protocolVersion,
+      String? runnerVersion,
+      int pid,
+    )
+    start,
     required TResult Function(int time, int count) allSuites,
     required TResult Function(int time, Suite suite) suite,
     required TResult Function(
@@ -1225,7 +1478,13 @@ class _$DebugImpl implements _Debug {
     debug,
     required TResult Function(int time, Group group) group,
     required TResult Function(int time, Test test) testStart,
-    required TResult Function(int time, @JsonKey(name: 'testID') int testId, String messageType, String message) print,
+    required TResult Function(
+      int time,
+      @JsonKey(name: 'testID') int testId,
+      String messageType,
+      String message,
+    )
+    print,
     required TResult Function(
       int time,
       @JsonKey(name: 'testID') int testId,
@@ -1251,14 +1510,31 @@ class _$DebugImpl implements _Debug {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(int time, String protocolVersion, String? runnerVersion, int pid)? start,
+    TResult? Function(
+      int time,
+      String protocolVersion,
+      String? runnerVersion,
+      int pid,
+    )?
+    start,
     TResult? Function(int time, int count)? allSuites,
     TResult? Function(int time, Suite suite)? suite,
-    TResult? Function(int time, @JsonKey(name: 'suiteID') int suiteId, String? observatory, String? remoteDebugger)?
+    TResult? Function(
+      int time,
+      @JsonKey(name: 'suiteID') int suiteId,
+      String? observatory,
+      String? remoteDebugger,
+    )?
     debug,
     TResult? Function(int time, Group group)? group,
     TResult? Function(int time, Test test)? testStart,
-    TResult? Function(int time, @JsonKey(name: 'testID') int testId, String messageType, String message)? print,
+    TResult? Function(
+      int time,
+      @JsonKey(name: 'testID') int testId,
+      String messageType,
+      String message,
+    )?
+    print,
     TResult? Function(
       int time,
       @JsonKey(name: 'testID') int testId,
@@ -1284,14 +1560,31 @@ class _$DebugImpl implements _Debug {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(int time, String protocolVersion, String? runnerVersion, int pid)? start,
+    TResult Function(
+      int time,
+      String protocolVersion,
+      String? runnerVersion,
+      int pid,
+    )?
+    start,
     TResult Function(int time, int count)? allSuites,
     TResult Function(int time, Suite suite)? suite,
-    TResult Function(int time, @JsonKey(name: 'suiteID') int suiteId, String? observatory, String? remoteDebugger)?
+    TResult Function(
+      int time,
+      @JsonKey(name: 'suiteID') int suiteId,
+      String? observatory,
+      String? remoteDebugger,
+    )?
     debug,
     TResult Function(int time, Group group)? group,
     TResult Function(int time, Test test)? testStart,
-    TResult Function(int time, @JsonKey(name: 'testID') int testId, String messageType, String message)? print,
+    TResult Function(
+      int time,
+      @JsonKey(name: 'testID') int testId,
+      String messageType,
+      String message,
+    )?
+    print,
     TResult Function(
       int time,
       @JsonKey(name: 'testID') int testId,
@@ -1410,12 +1703,16 @@ abstract class _Debug implements Event {
   /// with the given fields replaced by the non-null parameter values.
   @override
   @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$DebugImplCopyWith<_$DebugImpl> get copyWith => throw _privateConstructorUsedError;
+  _$$DebugImplCopyWith<_$DebugImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class _$$GroupImplCopyWith<$Res> implements $EventCopyWith<$Res> {
-  factory _$$GroupImplCopyWith(_$GroupImpl value, $Res Function(_$GroupImpl) then) = __$$GroupImplCopyWithImpl<$Res>;
+  factory _$$GroupImplCopyWith(
+    _$GroupImpl value,
+    $Res Function(_$GroupImpl) then,
+  ) = __$$GroupImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({int time, Group group});
@@ -1424,9 +1721,13 @@ abstract class _$$GroupImplCopyWith<$Res> implements $EventCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$GroupImplCopyWithImpl<$Res> extends _$EventCopyWithImpl<$Res, _$GroupImpl>
+class __$$GroupImplCopyWithImpl<$Res>
+    extends _$EventCopyWithImpl<$Res, _$GroupImpl>
     implements _$$GroupImplCopyWith<$Res> {
-  __$$GroupImplCopyWithImpl(_$GroupImpl _value, $Res Function(_$GroupImpl) _then) : super(_value, _then);
+  __$$GroupImplCopyWithImpl(
+    _$GroupImpl _value,
+    $Res Function(_$GroupImpl) _then,
+  ) : super(_value, _then);
 
   /// Create a copy of Event
   /// with the given fields replaced by the non-null parameter values.
@@ -1463,9 +1764,14 @@ class __$$GroupImplCopyWithImpl<$Res> extends _$EventCopyWithImpl<$Res, _$GroupI
 /// @nodoc
 @JsonSerializable()
 class _$GroupImpl implements _Group {
-  const _$GroupImpl({required this.time, required this.group, final String? $type}) : $type = $type ?? 'group';
+  const _$GroupImpl({
+    required this.time,
+    required this.group,
+    final String? $type,
+  }) : $type = $type ?? 'group';
 
-  factory _$GroupImpl.fromJson(Map<String, dynamic> json) => _$$GroupImplFromJson(json);
+  factory _$GroupImpl.fromJson(Map<String, dynamic> json) =>
+      _$$GroupImplFromJson(json);
 
   /// The time (in milliseconds) that has elapsed since the test runner started.
   @override
@@ -1501,12 +1807,19 @@ class _$GroupImpl implements _Group {
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$GroupImplCopyWith<_$GroupImpl> get copyWith => __$$GroupImplCopyWithImpl<_$GroupImpl>(this, _$identity);
+  _$$GroupImplCopyWith<_$GroupImpl> get copyWith =>
+      __$$GroupImplCopyWithImpl<_$GroupImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(int time, String protocolVersion, String? runnerVersion, int pid) start,
+    required TResult Function(
+      int time,
+      String protocolVersion,
+      String? runnerVersion,
+      int pid,
+    )
+    start,
     required TResult Function(int time, int count) allSuites,
     required TResult Function(int time, Suite suite) suite,
     required TResult Function(
@@ -1518,7 +1831,13 @@ class _$GroupImpl implements _Group {
     debug,
     required TResult Function(int time, Group group) group,
     required TResult Function(int time, Test test) testStart,
-    required TResult Function(int time, @JsonKey(name: 'testID') int testId, String messageType, String message) print,
+    required TResult Function(
+      int time,
+      @JsonKey(name: 'testID') int testId,
+      String messageType,
+      String message,
+    )
+    print,
     required TResult Function(
       int time,
       @JsonKey(name: 'testID') int testId,
@@ -1544,14 +1863,31 @@ class _$GroupImpl implements _Group {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(int time, String protocolVersion, String? runnerVersion, int pid)? start,
+    TResult? Function(
+      int time,
+      String protocolVersion,
+      String? runnerVersion,
+      int pid,
+    )?
+    start,
     TResult? Function(int time, int count)? allSuites,
     TResult? Function(int time, Suite suite)? suite,
-    TResult? Function(int time, @JsonKey(name: 'suiteID') int suiteId, String? observatory, String? remoteDebugger)?
+    TResult? Function(
+      int time,
+      @JsonKey(name: 'suiteID') int suiteId,
+      String? observatory,
+      String? remoteDebugger,
+    )?
     debug,
     TResult? Function(int time, Group group)? group,
     TResult? Function(int time, Test test)? testStart,
-    TResult? Function(int time, @JsonKey(name: 'testID') int testId, String messageType, String message)? print,
+    TResult? Function(
+      int time,
+      @JsonKey(name: 'testID') int testId,
+      String messageType,
+      String message,
+    )?
+    print,
     TResult? Function(
       int time,
       @JsonKey(name: 'testID') int testId,
@@ -1577,14 +1913,31 @@ class _$GroupImpl implements _Group {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(int time, String protocolVersion, String? runnerVersion, int pid)? start,
+    TResult Function(
+      int time,
+      String protocolVersion,
+      String? runnerVersion,
+      int pid,
+    )?
+    start,
     TResult Function(int time, int count)? allSuites,
     TResult Function(int time, Suite suite)? suite,
-    TResult Function(int time, @JsonKey(name: 'suiteID') int suiteId, String? observatory, String? remoteDebugger)?
+    TResult Function(
+      int time,
+      @JsonKey(name: 'suiteID') int suiteId,
+      String? observatory,
+      String? remoteDebugger,
+    )?
     debug,
     TResult Function(int time, Group group)? group,
     TResult Function(int time, Test test)? testStart,
-    TResult Function(int time, @JsonKey(name: 'testID') int testId, String messageType, String message)? print,
+    TResult Function(
+      int time,
+      @JsonKey(name: 'testID') int testId,
+      String messageType,
+      String message,
+    )?
+    print,
     TResult Function(
       int time,
       @JsonKey(name: 'testID') int testId,
@@ -1676,7 +2029,8 @@ class _$GroupImpl implements _Group {
 }
 
 abstract class _Group implements Event {
-  const factory _Group({required final int time, required final Group group}) = _$GroupImpl;
+  const factory _Group({required final int time, required final Group group}) =
+      _$GroupImpl;
 
   factory _Group.fromJson(Map<String, dynamic> json) = _$GroupImpl.fromJson;
 
@@ -1691,13 +2045,16 @@ abstract class _Group implements Event {
   /// with the given fields replaced by the non-null parameter values.
   @override
   @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$GroupImplCopyWith<_$GroupImpl> get copyWith => throw _privateConstructorUsedError;
+  _$$GroupImplCopyWith<_$GroupImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class _$$TestStartImplCopyWith<$Res> implements $EventCopyWith<$Res> {
-  factory _$$TestStartImplCopyWith(_$TestStartImpl value, $Res Function(_$TestStartImpl) then) =
-      __$$TestStartImplCopyWithImpl<$Res>;
+  factory _$$TestStartImplCopyWith(
+    _$TestStartImpl value,
+    $Res Function(_$TestStartImpl) then,
+  ) = __$$TestStartImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({int time, Test test});
@@ -1706,9 +2063,13 @@ abstract class _$$TestStartImplCopyWith<$Res> implements $EventCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$TestStartImplCopyWithImpl<$Res> extends _$EventCopyWithImpl<$Res, _$TestStartImpl>
+class __$$TestStartImplCopyWithImpl<$Res>
+    extends _$EventCopyWithImpl<$Res, _$TestStartImpl>
     implements _$$TestStartImplCopyWith<$Res> {
-  __$$TestStartImplCopyWithImpl(_$TestStartImpl _value, $Res Function(_$TestStartImpl) _then) : super(_value, _then);
+  __$$TestStartImplCopyWithImpl(
+    _$TestStartImpl _value,
+    $Res Function(_$TestStartImpl) _then,
+  ) : super(_value, _then);
 
   /// Create a copy of Event
   /// with the given fields replaced by the non-null parameter values.
@@ -1745,9 +2106,14 @@ class __$$TestStartImplCopyWithImpl<$Res> extends _$EventCopyWithImpl<$Res, _$Te
 /// @nodoc
 @JsonSerializable()
 class _$TestStartImpl implements _TestStart {
-  const _$TestStartImpl({required this.time, required this.test, final String? $type}) : $type = $type ?? 'testStart';
+  const _$TestStartImpl({
+    required this.time,
+    required this.test,
+    final String? $type,
+  }) : $type = $type ?? 'testStart';
 
-  factory _$TestStartImpl.fromJson(Map<String, dynamic> json) => _$$TestStartImplFromJson(json);
+  factory _$TestStartImpl.fromJson(Map<String, dynamic> json) =>
+      _$$TestStartImplFromJson(json);
 
   /// The time (in milliseconds) that has elapsed since the test runner started.
   @override
@@ -1789,7 +2155,13 @@ class _$TestStartImpl implements _TestStart {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(int time, String protocolVersion, String? runnerVersion, int pid) start,
+    required TResult Function(
+      int time,
+      String protocolVersion,
+      String? runnerVersion,
+      int pid,
+    )
+    start,
     required TResult Function(int time, int count) allSuites,
     required TResult Function(int time, Suite suite) suite,
     required TResult Function(
@@ -1801,7 +2173,13 @@ class _$TestStartImpl implements _TestStart {
     debug,
     required TResult Function(int time, Group group) group,
     required TResult Function(int time, Test test) testStart,
-    required TResult Function(int time, @JsonKey(name: 'testID') int testId, String messageType, String message) print,
+    required TResult Function(
+      int time,
+      @JsonKey(name: 'testID') int testId,
+      String messageType,
+      String message,
+    )
+    print,
     required TResult Function(
       int time,
       @JsonKey(name: 'testID') int testId,
@@ -1827,14 +2205,31 @@ class _$TestStartImpl implements _TestStart {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(int time, String protocolVersion, String? runnerVersion, int pid)? start,
+    TResult? Function(
+      int time,
+      String protocolVersion,
+      String? runnerVersion,
+      int pid,
+    )?
+    start,
     TResult? Function(int time, int count)? allSuites,
     TResult? Function(int time, Suite suite)? suite,
-    TResult? Function(int time, @JsonKey(name: 'suiteID') int suiteId, String? observatory, String? remoteDebugger)?
+    TResult? Function(
+      int time,
+      @JsonKey(name: 'suiteID') int suiteId,
+      String? observatory,
+      String? remoteDebugger,
+    )?
     debug,
     TResult? Function(int time, Group group)? group,
     TResult? Function(int time, Test test)? testStart,
-    TResult? Function(int time, @JsonKey(name: 'testID') int testId, String messageType, String message)? print,
+    TResult? Function(
+      int time,
+      @JsonKey(name: 'testID') int testId,
+      String messageType,
+      String message,
+    )?
+    print,
     TResult? Function(
       int time,
       @JsonKey(name: 'testID') int testId,
@@ -1860,14 +2255,31 @@ class _$TestStartImpl implements _TestStart {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(int time, String protocolVersion, String? runnerVersion, int pid)? start,
+    TResult Function(
+      int time,
+      String protocolVersion,
+      String? runnerVersion,
+      int pid,
+    )?
+    start,
     TResult Function(int time, int count)? allSuites,
     TResult Function(int time, Suite suite)? suite,
-    TResult Function(int time, @JsonKey(name: 'suiteID') int suiteId, String? observatory, String? remoteDebugger)?
+    TResult Function(
+      int time,
+      @JsonKey(name: 'suiteID') int suiteId,
+      String? observatory,
+      String? remoteDebugger,
+    )?
     debug,
     TResult Function(int time, Group group)? group,
     TResult Function(int time, Test test)? testStart,
-    TResult Function(int time, @JsonKey(name: 'testID') int testId, String messageType, String message)? print,
+    TResult Function(
+      int time,
+      @JsonKey(name: 'testID') int testId,
+      String messageType,
+      String message,
+    )?
+    print,
     TResult Function(
       int time,
       @JsonKey(name: 'testID') int testId,
@@ -1959,9 +2371,13 @@ class _$TestStartImpl implements _TestStart {
 }
 
 abstract class _TestStart implements Event {
-  const factory _TestStart({required final int time, required final Test test}) = _$TestStartImpl;
+  const factory _TestStart({
+    required final int time,
+    required final Test test,
+  }) = _$TestStartImpl;
 
-  factory _TestStart.fromJson(Map<String, dynamic> json) = _$TestStartImpl.fromJson;
+  factory _TestStart.fromJson(Map<String, dynamic> json) =
+      _$TestStartImpl.fromJson;
 
   /// The time (in milliseconds) that has elapsed since the test runner started.
   @override
@@ -1974,27 +2390,45 @@ abstract class _TestStart implements Event {
   /// with the given fields replaced by the non-null parameter values.
   @override
   @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$TestStartImplCopyWith<_$TestStartImpl> get copyWith => throw _privateConstructorUsedError;
+  _$$TestStartImplCopyWith<_$TestStartImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class _$$PrintImplCopyWith<$Res> implements $EventCopyWith<$Res> {
-  factory _$$PrintImplCopyWith(_$PrintImpl value, $Res Function(_$PrintImpl) then) = __$$PrintImplCopyWithImpl<$Res>;
+  factory _$$PrintImplCopyWith(
+    _$PrintImpl value,
+    $Res Function(_$PrintImpl) then,
+  ) = __$$PrintImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({int time, @JsonKey(name: 'testID') int testId, String messageType, String message});
+  $Res call({
+    int time,
+    @JsonKey(name: 'testID') int testId,
+    String messageType,
+    String message,
+  });
 }
 
 /// @nodoc
-class __$$PrintImplCopyWithImpl<$Res> extends _$EventCopyWithImpl<$Res, _$PrintImpl>
+class __$$PrintImplCopyWithImpl<$Res>
+    extends _$EventCopyWithImpl<$Res, _$PrintImpl>
     implements _$$PrintImplCopyWith<$Res> {
-  __$$PrintImplCopyWithImpl(_$PrintImpl _value, $Res Function(_$PrintImpl) _then) : super(_value, _then);
+  __$$PrintImplCopyWithImpl(
+    _$PrintImpl _value,
+    $Res Function(_$PrintImpl) _then,
+  ) : super(_value, _then);
 
   /// Create a copy of Event
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
-  $Res call({Object? time = null, Object? testId = null, Object? messageType = null, Object? message = null}) {
+  $Res call({
+    Object? time = null,
+    Object? testId = null,
+    Object? messageType = null,
+    Object? message = null,
+  }) {
     return _then(
       _$PrintImpl(
         time:
@@ -2033,7 +2467,8 @@ class _$PrintImpl implements _Print {
     final String? $type,
   }) : $type = $type ?? 'print';
 
-  factory _$PrintImpl.fromJson(Map<String, dynamic> json) => _$$PrintImplFromJson(json);
+  factory _$PrintImpl.fromJson(Map<String, dynamic> json) =>
+      _$$PrintImplFromJson(json);
 
   /// The time (in milliseconds) that has elapsed since the test runner started.
   @override
@@ -2067,25 +2502,34 @@ class _$PrintImpl implements _Print {
             other is _$PrintImpl &&
             (identical(other.time, time) || other.time == time) &&
             (identical(other.testId, testId) || other.testId == testId) &&
-            (identical(other.messageType, messageType) || other.messageType == messageType) &&
+            (identical(other.messageType, messageType) ||
+                other.messageType == messageType) &&
             (identical(other.message, message) || other.message == message));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(runtimeType, time, testId, messageType, message);
+  int get hashCode =>
+      Object.hash(runtimeType, time, testId, messageType, message);
 
   /// Create a copy of Event
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$PrintImplCopyWith<_$PrintImpl> get copyWith => __$$PrintImplCopyWithImpl<_$PrintImpl>(this, _$identity);
+  _$$PrintImplCopyWith<_$PrintImpl> get copyWith =>
+      __$$PrintImplCopyWithImpl<_$PrintImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(int time, String protocolVersion, String? runnerVersion, int pid) start,
+    required TResult Function(
+      int time,
+      String protocolVersion,
+      String? runnerVersion,
+      int pid,
+    )
+    start,
     required TResult Function(int time, int count) allSuites,
     required TResult Function(int time, Suite suite) suite,
     required TResult Function(
@@ -2097,7 +2541,13 @@ class _$PrintImpl implements _Print {
     debug,
     required TResult Function(int time, Group group) group,
     required TResult Function(int time, Test test) testStart,
-    required TResult Function(int time, @JsonKey(name: 'testID') int testId, String messageType, String message) print,
+    required TResult Function(
+      int time,
+      @JsonKey(name: 'testID') int testId,
+      String messageType,
+      String message,
+    )
+    print,
     required TResult Function(
       int time,
       @JsonKey(name: 'testID') int testId,
@@ -2123,14 +2573,31 @@ class _$PrintImpl implements _Print {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(int time, String protocolVersion, String? runnerVersion, int pid)? start,
+    TResult? Function(
+      int time,
+      String protocolVersion,
+      String? runnerVersion,
+      int pid,
+    )?
+    start,
     TResult? Function(int time, int count)? allSuites,
     TResult? Function(int time, Suite suite)? suite,
-    TResult? Function(int time, @JsonKey(name: 'suiteID') int suiteId, String? observatory, String? remoteDebugger)?
+    TResult? Function(
+      int time,
+      @JsonKey(name: 'suiteID') int suiteId,
+      String? observatory,
+      String? remoteDebugger,
+    )?
     debug,
     TResult? Function(int time, Group group)? group,
     TResult? Function(int time, Test test)? testStart,
-    TResult? Function(int time, @JsonKey(name: 'testID') int testId, String messageType, String message)? print,
+    TResult? Function(
+      int time,
+      @JsonKey(name: 'testID') int testId,
+      String messageType,
+      String message,
+    )?
+    print,
     TResult? Function(
       int time,
       @JsonKey(name: 'testID') int testId,
@@ -2156,14 +2623,31 @@ class _$PrintImpl implements _Print {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(int time, String protocolVersion, String? runnerVersion, int pid)? start,
+    TResult Function(
+      int time,
+      String protocolVersion,
+      String? runnerVersion,
+      int pid,
+    )?
+    start,
     TResult Function(int time, int count)? allSuites,
     TResult Function(int time, Suite suite)? suite,
-    TResult Function(int time, @JsonKey(name: 'suiteID') int suiteId, String? observatory, String? remoteDebugger)?
+    TResult Function(
+      int time,
+      @JsonKey(name: 'suiteID') int suiteId,
+      String? observatory,
+      String? remoteDebugger,
+    )?
     debug,
     TResult Function(int time, Group group)? group,
     TResult Function(int time, Test test)? testStart,
-    TResult Function(int time, @JsonKey(name: 'testID') int testId, String messageType, String message)? print,
+    TResult Function(
+      int time,
+      @JsonKey(name: 'testID') int testId,
+      String messageType,
+      String message,
+    )?
+    print,
     TResult Function(
       int time,
       @JsonKey(name: 'testID') int testId,
@@ -2282,12 +2766,16 @@ abstract class _Print implements Event {
   /// with the given fields replaced by the non-null parameter values.
   @override
   @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$PrintImplCopyWith<_$PrintImpl> get copyWith => throw _privateConstructorUsedError;
+  _$$PrintImplCopyWith<_$PrintImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class _$$ErrorImplCopyWith<$Res> implements $EventCopyWith<$Res> {
-  factory _$$ErrorImplCopyWith(_$ErrorImpl value, $Res Function(_$ErrorImpl) then) = __$$ErrorImplCopyWithImpl<$Res>;
+  factory _$$ErrorImplCopyWith(
+    _$ErrorImpl value,
+    $Res Function(_$ErrorImpl) then,
+  ) = __$$ErrorImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({
@@ -2300,9 +2788,13 @@ abstract class _$$ErrorImplCopyWith<$Res> implements $EventCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$ErrorImplCopyWithImpl<$Res> extends _$EventCopyWithImpl<$Res, _$ErrorImpl>
+class __$$ErrorImplCopyWithImpl<$Res>
+    extends _$EventCopyWithImpl<$Res, _$ErrorImpl>
     implements _$$ErrorImplCopyWith<$Res> {
-  __$$ErrorImplCopyWithImpl(_$ErrorImpl _value, $Res Function(_$ErrorImpl) _then) : super(_value, _then);
+  __$$ErrorImplCopyWithImpl(
+    _$ErrorImpl _value,
+    $Res Function(_$ErrorImpl) _then,
+  ) : super(_value, _then);
 
   /// Create a copy of Event
   /// with the given fields replaced by the non-null parameter values.
@@ -2359,7 +2851,8 @@ class _$ErrorImpl implements _Error {
     final String? $type,
   }) : $type = $type ?? 'error';
 
-  factory _$ErrorImpl.fromJson(Map<String, dynamic> json) => _$$ErrorImplFromJson(json);
+  factory _$ErrorImpl.fromJson(Map<String, dynamic> json) =>
+      _$$ErrorImplFromJson(json);
 
   /// The time (in milliseconds) that has elapsed since the test runner started.
   @override
@@ -2399,25 +2892,35 @@ class _$ErrorImpl implements _Error {
             (identical(other.time, time) || other.time == time) &&
             (identical(other.testId, testId) || other.testId == testId) &&
             (identical(other.error, error) || other.error == error) &&
-            (identical(other.stacktrace, stacktrace) || other.stacktrace == stacktrace) &&
-            (identical(other.isFailure, isFailure) || other.isFailure == isFailure));
+            (identical(other.stacktrace, stacktrace) ||
+                other.stacktrace == stacktrace) &&
+            (identical(other.isFailure, isFailure) ||
+                other.isFailure == isFailure));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(runtimeType, time, testId, error, stacktrace, isFailure);
+  int get hashCode =>
+      Object.hash(runtimeType, time, testId, error, stacktrace, isFailure);
 
   /// Create a copy of Event
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$ErrorImplCopyWith<_$ErrorImpl> get copyWith => __$$ErrorImplCopyWithImpl<_$ErrorImpl>(this, _$identity);
+  _$$ErrorImplCopyWith<_$ErrorImpl> get copyWith =>
+      __$$ErrorImplCopyWithImpl<_$ErrorImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(int time, String protocolVersion, String? runnerVersion, int pid) start,
+    required TResult Function(
+      int time,
+      String protocolVersion,
+      String? runnerVersion,
+      int pid,
+    )
+    start,
     required TResult Function(int time, int count) allSuites,
     required TResult Function(int time, Suite suite) suite,
     required TResult Function(
@@ -2429,7 +2932,13 @@ class _$ErrorImpl implements _Error {
     debug,
     required TResult Function(int time, Group group) group,
     required TResult Function(int time, Test test) testStart,
-    required TResult Function(int time, @JsonKey(name: 'testID') int testId, String messageType, String message) print,
+    required TResult Function(
+      int time,
+      @JsonKey(name: 'testID') int testId,
+      String messageType,
+      String message,
+    )
+    print,
     required TResult Function(
       int time,
       @JsonKey(name: 'testID') int testId,
@@ -2455,14 +2964,31 @@ class _$ErrorImpl implements _Error {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(int time, String protocolVersion, String? runnerVersion, int pid)? start,
+    TResult? Function(
+      int time,
+      String protocolVersion,
+      String? runnerVersion,
+      int pid,
+    )?
+    start,
     TResult? Function(int time, int count)? allSuites,
     TResult? Function(int time, Suite suite)? suite,
-    TResult? Function(int time, @JsonKey(name: 'suiteID') int suiteId, String? observatory, String? remoteDebugger)?
+    TResult? Function(
+      int time,
+      @JsonKey(name: 'suiteID') int suiteId,
+      String? observatory,
+      String? remoteDebugger,
+    )?
     debug,
     TResult? Function(int time, Group group)? group,
     TResult? Function(int time, Test test)? testStart,
-    TResult? Function(int time, @JsonKey(name: 'testID') int testId, String messageType, String message)? print,
+    TResult? Function(
+      int time,
+      @JsonKey(name: 'testID') int testId,
+      String messageType,
+      String message,
+    )?
+    print,
     TResult? Function(
       int time,
       @JsonKey(name: 'testID') int testId,
@@ -2488,14 +3014,31 @@ class _$ErrorImpl implements _Error {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(int time, String protocolVersion, String? runnerVersion, int pid)? start,
+    TResult Function(
+      int time,
+      String protocolVersion,
+      String? runnerVersion,
+      int pid,
+    )?
+    start,
     TResult Function(int time, int count)? allSuites,
     TResult Function(int time, Suite suite)? suite,
-    TResult Function(int time, @JsonKey(name: 'suiteID') int suiteId, String? observatory, String? remoteDebugger)?
+    TResult Function(
+      int time,
+      @JsonKey(name: 'suiteID') int suiteId,
+      String? observatory,
+      String? remoteDebugger,
+    )?
     debug,
     TResult Function(int time, Group group)? group,
     TResult Function(int time, Test test)? testStart,
-    TResult Function(int time, @JsonKey(name: 'testID') int testId, String messageType, String message)? print,
+    TResult Function(
+      int time,
+      @JsonKey(name: 'testID') int testId,
+      String messageType,
+      String message,
+    )?
+    print,
     TResult Function(
       int time,
       @JsonKey(name: 'testID') int testId,
@@ -2619,13 +3162,16 @@ abstract class _Error implements Event {
   /// with the given fields replaced by the non-null parameter values.
   @override
   @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$ErrorImplCopyWith<_$ErrorImpl> get copyWith => throw _privateConstructorUsedError;
+  _$$ErrorImplCopyWith<_$ErrorImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class _$$TestDoneImplCopyWith<$Res> implements $EventCopyWith<$Res> {
-  factory _$$TestDoneImplCopyWith(_$TestDoneImpl value, $Res Function(_$TestDoneImpl) then) =
-      __$$TestDoneImplCopyWithImpl<$Res>;
+  factory _$$TestDoneImplCopyWith(
+    _$TestDoneImpl value,
+    $Res Function(_$TestDoneImpl) then,
+  ) = __$$TestDoneImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({
@@ -2638,9 +3184,13 @@ abstract class _$$TestDoneImplCopyWith<$Res> implements $EventCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$TestDoneImplCopyWithImpl<$Res> extends _$EventCopyWithImpl<$Res, _$TestDoneImpl>
+class __$$TestDoneImplCopyWithImpl<$Res>
+    extends _$EventCopyWithImpl<$Res, _$TestDoneImpl>
     implements _$$TestDoneImplCopyWith<$Res> {
-  __$$TestDoneImplCopyWithImpl(_$TestDoneImpl _value, $Res Function(_$TestDoneImpl) _then) : super(_value, _then);
+  __$$TestDoneImplCopyWithImpl(
+    _$TestDoneImpl _value,
+    $Res Function(_$TestDoneImpl) _then,
+  ) : super(_value, _then);
 
   /// Create a copy of Event
   /// with the given fields replaced by the non-null parameter values.
@@ -2697,7 +3247,8 @@ class _$TestDoneImpl implements _TestDone {
     final String? $type,
   }) : $type = $type ?? 'testDone';
 
-  factory _$TestDoneImpl.fromJson(Map<String, dynamic> json) => _$$TestDoneImplFromJson(json);
+  factory _$TestDoneImpl.fromJson(Map<String, dynamic> json) =>
+      _$$TestDoneImplFromJson(json);
 
   /// The time (in milliseconds) that has elapsed since the test runner started.
   @override
@@ -2743,7 +3294,8 @@ class _$TestDoneImpl implements _TestDone {
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(runtimeType, time, result, testId, hidden, skipped);
+  int get hashCode =>
+      Object.hash(runtimeType, time, result, testId, hidden, skipped);
 
   /// Create a copy of Event
   /// with the given fields replaced by the non-null parameter values.
@@ -2756,7 +3308,13 @@ class _$TestDoneImpl implements _TestDone {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(int time, String protocolVersion, String? runnerVersion, int pid) start,
+    required TResult Function(
+      int time,
+      String protocolVersion,
+      String? runnerVersion,
+      int pid,
+    )
+    start,
     required TResult Function(int time, int count) allSuites,
     required TResult Function(int time, Suite suite) suite,
     required TResult Function(
@@ -2768,7 +3326,13 @@ class _$TestDoneImpl implements _TestDone {
     debug,
     required TResult Function(int time, Group group) group,
     required TResult Function(int time, Test test) testStart,
-    required TResult Function(int time, @JsonKey(name: 'testID') int testId, String messageType, String message) print,
+    required TResult Function(
+      int time,
+      @JsonKey(name: 'testID') int testId,
+      String messageType,
+      String message,
+    )
+    print,
     required TResult Function(
       int time,
       @JsonKey(name: 'testID') int testId,
@@ -2794,14 +3358,31 @@ class _$TestDoneImpl implements _TestDone {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(int time, String protocolVersion, String? runnerVersion, int pid)? start,
+    TResult? Function(
+      int time,
+      String protocolVersion,
+      String? runnerVersion,
+      int pid,
+    )?
+    start,
     TResult? Function(int time, int count)? allSuites,
     TResult? Function(int time, Suite suite)? suite,
-    TResult? Function(int time, @JsonKey(name: 'suiteID') int suiteId, String? observatory, String? remoteDebugger)?
+    TResult? Function(
+      int time,
+      @JsonKey(name: 'suiteID') int suiteId,
+      String? observatory,
+      String? remoteDebugger,
+    )?
     debug,
     TResult? Function(int time, Group group)? group,
     TResult? Function(int time, Test test)? testStart,
-    TResult? Function(int time, @JsonKey(name: 'testID') int testId, String messageType, String message)? print,
+    TResult? Function(
+      int time,
+      @JsonKey(name: 'testID') int testId,
+      String messageType,
+      String message,
+    )?
+    print,
     TResult? Function(
       int time,
       @JsonKey(name: 'testID') int testId,
@@ -2827,14 +3408,31 @@ class _$TestDoneImpl implements _TestDone {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(int time, String protocolVersion, String? runnerVersion, int pid)? start,
+    TResult Function(
+      int time,
+      String protocolVersion,
+      String? runnerVersion,
+      int pid,
+    )?
+    start,
     TResult Function(int time, int count)? allSuites,
     TResult Function(int time, Suite suite)? suite,
-    TResult Function(int time, @JsonKey(name: 'suiteID') int suiteId, String? observatory, String? remoteDebugger)?
+    TResult Function(
+      int time,
+      @JsonKey(name: 'suiteID') int suiteId,
+      String? observatory,
+      String? remoteDebugger,
+    )?
     debug,
     TResult Function(int time, Group group)? group,
     TResult Function(int time, Test test)? testStart,
-    TResult Function(int time, @JsonKey(name: 'testID') int testId, String messageType, String message)? print,
+    TResult Function(
+      int time,
+      @JsonKey(name: 'testID') int testId,
+      String messageType,
+      String message,
+    )?
+    print,
     TResult Function(
       int time,
       @JsonKey(name: 'testID') int testId,
@@ -2928,13 +3526,15 @@ class _$TestDoneImpl implements _TestDone {
 abstract class _TestDone implements Event {
   const factory _TestDone({
     required final int time,
-    @JsonKey(unknownEnumValue: TestResult.unknown) required final TestResult result,
+    @JsonKey(unknownEnumValue: TestResult.unknown)
+    required final TestResult result,
     @JsonKey(name: 'testID') required final int testId,
     required final bool hidden,
     required final bool skipped,
   }) = _$TestDoneImpl;
 
-  factory _TestDone.fromJson(Map<String, dynamic> json) = _$TestDoneImpl.fromJson;
+  factory _TestDone.fromJson(Map<String, dynamic> json) =
+      _$TestDoneImpl.fromJson;
 
   /// The time (in milliseconds) that has elapsed since the test runner started.
   @override
@@ -2958,21 +3558,27 @@ abstract class _TestDone implements Event {
   /// with the given fields replaced by the non-null parameter values.
   @override
   @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$TestDoneImplCopyWith<_$TestDoneImpl> get copyWith => throw _privateConstructorUsedError;
+  _$$TestDoneImplCopyWith<_$TestDoneImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class _$$DoneImplCopyWith<$Res> implements $EventCopyWith<$Res> {
-  factory _$$DoneImplCopyWith(_$DoneImpl value, $Res Function(_$DoneImpl) then) = __$$DoneImplCopyWithImpl<$Res>;
+  factory _$$DoneImplCopyWith(
+    _$DoneImpl value,
+    $Res Function(_$DoneImpl) then,
+  ) = __$$DoneImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({int time, bool? success});
 }
 
 /// @nodoc
-class __$$DoneImplCopyWithImpl<$Res> extends _$EventCopyWithImpl<$Res, _$DoneImpl>
+class __$$DoneImplCopyWithImpl<$Res>
+    extends _$EventCopyWithImpl<$Res, _$DoneImpl>
     implements _$$DoneImplCopyWith<$Res> {
-  __$$DoneImplCopyWithImpl(_$DoneImpl _value, $Res Function(_$DoneImpl) _then) : super(_value, _then);
+  __$$DoneImplCopyWithImpl(_$DoneImpl _value, $Res Function(_$DoneImpl) _then)
+    : super(_value, _then);
 
   /// Create a copy of Event
   /// with the given fields replaced by the non-null parameter values.
@@ -2999,9 +3605,11 @@ class __$$DoneImplCopyWithImpl<$Res> extends _$EventCopyWithImpl<$Res, _$DoneImp
 /// @nodoc
 @JsonSerializable()
 class _$DoneImpl implements _Done {
-  const _$DoneImpl({required this.time, this.success, final String? $type}) : $type = $type ?? 'done';
+  const _$DoneImpl({required this.time, this.success, final String? $type})
+    : $type = $type ?? 'done';
 
-  factory _$DoneImpl.fromJson(Map<String, dynamic> json) => _$$DoneImplFromJson(json);
+  factory _$DoneImpl.fromJson(Map<String, dynamic> json) =>
+      _$$DoneImplFromJson(json);
 
   /// The time (in milliseconds) that has elapsed since the test runner started.
   @override
@@ -3040,12 +3648,19 @@ class _$DoneImpl implements _Done {
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$DoneImplCopyWith<_$DoneImpl> get copyWith => __$$DoneImplCopyWithImpl<_$DoneImpl>(this, _$identity);
+  _$$DoneImplCopyWith<_$DoneImpl> get copyWith =>
+      __$$DoneImplCopyWithImpl<_$DoneImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(int time, String protocolVersion, String? runnerVersion, int pid) start,
+    required TResult Function(
+      int time,
+      String protocolVersion,
+      String? runnerVersion,
+      int pid,
+    )
+    start,
     required TResult Function(int time, int count) allSuites,
     required TResult Function(int time, Suite suite) suite,
     required TResult Function(
@@ -3057,7 +3672,13 @@ class _$DoneImpl implements _Done {
     debug,
     required TResult Function(int time, Group group) group,
     required TResult Function(int time, Test test) testStart,
-    required TResult Function(int time, @JsonKey(name: 'testID') int testId, String messageType, String message) print,
+    required TResult Function(
+      int time,
+      @JsonKey(name: 'testID') int testId,
+      String messageType,
+      String message,
+    )
+    print,
     required TResult Function(
       int time,
       @JsonKey(name: 'testID') int testId,
@@ -3083,14 +3704,31 @@ class _$DoneImpl implements _Done {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(int time, String protocolVersion, String? runnerVersion, int pid)? start,
+    TResult? Function(
+      int time,
+      String protocolVersion,
+      String? runnerVersion,
+      int pid,
+    )?
+    start,
     TResult? Function(int time, int count)? allSuites,
     TResult? Function(int time, Suite suite)? suite,
-    TResult? Function(int time, @JsonKey(name: 'suiteID') int suiteId, String? observatory, String? remoteDebugger)?
+    TResult? Function(
+      int time,
+      @JsonKey(name: 'suiteID') int suiteId,
+      String? observatory,
+      String? remoteDebugger,
+    )?
     debug,
     TResult? Function(int time, Group group)? group,
     TResult? Function(int time, Test test)? testStart,
-    TResult? Function(int time, @JsonKey(name: 'testID') int testId, String messageType, String message)? print,
+    TResult? Function(
+      int time,
+      @JsonKey(name: 'testID') int testId,
+      String messageType,
+      String message,
+    )?
+    print,
     TResult? Function(
       int time,
       @JsonKey(name: 'testID') int testId,
@@ -3116,14 +3754,31 @@ class _$DoneImpl implements _Done {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(int time, String protocolVersion, String? runnerVersion, int pid)? start,
+    TResult Function(
+      int time,
+      String protocolVersion,
+      String? runnerVersion,
+      int pid,
+    )?
+    start,
     TResult Function(int time, int count)? allSuites,
     TResult Function(int time, Suite suite)? suite,
-    TResult Function(int time, @JsonKey(name: 'suiteID') int suiteId, String? observatory, String? remoteDebugger)?
+    TResult Function(
+      int time,
+      @JsonKey(name: 'suiteID') int suiteId,
+      String? observatory,
+      String? remoteDebugger,
+    )?
     debug,
     TResult Function(int time, Group group)? group,
     TResult Function(int time, Test test)? testStart,
-    TResult Function(int time, @JsonKey(name: 'testID') int testId, String messageType, String message)? print,
+    TResult Function(
+      int time,
+      @JsonKey(name: 'testID') int testId,
+      String messageType,
+      String message,
+    )?
+    print,
     TResult Function(
       int time,
       @JsonKey(name: 'testID') int testId,
@@ -3215,7 +3870,8 @@ class _$DoneImpl implements _Done {
 }
 
 abstract class _Done implements Event {
-  const factory _Done({required final int time, final bool? success}) = _$DoneImpl;
+  const factory _Done({required final int time, final bool? success}) =
+      _$DoneImpl;
 
   factory _Done.fromJson(Map<String, dynamic> json) = _$DoneImpl.fromJson;
 
@@ -3233,22 +3889,29 @@ abstract class _Done implements Event {
   /// with the given fields replaced by the non-null parameter values.
   @override
   @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$DoneImplCopyWith<_$DoneImpl> get copyWith => throw _privateConstructorUsedError;
+  _$$DoneImplCopyWith<_$DoneImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class _$$UnknownImplCopyWith<$Res> implements $EventCopyWith<$Res> {
-  factory _$$UnknownImplCopyWith(_$UnknownImpl value, $Res Function(_$UnknownImpl) then) =
-      __$$UnknownImplCopyWithImpl<$Res>;
+  factory _$$UnknownImplCopyWith(
+    _$UnknownImpl value,
+    $Res Function(_$UnknownImpl) then,
+  ) = __$$UnknownImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({int time});
 }
 
 /// @nodoc
-class __$$UnknownImplCopyWithImpl<$Res> extends _$EventCopyWithImpl<$Res, _$UnknownImpl>
+class __$$UnknownImplCopyWithImpl<$Res>
+    extends _$EventCopyWithImpl<$Res, _$UnknownImpl>
     implements _$$UnknownImplCopyWith<$Res> {
-  __$$UnknownImplCopyWithImpl(_$UnknownImpl _value, $Res Function(_$UnknownImpl) _then) : super(_value, _then);
+  __$$UnknownImplCopyWithImpl(
+    _$UnknownImpl _value,
+    $Res Function(_$UnknownImpl) _then,
+  ) : super(_value, _then);
 
   /// Create a copy of Event
   /// with the given fields replaced by the non-null parameter values.
@@ -3270,9 +3933,11 @@ class __$$UnknownImplCopyWithImpl<$Res> extends _$EventCopyWithImpl<$Res, _$Unkn
 /// @nodoc
 @JsonSerializable()
 class _$UnknownImpl implements _Unknown {
-  const _$UnknownImpl({required this.time, final String? $type}) : $type = $type ?? 'unknown';
+  const _$UnknownImpl({required this.time, final String? $type})
+    : $type = $type ?? 'unknown';
 
-  factory _$UnknownImpl.fromJson(Map<String, dynamic> json) => _$$UnknownImplFromJson(json);
+  factory _$UnknownImpl.fromJson(Map<String, dynamic> json) =>
+      _$$UnknownImplFromJson(json);
 
   /// The time (in milliseconds) that has elapsed since the test runner started.
   @override
@@ -3303,12 +3968,19 @@ class _$UnknownImpl implements _Unknown {
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$UnknownImplCopyWith<_$UnknownImpl> get copyWith => __$$UnknownImplCopyWithImpl<_$UnknownImpl>(this, _$identity);
+  _$$UnknownImplCopyWith<_$UnknownImpl> get copyWith =>
+      __$$UnknownImplCopyWithImpl<_$UnknownImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(int time, String protocolVersion, String? runnerVersion, int pid) start,
+    required TResult Function(
+      int time,
+      String protocolVersion,
+      String? runnerVersion,
+      int pid,
+    )
+    start,
     required TResult Function(int time, int count) allSuites,
     required TResult Function(int time, Suite suite) suite,
     required TResult Function(
@@ -3320,7 +3992,13 @@ class _$UnknownImpl implements _Unknown {
     debug,
     required TResult Function(int time, Group group) group,
     required TResult Function(int time, Test test) testStart,
-    required TResult Function(int time, @JsonKey(name: 'testID') int testId, String messageType, String message) print,
+    required TResult Function(
+      int time,
+      @JsonKey(name: 'testID') int testId,
+      String messageType,
+      String message,
+    )
+    print,
     required TResult Function(
       int time,
       @JsonKey(name: 'testID') int testId,
@@ -3346,14 +4024,31 @@ class _$UnknownImpl implements _Unknown {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(int time, String protocolVersion, String? runnerVersion, int pid)? start,
+    TResult? Function(
+      int time,
+      String protocolVersion,
+      String? runnerVersion,
+      int pid,
+    )?
+    start,
     TResult? Function(int time, int count)? allSuites,
     TResult? Function(int time, Suite suite)? suite,
-    TResult? Function(int time, @JsonKey(name: 'suiteID') int suiteId, String? observatory, String? remoteDebugger)?
+    TResult? Function(
+      int time,
+      @JsonKey(name: 'suiteID') int suiteId,
+      String? observatory,
+      String? remoteDebugger,
+    )?
     debug,
     TResult? Function(int time, Group group)? group,
     TResult? Function(int time, Test test)? testStart,
-    TResult? Function(int time, @JsonKey(name: 'testID') int testId, String messageType, String message)? print,
+    TResult? Function(
+      int time,
+      @JsonKey(name: 'testID') int testId,
+      String messageType,
+      String message,
+    )?
+    print,
     TResult? Function(
       int time,
       @JsonKey(name: 'testID') int testId,
@@ -3379,14 +4074,31 @@ class _$UnknownImpl implements _Unknown {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(int time, String protocolVersion, String? runnerVersion, int pid)? start,
+    TResult Function(
+      int time,
+      String protocolVersion,
+      String? runnerVersion,
+      int pid,
+    )?
+    start,
     TResult Function(int time, int count)? allSuites,
     TResult Function(int time, Suite suite)? suite,
-    TResult Function(int time, @JsonKey(name: 'suiteID') int suiteId, String? observatory, String? remoteDebugger)?
+    TResult Function(
+      int time,
+      @JsonKey(name: 'suiteID') int suiteId,
+      String? observatory,
+      String? remoteDebugger,
+    )?
     debug,
     TResult Function(int time, Group group)? group,
     TResult Function(int time, Test test)? testStart,
-    TResult Function(int time, @JsonKey(name: 'testID') int testId, String messageType, String message)? print,
+    TResult Function(
+      int time,
+      @JsonKey(name: 'testID') int testId,
+      String messageType,
+      String message,
+    )?
+    print,
     TResult Function(
       int time,
       @JsonKey(name: 'testID') int testId,
@@ -3490,5 +4202,6 @@ abstract class _Unknown implements Event {
   /// with the given fields replaced by the non-null parameter values.
   @override
   @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$UnknownImplCopyWith<_$UnknownImpl> get copyWith => throw _privateConstructorUsedError;
+  _$$UnknownImplCopyWith<_$UnknownImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }

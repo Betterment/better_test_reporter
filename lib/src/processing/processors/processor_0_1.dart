@@ -1,4 +1,5 @@
-import 'package:better_test_reporter/json_reporter_protocol_0_1.dart' as json_reporter_protocol_0_1;
+import 'package:better_test_reporter/json_reporter_protocol_0_1.dart'
+    as json_reporter_protocol_0_1;
 import 'package:better_test_reporter/src/processing/models/models.dart';
 import 'package:better_test_reporter/src/processing/processors/processor.dart';
 
@@ -34,14 +35,27 @@ class Processor0_1 implements Processor {
           );
         },
         testDone: (time, result, testId, hidden, skipped) {
-          tests[testId] = tests[testId]!.copyWith(hidden: hidden, skipped: skipped, endTime: time);
+          tests[testId] = tests[testId]!.copyWith(
+            hidden: hidden,
+            skipped: skipped,
+            endTime: time,
+          );
         },
         suite: (time, suite) {
-          suites[suite.id] = Suite(path: suite.path, allTests: [], platform: suite.platform);
+          suites[suite.id] = Suite(
+            path: suite.path,
+            allTests: [],
+            platform: suite.platform,
+          );
         },
         error: (time, testId, error, stacktrace, isFailure) {
-          final problems = List<Problem>.from(tests[testId]!.problems)
-            ..add(Problem(message: error, stacktrace: stacktrace, isFailure: isFailure));
+          final problems = List<Problem>.from(tests[testId]!.problems)..add(
+            Problem(
+              message: error,
+              stacktrace: stacktrace,
+              isFailure: isFailure,
+            ),
+          );
           tests[testId] = tests[testId]!.copyWith(problems: problems);
         },
         print: (time, testId, messageType, message) {
@@ -52,7 +66,8 @@ class Processor0_1 implements Processor {
       );
     }
     for (final test in tests.values) {
-      final allTests = List<Test>.from(suites[test.suiteId]!.allTests)..add(test);
+      final allTests = List<Test>.from(suites[test.suiteId]!.allTests)
+        ..add(test);
       suites[test.suiteId] = suites[test.suiteId]!.copyWith(allTests: allTests);
     }
     return Report(suites: suites.values, timestamp: timestamp);

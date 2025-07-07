@@ -59,7 +59,8 @@ mixin _$Test {
 
 /// @nodoc
 abstract class $TestCopyWith<$Res> {
-  factory $TestCopyWith(Test value, $Res Function(Test) then) = _$TestCopyWithImpl<$Res, Test>;
+  factory $TestCopyWith(Test value, $Res Function(Test) then) =
+      _$TestCopyWithImpl<$Res, Test>;
   @useResult
   $Res call({
     int suiteId,
@@ -76,7 +77,8 @@ abstract class $TestCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$TestCopyWithImpl<$Res, $Val extends Test> implements $TestCopyWith<$Res> {
+class _$TestCopyWithImpl<$Res, $Val extends Test>
+    implements $TestCopyWith<$Res> {
   _$TestCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -160,7 +162,10 @@ class _$TestCopyWithImpl<$Res, $Val extends Test> implements $TestCopyWith<$Res>
 
 /// @nodoc
 abstract class _$$TestImplCopyWith<$Res> implements $TestCopyWith<$Res> {
-  factory _$$TestImplCopyWith(_$TestImpl value, $Res Function(_$TestImpl) then) = __$$TestImplCopyWithImpl<$Res>;
+  factory _$$TestImplCopyWith(
+    _$TestImpl value,
+    $Res Function(_$TestImpl) then,
+  ) = __$$TestImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({
@@ -178,8 +183,11 @@ abstract class _$$TestImplCopyWith<$Res> implements $TestCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$TestImplCopyWithImpl<$Res> extends _$TestCopyWithImpl<$Res, _$TestImpl> implements _$$TestImplCopyWith<$Res> {
-  __$$TestImplCopyWithImpl(_$TestImpl _value, $Res Function(_$TestImpl) _then) : super(_value, _then);
+class __$$TestImplCopyWithImpl<$Res>
+    extends _$TestCopyWithImpl<$Res, _$TestImpl>
+    implements _$$TestImplCopyWith<$Res> {
+  __$$TestImplCopyWithImpl(_$TestImpl _value, $Res Function(_$TestImpl) _then)
+    : super(_value, _then);
 
   /// Create a copy of Test
   /// with the given fields replaced by the non-null parameter values.
@@ -345,7 +353,8 @@ class _$TestImpl extends _Test {
             other is _$TestImpl &&
             (identical(other.suiteId, suiteId) || other.suiteId == suiteId) &&
             (identical(other.name, name) || other.name == name) &&
-            (identical(other.startTime, startTime) || other.startTime == startTime) &&
+            (identical(other.startTime, startTime) ||
+                other.startTime == startTime) &&
             (identical(other.url, url) || other.url == url) &&
             (identical(other.rootUrl, rootUrl) || other.rootUrl == rootUrl) &&
             (identical(other.endTime, endTime) || other.endTime == endTime) &&
@@ -375,7 +384,8 @@ class _$TestImpl extends _Test {
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$TestImplCopyWith<_$TestImpl> get copyWith => __$$TestImplCopyWithImpl<_$TestImpl>(this, _$identity);
+  _$$TestImplCopyWith<_$TestImpl> get copyWith =>
+      __$$TestImplCopyWithImpl<_$TestImpl>(this, _$identity);
 }
 
 abstract class _Test extends Test {
@@ -441,5 +451,6 @@ abstract class _Test extends Test {
   /// with the given fields replaced by the non-null parameter values.
   @override
   @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$TestImplCopyWith<_$TestImpl> get copyWith => throw _privateConstructorUsedError;
+  _$$TestImplCopyWith<_$TestImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }
