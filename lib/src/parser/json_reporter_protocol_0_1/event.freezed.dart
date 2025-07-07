@@ -12,7 +12,8 @@ part of 'event.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+  'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods',
+);
 
 Event _$EventFromJson(Map<String, dynamic> json) {
   switch (json['type']) {
@@ -48,104 +49,97 @@ mixin _$Event {
   int get time => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(
-            int time, String protocolVersion, String? runnerVersion, int pid)
-        start,
+    required TResult Function(int time, String protocolVersion, String? runnerVersion, int pid) start,
     required TResult Function(int time, int count) allSuites,
     required TResult Function(int time, Suite suite) suite,
-    required TResult Function(int time, @JsonKey(name: 'suiteID') int suiteId,
-            String? observatory, String? remoteDebugger)
-        debug,
+    required TResult Function(
+      int time,
+      @JsonKey(name: 'suiteID') int suiteId,
+      String? observatory,
+      String? remoteDebugger,
+    )
+    debug,
     required TResult Function(int time, Group group) group,
     required TResult Function(int time, Test test) testStart,
-    required TResult Function(int time, @JsonKey(name: 'testID') int testId,
-            String messageType, String message)
-        print,
+    required TResult Function(int time, @JsonKey(name: 'testID') int testId, String messageType, String message) print,
     required TResult Function(
-            int time,
-            @JsonKey(name: 'testID') int testId,
-            String error,
-            @JsonKey(name: 'stackTrace') String stacktrace,
-            bool isFailure)
-        error,
+      int time,
+      @JsonKey(name: 'testID') int testId,
+      String error,
+      @JsonKey(name: 'stackTrace') String stacktrace,
+      bool isFailure,
+    )
+    error,
     required TResult Function(
-            int time,
-            @JsonKey(unknownEnumValue: TestResult.unknown) TestResult result,
-            @JsonKey(name: 'testID') int testId,
-            bool hidden,
-            bool skipped)
-        testDone,
+      int time,
+      @JsonKey(unknownEnumValue: TestResult.unknown) TestResult result,
+      @JsonKey(name: 'testID') int testId,
+      bool hidden,
+      bool skipped,
+    )
+    testDone,
     required TResult Function(int time, bool? success) done,
     required TResult Function(int time) unknown,
-  }) =>
-      throw _privateConstructorUsedError;
+  }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(
-            int time, String protocolVersion, String? runnerVersion, int pid)?
-        start,
+    TResult Function(int time, String protocolVersion, String? runnerVersion, int pid)? start,
     TResult Function(int time, int count)? allSuites,
     TResult Function(int time, Suite suite)? suite,
-    TResult Function(int time, @JsonKey(name: 'suiteID') int suiteId,
-            String? observatory, String? remoteDebugger)?
-        debug,
+    TResult Function(int time, @JsonKey(name: 'suiteID') int suiteId, String? observatory, String? remoteDebugger)?
+    debug,
     TResult Function(int time, Group group)? group,
     TResult Function(int time, Test test)? testStart,
-    TResult Function(int time, @JsonKey(name: 'testID') int testId,
-            String messageType, String message)?
-        print,
+    TResult Function(int time, @JsonKey(name: 'testID') int testId, String messageType, String message)? print,
     TResult Function(
-            int time,
-            @JsonKey(name: 'testID') int testId,
-            String error,
-            @JsonKey(name: 'stackTrace') String stacktrace,
-            bool isFailure)?
-        error,
+      int time,
+      @JsonKey(name: 'testID') int testId,
+      String error,
+      @JsonKey(name: 'stackTrace') String stacktrace,
+      bool isFailure,
+    )?
+    error,
     TResult Function(
-            int time,
-            @JsonKey(unknownEnumValue: TestResult.unknown) TestResult result,
-            @JsonKey(name: 'testID') int testId,
-            bool hidden,
-            bool skipped)?
-        testDone,
+      int time,
+      @JsonKey(unknownEnumValue: TestResult.unknown) TestResult result,
+      @JsonKey(name: 'testID') int testId,
+      bool hidden,
+      bool skipped,
+    )?
+    testDone,
     TResult Function(int time, bool? success)? done,
     TResult Function(int time)? unknown,
-  }) =>
-      throw _privateConstructorUsedError;
+  }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(
-            int time, String protocolVersion, String? runnerVersion, int pid)?
-        start,
+    TResult Function(int time, String protocolVersion, String? runnerVersion, int pid)? start,
     TResult Function(int time, int count)? allSuites,
     TResult Function(int time, Suite suite)? suite,
-    TResult Function(int time, @JsonKey(name: 'suiteID') int suiteId,
-            String? observatory, String? remoteDebugger)?
-        debug,
+    TResult Function(int time, @JsonKey(name: 'suiteID') int suiteId, String? observatory, String? remoteDebugger)?
+    debug,
     TResult Function(int time, Group group)? group,
     TResult Function(int time, Test test)? testStart,
-    TResult Function(int time, @JsonKey(name: 'testID') int testId,
-            String messageType, String message)?
-        print,
+    TResult Function(int time, @JsonKey(name: 'testID') int testId, String messageType, String message)? print,
     TResult Function(
-            int time,
-            @JsonKey(name: 'testID') int testId,
-            String error,
-            @JsonKey(name: 'stackTrace') String stacktrace,
-            bool isFailure)?
-        error,
+      int time,
+      @JsonKey(name: 'testID') int testId,
+      String error,
+      @JsonKey(name: 'stackTrace') String stacktrace,
+      bool isFailure,
+    )?
+    error,
     TResult Function(
-            int time,
-            @JsonKey(unknownEnumValue: TestResult.unknown) TestResult result,
-            @JsonKey(name: 'testID') int testId,
-            bool hidden,
-            bool skipped)?
-        testDone,
+      int time,
+      @JsonKey(unknownEnumValue: TestResult.unknown) TestResult result,
+      @JsonKey(name: 'testID') int testId,
+      bool hidden,
+      bool skipped,
+    )?
+    testDone,
     TResult Function(int time, bool? success)? done,
     TResult Function(int time)? unknown,
     required TResult orElse(),
-  }) =>
-      throw _privateConstructorUsedError;
+  }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Start value) start,
@@ -159,8 +153,7 @@ mixin _$Event {
     required TResult Function(_TestDone value) testDone,
     required TResult Function(_Done value) done,
     required TResult Function(_Unknown value) unknown,
-  }) =>
-      throw _privateConstructorUsedError;
+  }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_Start value)? start,
@@ -174,8 +167,7 @@ mixin _$Event {
     TResult Function(_TestDone value)? testDone,
     TResult Function(_Done value)? done,
     TResult Function(_Unknown value)? unknown,
-  }) =>
-      throw _privateConstructorUsedError;
+  }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Start value)? start,
@@ -190,8 +182,7 @@ mixin _$Event {
     TResult Function(_Done value)? done,
     TResult Function(_Unknown value)? unknown,
     required TResult orElse(),
-  }) =>
-      throw _privateConstructorUsedError;
+  }) => throw _privateConstructorUsedError;
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   $EventCopyWith<Event> get copyWith => throw _privateConstructorUsedError;
@@ -199,8 +190,7 @@ mixin _$Event {
 
 /// @nodoc
 abstract class $EventCopyWith<$Res> {
-  factory $EventCopyWith(Event value, $Res Function(Event) then) =
-      _$EventCopyWithImpl<$Res>;
+  factory $EventCopyWith(Event value, $Res Function(Event) then) = _$EventCopyWithImpl<$Res>;
   $Res call({int time});
 }
 
@@ -213,31 +203,29 @@ class _$EventCopyWithImpl<$Res> implements $EventCopyWith<$Res> {
   final $Res Function(Event) _then;
 
   @override
-  $Res call({
-    Object? time = freezed,
-  }) {
-    return _then(_value.copyWith(
-      time: time == freezed
-          ? _value.time
-          : time // ignore: cast_nullable_to_non_nullable
-              as int,
-    ));
+  $Res call({Object? time = freezed}) {
+    return _then(
+      _value.copyWith(
+        time:
+            time == freezed
+                ? _value.time
+                : time // ignore: cast_nullable_to_non_nullable
+                    as int,
+      ),
+    );
   }
 }
 
 /// @nodoc
 abstract class _$$_StartCopyWith<$Res> implements $EventCopyWith<$Res> {
-  factory _$$_StartCopyWith(_$_Start value, $Res Function(_$_Start) then) =
-      __$$_StartCopyWithImpl<$Res>;
+  factory _$$_StartCopyWith(_$_Start value, $Res Function(_$_Start) then) = __$$_StartCopyWithImpl<$Res>;
   @override
   $Res call({int time, String protocolVersion, String? runnerVersion, int pid});
 }
 
 /// @nodoc
-class __$$_StartCopyWithImpl<$Res> extends _$EventCopyWithImpl<$Res>
-    implements _$$_StartCopyWith<$Res> {
-  __$$_StartCopyWithImpl(_$_Start _value, $Res Function(_$_Start) _then)
-      : super(_value, (v) => _then(v as _$_Start));
+class __$$_StartCopyWithImpl<$Res> extends _$EventCopyWithImpl<$Res> implements _$$_StartCopyWith<$Res> {
+  __$$_StartCopyWithImpl(_$_Start _value, $Res Function(_$_Start) _then) : super(_value, (v) => _then(v as _$_Start));
 
   @override
   _$_Start get _value => super._value as _$_Start;
@@ -249,40 +237,45 @@ class __$$_StartCopyWithImpl<$Res> extends _$EventCopyWithImpl<$Res>
     Object? runnerVersion = freezed,
     Object? pid = freezed,
   }) {
-    return _then(_$_Start(
-      time: time == freezed
-          ? _value.time
-          : time // ignore: cast_nullable_to_non_nullable
-              as int,
-      protocolVersion: protocolVersion == freezed
-          ? _value.protocolVersion
-          : protocolVersion // ignore: cast_nullable_to_non_nullable
-              as String,
-      runnerVersion: runnerVersion == freezed
-          ? _value.runnerVersion
-          : runnerVersion // ignore: cast_nullable_to_non_nullable
-              as String?,
-      pid: pid == freezed
-          ? _value.pid
-          : pid // ignore: cast_nullable_to_non_nullable
-              as int,
-    ));
+    return _then(
+      _$_Start(
+        time:
+            time == freezed
+                ? _value.time
+                : time // ignore: cast_nullable_to_non_nullable
+                    as int,
+        protocolVersion:
+            protocolVersion == freezed
+                ? _value.protocolVersion
+                : protocolVersion // ignore: cast_nullable_to_non_nullable
+                    as String,
+        runnerVersion:
+            runnerVersion == freezed
+                ? _value.runnerVersion
+                : runnerVersion // ignore: cast_nullable_to_non_nullable
+                    as String?,
+        pid:
+            pid == freezed
+                ? _value.pid
+                : pid // ignore: cast_nullable_to_non_nullable
+                    as int,
+      ),
+    );
   }
 }
 
 /// @nodoc
 @JsonSerializable()
 class _$_Start implements _Start {
-  const _$_Start(
-      {required this.time,
-      required this.protocolVersion,
-      this.runnerVersion,
-      required this.pid,
-      final String? $type})
-      : $type = $type ?? 'start';
+  const _$_Start({
+    required this.time,
+    required this.protocolVersion,
+    this.runnerVersion,
+    required this.pid,
+    final String? $type,
+  }) : $type = $type ?? 'start';
 
-  factory _$_Start.fromJson(Map<String, dynamic> json) =>
-      _$$_StartFromJson(json);
+  factory _$_Start.fromJson(Map<String, dynamic> json) => _$$_StartFromJson(json);
 
   /// The time (in milliseconds) that has elapsed since the test runner started.
   @override
@@ -319,57 +312,57 @@ class _$_Start implements _Start {
         (other.runtimeType == runtimeType &&
             other is _$_Start &&
             const DeepCollectionEquality().equals(other.time, time) &&
-            const DeepCollectionEquality()
-                .equals(other.protocolVersion, protocolVersion) &&
-            const DeepCollectionEquality()
-                .equals(other.runnerVersion, runnerVersion) &&
+            const DeepCollectionEquality().equals(other.protocolVersion, protocolVersion) &&
+            const DeepCollectionEquality().equals(other.runnerVersion, runnerVersion) &&
             const DeepCollectionEquality().equals(other.pid, pid));
   }
 
   @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(time),
-      const DeepCollectionEquality().hash(protocolVersion),
-      const DeepCollectionEquality().hash(runnerVersion),
-      const DeepCollectionEquality().hash(pid));
+    runtimeType,
+    const DeepCollectionEquality().hash(time),
+    const DeepCollectionEquality().hash(protocolVersion),
+    const DeepCollectionEquality().hash(runnerVersion),
+    const DeepCollectionEquality().hash(pid),
+  );
 
   @JsonKey(ignore: true)
   @override
-  _$$_StartCopyWith<_$_Start> get copyWith =>
-      __$$_StartCopyWithImpl<_$_Start>(this, _$identity);
+  _$$_StartCopyWith<_$_Start> get copyWith => __$$_StartCopyWithImpl<_$_Start>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(
-            int time, String protocolVersion, String? runnerVersion, int pid)
-        start,
+    required TResult Function(int time, String protocolVersion, String? runnerVersion, int pid) start,
     required TResult Function(int time, int count) allSuites,
     required TResult Function(int time, Suite suite) suite,
-    required TResult Function(int time, @JsonKey(name: 'suiteID') int suiteId,
-            String? observatory, String? remoteDebugger)
-        debug,
+    required TResult Function(
+      int time,
+      @JsonKey(name: 'suiteID') int suiteId,
+      String? observatory,
+      String? remoteDebugger,
+    )
+    debug,
     required TResult Function(int time, Group group) group,
     required TResult Function(int time, Test test) testStart,
-    required TResult Function(int time, @JsonKey(name: 'testID') int testId,
-            String messageType, String message)
-        print,
+    required TResult Function(int time, @JsonKey(name: 'testID') int testId, String messageType, String message) print,
     required TResult Function(
-            int time,
-            @JsonKey(name: 'testID') int testId,
-            String error,
-            @JsonKey(name: 'stackTrace') String stacktrace,
-            bool isFailure)
-        error,
+      int time,
+      @JsonKey(name: 'testID') int testId,
+      String error,
+      @JsonKey(name: 'stackTrace') String stacktrace,
+      bool isFailure,
+    )
+    error,
     required TResult Function(
-            int time,
-            @JsonKey(unknownEnumValue: TestResult.unknown) TestResult result,
-            @JsonKey(name: 'testID') int testId,
-            bool hidden,
-            bool skipped)
-        testDone,
+      int time,
+      @JsonKey(unknownEnumValue: TestResult.unknown) TestResult result,
+      @JsonKey(name: 'testID') int testId,
+      bool hidden,
+      bool skipped,
+    )
+    testDone,
     required TResult Function(int time, bool? success) done,
     required TResult Function(int time) unknown,
   }) {
@@ -379,33 +372,30 @@ class _$_Start implements _Start {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(
-            int time, String protocolVersion, String? runnerVersion, int pid)?
-        start,
+    TResult Function(int time, String protocolVersion, String? runnerVersion, int pid)? start,
     TResult Function(int time, int count)? allSuites,
     TResult Function(int time, Suite suite)? suite,
-    TResult Function(int time, @JsonKey(name: 'suiteID') int suiteId,
-            String? observatory, String? remoteDebugger)?
-        debug,
+    TResult Function(int time, @JsonKey(name: 'suiteID') int suiteId, String? observatory, String? remoteDebugger)?
+    debug,
     TResult Function(int time, Group group)? group,
     TResult Function(int time, Test test)? testStart,
-    TResult Function(int time, @JsonKey(name: 'testID') int testId,
-            String messageType, String message)?
-        print,
+    TResult Function(int time, @JsonKey(name: 'testID') int testId, String messageType, String message)? print,
     TResult Function(
-            int time,
-            @JsonKey(name: 'testID') int testId,
-            String error,
-            @JsonKey(name: 'stackTrace') String stacktrace,
-            bool isFailure)?
-        error,
+      int time,
+      @JsonKey(name: 'testID') int testId,
+      String error,
+      @JsonKey(name: 'stackTrace') String stacktrace,
+      bool isFailure,
+    )?
+    error,
     TResult Function(
-            int time,
-            @JsonKey(unknownEnumValue: TestResult.unknown) TestResult result,
-            @JsonKey(name: 'testID') int testId,
-            bool hidden,
-            bool skipped)?
-        testDone,
+      int time,
+      @JsonKey(unknownEnumValue: TestResult.unknown) TestResult result,
+      @JsonKey(name: 'testID') int testId,
+      bool hidden,
+      bool skipped,
+    )?
+    testDone,
     TResult Function(int time, bool? success)? done,
     TResult Function(int time)? unknown,
   }) {
@@ -415,33 +405,30 @@ class _$_Start implements _Start {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(
-            int time, String protocolVersion, String? runnerVersion, int pid)?
-        start,
+    TResult Function(int time, String protocolVersion, String? runnerVersion, int pid)? start,
     TResult Function(int time, int count)? allSuites,
     TResult Function(int time, Suite suite)? suite,
-    TResult Function(int time, @JsonKey(name: 'suiteID') int suiteId,
-            String? observatory, String? remoteDebugger)?
-        debug,
+    TResult Function(int time, @JsonKey(name: 'suiteID') int suiteId, String? observatory, String? remoteDebugger)?
+    debug,
     TResult Function(int time, Group group)? group,
     TResult Function(int time, Test test)? testStart,
-    TResult Function(int time, @JsonKey(name: 'testID') int testId,
-            String messageType, String message)?
-        print,
+    TResult Function(int time, @JsonKey(name: 'testID') int testId, String messageType, String message)? print,
     TResult Function(
-            int time,
-            @JsonKey(name: 'testID') int testId,
-            String error,
-            @JsonKey(name: 'stackTrace') String stacktrace,
-            bool isFailure)?
-        error,
+      int time,
+      @JsonKey(name: 'testID') int testId,
+      String error,
+      @JsonKey(name: 'stackTrace') String stacktrace,
+      bool isFailure,
+    )?
+    error,
     TResult Function(
-            int time,
-            @JsonKey(unknownEnumValue: TestResult.unknown) TestResult result,
-            @JsonKey(name: 'testID') int testId,
-            bool hidden,
-            bool skipped)?
-        testDone,
+      int time,
+      @JsonKey(unknownEnumValue: TestResult.unknown) TestResult result,
+      @JsonKey(name: 'testID') int testId,
+      bool hidden,
+      bool skipped,
+    )?
+    testDone,
     TResult Function(int time, bool? success)? done,
     TResult Function(int time)? unknown,
     required TResult orElse(),
@@ -512,23 +499,21 @@ class _$_Start implements _Start {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_StartToJson(
-      this,
-    );
+    return _$$_StartToJson(this);
   }
 }
 
 abstract class _Start implements Event {
-  const factory _Start(
-      {required final int time,
-      required final String protocolVersion,
-      final String? runnerVersion,
-      required final int pid}) = _$_Start;
+  const factory _Start({
+    required final int time,
+    required final String protocolVersion,
+    final String? runnerVersion,
+    required final int pid,
+  }) = _$_Start;
 
   factory _Start.fromJson(Map<String, dynamic> json) = _$_Start.fromJson;
 
   @override
-
   /// The time (in milliseconds) that has elapsed since the test runner started.
   int get time;
 
@@ -547,56 +532,50 @@ abstract class _Start implements Event {
   int get pid;
   @override
   @JsonKey(ignore: true)
-  _$$_StartCopyWith<_$_Start> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$_StartCopyWith<_$_Start> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class _$$_AllSuitesCopyWith<$Res> implements $EventCopyWith<$Res> {
-  factory _$$_AllSuitesCopyWith(
-          _$_AllSuites value, $Res Function(_$_AllSuites) then) =
+  factory _$$_AllSuitesCopyWith(_$_AllSuites value, $Res Function(_$_AllSuites) then) =
       __$$_AllSuitesCopyWithImpl<$Res>;
   @override
   $Res call({int time, int count});
 }
 
 /// @nodoc
-class __$$_AllSuitesCopyWithImpl<$Res> extends _$EventCopyWithImpl<$Res>
-    implements _$$_AllSuitesCopyWith<$Res> {
-  __$$_AllSuitesCopyWithImpl(
-      _$_AllSuites _value, $Res Function(_$_AllSuites) _then)
-      : super(_value, (v) => _then(v as _$_AllSuites));
+class __$$_AllSuitesCopyWithImpl<$Res> extends _$EventCopyWithImpl<$Res> implements _$$_AllSuitesCopyWith<$Res> {
+  __$$_AllSuitesCopyWithImpl(_$_AllSuites _value, $Res Function(_$_AllSuites) _then)
+    : super(_value, (v) => _then(v as _$_AllSuites));
 
   @override
   _$_AllSuites get _value => super._value as _$_AllSuites;
 
   @override
-  $Res call({
-    Object? time = freezed,
-    Object? count = freezed,
-  }) {
-    return _then(_$_AllSuites(
-      time: time == freezed
-          ? _value.time
-          : time // ignore: cast_nullable_to_non_nullable
-              as int,
-      count: count == freezed
-          ? _value.count
-          : count // ignore: cast_nullable_to_non_nullable
-              as int,
-    ));
+  $Res call({Object? time = freezed, Object? count = freezed}) {
+    return _then(
+      _$_AllSuites(
+        time:
+            time == freezed
+                ? _value.time
+                : time // ignore: cast_nullable_to_non_nullable
+                    as int,
+        count:
+            count == freezed
+                ? _value.count
+                : count // ignore: cast_nullable_to_non_nullable
+                    as int,
+      ),
+    );
   }
 }
 
 /// @nodoc
 @JsonSerializable()
 class _$_AllSuites implements _AllSuites {
-  const _$_AllSuites(
-      {required this.time, required this.count, final String? $type})
-      : $type = $type ?? 'allSuites';
+  const _$_AllSuites({required this.time, required this.count, final String? $type}) : $type = $type ?? 'allSuites';
 
-  factory _$_AllSuites.fromJson(Map<String, dynamic> json) =>
-      _$$_AllSuitesFromJson(json);
+  factory _$_AllSuites.fromJson(Map<String, dynamic> json) => _$$_AllSuitesFromJson(json);
 
   /// The time (in milliseconds) that has elapsed since the test runner started.
   @override
@@ -625,46 +604,45 @@ class _$_AllSuites implements _AllSuites {
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(time),
-      const DeepCollectionEquality().hash(count));
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(time), const DeepCollectionEquality().hash(count));
 
   @JsonKey(ignore: true)
   @override
-  _$$_AllSuitesCopyWith<_$_AllSuites> get copyWith =>
-      __$$_AllSuitesCopyWithImpl<_$_AllSuites>(this, _$identity);
+  _$$_AllSuitesCopyWith<_$_AllSuites> get copyWith => __$$_AllSuitesCopyWithImpl<_$_AllSuites>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(
-            int time, String protocolVersion, String? runnerVersion, int pid)
-        start,
+    required TResult Function(int time, String protocolVersion, String? runnerVersion, int pid) start,
     required TResult Function(int time, int count) allSuites,
     required TResult Function(int time, Suite suite) suite,
-    required TResult Function(int time, @JsonKey(name: 'suiteID') int suiteId,
-            String? observatory, String? remoteDebugger)
-        debug,
+    required TResult Function(
+      int time,
+      @JsonKey(name: 'suiteID') int suiteId,
+      String? observatory,
+      String? remoteDebugger,
+    )
+    debug,
     required TResult Function(int time, Group group) group,
     required TResult Function(int time, Test test) testStart,
-    required TResult Function(int time, @JsonKey(name: 'testID') int testId,
-            String messageType, String message)
-        print,
+    required TResult Function(int time, @JsonKey(name: 'testID') int testId, String messageType, String message) print,
     required TResult Function(
-            int time,
-            @JsonKey(name: 'testID') int testId,
-            String error,
-            @JsonKey(name: 'stackTrace') String stacktrace,
-            bool isFailure)
-        error,
+      int time,
+      @JsonKey(name: 'testID') int testId,
+      String error,
+      @JsonKey(name: 'stackTrace') String stacktrace,
+      bool isFailure,
+    )
+    error,
     required TResult Function(
-            int time,
-            @JsonKey(unknownEnumValue: TestResult.unknown) TestResult result,
-            @JsonKey(name: 'testID') int testId,
-            bool hidden,
-            bool skipped)
-        testDone,
+      int time,
+      @JsonKey(unknownEnumValue: TestResult.unknown) TestResult result,
+      @JsonKey(name: 'testID') int testId,
+      bool hidden,
+      bool skipped,
+    )
+    testDone,
     required TResult Function(int time, bool? success) done,
     required TResult Function(int time) unknown,
   }) {
@@ -674,33 +652,30 @@ class _$_AllSuites implements _AllSuites {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(
-            int time, String protocolVersion, String? runnerVersion, int pid)?
-        start,
+    TResult Function(int time, String protocolVersion, String? runnerVersion, int pid)? start,
     TResult Function(int time, int count)? allSuites,
     TResult Function(int time, Suite suite)? suite,
-    TResult Function(int time, @JsonKey(name: 'suiteID') int suiteId,
-            String? observatory, String? remoteDebugger)?
-        debug,
+    TResult Function(int time, @JsonKey(name: 'suiteID') int suiteId, String? observatory, String? remoteDebugger)?
+    debug,
     TResult Function(int time, Group group)? group,
     TResult Function(int time, Test test)? testStart,
-    TResult Function(int time, @JsonKey(name: 'testID') int testId,
-            String messageType, String message)?
-        print,
+    TResult Function(int time, @JsonKey(name: 'testID') int testId, String messageType, String message)? print,
     TResult Function(
-            int time,
-            @JsonKey(name: 'testID') int testId,
-            String error,
-            @JsonKey(name: 'stackTrace') String stacktrace,
-            bool isFailure)?
-        error,
+      int time,
+      @JsonKey(name: 'testID') int testId,
+      String error,
+      @JsonKey(name: 'stackTrace') String stacktrace,
+      bool isFailure,
+    )?
+    error,
     TResult Function(
-            int time,
-            @JsonKey(unknownEnumValue: TestResult.unknown) TestResult result,
-            @JsonKey(name: 'testID') int testId,
-            bool hidden,
-            bool skipped)?
-        testDone,
+      int time,
+      @JsonKey(unknownEnumValue: TestResult.unknown) TestResult result,
+      @JsonKey(name: 'testID') int testId,
+      bool hidden,
+      bool skipped,
+    )?
+    testDone,
     TResult Function(int time, bool? success)? done,
     TResult Function(int time)? unknown,
   }) {
@@ -710,33 +685,30 @@ class _$_AllSuites implements _AllSuites {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(
-            int time, String protocolVersion, String? runnerVersion, int pid)?
-        start,
+    TResult Function(int time, String protocolVersion, String? runnerVersion, int pid)? start,
     TResult Function(int time, int count)? allSuites,
     TResult Function(int time, Suite suite)? suite,
-    TResult Function(int time, @JsonKey(name: 'suiteID') int suiteId,
-            String? observatory, String? remoteDebugger)?
-        debug,
+    TResult Function(int time, @JsonKey(name: 'suiteID') int suiteId, String? observatory, String? remoteDebugger)?
+    debug,
     TResult Function(int time, Group group)? group,
     TResult Function(int time, Test test)? testStart,
-    TResult Function(int time, @JsonKey(name: 'testID') int testId,
-            String messageType, String message)?
-        print,
+    TResult Function(int time, @JsonKey(name: 'testID') int testId, String messageType, String message)? print,
     TResult Function(
-            int time,
-            @JsonKey(name: 'testID') int testId,
-            String error,
-            @JsonKey(name: 'stackTrace') String stacktrace,
-            bool isFailure)?
-        error,
+      int time,
+      @JsonKey(name: 'testID') int testId,
+      String error,
+      @JsonKey(name: 'stackTrace') String stacktrace,
+      bool isFailure,
+    )?
+    error,
     TResult Function(
-            int time,
-            @JsonKey(unknownEnumValue: TestResult.unknown) TestResult result,
-            @JsonKey(name: 'testID') int testId,
-            bool hidden,
-            bool skipped)?
-        testDone,
+      int time,
+      @JsonKey(unknownEnumValue: TestResult.unknown) TestResult result,
+      @JsonKey(name: 'testID') int testId,
+      bool hidden,
+      bool skipped,
+    )?
+    testDone,
     TResult Function(int time, bool? success)? done,
     TResult Function(int time)? unknown,
     required TResult orElse(),
@@ -807,21 +779,16 @@ class _$_AllSuites implements _AllSuites {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_AllSuitesToJson(
-      this,
-    );
+    return _$$_AllSuitesToJson(this);
   }
 }
 
 abstract class _AllSuites implements Event {
-  const factory _AllSuites(
-      {required final int time, required final int count}) = _$_AllSuites;
+  const factory _AllSuites({required final int time, required final int count}) = _$_AllSuites;
 
-  factory _AllSuites.fromJson(Map<String, dynamic> json) =
-      _$_AllSuites.fromJson;
+  factory _AllSuites.fromJson(Map<String, dynamic> json) = _$_AllSuites.fromJson;
 
   @override
-
   /// The time (in milliseconds) that has elapsed since the test runner started.
   int get time;
 
@@ -829,14 +796,12 @@ abstract class _AllSuites implements Event {
   int get count;
   @override
   @JsonKey(ignore: true)
-  _$$_AllSuitesCopyWith<_$_AllSuites> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$_AllSuitesCopyWith<_$_AllSuites> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class _$$_SuiteCopyWith<$Res> implements $EventCopyWith<$Res> {
-  factory _$$_SuiteCopyWith(_$_Suite value, $Res Function(_$_Suite) then) =
-      __$$_SuiteCopyWithImpl<$Res>;
+  factory _$$_SuiteCopyWith(_$_Suite value, $Res Function(_$_Suite) then) = __$$_SuiteCopyWithImpl<$Res>;
   @override
   $Res call({int time, Suite suite});
 
@@ -844,29 +809,28 @@ abstract class _$$_SuiteCopyWith<$Res> implements $EventCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$_SuiteCopyWithImpl<$Res> extends _$EventCopyWithImpl<$Res>
-    implements _$$_SuiteCopyWith<$Res> {
-  __$$_SuiteCopyWithImpl(_$_Suite _value, $Res Function(_$_Suite) _then)
-      : super(_value, (v) => _then(v as _$_Suite));
+class __$$_SuiteCopyWithImpl<$Res> extends _$EventCopyWithImpl<$Res> implements _$$_SuiteCopyWith<$Res> {
+  __$$_SuiteCopyWithImpl(_$_Suite _value, $Res Function(_$_Suite) _then) : super(_value, (v) => _then(v as _$_Suite));
 
   @override
   _$_Suite get _value => super._value as _$_Suite;
 
   @override
-  $Res call({
-    Object? time = freezed,
-    Object? suite = freezed,
-  }) {
-    return _then(_$_Suite(
-      time: time == freezed
-          ? _value.time
-          : time // ignore: cast_nullable_to_non_nullable
-              as int,
-      suite: suite == freezed
-          ? _value.suite
-          : suite // ignore: cast_nullable_to_non_nullable
-              as Suite,
-    ));
+  $Res call({Object? time = freezed, Object? suite = freezed}) {
+    return _then(
+      _$_Suite(
+        time:
+            time == freezed
+                ? _value.time
+                : time // ignore: cast_nullable_to_non_nullable
+                    as int,
+        suite:
+            suite == freezed
+                ? _value.suite
+                : suite // ignore: cast_nullable_to_non_nullable
+                    as Suite,
+      ),
+    );
   }
 
   @override
@@ -880,11 +844,9 @@ class __$$_SuiteCopyWithImpl<$Res> extends _$EventCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$_Suite implements _Suite {
-  const _$_Suite({required this.time, required this.suite, final String? $type})
-      : $type = $type ?? 'suite';
+  const _$_Suite({required this.time, required this.suite, final String? $type}) : $type = $type ?? 'suite';
 
-  factory _$_Suite.fromJson(Map<String, dynamic> json) =>
-      _$$_SuiteFromJson(json);
+  factory _$_Suite.fromJson(Map<String, dynamic> json) => _$$_SuiteFromJson(json);
 
   /// The time (in milliseconds) that has elapsed since the test runner started.
   @override
@@ -913,46 +875,45 @@ class _$_Suite implements _Suite {
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(time),
-      const DeepCollectionEquality().hash(suite));
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(time), const DeepCollectionEquality().hash(suite));
 
   @JsonKey(ignore: true)
   @override
-  _$$_SuiteCopyWith<_$_Suite> get copyWith =>
-      __$$_SuiteCopyWithImpl<_$_Suite>(this, _$identity);
+  _$$_SuiteCopyWith<_$_Suite> get copyWith => __$$_SuiteCopyWithImpl<_$_Suite>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(
-            int time, String protocolVersion, String? runnerVersion, int pid)
-        start,
+    required TResult Function(int time, String protocolVersion, String? runnerVersion, int pid) start,
     required TResult Function(int time, int count) allSuites,
     required TResult Function(int time, Suite suite) suite,
-    required TResult Function(int time, @JsonKey(name: 'suiteID') int suiteId,
-            String? observatory, String? remoteDebugger)
-        debug,
+    required TResult Function(
+      int time,
+      @JsonKey(name: 'suiteID') int suiteId,
+      String? observatory,
+      String? remoteDebugger,
+    )
+    debug,
     required TResult Function(int time, Group group) group,
     required TResult Function(int time, Test test) testStart,
-    required TResult Function(int time, @JsonKey(name: 'testID') int testId,
-            String messageType, String message)
-        print,
+    required TResult Function(int time, @JsonKey(name: 'testID') int testId, String messageType, String message) print,
     required TResult Function(
-            int time,
-            @JsonKey(name: 'testID') int testId,
-            String error,
-            @JsonKey(name: 'stackTrace') String stacktrace,
-            bool isFailure)
-        error,
+      int time,
+      @JsonKey(name: 'testID') int testId,
+      String error,
+      @JsonKey(name: 'stackTrace') String stacktrace,
+      bool isFailure,
+    )
+    error,
     required TResult Function(
-            int time,
-            @JsonKey(unknownEnumValue: TestResult.unknown) TestResult result,
-            @JsonKey(name: 'testID') int testId,
-            bool hidden,
-            bool skipped)
-        testDone,
+      int time,
+      @JsonKey(unknownEnumValue: TestResult.unknown) TestResult result,
+      @JsonKey(name: 'testID') int testId,
+      bool hidden,
+      bool skipped,
+    )
+    testDone,
     required TResult Function(int time, bool? success) done,
     required TResult Function(int time) unknown,
   }) {
@@ -962,33 +923,30 @@ class _$_Suite implements _Suite {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(
-            int time, String protocolVersion, String? runnerVersion, int pid)?
-        start,
+    TResult Function(int time, String protocolVersion, String? runnerVersion, int pid)? start,
     TResult Function(int time, int count)? allSuites,
     TResult Function(int time, Suite suite)? suite,
-    TResult Function(int time, @JsonKey(name: 'suiteID') int suiteId,
-            String? observatory, String? remoteDebugger)?
-        debug,
+    TResult Function(int time, @JsonKey(name: 'suiteID') int suiteId, String? observatory, String? remoteDebugger)?
+    debug,
     TResult Function(int time, Group group)? group,
     TResult Function(int time, Test test)? testStart,
-    TResult Function(int time, @JsonKey(name: 'testID') int testId,
-            String messageType, String message)?
-        print,
+    TResult Function(int time, @JsonKey(name: 'testID') int testId, String messageType, String message)? print,
     TResult Function(
-            int time,
-            @JsonKey(name: 'testID') int testId,
-            String error,
-            @JsonKey(name: 'stackTrace') String stacktrace,
-            bool isFailure)?
-        error,
+      int time,
+      @JsonKey(name: 'testID') int testId,
+      String error,
+      @JsonKey(name: 'stackTrace') String stacktrace,
+      bool isFailure,
+    )?
+    error,
     TResult Function(
-            int time,
-            @JsonKey(unknownEnumValue: TestResult.unknown) TestResult result,
-            @JsonKey(name: 'testID') int testId,
-            bool hidden,
-            bool skipped)?
-        testDone,
+      int time,
+      @JsonKey(unknownEnumValue: TestResult.unknown) TestResult result,
+      @JsonKey(name: 'testID') int testId,
+      bool hidden,
+      bool skipped,
+    )?
+    testDone,
     TResult Function(int time, bool? success)? done,
     TResult Function(int time)? unknown,
   }) {
@@ -998,33 +956,30 @@ class _$_Suite implements _Suite {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(
-            int time, String protocolVersion, String? runnerVersion, int pid)?
-        start,
+    TResult Function(int time, String protocolVersion, String? runnerVersion, int pid)? start,
     TResult Function(int time, int count)? allSuites,
     TResult Function(int time, Suite suite)? suite,
-    TResult Function(int time, @JsonKey(name: 'suiteID') int suiteId,
-            String? observatory, String? remoteDebugger)?
-        debug,
+    TResult Function(int time, @JsonKey(name: 'suiteID') int suiteId, String? observatory, String? remoteDebugger)?
+    debug,
     TResult Function(int time, Group group)? group,
     TResult Function(int time, Test test)? testStart,
-    TResult Function(int time, @JsonKey(name: 'testID') int testId,
-            String messageType, String message)?
-        print,
+    TResult Function(int time, @JsonKey(name: 'testID') int testId, String messageType, String message)? print,
     TResult Function(
-            int time,
-            @JsonKey(name: 'testID') int testId,
-            String error,
-            @JsonKey(name: 'stackTrace') String stacktrace,
-            bool isFailure)?
-        error,
+      int time,
+      @JsonKey(name: 'testID') int testId,
+      String error,
+      @JsonKey(name: 'stackTrace') String stacktrace,
+      bool isFailure,
+    )?
+    error,
     TResult Function(
-            int time,
-            @JsonKey(unknownEnumValue: TestResult.unknown) TestResult result,
-            @JsonKey(name: 'testID') int testId,
-            bool hidden,
-            bool skipped)?
-        testDone,
+      int time,
+      @JsonKey(unknownEnumValue: TestResult.unknown) TestResult result,
+      @JsonKey(name: 'testID') int testId,
+      bool hidden,
+      bool skipped,
+    )?
+    testDone,
     TResult Function(int time, bool? success)? done,
     TResult Function(int time)? unknown,
     required TResult orElse(),
@@ -1095,20 +1050,16 @@ class _$_Suite implements _Suite {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_SuiteToJson(
-      this,
-    );
+    return _$$_SuiteToJson(this);
   }
 }
 
 abstract class _Suite implements Event {
-  const factory _Suite({required final int time, required final Suite suite}) =
-      _$_Suite;
+  const factory _Suite({required final int time, required final Suite suite}) = _$_Suite;
 
   factory _Suite.fromJson(Map<String, dynamic> json) = _$_Suite.fromJson;
 
   @override
-
   /// The time (in milliseconds) that has elapsed since the test runner started.
   int get time;
 
@@ -1116,27 +1067,19 @@ abstract class _Suite implements Event {
   Suite get suite;
   @override
   @JsonKey(ignore: true)
-  _$$_SuiteCopyWith<_$_Suite> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$_SuiteCopyWith<_$_Suite> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class _$$_DebugCopyWith<$Res> implements $EventCopyWith<$Res> {
-  factory _$$_DebugCopyWith(_$_Debug value, $Res Function(_$_Debug) then) =
-      __$$_DebugCopyWithImpl<$Res>;
+  factory _$$_DebugCopyWith(_$_Debug value, $Res Function(_$_Debug) then) = __$$_DebugCopyWithImpl<$Res>;
   @override
-  $Res call(
-      {int time,
-      @JsonKey(name: 'suiteID') int suiteId,
-      String? observatory,
-      String? remoteDebugger});
+  $Res call({int time, @JsonKey(name: 'suiteID') int suiteId, String? observatory, String? remoteDebugger});
 }
 
 /// @nodoc
-class __$$_DebugCopyWithImpl<$Res> extends _$EventCopyWithImpl<$Res>
-    implements _$$_DebugCopyWith<$Res> {
-  __$$_DebugCopyWithImpl(_$_Debug _value, $Res Function(_$_Debug) _then)
-      : super(_value, (v) => _then(v as _$_Debug));
+class __$$_DebugCopyWithImpl<$Res> extends _$EventCopyWithImpl<$Res> implements _$$_DebugCopyWith<$Res> {
+  __$$_DebugCopyWithImpl(_$_Debug _value, $Res Function(_$_Debug) _then) : super(_value, (v) => _then(v as _$_Debug));
 
   @override
   _$_Debug get _value => super._value as _$_Debug;
@@ -1148,40 +1091,45 @@ class __$$_DebugCopyWithImpl<$Res> extends _$EventCopyWithImpl<$Res>
     Object? observatory = freezed,
     Object? remoteDebugger = freezed,
   }) {
-    return _then(_$_Debug(
-      time: time == freezed
-          ? _value.time
-          : time // ignore: cast_nullable_to_non_nullable
-              as int,
-      suiteId: suiteId == freezed
-          ? _value.suiteId
-          : suiteId // ignore: cast_nullable_to_non_nullable
-              as int,
-      observatory: observatory == freezed
-          ? _value.observatory
-          : observatory // ignore: cast_nullable_to_non_nullable
-              as String?,
-      remoteDebugger: remoteDebugger == freezed
-          ? _value.remoteDebugger
-          : remoteDebugger // ignore: cast_nullable_to_non_nullable
-              as String?,
-    ));
+    return _then(
+      _$_Debug(
+        time:
+            time == freezed
+                ? _value.time
+                : time // ignore: cast_nullable_to_non_nullable
+                    as int,
+        suiteId:
+            suiteId == freezed
+                ? _value.suiteId
+                : suiteId // ignore: cast_nullable_to_non_nullable
+                    as int,
+        observatory:
+            observatory == freezed
+                ? _value.observatory
+                : observatory // ignore: cast_nullable_to_non_nullable
+                    as String?,
+        remoteDebugger:
+            remoteDebugger == freezed
+                ? _value.remoteDebugger
+                : remoteDebugger // ignore: cast_nullable_to_non_nullable
+                    as String?,
+      ),
+    );
   }
 }
 
 /// @nodoc
 @JsonSerializable()
 class _$_Debug implements _Debug {
-  const _$_Debug(
-      {required this.time,
-      @JsonKey(name: 'suiteID') required this.suiteId,
-      this.observatory,
-      this.remoteDebugger,
-      final String? $type})
-      : $type = $type ?? 'debug';
+  const _$_Debug({
+    required this.time,
+    @JsonKey(name: 'suiteID') required this.suiteId,
+    this.observatory,
+    this.remoteDebugger,
+    final String? $type,
+  }) : $type = $type ?? 'debug';
 
-  factory _$_Debug.fromJson(Map<String, dynamic> json) =>
-      _$$_DebugFromJson(json);
+  factory _$_Debug.fromJson(Map<String, dynamic> json) => _$$_DebugFromJson(json);
 
   /// The time (in milliseconds) that has elapsed since the test runner started.
   @override
@@ -1215,56 +1163,56 @@ class _$_Debug implements _Debug {
             other is _$_Debug &&
             const DeepCollectionEquality().equals(other.time, time) &&
             const DeepCollectionEquality().equals(other.suiteId, suiteId) &&
-            const DeepCollectionEquality()
-                .equals(other.observatory, observatory) &&
-            const DeepCollectionEquality()
-                .equals(other.remoteDebugger, remoteDebugger));
+            const DeepCollectionEquality().equals(other.observatory, observatory) &&
+            const DeepCollectionEquality().equals(other.remoteDebugger, remoteDebugger));
   }
 
   @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(time),
-      const DeepCollectionEquality().hash(suiteId),
-      const DeepCollectionEquality().hash(observatory),
-      const DeepCollectionEquality().hash(remoteDebugger));
+    runtimeType,
+    const DeepCollectionEquality().hash(time),
+    const DeepCollectionEquality().hash(suiteId),
+    const DeepCollectionEquality().hash(observatory),
+    const DeepCollectionEquality().hash(remoteDebugger),
+  );
 
   @JsonKey(ignore: true)
   @override
-  _$$_DebugCopyWith<_$_Debug> get copyWith =>
-      __$$_DebugCopyWithImpl<_$_Debug>(this, _$identity);
+  _$$_DebugCopyWith<_$_Debug> get copyWith => __$$_DebugCopyWithImpl<_$_Debug>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(
-            int time, String protocolVersion, String? runnerVersion, int pid)
-        start,
+    required TResult Function(int time, String protocolVersion, String? runnerVersion, int pid) start,
     required TResult Function(int time, int count) allSuites,
     required TResult Function(int time, Suite suite) suite,
-    required TResult Function(int time, @JsonKey(name: 'suiteID') int suiteId,
-            String? observatory, String? remoteDebugger)
-        debug,
+    required TResult Function(
+      int time,
+      @JsonKey(name: 'suiteID') int suiteId,
+      String? observatory,
+      String? remoteDebugger,
+    )
+    debug,
     required TResult Function(int time, Group group) group,
     required TResult Function(int time, Test test) testStart,
-    required TResult Function(int time, @JsonKey(name: 'testID') int testId,
-            String messageType, String message)
-        print,
+    required TResult Function(int time, @JsonKey(name: 'testID') int testId, String messageType, String message) print,
     required TResult Function(
-            int time,
-            @JsonKey(name: 'testID') int testId,
-            String error,
-            @JsonKey(name: 'stackTrace') String stacktrace,
-            bool isFailure)
-        error,
+      int time,
+      @JsonKey(name: 'testID') int testId,
+      String error,
+      @JsonKey(name: 'stackTrace') String stacktrace,
+      bool isFailure,
+    )
+    error,
     required TResult Function(
-            int time,
-            @JsonKey(unknownEnumValue: TestResult.unknown) TestResult result,
-            @JsonKey(name: 'testID') int testId,
-            bool hidden,
-            bool skipped)
-        testDone,
+      int time,
+      @JsonKey(unknownEnumValue: TestResult.unknown) TestResult result,
+      @JsonKey(name: 'testID') int testId,
+      bool hidden,
+      bool skipped,
+    )
+    testDone,
     required TResult Function(int time, bool? success) done,
     required TResult Function(int time) unknown,
   }) {
@@ -1274,33 +1222,30 @@ class _$_Debug implements _Debug {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(
-            int time, String protocolVersion, String? runnerVersion, int pid)?
-        start,
+    TResult Function(int time, String protocolVersion, String? runnerVersion, int pid)? start,
     TResult Function(int time, int count)? allSuites,
     TResult Function(int time, Suite suite)? suite,
-    TResult Function(int time, @JsonKey(name: 'suiteID') int suiteId,
-            String? observatory, String? remoteDebugger)?
-        debug,
+    TResult Function(int time, @JsonKey(name: 'suiteID') int suiteId, String? observatory, String? remoteDebugger)?
+    debug,
     TResult Function(int time, Group group)? group,
     TResult Function(int time, Test test)? testStart,
-    TResult Function(int time, @JsonKey(name: 'testID') int testId,
-            String messageType, String message)?
-        print,
+    TResult Function(int time, @JsonKey(name: 'testID') int testId, String messageType, String message)? print,
     TResult Function(
-            int time,
-            @JsonKey(name: 'testID') int testId,
-            String error,
-            @JsonKey(name: 'stackTrace') String stacktrace,
-            bool isFailure)?
-        error,
+      int time,
+      @JsonKey(name: 'testID') int testId,
+      String error,
+      @JsonKey(name: 'stackTrace') String stacktrace,
+      bool isFailure,
+    )?
+    error,
     TResult Function(
-            int time,
-            @JsonKey(unknownEnumValue: TestResult.unknown) TestResult result,
-            @JsonKey(name: 'testID') int testId,
-            bool hidden,
-            bool skipped)?
-        testDone,
+      int time,
+      @JsonKey(unknownEnumValue: TestResult.unknown) TestResult result,
+      @JsonKey(name: 'testID') int testId,
+      bool hidden,
+      bool skipped,
+    )?
+    testDone,
     TResult Function(int time, bool? success)? done,
     TResult Function(int time)? unknown,
   }) {
@@ -1310,33 +1255,30 @@ class _$_Debug implements _Debug {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(
-            int time, String protocolVersion, String? runnerVersion, int pid)?
-        start,
+    TResult Function(int time, String protocolVersion, String? runnerVersion, int pid)? start,
     TResult Function(int time, int count)? allSuites,
     TResult Function(int time, Suite suite)? suite,
-    TResult Function(int time, @JsonKey(name: 'suiteID') int suiteId,
-            String? observatory, String? remoteDebugger)?
-        debug,
+    TResult Function(int time, @JsonKey(name: 'suiteID') int suiteId, String? observatory, String? remoteDebugger)?
+    debug,
     TResult Function(int time, Group group)? group,
     TResult Function(int time, Test test)? testStart,
-    TResult Function(int time, @JsonKey(name: 'testID') int testId,
-            String messageType, String message)?
-        print,
+    TResult Function(int time, @JsonKey(name: 'testID') int testId, String messageType, String message)? print,
     TResult Function(
-            int time,
-            @JsonKey(name: 'testID') int testId,
-            String error,
-            @JsonKey(name: 'stackTrace') String stacktrace,
-            bool isFailure)?
-        error,
+      int time,
+      @JsonKey(name: 'testID') int testId,
+      String error,
+      @JsonKey(name: 'stackTrace') String stacktrace,
+      bool isFailure,
+    )?
+    error,
     TResult Function(
-            int time,
-            @JsonKey(unknownEnumValue: TestResult.unknown) TestResult result,
-            @JsonKey(name: 'testID') int testId,
-            bool hidden,
-            bool skipped)?
-        testDone,
+      int time,
+      @JsonKey(unknownEnumValue: TestResult.unknown) TestResult result,
+      @JsonKey(name: 'testID') int testId,
+      bool hidden,
+      bool skipped,
+    )?
+    testDone,
     TResult Function(int time, bool? success)? done,
     TResult Function(int time)? unknown,
     required TResult orElse(),
@@ -1407,23 +1349,21 @@ class _$_Debug implements _Debug {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_DebugToJson(
-      this,
-    );
+    return _$$_DebugToJson(this);
   }
 }
 
 abstract class _Debug implements Event {
-  const factory _Debug(
-      {required final int time,
-      @JsonKey(name: 'suiteID') required final int suiteId,
-      final String? observatory,
-      final String? remoteDebugger}) = _$_Debug;
+  const factory _Debug({
+    required final int time,
+    @JsonKey(name: 'suiteID') required final int suiteId,
+    final String? observatory,
+    final String? remoteDebugger,
+  }) = _$_Debug;
 
   factory _Debug.fromJson(Map<String, dynamic> json) = _$_Debug.fromJson;
 
   @override
-
   /// The time (in milliseconds) that has elapsed since the test runner started.
   int get time;
 
@@ -1438,14 +1378,12 @@ abstract class _Debug implements Event {
   String? get remoteDebugger;
   @override
   @JsonKey(ignore: true)
-  _$$_DebugCopyWith<_$_Debug> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$_DebugCopyWith<_$_Debug> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class _$$_GroupCopyWith<$Res> implements $EventCopyWith<$Res> {
-  factory _$$_GroupCopyWith(_$_Group value, $Res Function(_$_Group) then) =
-      __$$_GroupCopyWithImpl<$Res>;
+  factory _$$_GroupCopyWith(_$_Group value, $Res Function(_$_Group) then) = __$$_GroupCopyWithImpl<$Res>;
   @override
   $Res call({int time, Group group});
 
@@ -1453,29 +1391,28 @@ abstract class _$$_GroupCopyWith<$Res> implements $EventCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$_GroupCopyWithImpl<$Res> extends _$EventCopyWithImpl<$Res>
-    implements _$$_GroupCopyWith<$Res> {
-  __$$_GroupCopyWithImpl(_$_Group _value, $Res Function(_$_Group) _then)
-      : super(_value, (v) => _then(v as _$_Group));
+class __$$_GroupCopyWithImpl<$Res> extends _$EventCopyWithImpl<$Res> implements _$$_GroupCopyWith<$Res> {
+  __$$_GroupCopyWithImpl(_$_Group _value, $Res Function(_$_Group) _then) : super(_value, (v) => _then(v as _$_Group));
 
   @override
   _$_Group get _value => super._value as _$_Group;
 
   @override
-  $Res call({
-    Object? time = freezed,
-    Object? group = freezed,
-  }) {
-    return _then(_$_Group(
-      time: time == freezed
-          ? _value.time
-          : time // ignore: cast_nullable_to_non_nullable
-              as int,
-      group: group == freezed
-          ? _value.group
-          : group // ignore: cast_nullable_to_non_nullable
-              as Group,
-    ));
+  $Res call({Object? time = freezed, Object? group = freezed}) {
+    return _then(
+      _$_Group(
+        time:
+            time == freezed
+                ? _value.time
+                : time // ignore: cast_nullable_to_non_nullable
+                    as int,
+        group:
+            group == freezed
+                ? _value.group
+                : group // ignore: cast_nullable_to_non_nullable
+                    as Group,
+      ),
+    );
   }
 
   @override
@@ -1489,11 +1426,9 @@ class __$$_GroupCopyWithImpl<$Res> extends _$EventCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$_Group implements _Group {
-  const _$_Group({required this.time, required this.group, final String? $type})
-      : $type = $type ?? 'group';
+  const _$_Group({required this.time, required this.group, final String? $type}) : $type = $type ?? 'group';
 
-  factory _$_Group.fromJson(Map<String, dynamic> json) =>
-      _$$_GroupFromJson(json);
+  factory _$_Group.fromJson(Map<String, dynamic> json) => _$$_GroupFromJson(json);
 
   /// The time (in milliseconds) that has elapsed since the test runner started.
   @override
@@ -1522,46 +1457,45 @@ class _$_Group implements _Group {
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(time),
-      const DeepCollectionEquality().hash(group));
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(time), const DeepCollectionEquality().hash(group));
 
   @JsonKey(ignore: true)
   @override
-  _$$_GroupCopyWith<_$_Group> get copyWith =>
-      __$$_GroupCopyWithImpl<_$_Group>(this, _$identity);
+  _$$_GroupCopyWith<_$_Group> get copyWith => __$$_GroupCopyWithImpl<_$_Group>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(
-            int time, String protocolVersion, String? runnerVersion, int pid)
-        start,
+    required TResult Function(int time, String protocolVersion, String? runnerVersion, int pid) start,
     required TResult Function(int time, int count) allSuites,
     required TResult Function(int time, Suite suite) suite,
-    required TResult Function(int time, @JsonKey(name: 'suiteID') int suiteId,
-            String? observatory, String? remoteDebugger)
-        debug,
+    required TResult Function(
+      int time,
+      @JsonKey(name: 'suiteID') int suiteId,
+      String? observatory,
+      String? remoteDebugger,
+    )
+    debug,
     required TResult Function(int time, Group group) group,
     required TResult Function(int time, Test test) testStart,
-    required TResult Function(int time, @JsonKey(name: 'testID') int testId,
-            String messageType, String message)
-        print,
+    required TResult Function(int time, @JsonKey(name: 'testID') int testId, String messageType, String message) print,
     required TResult Function(
-            int time,
-            @JsonKey(name: 'testID') int testId,
-            String error,
-            @JsonKey(name: 'stackTrace') String stacktrace,
-            bool isFailure)
-        error,
+      int time,
+      @JsonKey(name: 'testID') int testId,
+      String error,
+      @JsonKey(name: 'stackTrace') String stacktrace,
+      bool isFailure,
+    )
+    error,
     required TResult Function(
-            int time,
-            @JsonKey(unknownEnumValue: TestResult.unknown) TestResult result,
-            @JsonKey(name: 'testID') int testId,
-            bool hidden,
-            bool skipped)
-        testDone,
+      int time,
+      @JsonKey(unknownEnumValue: TestResult.unknown) TestResult result,
+      @JsonKey(name: 'testID') int testId,
+      bool hidden,
+      bool skipped,
+    )
+    testDone,
     required TResult Function(int time, bool? success) done,
     required TResult Function(int time) unknown,
   }) {
@@ -1571,33 +1505,30 @@ class _$_Group implements _Group {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(
-            int time, String protocolVersion, String? runnerVersion, int pid)?
-        start,
+    TResult Function(int time, String protocolVersion, String? runnerVersion, int pid)? start,
     TResult Function(int time, int count)? allSuites,
     TResult Function(int time, Suite suite)? suite,
-    TResult Function(int time, @JsonKey(name: 'suiteID') int suiteId,
-            String? observatory, String? remoteDebugger)?
-        debug,
+    TResult Function(int time, @JsonKey(name: 'suiteID') int suiteId, String? observatory, String? remoteDebugger)?
+    debug,
     TResult Function(int time, Group group)? group,
     TResult Function(int time, Test test)? testStart,
-    TResult Function(int time, @JsonKey(name: 'testID') int testId,
-            String messageType, String message)?
-        print,
+    TResult Function(int time, @JsonKey(name: 'testID') int testId, String messageType, String message)? print,
     TResult Function(
-            int time,
-            @JsonKey(name: 'testID') int testId,
-            String error,
-            @JsonKey(name: 'stackTrace') String stacktrace,
-            bool isFailure)?
-        error,
+      int time,
+      @JsonKey(name: 'testID') int testId,
+      String error,
+      @JsonKey(name: 'stackTrace') String stacktrace,
+      bool isFailure,
+    )?
+    error,
     TResult Function(
-            int time,
-            @JsonKey(unknownEnumValue: TestResult.unknown) TestResult result,
-            @JsonKey(name: 'testID') int testId,
-            bool hidden,
-            bool skipped)?
-        testDone,
+      int time,
+      @JsonKey(unknownEnumValue: TestResult.unknown) TestResult result,
+      @JsonKey(name: 'testID') int testId,
+      bool hidden,
+      bool skipped,
+    )?
+    testDone,
     TResult Function(int time, bool? success)? done,
     TResult Function(int time)? unknown,
   }) {
@@ -1607,33 +1538,30 @@ class _$_Group implements _Group {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(
-            int time, String protocolVersion, String? runnerVersion, int pid)?
-        start,
+    TResult Function(int time, String protocolVersion, String? runnerVersion, int pid)? start,
     TResult Function(int time, int count)? allSuites,
     TResult Function(int time, Suite suite)? suite,
-    TResult Function(int time, @JsonKey(name: 'suiteID') int suiteId,
-            String? observatory, String? remoteDebugger)?
-        debug,
+    TResult Function(int time, @JsonKey(name: 'suiteID') int suiteId, String? observatory, String? remoteDebugger)?
+    debug,
     TResult Function(int time, Group group)? group,
     TResult Function(int time, Test test)? testStart,
-    TResult Function(int time, @JsonKey(name: 'testID') int testId,
-            String messageType, String message)?
-        print,
+    TResult Function(int time, @JsonKey(name: 'testID') int testId, String messageType, String message)? print,
     TResult Function(
-            int time,
-            @JsonKey(name: 'testID') int testId,
-            String error,
-            @JsonKey(name: 'stackTrace') String stacktrace,
-            bool isFailure)?
-        error,
+      int time,
+      @JsonKey(name: 'testID') int testId,
+      String error,
+      @JsonKey(name: 'stackTrace') String stacktrace,
+      bool isFailure,
+    )?
+    error,
     TResult Function(
-            int time,
-            @JsonKey(unknownEnumValue: TestResult.unknown) TestResult result,
-            @JsonKey(name: 'testID') int testId,
-            bool hidden,
-            bool skipped)?
-        testDone,
+      int time,
+      @JsonKey(unknownEnumValue: TestResult.unknown) TestResult result,
+      @JsonKey(name: 'testID') int testId,
+      bool hidden,
+      bool skipped,
+    )?
+    testDone,
     TResult Function(int time, bool? success)? done,
     TResult Function(int time)? unknown,
     required TResult orElse(),
@@ -1704,20 +1632,16 @@ class _$_Group implements _Group {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_GroupToJson(
-      this,
-    );
+    return _$$_GroupToJson(this);
   }
 }
 
 abstract class _Group implements Event {
-  const factory _Group({required final int time, required final Group group}) =
-      _$_Group;
+  const factory _Group({required final int time, required final Group group}) = _$_Group;
 
   factory _Group.fromJson(Map<String, dynamic> json) = _$_Group.fromJson;
 
   @override
-
   /// The time (in milliseconds) that has elapsed since the test runner started.
   int get time;
 
@@ -1725,14 +1649,12 @@ abstract class _Group implements Event {
   Group get group;
   @override
   @JsonKey(ignore: true)
-  _$$_GroupCopyWith<_$_Group> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$_GroupCopyWith<_$_Group> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class _$$_TestStartCopyWith<$Res> implements $EventCopyWith<$Res> {
-  factory _$$_TestStartCopyWith(
-          _$_TestStart value, $Res Function(_$_TestStart) then) =
+  factory _$$_TestStartCopyWith(_$_TestStart value, $Res Function(_$_TestStart) then) =
       __$$_TestStartCopyWithImpl<$Res>;
   @override
   $Res call({int time, Test test});
@@ -1741,30 +1663,29 @@ abstract class _$$_TestStartCopyWith<$Res> implements $EventCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$_TestStartCopyWithImpl<$Res> extends _$EventCopyWithImpl<$Res>
-    implements _$$_TestStartCopyWith<$Res> {
-  __$$_TestStartCopyWithImpl(
-      _$_TestStart _value, $Res Function(_$_TestStart) _then)
-      : super(_value, (v) => _then(v as _$_TestStart));
+class __$$_TestStartCopyWithImpl<$Res> extends _$EventCopyWithImpl<$Res> implements _$$_TestStartCopyWith<$Res> {
+  __$$_TestStartCopyWithImpl(_$_TestStart _value, $Res Function(_$_TestStart) _then)
+    : super(_value, (v) => _then(v as _$_TestStart));
 
   @override
   _$_TestStart get _value => super._value as _$_TestStart;
 
   @override
-  $Res call({
-    Object? time = freezed,
-    Object? test = freezed,
-  }) {
-    return _then(_$_TestStart(
-      time: time == freezed
-          ? _value.time
-          : time // ignore: cast_nullable_to_non_nullable
-              as int,
-      test: test == freezed
-          ? _value.test
-          : test // ignore: cast_nullable_to_non_nullable
-              as Test,
-    ));
+  $Res call({Object? time = freezed, Object? test = freezed}) {
+    return _then(
+      _$_TestStart(
+        time:
+            time == freezed
+                ? _value.time
+                : time // ignore: cast_nullable_to_non_nullable
+                    as int,
+        test:
+            test == freezed
+                ? _value.test
+                : test // ignore: cast_nullable_to_non_nullable
+                    as Test,
+      ),
+    );
   }
 
   @override
@@ -1778,12 +1699,9 @@ class __$$_TestStartCopyWithImpl<$Res> extends _$EventCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$_TestStart implements _TestStart {
-  const _$_TestStart(
-      {required this.time, required this.test, final String? $type})
-      : $type = $type ?? 'testStart';
+  const _$_TestStart({required this.time, required this.test, final String? $type}) : $type = $type ?? 'testStart';
 
-  factory _$_TestStart.fromJson(Map<String, dynamic> json) =>
-      _$$_TestStartFromJson(json);
+  factory _$_TestStart.fromJson(Map<String, dynamic> json) => _$$_TestStartFromJson(json);
 
   /// The time (in milliseconds) that has elapsed since the test runner started.
   @override
@@ -1812,46 +1730,45 @@ class _$_TestStart implements _TestStart {
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(time),
-      const DeepCollectionEquality().hash(test));
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(time), const DeepCollectionEquality().hash(test));
 
   @JsonKey(ignore: true)
   @override
-  _$$_TestStartCopyWith<_$_TestStart> get copyWith =>
-      __$$_TestStartCopyWithImpl<_$_TestStart>(this, _$identity);
+  _$$_TestStartCopyWith<_$_TestStart> get copyWith => __$$_TestStartCopyWithImpl<_$_TestStart>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(
-            int time, String protocolVersion, String? runnerVersion, int pid)
-        start,
+    required TResult Function(int time, String protocolVersion, String? runnerVersion, int pid) start,
     required TResult Function(int time, int count) allSuites,
     required TResult Function(int time, Suite suite) suite,
-    required TResult Function(int time, @JsonKey(name: 'suiteID') int suiteId,
-            String? observatory, String? remoteDebugger)
-        debug,
+    required TResult Function(
+      int time,
+      @JsonKey(name: 'suiteID') int suiteId,
+      String? observatory,
+      String? remoteDebugger,
+    )
+    debug,
     required TResult Function(int time, Group group) group,
     required TResult Function(int time, Test test) testStart,
-    required TResult Function(int time, @JsonKey(name: 'testID') int testId,
-            String messageType, String message)
-        print,
+    required TResult Function(int time, @JsonKey(name: 'testID') int testId, String messageType, String message) print,
     required TResult Function(
-            int time,
-            @JsonKey(name: 'testID') int testId,
-            String error,
-            @JsonKey(name: 'stackTrace') String stacktrace,
-            bool isFailure)
-        error,
+      int time,
+      @JsonKey(name: 'testID') int testId,
+      String error,
+      @JsonKey(name: 'stackTrace') String stacktrace,
+      bool isFailure,
+    )
+    error,
     required TResult Function(
-            int time,
-            @JsonKey(unknownEnumValue: TestResult.unknown) TestResult result,
-            @JsonKey(name: 'testID') int testId,
-            bool hidden,
-            bool skipped)
-        testDone,
+      int time,
+      @JsonKey(unknownEnumValue: TestResult.unknown) TestResult result,
+      @JsonKey(name: 'testID') int testId,
+      bool hidden,
+      bool skipped,
+    )
+    testDone,
     required TResult Function(int time, bool? success) done,
     required TResult Function(int time) unknown,
   }) {
@@ -1861,33 +1778,30 @@ class _$_TestStart implements _TestStart {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(
-            int time, String protocolVersion, String? runnerVersion, int pid)?
-        start,
+    TResult Function(int time, String protocolVersion, String? runnerVersion, int pid)? start,
     TResult Function(int time, int count)? allSuites,
     TResult Function(int time, Suite suite)? suite,
-    TResult Function(int time, @JsonKey(name: 'suiteID') int suiteId,
-            String? observatory, String? remoteDebugger)?
-        debug,
+    TResult Function(int time, @JsonKey(name: 'suiteID') int suiteId, String? observatory, String? remoteDebugger)?
+    debug,
     TResult Function(int time, Group group)? group,
     TResult Function(int time, Test test)? testStart,
-    TResult Function(int time, @JsonKey(name: 'testID') int testId,
-            String messageType, String message)?
-        print,
+    TResult Function(int time, @JsonKey(name: 'testID') int testId, String messageType, String message)? print,
     TResult Function(
-            int time,
-            @JsonKey(name: 'testID') int testId,
-            String error,
-            @JsonKey(name: 'stackTrace') String stacktrace,
-            bool isFailure)?
-        error,
+      int time,
+      @JsonKey(name: 'testID') int testId,
+      String error,
+      @JsonKey(name: 'stackTrace') String stacktrace,
+      bool isFailure,
+    )?
+    error,
     TResult Function(
-            int time,
-            @JsonKey(unknownEnumValue: TestResult.unknown) TestResult result,
-            @JsonKey(name: 'testID') int testId,
-            bool hidden,
-            bool skipped)?
-        testDone,
+      int time,
+      @JsonKey(unknownEnumValue: TestResult.unknown) TestResult result,
+      @JsonKey(name: 'testID') int testId,
+      bool hidden,
+      bool skipped,
+    )?
+    testDone,
     TResult Function(int time, bool? success)? done,
     TResult Function(int time)? unknown,
   }) {
@@ -1897,33 +1811,30 @@ class _$_TestStart implements _TestStart {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(
-            int time, String protocolVersion, String? runnerVersion, int pid)?
-        start,
+    TResult Function(int time, String protocolVersion, String? runnerVersion, int pid)? start,
     TResult Function(int time, int count)? allSuites,
     TResult Function(int time, Suite suite)? suite,
-    TResult Function(int time, @JsonKey(name: 'suiteID') int suiteId,
-            String? observatory, String? remoteDebugger)?
-        debug,
+    TResult Function(int time, @JsonKey(name: 'suiteID') int suiteId, String? observatory, String? remoteDebugger)?
+    debug,
     TResult Function(int time, Group group)? group,
     TResult Function(int time, Test test)? testStart,
-    TResult Function(int time, @JsonKey(name: 'testID') int testId,
-            String messageType, String message)?
-        print,
+    TResult Function(int time, @JsonKey(name: 'testID') int testId, String messageType, String message)? print,
     TResult Function(
-            int time,
-            @JsonKey(name: 'testID') int testId,
-            String error,
-            @JsonKey(name: 'stackTrace') String stacktrace,
-            bool isFailure)?
-        error,
+      int time,
+      @JsonKey(name: 'testID') int testId,
+      String error,
+      @JsonKey(name: 'stackTrace') String stacktrace,
+      bool isFailure,
+    )?
+    error,
     TResult Function(
-            int time,
-            @JsonKey(unknownEnumValue: TestResult.unknown) TestResult result,
-            @JsonKey(name: 'testID') int testId,
-            bool hidden,
-            bool skipped)?
-        testDone,
+      int time,
+      @JsonKey(unknownEnumValue: TestResult.unknown) TestResult result,
+      @JsonKey(name: 'testID') int testId,
+      bool hidden,
+      bool skipped,
+    )?
+    testDone,
     TResult Function(int time, bool? success)? done,
     TResult Function(int time)? unknown,
     required TResult orElse(),
@@ -1994,21 +1905,16 @@ class _$_TestStart implements _TestStart {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_TestStartToJson(
-      this,
-    );
+    return _$$_TestStartToJson(this);
   }
 }
 
 abstract class _TestStart implements Event {
-  const factory _TestStart(
-      {required final int time, required final Test test}) = _$_TestStart;
+  const factory _TestStart({required final int time, required final Test test}) = _$_TestStart;
 
-  factory _TestStart.fromJson(Map<String, dynamic> json) =
-      _$_TestStart.fromJson;
+  factory _TestStart.fromJson(Map<String, dynamic> json) = _$_TestStart.fromJson;
 
   @override
-
   /// The time (in milliseconds) that has elapsed since the test runner started.
   int get time;
 
@@ -2016,27 +1922,19 @@ abstract class _TestStart implements Event {
   Test get test;
   @override
   @JsonKey(ignore: true)
-  _$$_TestStartCopyWith<_$_TestStart> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$_TestStartCopyWith<_$_TestStart> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class _$$_PrintCopyWith<$Res> implements $EventCopyWith<$Res> {
-  factory _$$_PrintCopyWith(_$_Print value, $Res Function(_$_Print) then) =
-      __$$_PrintCopyWithImpl<$Res>;
+  factory _$$_PrintCopyWith(_$_Print value, $Res Function(_$_Print) then) = __$$_PrintCopyWithImpl<$Res>;
   @override
-  $Res call(
-      {int time,
-      @JsonKey(name: 'testID') int testId,
-      String messageType,
-      String message});
+  $Res call({int time, @JsonKey(name: 'testID') int testId, String messageType, String message});
 }
 
 /// @nodoc
-class __$$_PrintCopyWithImpl<$Res> extends _$EventCopyWithImpl<$Res>
-    implements _$$_PrintCopyWith<$Res> {
-  __$$_PrintCopyWithImpl(_$_Print _value, $Res Function(_$_Print) _then)
-      : super(_value, (v) => _then(v as _$_Print));
+class __$$_PrintCopyWithImpl<$Res> extends _$EventCopyWithImpl<$Res> implements _$$_PrintCopyWith<$Res> {
+  __$$_PrintCopyWithImpl(_$_Print _value, $Res Function(_$_Print) _then) : super(_value, (v) => _then(v as _$_Print));
 
   @override
   _$_Print get _value => super._value as _$_Print;
@@ -2048,40 +1946,45 @@ class __$$_PrintCopyWithImpl<$Res> extends _$EventCopyWithImpl<$Res>
     Object? messageType = freezed,
     Object? message = freezed,
   }) {
-    return _then(_$_Print(
-      time: time == freezed
-          ? _value.time
-          : time // ignore: cast_nullable_to_non_nullable
-              as int,
-      testId: testId == freezed
-          ? _value.testId
-          : testId // ignore: cast_nullable_to_non_nullable
-              as int,
-      messageType: messageType == freezed
-          ? _value.messageType
-          : messageType // ignore: cast_nullable_to_non_nullable
-              as String,
-      message: message == freezed
-          ? _value.message
-          : message // ignore: cast_nullable_to_non_nullable
-              as String,
-    ));
+    return _then(
+      _$_Print(
+        time:
+            time == freezed
+                ? _value.time
+                : time // ignore: cast_nullable_to_non_nullable
+                    as int,
+        testId:
+            testId == freezed
+                ? _value.testId
+                : testId // ignore: cast_nullable_to_non_nullable
+                    as int,
+        messageType:
+            messageType == freezed
+                ? _value.messageType
+                : messageType // ignore: cast_nullable_to_non_nullable
+                    as String,
+        message:
+            message == freezed
+                ? _value.message
+                : message // ignore: cast_nullable_to_non_nullable
+                    as String,
+      ),
+    );
   }
 }
 
 /// @nodoc
 @JsonSerializable()
 class _$_Print implements _Print {
-  const _$_Print(
-      {required this.time,
-      @JsonKey(name: 'testID') required this.testId,
-      required this.messageType,
-      required this.message,
-      final String? $type})
-      : $type = $type ?? 'print';
+  const _$_Print({
+    required this.time,
+    @JsonKey(name: 'testID') required this.testId,
+    required this.messageType,
+    required this.message,
+    final String? $type,
+  }) : $type = $type ?? 'print';
 
-  factory _$_Print.fromJson(Map<String, dynamic> json) =>
-      _$$_PrintFromJson(json);
+  factory _$_Print.fromJson(Map<String, dynamic> json) => _$$_PrintFromJson(json);
 
   /// The time (in milliseconds) that has elapsed since the test runner started.
   @override
@@ -2115,55 +2018,56 @@ class _$_Print implements _Print {
             other is _$_Print &&
             const DeepCollectionEquality().equals(other.time, time) &&
             const DeepCollectionEquality().equals(other.testId, testId) &&
-            const DeepCollectionEquality()
-                .equals(other.messageType, messageType) &&
+            const DeepCollectionEquality().equals(other.messageType, messageType) &&
             const DeepCollectionEquality().equals(other.message, message));
   }
 
   @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(time),
-      const DeepCollectionEquality().hash(testId),
-      const DeepCollectionEquality().hash(messageType),
-      const DeepCollectionEquality().hash(message));
+    runtimeType,
+    const DeepCollectionEquality().hash(time),
+    const DeepCollectionEquality().hash(testId),
+    const DeepCollectionEquality().hash(messageType),
+    const DeepCollectionEquality().hash(message),
+  );
 
   @JsonKey(ignore: true)
   @override
-  _$$_PrintCopyWith<_$_Print> get copyWith =>
-      __$$_PrintCopyWithImpl<_$_Print>(this, _$identity);
+  _$$_PrintCopyWith<_$_Print> get copyWith => __$$_PrintCopyWithImpl<_$_Print>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(
-            int time, String protocolVersion, String? runnerVersion, int pid)
-        start,
+    required TResult Function(int time, String protocolVersion, String? runnerVersion, int pid) start,
     required TResult Function(int time, int count) allSuites,
     required TResult Function(int time, Suite suite) suite,
-    required TResult Function(int time, @JsonKey(name: 'suiteID') int suiteId,
-            String? observatory, String? remoteDebugger)
-        debug,
+    required TResult Function(
+      int time,
+      @JsonKey(name: 'suiteID') int suiteId,
+      String? observatory,
+      String? remoteDebugger,
+    )
+    debug,
     required TResult Function(int time, Group group) group,
     required TResult Function(int time, Test test) testStart,
-    required TResult Function(int time, @JsonKey(name: 'testID') int testId,
-            String messageType, String message)
-        print,
+    required TResult Function(int time, @JsonKey(name: 'testID') int testId, String messageType, String message) print,
     required TResult Function(
-            int time,
-            @JsonKey(name: 'testID') int testId,
-            String error,
-            @JsonKey(name: 'stackTrace') String stacktrace,
-            bool isFailure)
-        error,
+      int time,
+      @JsonKey(name: 'testID') int testId,
+      String error,
+      @JsonKey(name: 'stackTrace') String stacktrace,
+      bool isFailure,
+    )
+    error,
     required TResult Function(
-            int time,
-            @JsonKey(unknownEnumValue: TestResult.unknown) TestResult result,
-            @JsonKey(name: 'testID') int testId,
-            bool hidden,
-            bool skipped)
-        testDone,
+      int time,
+      @JsonKey(unknownEnumValue: TestResult.unknown) TestResult result,
+      @JsonKey(name: 'testID') int testId,
+      bool hidden,
+      bool skipped,
+    )
+    testDone,
     required TResult Function(int time, bool? success) done,
     required TResult Function(int time) unknown,
   }) {
@@ -2173,33 +2077,30 @@ class _$_Print implements _Print {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(
-            int time, String protocolVersion, String? runnerVersion, int pid)?
-        start,
+    TResult Function(int time, String protocolVersion, String? runnerVersion, int pid)? start,
     TResult Function(int time, int count)? allSuites,
     TResult Function(int time, Suite suite)? suite,
-    TResult Function(int time, @JsonKey(name: 'suiteID') int suiteId,
-            String? observatory, String? remoteDebugger)?
-        debug,
+    TResult Function(int time, @JsonKey(name: 'suiteID') int suiteId, String? observatory, String? remoteDebugger)?
+    debug,
     TResult Function(int time, Group group)? group,
     TResult Function(int time, Test test)? testStart,
-    TResult Function(int time, @JsonKey(name: 'testID') int testId,
-            String messageType, String message)?
-        print,
+    TResult Function(int time, @JsonKey(name: 'testID') int testId, String messageType, String message)? print,
     TResult Function(
-            int time,
-            @JsonKey(name: 'testID') int testId,
-            String error,
-            @JsonKey(name: 'stackTrace') String stacktrace,
-            bool isFailure)?
-        error,
+      int time,
+      @JsonKey(name: 'testID') int testId,
+      String error,
+      @JsonKey(name: 'stackTrace') String stacktrace,
+      bool isFailure,
+    )?
+    error,
     TResult Function(
-            int time,
-            @JsonKey(unknownEnumValue: TestResult.unknown) TestResult result,
-            @JsonKey(name: 'testID') int testId,
-            bool hidden,
-            bool skipped)?
-        testDone,
+      int time,
+      @JsonKey(unknownEnumValue: TestResult.unknown) TestResult result,
+      @JsonKey(name: 'testID') int testId,
+      bool hidden,
+      bool skipped,
+    )?
+    testDone,
     TResult Function(int time, bool? success)? done,
     TResult Function(int time)? unknown,
   }) {
@@ -2209,33 +2110,30 @@ class _$_Print implements _Print {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(
-            int time, String protocolVersion, String? runnerVersion, int pid)?
-        start,
+    TResult Function(int time, String protocolVersion, String? runnerVersion, int pid)? start,
     TResult Function(int time, int count)? allSuites,
     TResult Function(int time, Suite suite)? suite,
-    TResult Function(int time, @JsonKey(name: 'suiteID') int suiteId,
-            String? observatory, String? remoteDebugger)?
-        debug,
+    TResult Function(int time, @JsonKey(name: 'suiteID') int suiteId, String? observatory, String? remoteDebugger)?
+    debug,
     TResult Function(int time, Group group)? group,
     TResult Function(int time, Test test)? testStart,
-    TResult Function(int time, @JsonKey(name: 'testID') int testId,
-            String messageType, String message)?
-        print,
+    TResult Function(int time, @JsonKey(name: 'testID') int testId, String messageType, String message)? print,
     TResult Function(
-            int time,
-            @JsonKey(name: 'testID') int testId,
-            String error,
-            @JsonKey(name: 'stackTrace') String stacktrace,
-            bool isFailure)?
-        error,
+      int time,
+      @JsonKey(name: 'testID') int testId,
+      String error,
+      @JsonKey(name: 'stackTrace') String stacktrace,
+      bool isFailure,
+    )?
+    error,
     TResult Function(
-            int time,
-            @JsonKey(unknownEnumValue: TestResult.unknown) TestResult result,
-            @JsonKey(name: 'testID') int testId,
-            bool hidden,
-            bool skipped)?
-        testDone,
+      int time,
+      @JsonKey(unknownEnumValue: TestResult.unknown) TestResult result,
+      @JsonKey(name: 'testID') int testId,
+      bool hidden,
+      bool skipped,
+    )?
+    testDone,
     TResult Function(int time, bool? success)? done,
     TResult Function(int time)? unknown,
     required TResult orElse(),
@@ -2306,23 +2204,21 @@ class _$_Print implements _Print {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_PrintToJson(
-      this,
-    );
+    return _$$_PrintToJson(this);
   }
 }
 
 abstract class _Print implements Event {
-  const factory _Print(
-      {required final int time,
-      @JsonKey(name: 'testID') required final int testId,
-      required final String messageType,
-      required final String message}) = _$_Print;
+  const factory _Print({
+    required final int time,
+    @JsonKey(name: 'testID') required final int testId,
+    required final String messageType,
+    required final String message,
+  }) = _$_Print;
 
   factory _Print.fromJson(Map<String, dynamic> json) = _$_Print.fromJson;
 
   @override
-
   /// The time (in milliseconds) that has elapsed since the test runner started.
   int get time;
 
@@ -2337,28 +2233,25 @@ abstract class _Print implements Event {
   String get message;
   @override
   @JsonKey(ignore: true)
-  _$$_PrintCopyWith<_$_Print> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$_PrintCopyWith<_$_Print> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class _$$_ErrorCopyWith<$Res> implements $EventCopyWith<$Res> {
-  factory _$$_ErrorCopyWith(_$_Error value, $Res Function(_$_Error) then) =
-      __$$_ErrorCopyWithImpl<$Res>;
+  factory _$$_ErrorCopyWith(_$_Error value, $Res Function(_$_Error) then) = __$$_ErrorCopyWithImpl<$Res>;
   @override
-  $Res call(
-      {int time,
-      @JsonKey(name: 'testID') int testId,
-      String error,
-      @JsonKey(name: 'stackTrace') String stacktrace,
-      bool isFailure});
+  $Res call({
+    int time,
+    @JsonKey(name: 'testID') int testId,
+    String error,
+    @JsonKey(name: 'stackTrace') String stacktrace,
+    bool isFailure,
+  });
 }
 
 /// @nodoc
-class __$$_ErrorCopyWithImpl<$Res> extends _$EventCopyWithImpl<$Res>
-    implements _$$_ErrorCopyWith<$Res> {
-  __$$_ErrorCopyWithImpl(_$_Error _value, $Res Function(_$_Error) _then)
-      : super(_value, (v) => _then(v as _$_Error));
+class __$$_ErrorCopyWithImpl<$Res> extends _$EventCopyWithImpl<$Res> implements _$$_ErrorCopyWith<$Res> {
+  __$$_ErrorCopyWithImpl(_$_Error _value, $Res Function(_$_Error) _then) : super(_value, (v) => _then(v as _$_Error));
 
   @override
   _$_Error get _value => super._value as _$_Error;
@@ -2371,45 +2264,51 @@ class __$$_ErrorCopyWithImpl<$Res> extends _$EventCopyWithImpl<$Res>
     Object? stacktrace = freezed,
     Object? isFailure = freezed,
   }) {
-    return _then(_$_Error(
-      time: time == freezed
-          ? _value.time
-          : time // ignore: cast_nullable_to_non_nullable
-              as int,
-      testId: testId == freezed
-          ? _value.testId
-          : testId // ignore: cast_nullable_to_non_nullable
-              as int,
-      error: error == freezed
-          ? _value.error
-          : error // ignore: cast_nullable_to_non_nullable
-              as String,
-      stacktrace: stacktrace == freezed
-          ? _value.stacktrace
-          : stacktrace // ignore: cast_nullable_to_non_nullable
-              as String,
-      isFailure: isFailure == freezed
-          ? _value.isFailure
-          : isFailure // ignore: cast_nullable_to_non_nullable
-              as bool,
-    ));
+    return _then(
+      _$_Error(
+        time:
+            time == freezed
+                ? _value.time
+                : time // ignore: cast_nullable_to_non_nullable
+                    as int,
+        testId:
+            testId == freezed
+                ? _value.testId
+                : testId // ignore: cast_nullable_to_non_nullable
+                    as int,
+        error:
+            error == freezed
+                ? _value.error
+                : error // ignore: cast_nullable_to_non_nullable
+                    as String,
+        stacktrace:
+            stacktrace == freezed
+                ? _value.stacktrace
+                : stacktrace // ignore: cast_nullable_to_non_nullable
+                    as String,
+        isFailure:
+            isFailure == freezed
+                ? _value.isFailure
+                : isFailure // ignore: cast_nullable_to_non_nullable
+                    as bool,
+      ),
+    );
   }
 }
 
 /// @nodoc
 @JsonSerializable()
 class _$_Error implements _Error {
-  const _$_Error(
-      {required this.time,
-      @JsonKey(name: 'testID') required this.testId,
-      required this.error,
-      @JsonKey(name: 'stackTrace') required this.stacktrace,
-      required this.isFailure,
-      final String? $type})
-      : $type = $type ?? 'error';
+  const _$_Error({
+    required this.time,
+    @JsonKey(name: 'testID') required this.testId,
+    required this.error,
+    @JsonKey(name: 'stackTrace') required this.stacktrace,
+    required this.isFailure,
+    final String? $type,
+  }) : $type = $type ?? 'error';
 
-  factory _$_Error.fromJson(Map<String, dynamic> json) =>
-      _$$_ErrorFromJson(json);
+  factory _$_Error.fromJson(Map<String, dynamic> json) => _$$_ErrorFromJson(json);
 
   /// The time (in milliseconds) that has elapsed since the test runner started.
   @override
@@ -2449,56 +2348,57 @@ class _$_Error implements _Error {
             const DeepCollectionEquality().equals(other.time, time) &&
             const DeepCollectionEquality().equals(other.testId, testId) &&
             const DeepCollectionEquality().equals(other.error, error) &&
-            const DeepCollectionEquality()
-                .equals(other.stacktrace, stacktrace) &&
+            const DeepCollectionEquality().equals(other.stacktrace, stacktrace) &&
             const DeepCollectionEquality().equals(other.isFailure, isFailure));
   }
 
   @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(time),
-      const DeepCollectionEquality().hash(testId),
-      const DeepCollectionEquality().hash(error),
-      const DeepCollectionEquality().hash(stacktrace),
-      const DeepCollectionEquality().hash(isFailure));
+    runtimeType,
+    const DeepCollectionEquality().hash(time),
+    const DeepCollectionEquality().hash(testId),
+    const DeepCollectionEquality().hash(error),
+    const DeepCollectionEquality().hash(stacktrace),
+    const DeepCollectionEquality().hash(isFailure),
+  );
 
   @JsonKey(ignore: true)
   @override
-  _$$_ErrorCopyWith<_$_Error> get copyWith =>
-      __$$_ErrorCopyWithImpl<_$_Error>(this, _$identity);
+  _$$_ErrorCopyWith<_$_Error> get copyWith => __$$_ErrorCopyWithImpl<_$_Error>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(
-            int time, String protocolVersion, String? runnerVersion, int pid)
-        start,
+    required TResult Function(int time, String protocolVersion, String? runnerVersion, int pid) start,
     required TResult Function(int time, int count) allSuites,
     required TResult Function(int time, Suite suite) suite,
-    required TResult Function(int time, @JsonKey(name: 'suiteID') int suiteId,
-            String? observatory, String? remoteDebugger)
-        debug,
+    required TResult Function(
+      int time,
+      @JsonKey(name: 'suiteID') int suiteId,
+      String? observatory,
+      String? remoteDebugger,
+    )
+    debug,
     required TResult Function(int time, Group group) group,
     required TResult Function(int time, Test test) testStart,
-    required TResult Function(int time, @JsonKey(name: 'testID') int testId,
-            String messageType, String message)
-        print,
+    required TResult Function(int time, @JsonKey(name: 'testID') int testId, String messageType, String message) print,
     required TResult Function(
-            int time,
-            @JsonKey(name: 'testID') int testId,
-            String error,
-            @JsonKey(name: 'stackTrace') String stacktrace,
-            bool isFailure)
-        error,
+      int time,
+      @JsonKey(name: 'testID') int testId,
+      String error,
+      @JsonKey(name: 'stackTrace') String stacktrace,
+      bool isFailure,
+    )
+    error,
     required TResult Function(
-            int time,
-            @JsonKey(unknownEnumValue: TestResult.unknown) TestResult result,
-            @JsonKey(name: 'testID') int testId,
-            bool hidden,
-            bool skipped)
-        testDone,
+      int time,
+      @JsonKey(unknownEnumValue: TestResult.unknown) TestResult result,
+      @JsonKey(name: 'testID') int testId,
+      bool hidden,
+      bool skipped,
+    )
+    testDone,
     required TResult Function(int time, bool? success) done,
     required TResult Function(int time) unknown,
   }) {
@@ -2508,33 +2408,30 @@ class _$_Error implements _Error {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(
-            int time, String protocolVersion, String? runnerVersion, int pid)?
-        start,
+    TResult Function(int time, String protocolVersion, String? runnerVersion, int pid)? start,
     TResult Function(int time, int count)? allSuites,
     TResult Function(int time, Suite suite)? suite,
-    TResult Function(int time, @JsonKey(name: 'suiteID') int suiteId,
-            String? observatory, String? remoteDebugger)?
-        debug,
+    TResult Function(int time, @JsonKey(name: 'suiteID') int suiteId, String? observatory, String? remoteDebugger)?
+    debug,
     TResult Function(int time, Group group)? group,
     TResult Function(int time, Test test)? testStart,
-    TResult Function(int time, @JsonKey(name: 'testID') int testId,
-            String messageType, String message)?
-        print,
+    TResult Function(int time, @JsonKey(name: 'testID') int testId, String messageType, String message)? print,
     TResult Function(
-            int time,
-            @JsonKey(name: 'testID') int testId,
-            String error,
-            @JsonKey(name: 'stackTrace') String stacktrace,
-            bool isFailure)?
-        error,
+      int time,
+      @JsonKey(name: 'testID') int testId,
+      String error,
+      @JsonKey(name: 'stackTrace') String stacktrace,
+      bool isFailure,
+    )?
+    error,
     TResult Function(
-            int time,
-            @JsonKey(unknownEnumValue: TestResult.unknown) TestResult result,
-            @JsonKey(name: 'testID') int testId,
-            bool hidden,
-            bool skipped)?
-        testDone,
+      int time,
+      @JsonKey(unknownEnumValue: TestResult.unknown) TestResult result,
+      @JsonKey(name: 'testID') int testId,
+      bool hidden,
+      bool skipped,
+    )?
+    testDone,
     TResult Function(int time, bool? success)? done,
     TResult Function(int time)? unknown,
   }) {
@@ -2544,33 +2441,30 @@ class _$_Error implements _Error {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(
-            int time, String protocolVersion, String? runnerVersion, int pid)?
-        start,
+    TResult Function(int time, String protocolVersion, String? runnerVersion, int pid)? start,
     TResult Function(int time, int count)? allSuites,
     TResult Function(int time, Suite suite)? suite,
-    TResult Function(int time, @JsonKey(name: 'suiteID') int suiteId,
-            String? observatory, String? remoteDebugger)?
-        debug,
+    TResult Function(int time, @JsonKey(name: 'suiteID') int suiteId, String? observatory, String? remoteDebugger)?
+    debug,
     TResult Function(int time, Group group)? group,
     TResult Function(int time, Test test)? testStart,
-    TResult Function(int time, @JsonKey(name: 'testID') int testId,
-            String messageType, String message)?
-        print,
+    TResult Function(int time, @JsonKey(name: 'testID') int testId, String messageType, String message)? print,
     TResult Function(
-            int time,
-            @JsonKey(name: 'testID') int testId,
-            String error,
-            @JsonKey(name: 'stackTrace') String stacktrace,
-            bool isFailure)?
-        error,
+      int time,
+      @JsonKey(name: 'testID') int testId,
+      String error,
+      @JsonKey(name: 'stackTrace') String stacktrace,
+      bool isFailure,
+    )?
+    error,
     TResult Function(
-            int time,
-            @JsonKey(unknownEnumValue: TestResult.unknown) TestResult result,
-            @JsonKey(name: 'testID') int testId,
-            bool hidden,
-            bool skipped)?
-        testDone,
+      int time,
+      @JsonKey(unknownEnumValue: TestResult.unknown) TestResult result,
+      @JsonKey(name: 'testID') int testId,
+      bool hidden,
+      bool skipped,
+    )?
+    testDone,
     TResult Function(int time, bool? success)? done,
     TResult Function(int time)? unknown,
     required TResult orElse(),
@@ -2641,24 +2535,22 @@ class _$_Error implements _Error {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_ErrorToJson(
-      this,
-    );
+    return _$$_ErrorToJson(this);
   }
 }
 
 abstract class _Error implements Event {
-  const factory _Error(
-      {required final int time,
-      @JsonKey(name: 'testID') required final int testId,
-      required final String error,
-      @JsonKey(name: 'stackTrace') required final String stacktrace,
-      required final bool isFailure}) = _$_Error;
+  const factory _Error({
+    required final int time,
+    @JsonKey(name: 'testID') required final int testId,
+    required final String error,
+    @JsonKey(name: 'stackTrace') required final String stacktrace,
+    required final bool isFailure,
+  }) = _$_Error;
 
   factory _Error.fromJson(Map<String, dynamic> json) = _$_Error.fromJson;
 
   @override
-
   /// The time (in milliseconds) that has elapsed since the test runner started.
   int get time;
 
@@ -2677,30 +2569,26 @@ abstract class _Error implements Event {
   bool get isFailure;
   @override
   @JsonKey(ignore: true)
-  _$$_ErrorCopyWith<_$_Error> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$_ErrorCopyWith<_$_Error> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class _$$_TestDoneCopyWith<$Res> implements $EventCopyWith<$Res> {
-  factory _$$_TestDoneCopyWith(
-          _$_TestDone value, $Res Function(_$_TestDone) then) =
-      __$$_TestDoneCopyWithImpl<$Res>;
+  factory _$$_TestDoneCopyWith(_$_TestDone value, $Res Function(_$_TestDone) then) = __$$_TestDoneCopyWithImpl<$Res>;
   @override
-  $Res call(
-      {int time,
-      @JsonKey(unknownEnumValue: TestResult.unknown) TestResult result,
-      @JsonKey(name: 'testID') int testId,
-      bool hidden,
-      bool skipped});
+  $Res call({
+    int time,
+    @JsonKey(unknownEnumValue: TestResult.unknown) TestResult result,
+    @JsonKey(name: 'testID') int testId,
+    bool hidden,
+    bool skipped,
+  });
 }
 
 /// @nodoc
-class __$$_TestDoneCopyWithImpl<$Res> extends _$EventCopyWithImpl<$Res>
-    implements _$$_TestDoneCopyWith<$Res> {
-  __$$_TestDoneCopyWithImpl(
-      _$_TestDone _value, $Res Function(_$_TestDone) _then)
-      : super(_value, (v) => _then(v as _$_TestDone));
+class __$$_TestDoneCopyWithImpl<$Res> extends _$EventCopyWithImpl<$Res> implements _$$_TestDoneCopyWith<$Res> {
+  __$$_TestDoneCopyWithImpl(_$_TestDone _value, $Res Function(_$_TestDone) _then)
+    : super(_value, (v) => _then(v as _$_TestDone));
 
   @override
   _$_TestDone get _value => super._value as _$_TestDone;
@@ -2713,45 +2601,51 @@ class __$$_TestDoneCopyWithImpl<$Res> extends _$EventCopyWithImpl<$Res>
     Object? hidden = freezed,
     Object? skipped = freezed,
   }) {
-    return _then(_$_TestDone(
-      time: time == freezed
-          ? _value.time
-          : time // ignore: cast_nullable_to_non_nullable
-              as int,
-      result: result == freezed
-          ? _value.result
-          : result // ignore: cast_nullable_to_non_nullable
-              as TestResult,
-      testId: testId == freezed
-          ? _value.testId
-          : testId // ignore: cast_nullable_to_non_nullable
-              as int,
-      hidden: hidden == freezed
-          ? _value.hidden
-          : hidden // ignore: cast_nullable_to_non_nullable
-              as bool,
-      skipped: skipped == freezed
-          ? _value.skipped
-          : skipped // ignore: cast_nullable_to_non_nullable
-              as bool,
-    ));
+    return _then(
+      _$_TestDone(
+        time:
+            time == freezed
+                ? _value.time
+                : time // ignore: cast_nullable_to_non_nullable
+                    as int,
+        result:
+            result == freezed
+                ? _value.result
+                : result // ignore: cast_nullable_to_non_nullable
+                    as TestResult,
+        testId:
+            testId == freezed
+                ? _value.testId
+                : testId // ignore: cast_nullable_to_non_nullable
+                    as int,
+        hidden:
+            hidden == freezed
+                ? _value.hidden
+                : hidden // ignore: cast_nullable_to_non_nullable
+                    as bool,
+        skipped:
+            skipped == freezed
+                ? _value.skipped
+                : skipped // ignore: cast_nullable_to_non_nullable
+                    as bool,
+      ),
+    );
   }
 }
 
 /// @nodoc
 @JsonSerializable()
 class _$_TestDone implements _TestDone {
-  const _$_TestDone(
-      {required this.time,
-      @JsonKey(unknownEnumValue: TestResult.unknown) required this.result,
-      @JsonKey(name: 'testID') required this.testId,
-      required this.hidden,
-      required this.skipped,
-      final String? $type})
-      : $type = $type ?? 'testDone';
+  const _$_TestDone({
+    required this.time,
+    @JsonKey(unknownEnumValue: TestResult.unknown) required this.result,
+    @JsonKey(name: 'testID') required this.testId,
+    required this.hidden,
+    required this.skipped,
+    final String? $type,
+  }) : $type = $type ?? 'testDone';
 
-  factory _$_TestDone.fromJson(Map<String, dynamic> json) =>
-      _$$_TestDoneFromJson(json);
+  factory _$_TestDone.fromJson(Map<String, dynamic> json) => _$$_TestDoneFromJson(json);
 
   /// The time (in milliseconds) that has elapsed since the test runner started.
   @override
@@ -2798,48 +2692,50 @@ class _$_TestDone implements _TestDone {
   @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(time),
-      const DeepCollectionEquality().hash(result),
-      const DeepCollectionEquality().hash(testId),
-      const DeepCollectionEquality().hash(hidden),
-      const DeepCollectionEquality().hash(skipped));
+    runtimeType,
+    const DeepCollectionEquality().hash(time),
+    const DeepCollectionEquality().hash(result),
+    const DeepCollectionEquality().hash(testId),
+    const DeepCollectionEquality().hash(hidden),
+    const DeepCollectionEquality().hash(skipped),
+  );
 
   @JsonKey(ignore: true)
   @override
-  _$$_TestDoneCopyWith<_$_TestDone> get copyWith =>
-      __$$_TestDoneCopyWithImpl<_$_TestDone>(this, _$identity);
+  _$$_TestDoneCopyWith<_$_TestDone> get copyWith => __$$_TestDoneCopyWithImpl<_$_TestDone>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(
-            int time, String protocolVersion, String? runnerVersion, int pid)
-        start,
+    required TResult Function(int time, String protocolVersion, String? runnerVersion, int pid) start,
     required TResult Function(int time, int count) allSuites,
     required TResult Function(int time, Suite suite) suite,
-    required TResult Function(int time, @JsonKey(name: 'suiteID') int suiteId,
-            String? observatory, String? remoteDebugger)
-        debug,
+    required TResult Function(
+      int time,
+      @JsonKey(name: 'suiteID') int suiteId,
+      String? observatory,
+      String? remoteDebugger,
+    )
+    debug,
     required TResult Function(int time, Group group) group,
     required TResult Function(int time, Test test) testStart,
-    required TResult Function(int time, @JsonKey(name: 'testID') int testId,
-            String messageType, String message)
-        print,
+    required TResult Function(int time, @JsonKey(name: 'testID') int testId, String messageType, String message) print,
     required TResult Function(
-            int time,
-            @JsonKey(name: 'testID') int testId,
-            String error,
-            @JsonKey(name: 'stackTrace') String stacktrace,
-            bool isFailure)
-        error,
+      int time,
+      @JsonKey(name: 'testID') int testId,
+      String error,
+      @JsonKey(name: 'stackTrace') String stacktrace,
+      bool isFailure,
+    )
+    error,
     required TResult Function(
-            int time,
-            @JsonKey(unknownEnumValue: TestResult.unknown) TestResult result,
-            @JsonKey(name: 'testID') int testId,
-            bool hidden,
-            bool skipped)
-        testDone,
+      int time,
+      @JsonKey(unknownEnumValue: TestResult.unknown) TestResult result,
+      @JsonKey(name: 'testID') int testId,
+      bool hidden,
+      bool skipped,
+    )
+    testDone,
     required TResult Function(int time, bool? success) done,
     required TResult Function(int time) unknown,
   }) {
@@ -2849,33 +2745,30 @@ class _$_TestDone implements _TestDone {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(
-            int time, String protocolVersion, String? runnerVersion, int pid)?
-        start,
+    TResult Function(int time, String protocolVersion, String? runnerVersion, int pid)? start,
     TResult Function(int time, int count)? allSuites,
     TResult Function(int time, Suite suite)? suite,
-    TResult Function(int time, @JsonKey(name: 'suiteID') int suiteId,
-            String? observatory, String? remoteDebugger)?
-        debug,
+    TResult Function(int time, @JsonKey(name: 'suiteID') int suiteId, String? observatory, String? remoteDebugger)?
+    debug,
     TResult Function(int time, Group group)? group,
     TResult Function(int time, Test test)? testStart,
-    TResult Function(int time, @JsonKey(name: 'testID') int testId,
-            String messageType, String message)?
-        print,
+    TResult Function(int time, @JsonKey(name: 'testID') int testId, String messageType, String message)? print,
     TResult Function(
-            int time,
-            @JsonKey(name: 'testID') int testId,
-            String error,
-            @JsonKey(name: 'stackTrace') String stacktrace,
-            bool isFailure)?
-        error,
+      int time,
+      @JsonKey(name: 'testID') int testId,
+      String error,
+      @JsonKey(name: 'stackTrace') String stacktrace,
+      bool isFailure,
+    )?
+    error,
     TResult Function(
-            int time,
-            @JsonKey(unknownEnumValue: TestResult.unknown) TestResult result,
-            @JsonKey(name: 'testID') int testId,
-            bool hidden,
-            bool skipped)?
-        testDone,
+      int time,
+      @JsonKey(unknownEnumValue: TestResult.unknown) TestResult result,
+      @JsonKey(name: 'testID') int testId,
+      bool hidden,
+      bool skipped,
+    )?
+    testDone,
     TResult Function(int time, bool? success)? done,
     TResult Function(int time)? unknown,
   }) {
@@ -2885,33 +2778,30 @@ class _$_TestDone implements _TestDone {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(
-            int time, String protocolVersion, String? runnerVersion, int pid)?
-        start,
+    TResult Function(int time, String protocolVersion, String? runnerVersion, int pid)? start,
     TResult Function(int time, int count)? allSuites,
     TResult Function(int time, Suite suite)? suite,
-    TResult Function(int time, @JsonKey(name: 'suiteID') int suiteId,
-            String? observatory, String? remoteDebugger)?
-        debug,
+    TResult Function(int time, @JsonKey(name: 'suiteID') int suiteId, String? observatory, String? remoteDebugger)?
+    debug,
     TResult Function(int time, Group group)? group,
     TResult Function(int time, Test test)? testStart,
-    TResult Function(int time, @JsonKey(name: 'testID') int testId,
-            String messageType, String message)?
-        print,
+    TResult Function(int time, @JsonKey(name: 'testID') int testId, String messageType, String message)? print,
     TResult Function(
-            int time,
-            @JsonKey(name: 'testID') int testId,
-            String error,
-            @JsonKey(name: 'stackTrace') String stacktrace,
-            bool isFailure)?
-        error,
+      int time,
+      @JsonKey(name: 'testID') int testId,
+      String error,
+      @JsonKey(name: 'stackTrace') String stacktrace,
+      bool isFailure,
+    )?
+    error,
     TResult Function(
-            int time,
-            @JsonKey(unknownEnumValue: TestResult.unknown) TestResult result,
-            @JsonKey(name: 'testID') int testId,
-            bool hidden,
-            bool skipped)?
-        testDone,
+      int time,
+      @JsonKey(unknownEnumValue: TestResult.unknown) TestResult result,
+      @JsonKey(name: 'testID') int testId,
+      bool hidden,
+      bool skipped,
+    )?
+    testDone,
     TResult Function(int time, bool? success)? done,
     TResult Function(int time)? unknown,
     required TResult orElse(),
@@ -2982,26 +2872,22 @@ class _$_TestDone implements _TestDone {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_TestDoneToJson(
-      this,
-    );
+    return _$$_TestDoneToJson(this);
   }
 }
 
 abstract class _TestDone implements Event {
-  const factory _TestDone(
-      {required final int time,
-      @JsonKey(unknownEnumValue: TestResult.unknown)
-          required final TestResult result,
-      @JsonKey(name: 'testID')
-          required final int testId,
-      required final bool hidden,
-      required final bool skipped}) = _$_TestDone;
+  const factory _TestDone({
+    required final int time,
+    @JsonKey(unknownEnumValue: TestResult.unknown) required final TestResult result,
+    @JsonKey(name: 'testID') required final int testId,
+    required final bool hidden,
+    required final bool skipped,
+  }) = _$_TestDone;
 
   factory _TestDone.fromJson(Map<String, dynamic> json) = _$_TestDone.fromJson;
 
   @override
-
   /// The time (in milliseconds) that has elapsed since the test runner started.
   int get time;
 
@@ -3020,50 +2906,46 @@ abstract class _TestDone implements Event {
   bool get skipped;
   @override
   @JsonKey(ignore: true)
-  _$$_TestDoneCopyWith<_$_TestDone> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$_TestDoneCopyWith<_$_TestDone> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class _$$_DoneCopyWith<$Res> implements $EventCopyWith<$Res> {
-  factory _$$_DoneCopyWith(_$_Done value, $Res Function(_$_Done) then) =
-      __$$_DoneCopyWithImpl<$Res>;
+  factory _$$_DoneCopyWith(_$_Done value, $Res Function(_$_Done) then) = __$$_DoneCopyWithImpl<$Res>;
   @override
   $Res call({int time, bool? success});
 }
 
 /// @nodoc
-class __$$_DoneCopyWithImpl<$Res> extends _$EventCopyWithImpl<$Res>
-    implements _$$_DoneCopyWith<$Res> {
-  __$$_DoneCopyWithImpl(_$_Done _value, $Res Function(_$_Done) _then)
-      : super(_value, (v) => _then(v as _$_Done));
+class __$$_DoneCopyWithImpl<$Res> extends _$EventCopyWithImpl<$Res> implements _$$_DoneCopyWith<$Res> {
+  __$$_DoneCopyWithImpl(_$_Done _value, $Res Function(_$_Done) _then) : super(_value, (v) => _then(v as _$_Done));
 
   @override
   _$_Done get _value => super._value as _$_Done;
 
   @override
-  $Res call({
-    Object? time = freezed,
-    Object? success = freezed,
-  }) {
-    return _then(_$_Done(
-      time: time == freezed
-          ? _value.time
-          : time // ignore: cast_nullable_to_non_nullable
-              as int,
-      success: success == freezed
-          ? _value.success
-          : success // ignore: cast_nullable_to_non_nullable
-              as bool?,
-    ));
+  $Res call({Object? time = freezed, Object? success = freezed}) {
+    return _then(
+      _$_Done(
+        time:
+            time == freezed
+                ? _value.time
+                : time // ignore: cast_nullable_to_non_nullable
+                    as int,
+        success:
+            success == freezed
+                ? _value.success
+                : success // ignore: cast_nullable_to_non_nullable
+                    as bool?,
+      ),
+    );
   }
 }
 
 /// @nodoc
 @JsonSerializable()
 class _$_Done implements _Done {
-  const _$_Done({required this.time, this.success, final String? $type})
-      : $type = $type ?? 'done';
+  const _$_Done({required this.time, this.success, final String? $type}) : $type = $type ?? 'done';
 
   factory _$_Done.fromJson(Map<String, dynamic> json) => _$$_DoneFromJson(json);
 
@@ -3097,46 +2979,45 @@ class _$_Done implements _Done {
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(time),
-      const DeepCollectionEquality().hash(success));
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(time), const DeepCollectionEquality().hash(success));
 
   @JsonKey(ignore: true)
   @override
-  _$$_DoneCopyWith<_$_Done> get copyWith =>
-      __$$_DoneCopyWithImpl<_$_Done>(this, _$identity);
+  _$$_DoneCopyWith<_$_Done> get copyWith => __$$_DoneCopyWithImpl<_$_Done>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(
-            int time, String protocolVersion, String? runnerVersion, int pid)
-        start,
+    required TResult Function(int time, String protocolVersion, String? runnerVersion, int pid) start,
     required TResult Function(int time, int count) allSuites,
     required TResult Function(int time, Suite suite) suite,
-    required TResult Function(int time, @JsonKey(name: 'suiteID') int suiteId,
-            String? observatory, String? remoteDebugger)
-        debug,
+    required TResult Function(
+      int time,
+      @JsonKey(name: 'suiteID') int suiteId,
+      String? observatory,
+      String? remoteDebugger,
+    )
+    debug,
     required TResult Function(int time, Group group) group,
     required TResult Function(int time, Test test) testStart,
-    required TResult Function(int time, @JsonKey(name: 'testID') int testId,
-            String messageType, String message)
-        print,
+    required TResult Function(int time, @JsonKey(name: 'testID') int testId, String messageType, String message) print,
     required TResult Function(
-            int time,
-            @JsonKey(name: 'testID') int testId,
-            String error,
-            @JsonKey(name: 'stackTrace') String stacktrace,
-            bool isFailure)
-        error,
+      int time,
+      @JsonKey(name: 'testID') int testId,
+      String error,
+      @JsonKey(name: 'stackTrace') String stacktrace,
+      bool isFailure,
+    )
+    error,
     required TResult Function(
-            int time,
-            @JsonKey(unknownEnumValue: TestResult.unknown) TestResult result,
-            @JsonKey(name: 'testID') int testId,
-            bool hidden,
-            bool skipped)
-        testDone,
+      int time,
+      @JsonKey(unknownEnumValue: TestResult.unknown) TestResult result,
+      @JsonKey(name: 'testID') int testId,
+      bool hidden,
+      bool skipped,
+    )
+    testDone,
     required TResult Function(int time, bool? success) done,
     required TResult Function(int time) unknown,
   }) {
@@ -3146,33 +3027,30 @@ class _$_Done implements _Done {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(
-            int time, String protocolVersion, String? runnerVersion, int pid)?
-        start,
+    TResult Function(int time, String protocolVersion, String? runnerVersion, int pid)? start,
     TResult Function(int time, int count)? allSuites,
     TResult Function(int time, Suite suite)? suite,
-    TResult Function(int time, @JsonKey(name: 'suiteID') int suiteId,
-            String? observatory, String? remoteDebugger)?
-        debug,
+    TResult Function(int time, @JsonKey(name: 'suiteID') int suiteId, String? observatory, String? remoteDebugger)?
+    debug,
     TResult Function(int time, Group group)? group,
     TResult Function(int time, Test test)? testStart,
-    TResult Function(int time, @JsonKey(name: 'testID') int testId,
-            String messageType, String message)?
-        print,
+    TResult Function(int time, @JsonKey(name: 'testID') int testId, String messageType, String message)? print,
     TResult Function(
-            int time,
-            @JsonKey(name: 'testID') int testId,
-            String error,
-            @JsonKey(name: 'stackTrace') String stacktrace,
-            bool isFailure)?
-        error,
+      int time,
+      @JsonKey(name: 'testID') int testId,
+      String error,
+      @JsonKey(name: 'stackTrace') String stacktrace,
+      bool isFailure,
+    )?
+    error,
     TResult Function(
-            int time,
-            @JsonKey(unknownEnumValue: TestResult.unknown) TestResult result,
-            @JsonKey(name: 'testID') int testId,
-            bool hidden,
-            bool skipped)?
-        testDone,
+      int time,
+      @JsonKey(unknownEnumValue: TestResult.unknown) TestResult result,
+      @JsonKey(name: 'testID') int testId,
+      bool hidden,
+      bool skipped,
+    )?
+    testDone,
     TResult Function(int time, bool? success)? done,
     TResult Function(int time)? unknown,
   }) {
@@ -3182,33 +3060,30 @@ class _$_Done implements _Done {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(
-            int time, String protocolVersion, String? runnerVersion, int pid)?
-        start,
+    TResult Function(int time, String protocolVersion, String? runnerVersion, int pid)? start,
     TResult Function(int time, int count)? allSuites,
     TResult Function(int time, Suite suite)? suite,
-    TResult Function(int time, @JsonKey(name: 'suiteID') int suiteId,
-            String? observatory, String? remoteDebugger)?
-        debug,
+    TResult Function(int time, @JsonKey(name: 'suiteID') int suiteId, String? observatory, String? remoteDebugger)?
+    debug,
     TResult Function(int time, Group group)? group,
     TResult Function(int time, Test test)? testStart,
-    TResult Function(int time, @JsonKey(name: 'testID') int testId,
-            String messageType, String message)?
-        print,
+    TResult Function(int time, @JsonKey(name: 'testID') int testId, String messageType, String message)? print,
     TResult Function(
-            int time,
-            @JsonKey(name: 'testID') int testId,
-            String error,
-            @JsonKey(name: 'stackTrace') String stacktrace,
-            bool isFailure)?
-        error,
+      int time,
+      @JsonKey(name: 'testID') int testId,
+      String error,
+      @JsonKey(name: 'stackTrace') String stacktrace,
+      bool isFailure,
+    )?
+    error,
     TResult Function(
-            int time,
-            @JsonKey(unknownEnumValue: TestResult.unknown) TestResult result,
-            @JsonKey(name: 'testID') int testId,
-            bool hidden,
-            bool skipped)?
-        testDone,
+      int time,
+      @JsonKey(unknownEnumValue: TestResult.unknown) TestResult result,
+      @JsonKey(name: 'testID') int testId,
+      bool hidden,
+      bool skipped,
+    )?
+    testDone,
     TResult Function(int time, bool? success)? done,
     TResult Function(int time)? unknown,
     required TResult orElse(),
@@ -3279,9 +3154,7 @@ class _$_Done implements _Done {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_DoneToJson(
-      this,
-    );
+    return _$$_DoneToJson(this);
   }
 }
 
@@ -3291,7 +3164,6 @@ abstract class _Done implements Event {
   factory _Done.fromJson(Map<String, dynamic> json) = _$_Done.fromJson;
 
   @override
-
   /// The time (in milliseconds) that has elapsed since the test runner started.
   int get time;
 
@@ -3307,43 +3179,39 @@ abstract class _Done implements Event {
 
 /// @nodoc
 abstract class _$$_UnknownCopyWith<$Res> implements $EventCopyWith<$Res> {
-  factory _$$_UnknownCopyWith(
-          _$_Unknown value, $Res Function(_$_Unknown) then) =
-      __$$_UnknownCopyWithImpl<$Res>;
+  factory _$$_UnknownCopyWith(_$_Unknown value, $Res Function(_$_Unknown) then) = __$$_UnknownCopyWithImpl<$Res>;
   @override
   $Res call({int time});
 }
 
 /// @nodoc
-class __$$_UnknownCopyWithImpl<$Res> extends _$EventCopyWithImpl<$Res>
-    implements _$$_UnknownCopyWith<$Res> {
+class __$$_UnknownCopyWithImpl<$Res> extends _$EventCopyWithImpl<$Res> implements _$$_UnknownCopyWith<$Res> {
   __$$_UnknownCopyWithImpl(_$_Unknown _value, $Res Function(_$_Unknown) _then)
-      : super(_value, (v) => _then(v as _$_Unknown));
+    : super(_value, (v) => _then(v as _$_Unknown));
 
   @override
   _$_Unknown get _value => super._value as _$_Unknown;
 
   @override
-  $Res call({
-    Object? time = freezed,
-  }) {
-    return _then(_$_Unknown(
-      time: time == freezed
-          ? _value.time
-          : time // ignore: cast_nullable_to_non_nullable
-              as int,
-    ));
+  $Res call({Object? time = freezed}) {
+    return _then(
+      _$_Unknown(
+        time:
+            time == freezed
+                ? _value.time
+                : time // ignore: cast_nullable_to_non_nullable
+                    as int,
+      ),
+    );
   }
 }
 
 /// @nodoc
 @JsonSerializable()
 class _$_Unknown implements _Unknown {
-  const _$_Unknown({required this.time, final String? $type})
-      : $type = $type ?? 'unknown';
+  const _$_Unknown({required this.time, final String? $type}) : $type = $type ?? 'unknown';
 
-  factory _$_Unknown.fromJson(Map<String, dynamic> json) =>
-      _$$_UnknownFromJson(json);
+  factory _$_Unknown.fromJson(Map<String, dynamic> json) => _$$_UnknownFromJson(json);
 
   /// The time (in milliseconds) that has elapsed since the test runner started.
   @override
@@ -3367,44 +3235,44 @@ class _$_Unknown implements _Unknown {
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(time));
+  int get hashCode => Object.hash(runtimeType, const DeepCollectionEquality().hash(time));
 
   @JsonKey(ignore: true)
   @override
-  _$$_UnknownCopyWith<_$_Unknown> get copyWith =>
-      __$$_UnknownCopyWithImpl<_$_Unknown>(this, _$identity);
+  _$$_UnknownCopyWith<_$_Unknown> get copyWith => __$$_UnknownCopyWithImpl<_$_Unknown>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(
-            int time, String protocolVersion, String? runnerVersion, int pid)
-        start,
+    required TResult Function(int time, String protocolVersion, String? runnerVersion, int pid) start,
     required TResult Function(int time, int count) allSuites,
     required TResult Function(int time, Suite suite) suite,
-    required TResult Function(int time, @JsonKey(name: 'suiteID') int suiteId,
-            String? observatory, String? remoteDebugger)
-        debug,
+    required TResult Function(
+      int time,
+      @JsonKey(name: 'suiteID') int suiteId,
+      String? observatory,
+      String? remoteDebugger,
+    )
+    debug,
     required TResult Function(int time, Group group) group,
     required TResult Function(int time, Test test) testStart,
-    required TResult Function(int time, @JsonKey(name: 'testID') int testId,
-            String messageType, String message)
-        print,
+    required TResult Function(int time, @JsonKey(name: 'testID') int testId, String messageType, String message) print,
     required TResult Function(
-            int time,
-            @JsonKey(name: 'testID') int testId,
-            String error,
-            @JsonKey(name: 'stackTrace') String stacktrace,
-            bool isFailure)
-        error,
+      int time,
+      @JsonKey(name: 'testID') int testId,
+      String error,
+      @JsonKey(name: 'stackTrace') String stacktrace,
+      bool isFailure,
+    )
+    error,
     required TResult Function(
-            int time,
-            @JsonKey(unknownEnumValue: TestResult.unknown) TestResult result,
-            @JsonKey(name: 'testID') int testId,
-            bool hidden,
-            bool skipped)
-        testDone,
+      int time,
+      @JsonKey(unknownEnumValue: TestResult.unknown) TestResult result,
+      @JsonKey(name: 'testID') int testId,
+      bool hidden,
+      bool skipped,
+    )
+    testDone,
     required TResult Function(int time, bool? success) done,
     required TResult Function(int time) unknown,
   }) {
@@ -3414,33 +3282,30 @@ class _$_Unknown implements _Unknown {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(
-            int time, String protocolVersion, String? runnerVersion, int pid)?
-        start,
+    TResult Function(int time, String protocolVersion, String? runnerVersion, int pid)? start,
     TResult Function(int time, int count)? allSuites,
     TResult Function(int time, Suite suite)? suite,
-    TResult Function(int time, @JsonKey(name: 'suiteID') int suiteId,
-            String? observatory, String? remoteDebugger)?
-        debug,
+    TResult Function(int time, @JsonKey(name: 'suiteID') int suiteId, String? observatory, String? remoteDebugger)?
+    debug,
     TResult Function(int time, Group group)? group,
     TResult Function(int time, Test test)? testStart,
-    TResult Function(int time, @JsonKey(name: 'testID') int testId,
-            String messageType, String message)?
-        print,
+    TResult Function(int time, @JsonKey(name: 'testID') int testId, String messageType, String message)? print,
     TResult Function(
-            int time,
-            @JsonKey(name: 'testID') int testId,
-            String error,
-            @JsonKey(name: 'stackTrace') String stacktrace,
-            bool isFailure)?
-        error,
+      int time,
+      @JsonKey(name: 'testID') int testId,
+      String error,
+      @JsonKey(name: 'stackTrace') String stacktrace,
+      bool isFailure,
+    )?
+    error,
     TResult Function(
-            int time,
-            @JsonKey(unknownEnumValue: TestResult.unknown) TestResult result,
-            @JsonKey(name: 'testID') int testId,
-            bool hidden,
-            bool skipped)?
-        testDone,
+      int time,
+      @JsonKey(unknownEnumValue: TestResult.unknown) TestResult result,
+      @JsonKey(name: 'testID') int testId,
+      bool hidden,
+      bool skipped,
+    )?
+    testDone,
     TResult Function(int time, bool? success)? done,
     TResult Function(int time)? unknown,
   }) {
@@ -3450,33 +3315,30 @@ class _$_Unknown implements _Unknown {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(
-            int time, String protocolVersion, String? runnerVersion, int pid)?
-        start,
+    TResult Function(int time, String protocolVersion, String? runnerVersion, int pid)? start,
     TResult Function(int time, int count)? allSuites,
     TResult Function(int time, Suite suite)? suite,
-    TResult Function(int time, @JsonKey(name: 'suiteID') int suiteId,
-            String? observatory, String? remoteDebugger)?
-        debug,
+    TResult Function(int time, @JsonKey(name: 'suiteID') int suiteId, String? observatory, String? remoteDebugger)?
+    debug,
     TResult Function(int time, Group group)? group,
     TResult Function(int time, Test test)? testStart,
-    TResult Function(int time, @JsonKey(name: 'testID') int testId,
-            String messageType, String message)?
-        print,
+    TResult Function(int time, @JsonKey(name: 'testID') int testId, String messageType, String message)? print,
     TResult Function(
-            int time,
-            @JsonKey(name: 'testID') int testId,
-            String error,
-            @JsonKey(name: 'stackTrace') String stacktrace,
-            bool isFailure)?
-        error,
+      int time,
+      @JsonKey(name: 'testID') int testId,
+      String error,
+      @JsonKey(name: 'stackTrace') String stacktrace,
+      bool isFailure,
+    )?
+    error,
     TResult Function(
-            int time,
-            @JsonKey(unknownEnumValue: TestResult.unknown) TestResult result,
-            @JsonKey(name: 'testID') int testId,
-            bool hidden,
-            bool skipped)?
-        testDone,
+      int time,
+      @JsonKey(unknownEnumValue: TestResult.unknown) TestResult result,
+      @JsonKey(name: 'testID') int testId,
+      bool hidden,
+      bool skipped,
+    )?
+    testDone,
     TResult Function(int time, bool? success)? done,
     TResult Function(int time)? unknown,
     required TResult orElse(),
@@ -3547,9 +3409,7 @@ class _$_Unknown implements _Unknown {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_UnknownToJson(
-      this,
-    );
+    return _$$_UnknownToJson(this);
   }
 }
 
@@ -3559,11 +3419,9 @@ abstract class _Unknown implements Event {
   factory _Unknown.fromJson(Map<String, dynamic> json) = _$_Unknown.fromJson;
 
   @override
-
   /// The time (in milliseconds) that has elapsed since the test runner started.
   int get time;
   @override
   @JsonKey(ignore: true)
-  _$$_UnknownCopyWith<_$_Unknown> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$_UnknownCopyWith<_$_Unknown> get copyWith => throw _privateConstructorUsedError;
 }

@@ -12,7 +12,8 @@ part of 'suite.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+  'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods',
+);
 
 /// @nodoc
 mixin _$Suite {
@@ -31,8 +32,7 @@ mixin _$Suite {
 
 /// @nodoc
 abstract class $SuiteCopyWith<$Res> {
-  factory $SuiteCopyWith(Suite value, $Res Function(Suite) then) =
-      _$SuiteCopyWithImpl<$Res>;
+  factory $SuiteCopyWith(Suite value, $Res Function(Suite) then) = _$SuiteCopyWithImpl<$Res>;
   $Res call({String? path, String platform, List<Test> allTests});
 }
 
@@ -45,75 +45,71 @@ class _$SuiteCopyWithImpl<$Res> implements $SuiteCopyWith<$Res> {
   final $Res Function(Suite) _then;
 
   @override
-  $Res call({
-    Object? path = freezed,
-    Object? platform = freezed,
-    Object? allTests = freezed,
-  }) {
-    return _then(_value.copyWith(
-      path: path == freezed
-          ? _value.path
-          : path // ignore: cast_nullable_to_non_nullable
-              as String?,
-      platform: platform == freezed
-          ? _value.platform
-          : platform // ignore: cast_nullable_to_non_nullable
-              as String,
-      allTests: allTests == freezed
-          ? _value.allTests
-          : allTests // ignore: cast_nullable_to_non_nullable
-              as List<Test>,
-    ));
+  $Res call({Object? path = freezed, Object? platform = freezed, Object? allTests = freezed}) {
+    return _then(
+      _value.copyWith(
+        path:
+            path == freezed
+                ? _value.path
+                : path // ignore: cast_nullable_to_non_nullable
+                    as String?,
+        platform:
+            platform == freezed
+                ? _value.platform
+                : platform // ignore: cast_nullable_to_non_nullable
+                    as String,
+        allTests:
+            allTests == freezed
+                ? _value.allTests
+                : allTests // ignore: cast_nullable_to_non_nullable
+                    as List<Test>,
+      ),
+    );
   }
 }
 
 /// @nodoc
 abstract class _$$_SuiteCopyWith<$Res> implements $SuiteCopyWith<$Res> {
-  factory _$$_SuiteCopyWith(_$_Suite value, $Res Function(_$_Suite) then) =
-      __$$_SuiteCopyWithImpl<$Res>;
+  factory _$$_SuiteCopyWith(_$_Suite value, $Res Function(_$_Suite) then) = __$$_SuiteCopyWithImpl<$Res>;
   @override
   $Res call({String? path, String platform, List<Test> allTests});
 }
 
 /// @nodoc
-class __$$_SuiteCopyWithImpl<$Res> extends _$SuiteCopyWithImpl<$Res>
-    implements _$$_SuiteCopyWith<$Res> {
-  __$$_SuiteCopyWithImpl(_$_Suite _value, $Res Function(_$_Suite) _then)
-      : super(_value, (v) => _then(v as _$_Suite));
+class __$$_SuiteCopyWithImpl<$Res> extends _$SuiteCopyWithImpl<$Res> implements _$$_SuiteCopyWith<$Res> {
+  __$$_SuiteCopyWithImpl(_$_Suite _value, $Res Function(_$_Suite) _then) : super(_value, (v) => _then(v as _$_Suite));
 
   @override
   _$_Suite get _value => super._value as _$_Suite;
 
   @override
-  $Res call({
-    Object? path = freezed,
-    Object? platform = freezed,
-    Object? allTests = freezed,
-  }) {
-    return _then(_$_Suite(
-      path: path == freezed
-          ? _value.path
-          : path // ignore: cast_nullable_to_non_nullable
-              as String?,
-      platform: platform == freezed
-          ? _value.platform
-          : platform // ignore: cast_nullable_to_non_nullable
-              as String,
-      allTests: allTests == freezed
-          ? _value._allTests
-          : allTests // ignore: cast_nullable_to_non_nullable
-              as List<Test>,
-    ));
+  $Res call({Object? path = freezed, Object? platform = freezed, Object? allTests = freezed}) {
+    return _then(
+      _$_Suite(
+        path:
+            path == freezed
+                ? _value.path
+                : path // ignore: cast_nullable_to_non_nullable
+                    as String?,
+        platform:
+            platform == freezed
+                ? _value.platform
+                : platform // ignore: cast_nullable_to_non_nullable
+                    as String,
+        allTests:
+            allTests == freezed
+                ? _value._allTests
+                : allTests // ignore: cast_nullable_to_non_nullable
+                    as List<Test>,
+      ),
+    );
   }
 }
 
 /// @nodoc
 
 class _$_Suite extends _Suite {
-  _$_Suite(
-      {this.path, required this.platform, required final List<Test> allTests})
-      : _allTests = allTests,
-        super._();
+  _$_Suite({this.path, required this.platform, required final List<Test> allTests}) : _allTests = allTests, super._();
 
   /// Optional path to this suite's file
   @override
@@ -150,38 +146,31 @@ class _$_Suite extends _Suite {
 
   @override
   int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(path),
-      const DeepCollectionEquality().hash(platform),
-      const DeepCollectionEquality().hash(_allTests));
+    runtimeType,
+    const DeepCollectionEquality().hash(path),
+    const DeepCollectionEquality().hash(platform),
+    const DeepCollectionEquality().hash(_allTests),
+  );
 
   @JsonKey(ignore: true)
   @override
-  _$$_SuiteCopyWith<_$_Suite> get copyWith =>
-      __$$_SuiteCopyWithImpl<_$_Suite>(this, _$identity);
+  _$$_SuiteCopyWith<_$_Suite> get copyWith => __$$_SuiteCopyWithImpl<_$_Suite>(this, _$identity);
 }
 
 abstract class _Suite extends Suite {
-  factory _Suite(
-      {final String? path,
-      required final String platform,
-      required final List<Test> allTests}) = _$_Suite;
+  factory _Suite({final String? path, required final String platform, required final List<Test> allTests}) = _$_Suite;
   _Suite._() : super._();
 
   @override
-
   /// Optional path to this suite's file
   String? get path;
   @override
-
   /// Platform on which this suite is running
   String get platform;
   @override
-
   /// All Tests contained within this suite
   List<Test> get allTests;
   @override
   @JsonKey(ignore: true)
-  _$$_SuiteCopyWith<_$_Suite> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$_SuiteCopyWith<_$_Suite> get copyWith => throw _privateConstructorUsedError;
 }

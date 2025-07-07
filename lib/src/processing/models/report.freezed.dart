@@ -12,7 +12,8 @@ part of 'report.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+  'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods',
+);
 
 /// @nodoc
 mixin _$Report {
@@ -28,8 +29,7 @@ mixin _$Report {
 
 /// @nodoc
 abstract class $ReportCopyWith<$Res> {
-  factory $ReportCopyWith(Report value, $Res Function(Report) then) =
-      _$ReportCopyWithImpl<$Res>;
+  factory $ReportCopyWith(Report value, $Res Function(Report) then) = _$ReportCopyWithImpl<$Res>;
   $Res call({Iterable<Suite> suites, DateTime? timestamp});
 }
 
@@ -42,55 +42,55 @@ class _$ReportCopyWithImpl<$Res> implements $ReportCopyWith<$Res> {
   final $Res Function(Report) _then;
 
   @override
-  $Res call({
-    Object? suites = freezed,
-    Object? timestamp = freezed,
-  }) {
-    return _then(_value.copyWith(
-      suites: suites == freezed
-          ? _value.suites
-          : suites // ignore: cast_nullable_to_non_nullable
-              as Iterable<Suite>,
-      timestamp: timestamp == freezed
-          ? _value.timestamp
-          : timestamp // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
-    ));
+  $Res call({Object? suites = freezed, Object? timestamp = freezed}) {
+    return _then(
+      _value.copyWith(
+        suites:
+            suites == freezed
+                ? _value.suites
+                : suites // ignore: cast_nullable_to_non_nullable
+                    as Iterable<Suite>,
+        timestamp:
+            timestamp == freezed
+                ? _value.timestamp
+                : timestamp // ignore: cast_nullable_to_non_nullable
+                    as DateTime?,
+      ),
+    );
   }
 }
 
 /// @nodoc
 abstract class _$$_ReportCopyWith<$Res> implements $ReportCopyWith<$Res> {
-  factory _$$_ReportCopyWith(_$_Report value, $Res Function(_$_Report) then) =
-      __$$_ReportCopyWithImpl<$Res>;
+  factory _$$_ReportCopyWith(_$_Report value, $Res Function(_$_Report) then) = __$$_ReportCopyWithImpl<$Res>;
   @override
   $Res call({Iterable<Suite> suites, DateTime? timestamp});
 }
 
 /// @nodoc
-class __$$_ReportCopyWithImpl<$Res> extends _$ReportCopyWithImpl<$Res>
-    implements _$$_ReportCopyWith<$Res> {
+class __$$_ReportCopyWithImpl<$Res> extends _$ReportCopyWithImpl<$Res> implements _$$_ReportCopyWith<$Res> {
   __$$_ReportCopyWithImpl(_$_Report _value, $Res Function(_$_Report) _then)
-      : super(_value, (v) => _then(v as _$_Report));
+    : super(_value, (v) => _then(v as _$_Report));
 
   @override
   _$_Report get _value => super._value as _$_Report;
 
   @override
-  $Res call({
-    Object? suites = freezed,
-    Object? timestamp = freezed,
-  }) {
-    return _then(_$_Report(
-      suites: suites == freezed
-          ? _value.suites
-          : suites // ignore: cast_nullable_to_non_nullable
-              as Iterable<Suite>,
-      timestamp: timestamp == freezed
-          ? _value.timestamp
-          : timestamp // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
-    ));
+  $Res call({Object? suites = freezed, Object? timestamp = freezed}) {
+    return _then(
+      _$_Report(
+        suites:
+            suites == freezed
+                ? _value.suites
+                : suites // ignore: cast_nullable_to_non_nullable
+                    as Iterable<Suite>,
+        timestamp:
+            timestamp == freezed
+                ? _value.timestamp
+                : timestamp // ignore: cast_nullable_to_non_nullable
+                    as DateTime?,
+      ),
+    );
   }
 }
 
@@ -123,31 +123,26 @@ class _$_Report implements _Report {
 
   @override
   int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(suites),
-      const DeepCollectionEquality().hash(timestamp));
+    runtimeType,
+    const DeepCollectionEquality().hash(suites),
+    const DeepCollectionEquality().hash(timestamp),
+  );
 
   @JsonKey(ignore: true)
   @override
-  _$$_ReportCopyWith<_$_Report> get copyWith =>
-      __$$_ReportCopyWithImpl<_$_Report>(this, _$identity);
+  _$$_ReportCopyWith<_$_Report> get copyWith => __$$_ReportCopyWithImpl<_$_Report>(this, _$identity);
 }
 
 abstract class _Report implements Report {
-  factory _Report(
-      {required final Iterable<Suite> suites,
-      final DateTime? timestamp}) = _$_Report;
+  factory _Report({required final Iterable<Suite> suites, final DateTime? timestamp}) = _$_Report;
 
   @override
-
   /// The Suites in this report
   Iterable<Suite> get suites;
   @override
-
   /// The optional timestamp of the tests
   DateTime? get timestamp;
   @override
   @JsonKey(ignore: true)
-  _$$_ReportCopyWith<_$_Report> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$_ReportCopyWith<_$_Report> get copyWith => throw _privateConstructorUsedError;
 }

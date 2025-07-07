@@ -12,7 +12,8 @@ part of 'test.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+  'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods',
+);
 
 Test _$TestFromJson(Map<String, dynamic> json) {
   return _Test.fromJson(json);
@@ -68,19 +69,19 @@ mixin _$Test {
 
 /// @nodoc
 abstract class $TestCopyWith<$Res> {
-  factory $TestCopyWith(Test value, $Res Function(Test) then) =
-      _$TestCopyWithImpl<$Res>;
-  $Res call(
-      {int id,
-      String name,
-      @JsonKey(name: 'suiteID') int suiteId,
-      @JsonKey(name: 'groupIDs') List<int> groupIds,
-      int? line,
-      int? column,
-      String? url,
-      @JsonKey(name: 'root_line') int? rootLine,
-      @JsonKey(name: 'root_column') int? rootColumn,
-      @JsonKey(name: 'root_url') String? rootUrl});
+  factory $TestCopyWith(Test value, $Res Function(Test) then) = _$TestCopyWithImpl<$Res>;
+  $Res call({
+    int id,
+    String name,
+    @JsonKey(name: 'suiteID') int suiteId,
+    @JsonKey(name: 'groupIDs') List<int> groupIds,
+    int? line,
+    int? column,
+    String? url,
+    @JsonKey(name: 'root_line') int? rootLine,
+    @JsonKey(name: 'root_column') int? rootColumn,
+    @JsonKey(name: 'root_url') String? rootUrl,
+  });
 }
 
 /// @nodoc
@@ -104,74 +105,84 @@ class _$TestCopyWithImpl<$Res> implements $TestCopyWith<$Res> {
     Object? rootColumn = freezed,
     Object? rootUrl = freezed,
   }) {
-    return _then(_value.copyWith(
-      id: id == freezed
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as int,
-      name: name == freezed
-          ? _value.name
-          : name // ignore: cast_nullable_to_non_nullable
-              as String,
-      suiteId: suiteId == freezed
-          ? _value.suiteId
-          : suiteId // ignore: cast_nullable_to_non_nullable
-              as int,
-      groupIds: groupIds == freezed
-          ? _value.groupIds
-          : groupIds // ignore: cast_nullable_to_non_nullable
-              as List<int>,
-      line: line == freezed
-          ? _value.line
-          : line // ignore: cast_nullable_to_non_nullable
-              as int?,
-      column: column == freezed
-          ? _value.column
-          : column // ignore: cast_nullable_to_non_nullable
-              as int?,
-      url: url == freezed
-          ? _value.url
-          : url // ignore: cast_nullable_to_non_nullable
-              as String?,
-      rootLine: rootLine == freezed
-          ? _value.rootLine
-          : rootLine // ignore: cast_nullable_to_non_nullable
-              as int?,
-      rootColumn: rootColumn == freezed
-          ? _value.rootColumn
-          : rootColumn // ignore: cast_nullable_to_non_nullable
-              as int?,
-      rootUrl: rootUrl == freezed
-          ? _value.rootUrl
-          : rootUrl // ignore: cast_nullable_to_non_nullable
-              as String?,
-    ));
+    return _then(
+      _value.copyWith(
+        id:
+            id == freezed
+                ? _value.id
+                : id // ignore: cast_nullable_to_non_nullable
+                    as int,
+        name:
+            name == freezed
+                ? _value.name
+                : name // ignore: cast_nullable_to_non_nullable
+                    as String,
+        suiteId:
+            suiteId == freezed
+                ? _value.suiteId
+                : suiteId // ignore: cast_nullable_to_non_nullable
+                    as int,
+        groupIds:
+            groupIds == freezed
+                ? _value.groupIds
+                : groupIds // ignore: cast_nullable_to_non_nullable
+                    as List<int>,
+        line:
+            line == freezed
+                ? _value.line
+                : line // ignore: cast_nullable_to_non_nullable
+                    as int?,
+        column:
+            column == freezed
+                ? _value.column
+                : column // ignore: cast_nullable_to_non_nullable
+                    as int?,
+        url:
+            url == freezed
+                ? _value.url
+                : url // ignore: cast_nullable_to_non_nullable
+                    as String?,
+        rootLine:
+            rootLine == freezed
+                ? _value.rootLine
+                : rootLine // ignore: cast_nullable_to_non_nullable
+                    as int?,
+        rootColumn:
+            rootColumn == freezed
+                ? _value.rootColumn
+                : rootColumn // ignore: cast_nullable_to_non_nullable
+                    as int?,
+        rootUrl:
+            rootUrl == freezed
+                ? _value.rootUrl
+                : rootUrl // ignore: cast_nullable_to_non_nullable
+                    as String?,
+      ),
+    );
   }
 }
 
 /// @nodoc
 abstract class _$$_TestCopyWith<$Res> implements $TestCopyWith<$Res> {
-  factory _$$_TestCopyWith(_$_Test value, $Res Function(_$_Test) then) =
-      __$$_TestCopyWithImpl<$Res>;
+  factory _$$_TestCopyWith(_$_Test value, $Res Function(_$_Test) then) = __$$_TestCopyWithImpl<$Res>;
   @override
-  $Res call(
-      {int id,
-      String name,
-      @JsonKey(name: 'suiteID') int suiteId,
-      @JsonKey(name: 'groupIDs') List<int> groupIds,
-      int? line,
-      int? column,
-      String? url,
-      @JsonKey(name: 'root_line') int? rootLine,
-      @JsonKey(name: 'root_column') int? rootColumn,
-      @JsonKey(name: 'root_url') String? rootUrl});
+  $Res call({
+    int id,
+    String name,
+    @JsonKey(name: 'suiteID') int suiteId,
+    @JsonKey(name: 'groupIDs') List<int> groupIds,
+    int? line,
+    int? column,
+    String? url,
+    @JsonKey(name: 'root_line') int? rootLine,
+    @JsonKey(name: 'root_column') int? rootColumn,
+    @JsonKey(name: 'root_url') String? rootUrl,
+  });
 }
 
 /// @nodoc
-class __$$_TestCopyWithImpl<$Res> extends _$TestCopyWithImpl<$Res>
-    implements _$$_TestCopyWith<$Res> {
-  __$$_TestCopyWithImpl(_$_Test _value, $Res Function(_$_Test) _then)
-      : super(_value, (v) => _then(v as _$_Test));
+class __$$_TestCopyWithImpl<$Res> extends _$TestCopyWithImpl<$Res> implements _$$_TestCopyWith<$Res> {
+  __$$_TestCopyWithImpl(_$_Test _value, $Res Function(_$_Test) _then) : super(_value, (v) => _then(v as _$_Test));
 
   @override
   _$_Test get _value => super._value as _$_Test;
@@ -189,66 +200,78 @@ class __$$_TestCopyWithImpl<$Res> extends _$TestCopyWithImpl<$Res>
     Object? rootColumn = freezed,
     Object? rootUrl = freezed,
   }) {
-    return _then(_$_Test(
-      id: id == freezed
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as int,
-      name: name == freezed
-          ? _value.name
-          : name // ignore: cast_nullable_to_non_nullable
-              as String,
-      suiteId: suiteId == freezed
-          ? _value.suiteId
-          : suiteId // ignore: cast_nullable_to_non_nullable
-              as int,
-      groupIds: groupIds == freezed
-          ? _value._groupIds
-          : groupIds // ignore: cast_nullable_to_non_nullable
-              as List<int>,
-      line: line == freezed
-          ? _value.line
-          : line // ignore: cast_nullable_to_non_nullable
-              as int?,
-      column: column == freezed
-          ? _value.column
-          : column // ignore: cast_nullable_to_non_nullable
-              as int?,
-      url: url == freezed
-          ? _value.url
-          : url // ignore: cast_nullable_to_non_nullable
-              as String?,
-      rootLine: rootLine == freezed
-          ? _value.rootLine
-          : rootLine // ignore: cast_nullable_to_non_nullable
-              as int?,
-      rootColumn: rootColumn == freezed
-          ? _value.rootColumn
-          : rootColumn // ignore: cast_nullable_to_non_nullable
-              as int?,
-      rootUrl: rootUrl == freezed
-          ? _value.rootUrl
-          : rootUrl // ignore: cast_nullable_to_non_nullable
-              as String?,
-    ));
+    return _then(
+      _$_Test(
+        id:
+            id == freezed
+                ? _value.id
+                : id // ignore: cast_nullable_to_non_nullable
+                    as int,
+        name:
+            name == freezed
+                ? _value.name
+                : name // ignore: cast_nullable_to_non_nullable
+                    as String,
+        suiteId:
+            suiteId == freezed
+                ? _value.suiteId
+                : suiteId // ignore: cast_nullable_to_non_nullable
+                    as int,
+        groupIds:
+            groupIds == freezed
+                ? _value._groupIds
+                : groupIds // ignore: cast_nullable_to_non_nullable
+                    as List<int>,
+        line:
+            line == freezed
+                ? _value.line
+                : line // ignore: cast_nullable_to_non_nullable
+                    as int?,
+        column:
+            column == freezed
+                ? _value.column
+                : column // ignore: cast_nullable_to_non_nullable
+                    as int?,
+        url:
+            url == freezed
+                ? _value.url
+                : url // ignore: cast_nullable_to_non_nullable
+                    as String?,
+        rootLine:
+            rootLine == freezed
+                ? _value.rootLine
+                : rootLine // ignore: cast_nullable_to_non_nullable
+                    as int?,
+        rootColumn:
+            rootColumn == freezed
+                ? _value.rootColumn
+                : rootColumn // ignore: cast_nullable_to_non_nullable
+                    as int?,
+        rootUrl:
+            rootUrl == freezed
+                ? _value.rootUrl
+                : rootUrl // ignore: cast_nullable_to_non_nullable
+                    as String?,
+      ),
+    );
   }
 }
 
 /// @nodoc
 @JsonSerializable()
 class _$_Test implements _Test {
-  _$_Test(
-      {required this.id,
-      required this.name,
-      @JsonKey(name: 'suiteID') required this.suiteId,
-      @JsonKey(name: 'groupIDs') required final List<int> groupIds,
-      this.line,
-      this.column,
-      this.url,
-      @JsonKey(name: 'root_line') this.rootLine,
-      @JsonKey(name: 'root_column') this.rootColumn,
-      @JsonKey(name: 'root_url') this.rootUrl})
-      : _groupIds = groupIds;
+  _$_Test({
+    required this.id,
+    required this.name,
+    @JsonKey(name: 'suiteID') required this.suiteId,
+    @JsonKey(name: 'groupIDs') required final List<int> groupIds,
+    this.line,
+    this.column,
+    this.url,
+    @JsonKey(name: 'root_line') this.rootLine,
+    @JsonKey(name: 'root_column') this.rootColumn,
+    @JsonKey(name: 'root_url') this.rootUrl,
+  }) : _groupIds = groupIds;
 
   factory _$_Test.fromJson(Map<String, dynamic> json) => _$$_TestFromJson(json);
 
@@ -327,100 +350,88 @@ class _$_Test implements _Test {
             const DeepCollectionEquality().equals(other.column, column) &&
             const DeepCollectionEquality().equals(other.url, url) &&
             const DeepCollectionEquality().equals(other.rootLine, rootLine) &&
-            const DeepCollectionEquality()
-                .equals(other.rootColumn, rootColumn) &&
+            const DeepCollectionEquality().equals(other.rootColumn, rootColumn) &&
             const DeepCollectionEquality().equals(other.rootUrl, rootUrl));
   }
 
   @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(id),
-      const DeepCollectionEquality().hash(name),
-      const DeepCollectionEquality().hash(suiteId),
-      const DeepCollectionEquality().hash(_groupIds),
-      const DeepCollectionEquality().hash(line),
-      const DeepCollectionEquality().hash(column),
-      const DeepCollectionEquality().hash(url),
-      const DeepCollectionEquality().hash(rootLine),
-      const DeepCollectionEquality().hash(rootColumn),
-      const DeepCollectionEquality().hash(rootUrl));
+    runtimeType,
+    const DeepCollectionEquality().hash(id),
+    const DeepCollectionEquality().hash(name),
+    const DeepCollectionEquality().hash(suiteId),
+    const DeepCollectionEquality().hash(_groupIds),
+    const DeepCollectionEquality().hash(line),
+    const DeepCollectionEquality().hash(column),
+    const DeepCollectionEquality().hash(url),
+    const DeepCollectionEquality().hash(rootLine),
+    const DeepCollectionEquality().hash(rootColumn),
+    const DeepCollectionEquality().hash(rootUrl),
+  );
 
   @JsonKey(ignore: true)
   @override
-  _$$_TestCopyWith<_$_Test> get copyWith =>
-      __$$_TestCopyWithImpl<_$_Test>(this, _$identity);
+  _$$_TestCopyWith<_$_Test> get copyWith => __$$_TestCopyWithImpl<_$_Test>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_TestToJson(
-      this,
-    );
+    return _$$_TestToJson(this);
   }
 }
 
 abstract class _Test implements Test {
-  factory _Test(
-      {required final int id,
-      required final String name,
-      @JsonKey(name: 'suiteID') required final int suiteId,
-      @JsonKey(name: 'groupIDs') required final List<int> groupIds,
-      final int? line,
-      final int? column,
-      final String? url,
-      @JsonKey(name: 'root_line') final int? rootLine,
-      @JsonKey(name: 'root_column') final int? rootColumn,
-      @JsonKey(name: 'root_url') final String? rootUrl}) = _$_Test;
+  factory _Test({
+    required final int id,
+    required final String name,
+    @JsonKey(name: 'suiteID') required final int suiteId,
+    @JsonKey(name: 'groupIDs') required final List<int> groupIds,
+    final int? line,
+    final int? column,
+    final String? url,
+    @JsonKey(name: 'root_line') final int? rootLine,
+    @JsonKey(name: 'root_column') final int? rootColumn,
+    @JsonKey(name: 'root_url') final String? rootUrl,
+  }) = _$_Test;
 
   factory _Test.fromJson(Map<String, dynamic> json) = _$_Test.fromJson;
 
   @override
-
   /// An opaque ID for this test.
   int get id;
   @override
-
   /// The name of this test, including prefixes from any containing groups.
   String get name;
   @override
-
   /// The ID of the suite containing this test.
   @JsonKey(name: 'suiteID')
   int get suiteId;
   @override
-
   /// The IDs of groups containing this test, in order from outermost to innermost.
   @JsonKey(name: 'groupIDs')
   List<int> get groupIds;
   @override
-
   /// The (1-based) line on which this test was defined, or `null`.
   int? get line;
   @override
-
   /// The (1-based) column on which this test was defined, or `null`.
   int? get column;
   @override
-
   /// The URL for the file in which this test was defined, or `null`.
   String? get url;
   @override
-
   /// The (1-based) line in the original test suite from which this test originated.
   ///
   /// Will only be present if `rootUrl` is different from `url`.
   @JsonKey(name: 'root_line')
   int? get rootLine;
   @override
-
   /// The (1-based) line on in the original test suite from which this test originated.
   ///
   /// Will only be present if `rootUrl` is different from `url`.
   @JsonKey(name: 'root_column')
   int? get rootColumn;
   @override
-
   /// The URL for the original test suite in which this test was defined.
   ///
   /// Will only be present if different from `url`.

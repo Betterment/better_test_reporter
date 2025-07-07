@@ -12,7 +12,8 @@ part of 'test.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+  'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods',
+);
 
 /// @nodoc
 mixin _$Test {
@@ -56,19 +57,19 @@ mixin _$Test {
 
 /// @nodoc
 abstract class $TestCopyWith<$Res> {
-  factory $TestCopyWith(Test value, $Res Function(Test) then) =
-      _$TestCopyWithImpl<$Res>;
-  $Res call(
-      {int suiteId,
-      String name,
-      int startTime,
-      String? url,
-      String? rootUrl,
-      int endTime,
-      bool hidden,
-      bool skipped,
-      List<Problem> problems,
-      List<String> prints});
+  factory $TestCopyWith(Test value, $Res Function(Test) then) = _$TestCopyWithImpl<$Res>;
+  $Res call({
+    int suiteId,
+    String name,
+    int startTime,
+    String? url,
+    String? rootUrl,
+    int endTime,
+    bool hidden,
+    bool skipped,
+    List<Problem> problems,
+    List<String> prints,
+  });
 }
 
 /// @nodoc
@@ -92,74 +93,84 @@ class _$TestCopyWithImpl<$Res> implements $TestCopyWith<$Res> {
     Object? problems = freezed,
     Object? prints = freezed,
   }) {
-    return _then(_value.copyWith(
-      suiteId: suiteId == freezed
-          ? _value.suiteId
-          : suiteId // ignore: cast_nullable_to_non_nullable
-              as int,
-      name: name == freezed
-          ? _value.name
-          : name // ignore: cast_nullable_to_non_nullable
-              as String,
-      startTime: startTime == freezed
-          ? _value.startTime
-          : startTime // ignore: cast_nullable_to_non_nullable
-              as int,
-      url: url == freezed
-          ? _value.url
-          : url // ignore: cast_nullable_to_non_nullable
-              as String?,
-      rootUrl: rootUrl == freezed
-          ? _value.rootUrl
-          : rootUrl // ignore: cast_nullable_to_non_nullable
-              as String?,
-      endTime: endTime == freezed
-          ? _value.endTime
-          : endTime // ignore: cast_nullable_to_non_nullable
-              as int,
-      hidden: hidden == freezed
-          ? _value.hidden
-          : hidden // ignore: cast_nullable_to_non_nullable
-              as bool,
-      skipped: skipped == freezed
-          ? _value.skipped
-          : skipped // ignore: cast_nullable_to_non_nullable
-              as bool,
-      problems: problems == freezed
-          ? _value.problems
-          : problems // ignore: cast_nullable_to_non_nullable
-              as List<Problem>,
-      prints: prints == freezed
-          ? _value.prints
-          : prints // ignore: cast_nullable_to_non_nullable
-              as List<String>,
-    ));
+    return _then(
+      _value.copyWith(
+        suiteId:
+            suiteId == freezed
+                ? _value.suiteId
+                : suiteId // ignore: cast_nullable_to_non_nullable
+                    as int,
+        name:
+            name == freezed
+                ? _value.name
+                : name // ignore: cast_nullable_to_non_nullable
+                    as String,
+        startTime:
+            startTime == freezed
+                ? _value.startTime
+                : startTime // ignore: cast_nullable_to_non_nullable
+                    as int,
+        url:
+            url == freezed
+                ? _value.url
+                : url // ignore: cast_nullable_to_non_nullable
+                    as String?,
+        rootUrl:
+            rootUrl == freezed
+                ? _value.rootUrl
+                : rootUrl // ignore: cast_nullable_to_non_nullable
+                    as String?,
+        endTime:
+            endTime == freezed
+                ? _value.endTime
+                : endTime // ignore: cast_nullable_to_non_nullable
+                    as int,
+        hidden:
+            hidden == freezed
+                ? _value.hidden
+                : hidden // ignore: cast_nullable_to_non_nullable
+                    as bool,
+        skipped:
+            skipped == freezed
+                ? _value.skipped
+                : skipped // ignore: cast_nullable_to_non_nullable
+                    as bool,
+        problems:
+            problems == freezed
+                ? _value.problems
+                : problems // ignore: cast_nullable_to_non_nullable
+                    as List<Problem>,
+        prints:
+            prints == freezed
+                ? _value.prints
+                : prints // ignore: cast_nullable_to_non_nullable
+                    as List<String>,
+      ),
+    );
   }
 }
 
 /// @nodoc
 abstract class _$$_TestCopyWith<$Res> implements $TestCopyWith<$Res> {
-  factory _$$_TestCopyWith(_$_Test value, $Res Function(_$_Test) then) =
-      __$$_TestCopyWithImpl<$Res>;
+  factory _$$_TestCopyWith(_$_Test value, $Res Function(_$_Test) then) = __$$_TestCopyWithImpl<$Res>;
   @override
-  $Res call(
-      {int suiteId,
-      String name,
-      int startTime,
-      String? url,
-      String? rootUrl,
-      int endTime,
-      bool hidden,
-      bool skipped,
-      List<Problem> problems,
-      List<String> prints});
+  $Res call({
+    int suiteId,
+    String name,
+    int startTime,
+    String? url,
+    String? rootUrl,
+    int endTime,
+    bool hidden,
+    bool skipped,
+    List<Problem> problems,
+    List<String> prints,
+  });
 }
 
 /// @nodoc
-class __$$_TestCopyWithImpl<$Res> extends _$TestCopyWithImpl<$Res>
-    implements _$$_TestCopyWith<$Res> {
-  __$$_TestCopyWithImpl(_$_Test _value, $Res Function(_$_Test) _then)
-      : super(_value, (v) => _then(v as _$_Test));
+class __$$_TestCopyWithImpl<$Res> extends _$TestCopyWithImpl<$Res> implements _$$_TestCopyWith<$Res> {
+  __$$_TestCopyWithImpl(_$_Test _value, $Res Function(_$_Test) _then) : super(_value, (v) => _then(v as _$_Test));
 
   @override
   _$_Test get _value => super._value as _$_Test;
@@ -177,68 +188,80 @@ class __$$_TestCopyWithImpl<$Res> extends _$TestCopyWithImpl<$Res>
     Object? problems = freezed,
     Object? prints = freezed,
   }) {
-    return _then(_$_Test(
-      suiteId: suiteId == freezed
-          ? _value.suiteId
-          : suiteId // ignore: cast_nullable_to_non_nullable
-              as int,
-      name: name == freezed
-          ? _value.name
-          : name // ignore: cast_nullable_to_non_nullable
-              as String,
-      startTime: startTime == freezed
-          ? _value.startTime
-          : startTime // ignore: cast_nullable_to_non_nullable
-              as int,
-      url: url == freezed
-          ? _value.url
-          : url // ignore: cast_nullable_to_non_nullable
-              as String?,
-      rootUrl: rootUrl == freezed
-          ? _value.rootUrl
-          : rootUrl // ignore: cast_nullable_to_non_nullable
-              as String?,
-      endTime: endTime == freezed
-          ? _value.endTime
-          : endTime // ignore: cast_nullable_to_non_nullable
-              as int,
-      hidden: hidden == freezed
-          ? _value.hidden
-          : hidden // ignore: cast_nullable_to_non_nullable
-              as bool,
-      skipped: skipped == freezed
-          ? _value.skipped
-          : skipped // ignore: cast_nullable_to_non_nullable
-              as bool,
-      problems: problems == freezed
-          ? _value._problems
-          : problems // ignore: cast_nullable_to_non_nullable
-              as List<Problem>,
-      prints: prints == freezed
-          ? _value._prints
-          : prints // ignore: cast_nullable_to_non_nullable
-              as List<String>,
-    ));
+    return _then(
+      _$_Test(
+        suiteId:
+            suiteId == freezed
+                ? _value.suiteId
+                : suiteId // ignore: cast_nullable_to_non_nullable
+                    as int,
+        name:
+            name == freezed
+                ? _value.name
+                : name // ignore: cast_nullable_to_non_nullable
+                    as String,
+        startTime:
+            startTime == freezed
+                ? _value.startTime
+                : startTime // ignore: cast_nullable_to_non_nullable
+                    as int,
+        url:
+            url == freezed
+                ? _value.url
+                : url // ignore: cast_nullable_to_non_nullable
+                    as String?,
+        rootUrl:
+            rootUrl == freezed
+                ? _value.rootUrl
+                : rootUrl // ignore: cast_nullable_to_non_nullable
+                    as String?,
+        endTime:
+            endTime == freezed
+                ? _value.endTime
+                : endTime // ignore: cast_nullable_to_non_nullable
+                    as int,
+        hidden:
+            hidden == freezed
+                ? _value.hidden
+                : hidden // ignore: cast_nullable_to_non_nullable
+                    as bool,
+        skipped:
+            skipped == freezed
+                ? _value.skipped
+                : skipped // ignore: cast_nullable_to_non_nullable
+                    as bool,
+        problems:
+            problems == freezed
+                ? _value._problems
+                : problems // ignore: cast_nullable_to_non_nullable
+                    as List<Problem>,
+        prints:
+            prints == freezed
+                ? _value._prints
+                : prints // ignore: cast_nullable_to_non_nullable
+                    as List<String>,
+      ),
+    );
   }
 }
 
 /// @nodoc
 
 class _$_Test extends _Test {
-  _$_Test(
-      {required this.suiteId,
-      required this.name,
-      required this.startTime,
-      this.url,
-      this.rootUrl,
-      this.endTime = -1,
-      this.hidden = false,
-      this.skipped = false,
-      required final List<Problem> problems,
-      required final List<String> prints})
-      : _problems = problems,
-        _prints = prints,
-        super._();
+  _$_Test({
+    required this.suiteId,
+    required this.name,
+    required this.startTime,
+    this.url,
+    this.rootUrl,
+    this.endTime = -1,
+    this.hidden = false,
+    this.skipped = false,
+    required final List<Problem> problems,
+    required final List<String> prints,
+  }) : _problems = problems,
+       _prints = prints,
+       super._();
 
   /// The id of the suite to which this test belongs.
   @override
@@ -323,80 +346,71 @@ class _$_Test extends _Test {
 
   @override
   int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(suiteId),
-      const DeepCollectionEquality().hash(name),
-      const DeepCollectionEquality().hash(startTime),
-      const DeepCollectionEquality().hash(url),
-      const DeepCollectionEquality().hash(rootUrl),
-      const DeepCollectionEquality().hash(endTime),
-      const DeepCollectionEquality().hash(hidden),
-      const DeepCollectionEquality().hash(skipped),
-      const DeepCollectionEquality().hash(_problems),
-      const DeepCollectionEquality().hash(_prints));
+    runtimeType,
+    const DeepCollectionEquality().hash(suiteId),
+    const DeepCollectionEquality().hash(name),
+    const DeepCollectionEquality().hash(startTime),
+    const DeepCollectionEquality().hash(url),
+    const DeepCollectionEquality().hash(rootUrl),
+    const DeepCollectionEquality().hash(endTime),
+    const DeepCollectionEquality().hash(hidden),
+    const DeepCollectionEquality().hash(skipped),
+    const DeepCollectionEquality().hash(_problems),
+    const DeepCollectionEquality().hash(_prints),
+  );
 
   @JsonKey(ignore: true)
   @override
-  _$$_TestCopyWith<_$_Test> get copyWith =>
-      __$$_TestCopyWithImpl<_$_Test>(this, _$identity);
+  _$$_TestCopyWith<_$_Test> get copyWith => __$$_TestCopyWithImpl<_$_Test>(this, _$identity);
 }
 
 abstract class _Test extends Test {
-  factory _Test(
-      {required final int suiteId,
-      required final String name,
-      required final int startTime,
-      final String? url,
-      final String? rootUrl,
-      final int endTime,
-      final bool hidden,
-      final bool skipped,
-      required final List<Problem> problems,
-      required final List<String> prints}) = _$_Test;
+  factory _Test({
+    required final int suiteId,
+    required final String name,
+    required final int startTime,
+    final String? url,
+    final String? rootUrl,
+    final int endTime,
+    final bool hidden,
+    final bool skipped,
+    required final List<Problem> problems,
+    required final List<String> prints,
+  }) = _$_Test;
   _Test._() : super._();
 
   @override
-
   /// The id of the suite to which this test belongs.
   int get suiteId;
   @override
-
   /// The name of this test, including prefixes from any containing groups.
   String get name;
   @override
-
   /// The time (in milliseconds) that has elapsed between the test runner starting and this test starting.
   int get startTime;
   @override
-
   /// Optional URL for the file in which this test was defined
   String? get url;
   @override
-
   /// Optional URL for the original test suite in which this test was defined
   ///
   /// Will only be present if different from `url`
   String? get rootUrl;
   @override
-
   /// The time (in milliseconds) that has elapsed between the test runner starting and this test completing.
   ///
   /// This will be -1 if this test was not completed.
   int get endTime;
   @override
-
   /// Whether this test's result should be hidden.
   bool get hidden;
   @override
-
   /// Whether this test (or some part of it) was skipped.
   bool get skipped;
   @override
-
   /// A list of any problems that occured during this test.
   List<Problem> get problems;
   @override
-
   /// A list of any messages emitted during this test.
   List<String> get prints;
   @override

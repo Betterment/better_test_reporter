@@ -12,7 +12,8 @@ part of 'suite.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+  'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods',
+);
 
 Suite _$SuiteFromJson(Map<String, dynamic> json) {
   return _Suite.fromJson(json);
@@ -36,8 +37,7 @@ mixin _$Suite {
 
 /// @nodoc
 abstract class $SuiteCopyWith<$Res> {
-  factory $SuiteCopyWith(Suite value, $Res Function(Suite) then) =
-      _$SuiteCopyWithImpl<$Res>;
+  factory $SuiteCopyWith(Suite value, $Res Function(Suite) then) = _$SuiteCopyWithImpl<$Res>;
   $Res call({int id, String platform, String? path});
 }
 
@@ -50,65 +50,64 @@ class _$SuiteCopyWithImpl<$Res> implements $SuiteCopyWith<$Res> {
   final $Res Function(Suite) _then;
 
   @override
-  $Res call({
-    Object? id = freezed,
-    Object? platform = freezed,
-    Object? path = freezed,
-  }) {
-    return _then(_value.copyWith(
-      id: id == freezed
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as int,
-      platform: platform == freezed
-          ? _value.platform
-          : platform // ignore: cast_nullable_to_non_nullable
-              as String,
-      path: path == freezed
-          ? _value.path
-          : path // ignore: cast_nullable_to_non_nullable
-              as String?,
-    ));
+  $Res call({Object? id = freezed, Object? platform = freezed, Object? path = freezed}) {
+    return _then(
+      _value.copyWith(
+        id:
+            id == freezed
+                ? _value.id
+                : id // ignore: cast_nullable_to_non_nullable
+                    as int,
+        platform:
+            platform == freezed
+                ? _value.platform
+                : platform // ignore: cast_nullable_to_non_nullable
+                    as String,
+        path:
+            path == freezed
+                ? _value.path
+                : path // ignore: cast_nullable_to_non_nullable
+                    as String?,
+      ),
+    );
   }
 }
 
 /// @nodoc
 abstract class _$$_SuiteCopyWith<$Res> implements $SuiteCopyWith<$Res> {
-  factory _$$_SuiteCopyWith(_$_Suite value, $Res Function(_$_Suite) then) =
-      __$$_SuiteCopyWithImpl<$Res>;
+  factory _$$_SuiteCopyWith(_$_Suite value, $Res Function(_$_Suite) then) = __$$_SuiteCopyWithImpl<$Res>;
   @override
   $Res call({int id, String platform, String? path});
 }
 
 /// @nodoc
-class __$$_SuiteCopyWithImpl<$Res> extends _$SuiteCopyWithImpl<$Res>
-    implements _$$_SuiteCopyWith<$Res> {
-  __$$_SuiteCopyWithImpl(_$_Suite _value, $Res Function(_$_Suite) _then)
-      : super(_value, (v) => _then(v as _$_Suite));
+class __$$_SuiteCopyWithImpl<$Res> extends _$SuiteCopyWithImpl<$Res> implements _$$_SuiteCopyWith<$Res> {
+  __$$_SuiteCopyWithImpl(_$_Suite _value, $Res Function(_$_Suite) _then) : super(_value, (v) => _then(v as _$_Suite));
 
   @override
   _$_Suite get _value => super._value as _$_Suite;
 
   @override
-  $Res call({
-    Object? id = freezed,
-    Object? platform = freezed,
-    Object? path = freezed,
-  }) {
-    return _then(_$_Suite(
-      id: id == freezed
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as int,
-      platform: platform == freezed
-          ? _value.platform
-          : platform // ignore: cast_nullable_to_non_nullable
-              as String,
-      path: path == freezed
-          ? _value.path
-          : path // ignore: cast_nullable_to_non_nullable
-              as String?,
-    ));
+  $Res call({Object? id = freezed, Object? platform = freezed, Object? path = freezed}) {
+    return _then(
+      _$_Suite(
+        id:
+            id == freezed
+                ? _value.id
+                : id // ignore: cast_nullable_to_non_nullable
+                    as int,
+        platform:
+            platform == freezed
+                ? _value.platform
+                : platform // ignore: cast_nullable_to_non_nullable
+                    as String,
+        path:
+            path == freezed
+                ? _value.path
+                : path // ignore: cast_nullable_to_non_nullable
+                    as String?,
+      ),
+    );
   }
 }
 
@@ -117,8 +116,7 @@ class __$$_SuiteCopyWithImpl<$Res> extends _$SuiteCopyWithImpl<$Res>
 class _$_Suite implements _Suite {
   _$_Suite({required this.id, required this.platform, this.path});
 
-  factory _$_Suite.fromJson(Map<String, dynamic> json) =>
-      _$$_SuiteFromJson(json);
+  factory _$_Suite.fromJson(Map<String, dynamic> json) => _$$_SuiteFromJson(json);
 
   /// An opaque ID for this suite.
   @override
@@ -150,46 +148,37 @@ class _$_Suite implements _Suite {
   @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(id),
-      const DeepCollectionEquality().hash(platform),
-      const DeepCollectionEquality().hash(path));
+    runtimeType,
+    const DeepCollectionEquality().hash(id),
+    const DeepCollectionEquality().hash(platform),
+    const DeepCollectionEquality().hash(path),
+  );
 
   @JsonKey(ignore: true)
   @override
-  _$$_SuiteCopyWith<_$_Suite> get copyWith =>
-      __$$_SuiteCopyWithImpl<_$_Suite>(this, _$identity);
+  _$$_SuiteCopyWith<_$_Suite> get copyWith => __$$_SuiteCopyWithImpl<_$_Suite>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_SuiteToJson(
-      this,
-    );
+    return _$$_SuiteToJson(this);
   }
 }
 
 abstract class _Suite implements Suite {
-  factory _Suite(
-      {required final int id,
-      required final String platform,
-      final String? path}) = _$_Suite;
+  factory _Suite({required final int id, required final String platform, final String? path}) = _$_Suite;
 
   factory _Suite.fromJson(Map<String, dynamic> json) = _$_Suite.fromJson;
 
   @override
-
   /// An opaque ID for this suite.
   int get id;
   @override
-
   /// The platform on which this suite is running.
   String get platform;
   @override
-
   /// The path to this suite's file, or `null` if that path is unknown.
   String? get path;
   @override
   @JsonKey(ignore: true)
-  _$$_SuiteCopyWith<_$_Suite> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$_SuiteCopyWith<_$_Suite> get copyWith => throw _privateConstructorUsedError;
 }

@@ -12,7 +12,8 @@ part of 'problem.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+  'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods',
+);
 
 /// @nodoc
 mixin _$Problem {
@@ -31,8 +32,7 @@ mixin _$Problem {
 
 /// @nodoc
 abstract class $ProblemCopyWith<$Res> {
-  factory $ProblemCopyWith(Problem value, $Res Function(Problem) then) =
-      _$ProblemCopyWithImpl<$Res>;
+  factory $ProblemCopyWith(Problem value, $Res Function(Problem) then) = _$ProblemCopyWithImpl<$Res>;
   $Res call({String message, String stacktrace, bool isFailure});
 }
 
@@ -45,76 +45,72 @@ class _$ProblemCopyWithImpl<$Res> implements $ProblemCopyWith<$Res> {
   final $Res Function(Problem) _then;
 
   @override
-  $Res call({
-    Object? message = freezed,
-    Object? stacktrace = freezed,
-    Object? isFailure = freezed,
-  }) {
-    return _then(_value.copyWith(
-      message: message == freezed
-          ? _value.message
-          : message // ignore: cast_nullable_to_non_nullable
-              as String,
-      stacktrace: stacktrace == freezed
-          ? _value.stacktrace
-          : stacktrace // ignore: cast_nullable_to_non_nullable
-              as String,
-      isFailure: isFailure == freezed
-          ? _value.isFailure
-          : isFailure // ignore: cast_nullable_to_non_nullable
-              as bool,
-    ));
+  $Res call({Object? message = freezed, Object? stacktrace = freezed, Object? isFailure = freezed}) {
+    return _then(
+      _value.copyWith(
+        message:
+            message == freezed
+                ? _value.message
+                : message // ignore: cast_nullable_to_non_nullable
+                    as String,
+        stacktrace:
+            stacktrace == freezed
+                ? _value.stacktrace
+                : stacktrace // ignore: cast_nullable_to_non_nullable
+                    as String,
+        isFailure:
+            isFailure == freezed
+                ? _value.isFailure
+                : isFailure // ignore: cast_nullable_to_non_nullable
+                    as bool,
+      ),
+    );
   }
 }
 
 /// @nodoc
 abstract class _$$_ProblemCopyWith<$Res> implements $ProblemCopyWith<$Res> {
-  factory _$$_ProblemCopyWith(
-          _$_Problem value, $Res Function(_$_Problem) then) =
-      __$$_ProblemCopyWithImpl<$Res>;
+  factory _$$_ProblemCopyWith(_$_Problem value, $Res Function(_$_Problem) then) = __$$_ProblemCopyWithImpl<$Res>;
   @override
   $Res call({String message, String stacktrace, bool isFailure});
 }
 
 /// @nodoc
-class __$$_ProblemCopyWithImpl<$Res> extends _$ProblemCopyWithImpl<$Res>
-    implements _$$_ProblemCopyWith<$Res> {
+class __$$_ProblemCopyWithImpl<$Res> extends _$ProblemCopyWithImpl<$Res> implements _$$_ProblemCopyWith<$Res> {
   __$$_ProblemCopyWithImpl(_$_Problem _value, $Res Function(_$_Problem) _then)
-      : super(_value, (v) => _then(v as _$_Problem));
+    : super(_value, (v) => _then(v as _$_Problem));
 
   @override
   _$_Problem get _value => super._value as _$_Problem;
 
   @override
-  $Res call({
-    Object? message = freezed,
-    Object? stacktrace = freezed,
-    Object? isFailure = freezed,
-  }) {
-    return _then(_$_Problem(
-      message: message == freezed
-          ? _value.message
-          : message // ignore: cast_nullable_to_non_nullable
-              as String,
-      stacktrace: stacktrace == freezed
-          ? _value.stacktrace
-          : stacktrace // ignore: cast_nullable_to_non_nullable
-              as String,
-      isFailure: isFailure == freezed
-          ? _value.isFailure
-          : isFailure // ignore: cast_nullable_to_non_nullable
-              as bool,
-    ));
+  $Res call({Object? message = freezed, Object? stacktrace = freezed, Object? isFailure = freezed}) {
+    return _then(
+      _$_Problem(
+        message:
+            message == freezed
+                ? _value.message
+                : message // ignore: cast_nullable_to_non_nullable
+                    as String,
+        stacktrace:
+            stacktrace == freezed
+                ? _value.stacktrace
+                : stacktrace // ignore: cast_nullable_to_non_nullable
+                    as String,
+        isFailure:
+            isFailure == freezed
+                ? _value.isFailure
+                : isFailure // ignore: cast_nullable_to_non_nullable
+                    as bool,
+      ),
+    );
   }
 }
 
 /// @nodoc
 
 class _$_Problem implements _Problem {
-  _$_Problem(
-      {required this.message,
-      required this.stacktrace,
-      required this.isFailure});
+  _$_Problem({required this.message, required this.stacktrace, required this.isFailure});
 
   /// The error's message.
   @override
@@ -139,44 +135,37 @@ class _$_Problem implements _Problem {
         (other.runtimeType == runtimeType &&
             other is _$_Problem &&
             const DeepCollectionEquality().equals(other.message, message) &&
-            const DeepCollectionEquality()
-                .equals(other.stacktrace, stacktrace) &&
+            const DeepCollectionEquality().equals(other.stacktrace, stacktrace) &&
             const DeepCollectionEquality().equals(other.isFailure, isFailure));
   }
 
   @override
   int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(message),
-      const DeepCollectionEquality().hash(stacktrace),
-      const DeepCollectionEquality().hash(isFailure));
+    runtimeType,
+    const DeepCollectionEquality().hash(message),
+    const DeepCollectionEquality().hash(stacktrace),
+    const DeepCollectionEquality().hash(isFailure),
+  );
 
   @JsonKey(ignore: true)
   @override
-  _$$_ProblemCopyWith<_$_Problem> get copyWith =>
-      __$$_ProblemCopyWithImpl<_$_Problem>(this, _$identity);
+  _$$_ProblemCopyWith<_$_Problem> get copyWith => __$$_ProblemCopyWithImpl<_$_Problem>(this, _$identity);
 }
 
 abstract class _Problem implements Problem {
-  factory _Problem(
-      {required final String message,
-      required final String stacktrace,
-      required final bool isFailure}) = _$_Problem;
+  factory _Problem({required final String message, required final String stacktrace, required final bool isFailure}) =
+      _$_Problem;
 
   @override
-
   /// The error's message.
   String get message;
   @override
-
   /// The error's stack trace, in the [stack_trace](https://pub.dev/packages/stack_trace) package format
   String get stacktrace;
   @override
-
   /// Whether the error was a `TestFailure`
   bool get isFailure;
   @override
   @JsonKey(ignore: true)
-  _$$_ProblemCopyWith<_$_Problem> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$_ProblemCopyWith<_$_Problem> get copyWith => throw _privateConstructorUsedError;
 }

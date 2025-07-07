@@ -6,10 +6,7 @@ part 'event.freezed.dart';
 part 'event.g.dart';
 
 /// Events as defined by [json reporter](https://github.com/dart-lang/test/blob/master/pkgs/test/doc/json_reporter.md#events)
-@Freezed(
-  unionKey: 'type',
-  fallbackUnion: 'unknown',
-)
+@Freezed(unionKey: 'type', fallbackUnion: 'unknown')
 class Event with _$Event {
   // coverage:ignore-start
 

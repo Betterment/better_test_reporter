@@ -12,7 +12,8 @@ part of 'group.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+  'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods',
+);
 
 Group _$GroupFromJson(Map<String, dynamic> json) {
   return _Group.fromJson(json);
@@ -53,17 +54,17 @@ mixin _$Group {
 
 /// @nodoc
 abstract class $GroupCopyWith<$Res> {
-  factory $GroupCopyWith(Group value, $Res Function(Group) then) =
-      _$GroupCopyWithImpl<$Res>;
-  $Res call(
-      {int id,
-      String name,
-      @JsonKey(name: 'suiteID') int suiteId,
-      @JsonKey(name: 'parentID') int? parentId,
-      int testCount,
-      int? line,
-      int? column,
-      String? url});
+  factory $GroupCopyWith(Group value, $Res Function(Group) then) = _$GroupCopyWithImpl<$Res>;
+  $Res call({
+    int id,
+    String name,
+    @JsonKey(name: 'suiteID') int suiteId,
+    @JsonKey(name: 'parentID') int? parentId,
+    int testCount,
+    int? line,
+    int? column,
+    String? url,
+  });
 }
 
 /// @nodoc
@@ -85,64 +86,72 @@ class _$GroupCopyWithImpl<$Res> implements $GroupCopyWith<$Res> {
     Object? column = freezed,
     Object? url = freezed,
   }) {
-    return _then(_value.copyWith(
-      id: id == freezed
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as int,
-      name: name == freezed
-          ? _value.name
-          : name // ignore: cast_nullable_to_non_nullable
-              as String,
-      suiteId: suiteId == freezed
-          ? _value.suiteId
-          : suiteId // ignore: cast_nullable_to_non_nullable
-              as int,
-      parentId: parentId == freezed
-          ? _value.parentId
-          : parentId // ignore: cast_nullable_to_non_nullable
-              as int?,
-      testCount: testCount == freezed
-          ? _value.testCount
-          : testCount // ignore: cast_nullable_to_non_nullable
-              as int,
-      line: line == freezed
-          ? _value.line
-          : line // ignore: cast_nullable_to_non_nullable
-              as int?,
-      column: column == freezed
-          ? _value.column
-          : column // ignore: cast_nullable_to_non_nullable
-              as int?,
-      url: url == freezed
-          ? _value.url
-          : url // ignore: cast_nullable_to_non_nullable
-              as String?,
-    ));
+    return _then(
+      _value.copyWith(
+        id:
+            id == freezed
+                ? _value.id
+                : id // ignore: cast_nullable_to_non_nullable
+                    as int,
+        name:
+            name == freezed
+                ? _value.name
+                : name // ignore: cast_nullable_to_non_nullable
+                    as String,
+        suiteId:
+            suiteId == freezed
+                ? _value.suiteId
+                : suiteId // ignore: cast_nullable_to_non_nullable
+                    as int,
+        parentId:
+            parentId == freezed
+                ? _value.parentId
+                : parentId // ignore: cast_nullable_to_non_nullable
+                    as int?,
+        testCount:
+            testCount == freezed
+                ? _value.testCount
+                : testCount // ignore: cast_nullable_to_non_nullable
+                    as int,
+        line:
+            line == freezed
+                ? _value.line
+                : line // ignore: cast_nullable_to_non_nullable
+                    as int?,
+        column:
+            column == freezed
+                ? _value.column
+                : column // ignore: cast_nullable_to_non_nullable
+                    as int?,
+        url:
+            url == freezed
+                ? _value.url
+                : url // ignore: cast_nullable_to_non_nullable
+                    as String?,
+      ),
+    );
   }
 }
 
 /// @nodoc
 abstract class _$$_GroupCopyWith<$Res> implements $GroupCopyWith<$Res> {
-  factory _$$_GroupCopyWith(_$_Group value, $Res Function(_$_Group) then) =
-      __$$_GroupCopyWithImpl<$Res>;
+  factory _$$_GroupCopyWith(_$_Group value, $Res Function(_$_Group) then) = __$$_GroupCopyWithImpl<$Res>;
   @override
-  $Res call(
-      {int id,
-      String name,
-      @JsonKey(name: 'suiteID') int suiteId,
-      @JsonKey(name: 'parentID') int? parentId,
-      int testCount,
-      int? line,
-      int? column,
-      String? url});
+  $Res call({
+    int id,
+    String name,
+    @JsonKey(name: 'suiteID') int suiteId,
+    @JsonKey(name: 'parentID') int? parentId,
+    int testCount,
+    int? line,
+    int? column,
+    String? url,
+  });
 }
 
 /// @nodoc
-class __$$_GroupCopyWithImpl<$Res> extends _$GroupCopyWithImpl<$Res>
-    implements _$$_GroupCopyWith<$Res> {
-  __$$_GroupCopyWithImpl(_$_Group _value, $Res Function(_$_Group) _then)
-      : super(_value, (v) => _then(v as _$_Group));
+class __$$_GroupCopyWithImpl<$Res> extends _$GroupCopyWithImpl<$Res> implements _$$_GroupCopyWith<$Res> {
+  __$$_GroupCopyWithImpl(_$_Group _value, $Res Function(_$_Group) _then) : super(_value, (v) => _then(v as _$_Group));
 
   @override
   _$_Group get _value => super._value as _$_Group;
@@ -158,58 +167,68 @@ class __$$_GroupCopyWithImpl<$Res> extends _$GroupCopyWithImpl<$Res>
     Object? column = freezed,
     Object? url = freezed,
   }) {
-    return _then(_$_Group(
-      id: id == freezed
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as int,
-      name: name == freezed
-          ? _value.name
-          : name // ignore: cast_nullable_to_non_nullable
-              as String,
-      suiteId: suiteId == freezed
-          ? _value.suiteId
-          : suiteId // ignore: cast_nullable_to_non_nullable
-              as int,
-      parentId: parentId == freezed
-          ? _value.parentId
-          : parentId // ignore: cast_nullable_to_non_nullable
-              as int?,
-      testCount: testCount == freezed
-          ? _value.testCount
-          : testCount // ignore: cast_nullable_to_non_nullable
-              as int,
-      line: line == freezed
-          ? _value.line
-          : line // ignore: cast_nullable_to_non_nullable
-              as int?,
-      column: column == freezed
-          ? _value.column
-          : column // ignore: cast_nullable_to_non_nullable
-              as int?,
-      url: url == freezed
-          ? _value.url
-          : url // ignore: cast_nullable_to_non_nullable
-              as String?,
-    ));
+    return _then(
+      _$_Group(
+        id:
+            id == freezed
+                ? _value.id
+                : id // ignore: cast_nullable_to_non_nullable
+                    as int,
+        name:
+            name == freezed
+                ? _value.name
+                : name // ignore: cast_nullable_to_non_nullable
+                    as String,
+        suiteId:
+            suiteId == freezed
+                ? _value.suiteId
+                : suiteId // ignore: cast_nullable_to_non_nullable
+                    as int,
+        parentId:
+            parentId == freezed
+                ? _value.parentId
+                : parentId // ignore: cast_nullable_to_non_nullable
+                    as int?,
+        testCount:
+            testCount == freezed
+                ? _value.testCount
+                : testCount // ignore: cast_nullable_to_non_nullable
+                    as int,
+        line:
+            line == freezed
+                ? _value.line
+                : line // ignore: cast_nullable_to_non_nullable
+                    as int?,
+        column:
+            column == freezed
+                ? _value.column
+                : column // ignore: cast_nullable_to_non_nullable
+                    as int?,
+        url:
+            url == freezed
+                ? _value.url
+                : url // ignore: cast_nullable_to_non_nullable
+                    as String?,
+      ),
+    );
   }
 }
 
 /// @nodoc
 @JsonSerializable()
 class _$_Group implements _Group {
-  _$_Group(
-      {required this.id,
-      required this.name,
-      @JsonKey(name: 'suiteID') required this.suiteId,
-      @JsonKey(name: 'parentID') this.parentId,
-      required this.testCount,
-      this.line,
-      this.column,
-      this.url});
+  _$_Group({
+    required this.id,
+    required this.name,
+    @JsonKey(name: 'suiteID') required this.suiteId,
+    @JsonKey(name: 'parentID') this.parentId,
+    required this.testCount,
+    this.line,
+    this.column,
+    this.url,
+  });
 
-  factory _$_Group.fromJson(Map<String, dynamic> json) =>
-      _$$_GroupFromJson(json);
+  factory _$_Group.fromJson(Map<String, dynamic> json) => _$$_GroupFromJson(json);
 
   /// An opaque ID for this group.
   @override
@@ -268,78 +287,68 @@ class _$_Group implements _Group {
   @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(id),
-      const DeepCollectionEquality().hash(name),
-      const DeepCollectionEquality().hash(suiteId),
-      const DeepCollectionEquality().hash(parentId),
-      const DeepCollectionEquality().hash(testCount),
-      const DeepCollectionEquality().hash(line),
-      const DeepCollectionEquality().hash(column),
-      const DeepCollectionEquality().hash(url));
+    runtimeType,
+    const DeepCollectionEquality().hash(id),
+    const DeepCollectionEquality().hash(name),
+    const DeepCollectionEquality().hash(suiteId),
+    const DeepCollectionEquality().hash(parentId),
+    const DeepCollectionEquality().hash(testCount),
+    const DeepCollectionEquality().hash(line),
+    const DeepCollectionEquality().hash(column),
+    const DeepCollectionEquality().hash(url),
+  );
 
   @JsonKey(ignore: true)
   @override
-  _$$_GroupCopyWith<_$_Group> get copyWith =>
-      __$$_GroupCopyWithImpl<_$_Group>(this, _$identity);
+  _$$_GroupCopyWith<_$_Group> get copyWith => __$$_GroupCopyWithImpl<_$_Group>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_GroupToJson(
-      this,
-    );
+    return _$$_GroupToJson(this);
   }
 }
 
 abstract class _Group implements Group {
-  factory _Group(
-      {required final int id,
-      required final String name,
-      @JsonKey(name: 'suiteID') required final int suiteId,
-      @JsonKey(name: 'parentID') final int? parentId,
-      required final int testCount,
-      final int? line,
-      final int? column,
-      final String? url}) = _$_Group;
+  factory _Group({
+    required final int id,
+    required final String name,
+    @JsonKey(name: 'suiteID') required final int suiteId,
+    @JsonKey(name: 'parentID') final int? parentId,
+    required final int testCount,
+    final int? line,
+    final int? column,
+    final String? url,
+  }) = _$_Group;
 
   factory _Group.fromJson(Map<String, dynamic> json) = _$_Group.fromJson;
 
   @override
-
   /// An opaque ID for this group.
   int get id;
   @override
-
   /// The name of this group, including prefixes from any containing groups.
   String get name;
   @override
-
   /// The ID of the suite containing this group.
   @JsonKey(name: 'suiteID')
   int get suiteId;
   @override
-
   /// The ID of this group's parent group, unless it's the root group.
   @JsonKey(name: 'parentID')
   int? get parentId;
   @override
-
   /// The number of tests (recursively) within this group.
   int get testCount;
   @override
-
   /// The (1-based) line on which this group was defined, or `null`.
   int? get line;
   @override
-
   /// The (1-based) column on which this group was defined, or `null`.
   int? get column;
   @override
-
   /// The URL for the file in which this group was defined, or `null`.
   String? get url;
   @override
   @JsonKey(ignore: true)
-  _$$_GroupCopyWith<_$_Group> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$_GroupCopyWith<_$_Group> get copyWith => throw _privateConstructorUsedError;
 }
